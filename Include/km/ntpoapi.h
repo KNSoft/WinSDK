@@ -353,6 +353,11 @@ DEFINE_GUID( GUID_DISK_BURST_IGNORE_THRESHOLD, 0x80e3c60e, 0xbb94, 0x4ad8, 0xbb,
 //
 DEFINE_GUID( GUID_DISK_ADAPTIVE_POWERDOWN, 0x396A32E1, 0x499A, 0x40B2, 0x91, 0x24, 0xA9, 0x6A, 0xFE, 0x70, 0x76, 0x67 );
 
+//
+// Specifies whether NVMe non-operational power state permissive mode is enabled.
+//
+DEFINE_GUID(GUID_DISK_NVME_NOPPME, 0xfc7372b6, 0xab2d, 0x43ee, 0x87, 0x97, 0x15, 0xe9, 0x84, 0x1f, 0x2c, 0xca);
+
 // System sleep settings
 // ---------------------
 //
@@ -1139,6 +1144,15 @@ DEFINE_GUID( GUID_PROCESSOR_PARKING_HEADROOM_THRESHOLD, 0xf735a673, 0x2066, 0x4f
 DEFINE_GUID( GUID_PROCESSOR_PARKING_DISTRIBUTION_THRESHOLD, 0x4bdaf4e9, 0xd103, 0x46d7, 0xa5, 0xf0, 0x62, 0x80, 0x12, 0x16, 0x16, 0xef);
 
 //
+// Specify the anticipated execution latency at which a soft parked core can be
+// used by the scheduler.
+//
+// {97CFAC41-2217-47eb-992D-618B1977C907}
+//
+DEFINE_GUID(GUID_PROCESSOR_SOFT_PARKING_LATENCY,
+0x97cfac41, 0x2217, 0x47eb, 0x99, 0x2d, 0x61, 0x8b, 0x19, 0x77, 0xc9, 0x7);
+
+//
 // Specifies the number of perf time check intervals to average utility over.
 //
 // {7d24baa7-0b84-480f-840c-1b0743c00f5f}
@@ -1361,7 +1375,7 @@ DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_ENABLE_THRESHOLD_1,
 // responsivenss overrides will be disabled.
 //
 // {F565999F-3FB0-411a-A226-3F0198DEC130}
-DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_DISABLE_TIME, 
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_DISABLE_TIME,
 0xf565999f, 0x3fb0, 0x411a, 0xa2, 0x26, 0x3f, 0x1, 0x98, 0xde, 0xc1, 0x30);
 
 //
@@ -1369,7 +1383,7 @@ DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_DISABLE_TIME,
 // responsivenss overrides will be disabled for efficiency class 1 processors.
 //
 // {F565999F-3FB0-411a-A226-3F0198DEC131}
-DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_DISABLE_TIME_1, 
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_DISABLE_TIME_1,
 0xf565999f, 0x3fb0, 0x411a, 0xa2, 0x26, 0x3f, 0x1, 0x98, 0xde, 0xc1, 0x31);
 
 //
@@ -1377,7 +1391,7 @@ DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_DISABLE_TIME_1,
 // responsivenss overrides will be enabled.
 //
 // {3D915188-7830-49ae-A79A-0FB0A1E5A200}
-DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_ENABLE_TIME, 
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_ENABLE_TIME,
 0x3d915188, 0x7830, 0x49ae, 0xa7, 0x9a, 0xf, 0xb0, 0xa1, 0xe5, 0xa2, 0x0);
 
 //
@@ -1385,14 +1399,14 @@ DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_ENABLE_TIME,
 // responsivenss overrides will be enabled for efficiency class 1 processors.
 //
 // {3D915188-7830-49ae-A79A-0FB0A1E5A201}
-DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_ENABLE_TIME_1, 
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_ENABLE_TIME_1,
 0x3d915188, 0x7830, 0x49ae, 0xa7, 0x9a, 0xf, 0xb0, 0xa1, 0xe5, 0xa2, 0x1);
 
 //
 // Specifies the ceiling placed on EPP when responsiveness hints are enabled.
 //
 // {4427C73B-9756-4a5c-B84B-C7BDA79C7320}
-DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_EPP_CEILING, 
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_EPP_CEILING,
 0x4427c73b, 0x9756, 0x4a5c, 0xb8, 0x4b, 0xc7, 0xbd, 0xa7, 0x9c, 0x73, 0x20);
 
 //
@@ -1400,7 +1414,7 @@ DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_EPP_CEILING,
 // for efficiency class 1 processors.
 //
 // {4427C73B-9756-4a5c-B84B-C7BDA79C7321}
-DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_EPP_CEILING_1, 
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_EPP_CEILING_1,
 0x4427c73b, 0x9756, 0x4a5c, 0xb8, 0x4b, 0xc7, 0xbd, 0xa7, 0x9c, 0x73, 0x21);
 
 //
@@ -1408,7 +1422,7 @@ DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_EPP_CEILING_1,
 // are enabled.
 //
 // {CE8E92EE-6A86-4572-BFE0-20C21D03CD40}
-DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_PERF_FLOOR, 
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_PERF_FLOOR,
 0xce8e92ee, 0x6a86, 0x4572, 0xbf, 0xe0, 0x20, 0xc2, 0x1d, 0x3, 0xcd, 0x40);
 
 //
@@ -1416,7 +1430,7 @@ DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_PERF_FLOOR,
 // are enabled for efficiency class 1 processors.
 //
 // {CE8E92EE-6A86-4572-BFE0-20C21D03CD41}
-DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_PERF_FLOOR_1, 
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_PERF_FLOOR_1,
 0xce8e92ee, 0x6a86, 0x4572, 0xbf, 0xe0, 0x20, 0xc2, 0x1d, 0x3, 0xcd, 0x41);
 
 // Lock Console on Wake
@@ -1984,6 +1998,7 @@ typedef enum {
     EnergyTrackerCreate,
     EnergyTrackerQuery,
     UpdateBlackBoxRecorder,
+    SessionAllowExternalDmaDevices,
     PowerInformationLevelMaximum
 } POWER_INFORMATION_LEVEL;
 
@@ -2030,6 +2045,13 @@ typedef struct _POWER_SESSION_WINLOGON {
     BOOLEAN Console; // TRUE - for console session, FALSE - for remote session
     BOOLEAN Locked; // TRUE - lock, FALSE - unlock
 } POWER_SESSION_WINLOGON, *PPOWER_SESSION_WINLOGON;
+
+//
+// Winlogon notification to unblock external DMA devices.
+//
+typedef struct _POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES {
+    BOOLEAN IsAllowed;
+} POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES, *PPOWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES;
 
 //
 // Idle resiliency
@@ -2093,6 +2115,11 @@ typedef enum {
     MonitorRequestReasonPdcSignalHolographicShell,              // PDC_SIGNAL_PROVIDER_HOLOSI_CRITICAL_BATTERY_WAKE
     MonitorRequestReasonPdcSignalFingerprint,                   // PDC_SIGNAL_PROVIDER_WINBIO
     MonitorRequestReasonDirectedDrips,
+    MonitorRequestReasonDim,
+    MonitorRequestReasonBuiltinPanel,
+    MonitorRequestReasonDisplayRequiredUnDim,
+    MonitorRequestReasonBatteryCountChangeSuppressed,
+    MonitorRequestReasonResumeModernStandby,
     MonitorRequestReasonMax
 } POWER_MONITOR_REQUEST_REASON;
 

@@ -22,6 +22,9 @@
 
 #include <d3dukmdt.h>
 
+#pragma region Desktop Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+
 #pragma warning(push)
 #pragma warning(disable:4201) // anonymous unions warning
 #pragma warning(disable:4214)   // nonstandard extension used: bit field types other than int
@@ -2100,6 +2103,33 @@ typedef struct _D3DKMT_WDDM_2_0_CAPS
     };
 } D3DKMT_WDDM_2_0_CAPS;
 
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_7)
+
+typedef struct _D3DKMT_WDDM_2_7_CAPS
+{
+    union
+    {
+        struct
+        {
+            UINT HwSchSupported               :  1;    // Specifies whether the GPU supports hardware scheduling
+            UINT HwSchEnabled                 :  1;    // Specifies whether the hardware scheduling is currently enabled for this GPU
+            UINT HwSchEnabledByDefault        :  1;    // Set to 1 if the OS default policy is to enable hardware scheduling for this GPU
+            UINT IndependentVidPnVSyncControl :  1;
+            UINT Reserved                     : 28;
+        };
+        UINT Value;
+    };
+} D3DKMT_WDDM_2_7_CAPS;
+
+#endif
+
+typedef struct _D3DKMT_TRACKEDWORKLOAD_SUPPORT
+{
+    _In_ UINT PhysicalAdapterIndex;
+    _In_ DXGK_ENGINE_TYPE EngineType;
+    _Out_ BOOL Support;
+} D3DKMT_TRACKEDWORKLOAD_SUPPORT;
+
 typedef struct _D3DKMT_NODEMETADATA
 {
     _In_ UINT NodeOrdinalAndAdapterIndex;     // WDDMv2: High word is physical adapter index, low word is node ordinal
@@ -2300,6 +2330,9 @@ typedef BYTE DXGK_DISPLAY_DESCRIPTOR_TYPE;
 
 #pragma warning(pop)
 
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
+#pragma endregion
 
 #endif /* _D3DKMDT_H */
 

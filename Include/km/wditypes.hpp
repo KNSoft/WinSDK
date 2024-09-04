@@ -385,7 +385,15 @@
 #define WDI_TLV_FTM_REQUEST_TIMEOUT                             0x161
 #define WDI_TLV_FTM_TARGET_BSS_ENTRY                            0x162
 #define WDI_TLV_FTM_RESPONSE                                    0x163
-
+#define WDI_TLV_CIPHER_KEY_GCMP_256_KEY                         0x164
+#define WDI_TLV_CIPHER_KEY_BIP_GMAC_256_KEY                     0x165
+#define WDI_TLV_PROTOCOL_OFFLOAD_ID                             0x166
+#define WDI_TLV_REPLAY_COUNTER                                  0x167
+#define WDI_TLV_KCK_CONTENT                                     0x168
+#define WDI_TLV_KEK_CONTENT                                     0x169
+#define WDI_TLV_OWE_DH_IE                                       0x16A
+#define WDI_TLV_FTM_BANDWIDTH_USED                              0x16B
+#define WDI_TLV_FTM_PROPAGATION_PROPERTY                        0x16C
 
 #define WDI_TEST_TASK                                           0xFFE0
 #define WDI_TLV_TEST1                                           0xFFE1
@@ -457,6 +465,7 @@ typedef enum _WDI_AUTH_ALGORITHM
     WDI_AUTH_ALGO_RSNA_PSK = 7,
     WDI_AUTH_ALGO_WPA3 = 8,
     WDI_AUTH_ALGO_WPA3_SAE = 9,
+    WDI_AUTH_ALGO_OWE = 10,
     WDI_AUTH_ALGO_IHV_START = 0x80000000,
     WDI_AUTH_ALGO_IHV_END = 0xffffffff
 } WDI_AUTH_ALGORITHM;
@@ -468,8 +477,13 @@ typedef enum _WDI_CIPHER_ALGORITHM
     WDI_CIPHER_ALGO_TKIP = 0x02,
     WDI_CIPHER_ALGO_CCMP = 0x04,
     WDI_CIPHER_ALGO_WEP104 = 0x05,
-    WDI_CIPHER_ALGO_BIP = 0x06,
-    WDI_CIPHER_ALGO_GCMP = 0x08,
+    WDI_CIPHER_ALGO_BIP = 0x06,                     // BIP-CMAC-128
+    WDI_CIPHER_ALGO_GCMP = 0x08,                    // AES-GCMP-128
+    WDI_CIPHER_ALGO_GCMP_256 = 0x09,                // AES-GCMP-256
+    WDI_CIPHER_ALGO_CCMP_256 = 0x0a,                // AES-CCMP-256
+    WDI_CIPHER_ALGO_BIP_GMAC_128 = 0x0b,            // BIP-GMAC-128
+    WDI_CIPHER_ALGO_BIP_GMAC_256 = 0x0c,            // BIP-GMAC-256
+    WDI_CIPHER_ALGO_BIP_CMAC_256 = 0x0d,            // BIP-CMAC-256
     WDI_CIPHER_ALGO_WPA_USE_GROUP = 0x100,
     WDI_CIPHER_ALGO_RSN_USE_GROUP = 0x100,
     WDI_CIPHER_ALGO_WEP = 0x101,
@@ -623,7 +637,8 @@ typedef enum _WDI_SCAN_TRIGGER
     WDI_SCAN_TRIGGER_ROAM = 3,
     WDI_SCAN_TRIGGER_CONNECT = 4,
     WDI_SCAN_TRIGGER_ANQP_QUERY = 5,
-    WDI_SCAN_TRIGGER_FAST_ROAM = 6
+    WDI_SCAN_TRIGGER_FAST_ROAM = 6,
+    WDI_SCAN_TRIGGER_FTM = 7
 } WDI_SCAN_TRIGGER;
 
 typedef enum _WDI_PACKET_FILTER_TYPE
@@ -884,6 +899,25 @@ typedef enum _WDI_FTM_RESPONSE_STATUS
     WDI_FTM_RESPONSE_STATUS_ABORTED = 6,
     WDI_FTM_RESPONSE_STATUS_FAILED = 7
 } WDI_FTM_RESPONSE_STATUS;
+
+typedef enum _WDI_FTM_BANDWIDTH
+{
+    WDI_FTM_BANDWIDTH_5 = 1,
+    WDI_FTM_BANDWIDTH_10 = 2,
+    WDI_FTM_BANDWIDTH_20 = 3,
+    WDI_FTM_BANDWIDTH_40 = 4,
+    WDI_FTM_BANDWIDTH_80 = 5,
+    WDI_FTM_BANDWIDTH_80_80 = 6,
+    WDI_FTM_BANDWIDTH_160 = 7,
+    WDI_FTM_BANDWIDTH_2160 = 8
+} WDI_FTM_BANDWIDTH;
+
+typedef enum _WDI_FTM_PROPAGATION
+{
+    WDI_FTM_PROPAGATION_UNKNOWN = 0,
+    WDI_FTM_PROPAGATION_INDIRECT_PATH = 1,
+    WDI_FTM_PROPAGATION_LINE_OF_SIGHT = 2
+} WDI_FTM_PROPAGATION;
 
 typedef enum _WDI_LCI_REPORT_STATUS
 {

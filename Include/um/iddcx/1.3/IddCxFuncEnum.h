@@ -323,4 +323,3 @@ typedef enum _IDDSTRUCTENUM {
 
 #endif // _IDDFUNCENUM_H_
 
-

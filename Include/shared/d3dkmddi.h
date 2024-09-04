@@ -1572,7 +1572,6 @@ typedef enum _DXGK_QUERYADAPTERINFOTYPE
     DXGKQAITYPE_WDDMDEVICECAPS          = 29,
     DXGKQAITYPE_GPUPCAPS                = 30,
     DXGKQAITYPE_QUERYTARGETGAMMACAPS    = 31,
-    DXGKQAITYPE_MIPI_DSI2_QUERY_CAPS    = 32,
     DXGKQAITYPE_SCANOUT_CAPS            = 33,
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM2_6
 
@@ -1856,9 +1855,14 @@ typedef struct _DXGK_PHYSICALADAPTERFLAGS
          UINT VPRPagingContextRequired       : 1;
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_2)
          UINT AllowHardwareProtectedNoVpr    : 1;
-         UINT Reserved                       : 27;
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_7)
+         UINT VirtualCopyEngineSupported     : 1;
+         UINT Reserved                       : 26;
 #else
-         UINT    Reserved                    : 28;
+         UINT Reserved                       : 27;
+#endif
+#else
+         UINT Reserved                       : 28;
 #endif
 #else  // ! DXGKDDI_INTERFACE_VERSION_WDDM2_1
          UINT Reserved                       : 30;
@@ -1876,6 +1880,9 @@ typedef struct _DXGK_PHYSICALADAPTERCAPS
     DXGK_PHYSICALADAPTERFLAGS   Flags;
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_1)
     UINT                        VPRPagingNode;
+#endif
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_7)
+    UINT                        VirtualCopyNodeIndex;
 #endif
 } DXGK_PHYSICALADAPTERCAPS;
 
@@ -1933,7 +1940,12 @@ typedef struct _DXGK_VIDMMCAPS
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
             UINT    IoMmuSecureModeSupported    : 1;
             UINT    DisableSelfRefreshVRAMInS3  : 1;
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_7)
+            UINT    IoMmuSecureModeRequired     : 1;
+            UINT    Reserved                    : 18;
+#else  // ! DXGKDDI_INTERFACE_VERSION_WDDM2_4
             UINT    Reserved                    : 19;
+#endif // DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_7
 #else  // ! DXGKDDI_INTERFACE_VERSION_WDDM2_4
             UINT    Reserved                    : 21;
 #endif // DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4
@@ -2021,7 +2033,8 @@ typedef enum _DXGK_WDDMVERSION // _ADVSCH_
      DXGKDDI_WDDMv2_3   = 0x2300,
      DXGKDDI_WDDMv2_4   = 0x2400,
      DXGKDDI_WDDMv2_5   = 0x2500,
-     DXGKDDI_WDDMv2_6   = 0x2600
+     DXGKDDI_WDDMv2_6   = 0x2600,
+     DXGKDDI_WDDMv2_7   = 0x2700
 } DXGK_WDDMVERSION;
 #endif // DXGKDDI_INTERFACE_VERSION
 
@@ -2091,7 +2104,12 @@ typedef struct _DXGK_DRIVERCAPS
             UINT VirtualGpuOnly             : 1;
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_6)
             UINT ComputeOnly : 1;
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_7)
+            UINT IndependentVidPnVSyncControl : 1;
+            UINT Reserved : 27;
+#else
             UINT Reserved : 28;
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_7)
 #else // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_6)
             UINT Reserved : 29;
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_6)
@@ -2387,7 +2405,12 @@ typedef struct _DXGK_DISPLAY_DRIVERCAPS_EXTENSION
 #elif (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_5)
             UINT    HdrFP16ScanoutSupport   : 1;    // 0x00000004
             UINT    HdrARGB10ScanoutSupport : 1;    // 0x00000008
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_7)
+            UINT    Hdr10MetadataSupport    : 1;    // 0x00000010
+            UINT    Reserved                :27;    // 0xFFFFFFE0
+#else
             UINT    Reserved                :28;    // 0xFFFFFFF0
+#endif
 #else
             UINT    Reserved                :30;    // 0xFFFFFFFC
 #endif
@@ -2579,30 +2602,6 @@ typedef struct _DXGK_TARGET_GAMMA_CAPS
 
 typedef DXGK_QAITARGETIN DXGK_QUERYTARGETGAMMACAPSIN;
 
-typedef struct _DXGK_DSI2_CAPS
-{
-    BYTE    DSI2VersionMajor;
-    BYTE    DSI2VersionMinor;
-    WORD    TargetMaximumReturnPacketSize;
-
-    BYTE    ResultCodeFlags;
-    BYTE    ResultCodeStatus;
-    BYTE    Revision;
-    BYTE    Level;
-    
-    BYTE    DeviceClassHi;
-    BYTE    DeviceClassLo;
-    BYTE    ManufacturerHi;
-    BYTE    ManufacturerLo;
-    
-    BYTE    ProductHi;
-    BYTE    ProductLo;
-    BYTE    LengthHi;
-    BYTE    LengthLo;
-} DXGK_DSI2_CAPS, *PDXGK_DSI2_CAPS; 
-
-typedef DXGK_QAITARGETIN DXGK_QUERYTARGETMIPIDSI2CAPSIN;
-
 typedef struct _DXGK_QAISOURCEIN
 {
     D3DDDI_VIDEO_PRESENT_SOURCE_ID      Source;
@@ -2771,26 +2770,26 @@ typedef struct _DXGK_POWER_COMPONENT_MAPPING
    DXGK_POWER_COMPONENT_TYPE	ComponentType;
    union
    {
-      struct DXGK_POWER_COMPONENT_ENGINE_DESC
+      struct //DXGK_POWER_COMPONENT_ENGINE_DESC
       {
           UINT  NodeIndex;
       } EngineDesc;
-      struct DXGK_POWER_COMPONENT_MONITOR_REFRESH_DESC
+      struct //DXGK_POWER_COMPONENT_MONITOR_REFRESH_DESC
       {
           UINT  VidPnSourceID;
       } MonitorRefreshDesc;
-      struct DXGK_POWER_COMPONENT_MONITOR_DESC
+      struct //DXGK_POWER_COMPONENT_MONITOR_DESC
       {
           UINT  VidPnTargetID;
       } MonitorDesc;
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM1_3)
-      struct DXGK_POWER_COMPONENT_MEMORY_DESC
+      struct //DXGK_POWER_COMPONENT_MEMORY_DESC
       {
           UINT  SegmentID;		// Zero based memory segment index
       } MemoryDesc;
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM1_3)
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_4)
-      struct DXGK_POWER_COMPONENT_SHARED_DESC
+      struct //DXGK_POWER_COMPONENT_SHARED_DESC
       {
           union
           {
@@ -3701,6 +3700,34 @@ DXGKDDI_CONTROLINTERRUPT2(
     );
 
 #endif // DXGKDDI_INTERFACE_VERSION_WDDM1_3
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_7)
+typedef struct _DXGKARG_CONTROLINTERRUPT3
+{
+    DXGK_INTERRUPT_TYPE InterruptType;
+    union
+    {
+        DXGK_INTERRUPT_STATE           InterruptState;
+        DXGK_CRTC_VSYNC_STATE          CrtcVsyncState;
+    };
+
+    D3DDDI_VIDEO_PRESENT_SOURCE_ID  VidPnSourceId;
+}DXGKARG_CONTROLINTERRUPT3;
+
+typedef _In_ CONST DXGKARG_CONTROLINTERRUPT3* IN_CONST_PDXGKARG_CONTROLINTERRUPT3;
+
+typedef
+_Check_return_
+_Function_class_DXGK_(DXGKDDI_CONTROLINTERRUPT3)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+APIENTRY
+DXGKDDI_CONTROLINTERRUPT3(
+    IN_CONST_HANDLE                      hAdapter,
+    IN_CONST_PDXGKARG_CONTROLINTERRUPT3  InterruptControl
+);
+
+#endif
 
 typedef enum _DXGK_BUILDPAGINGBUFFER_OPERATION
 {
@@ -8158,165 +8185,6 @@ DXGKDDI_SETTARGETGAMMA(
     IN_CONST_PDXGKARG_SETTARGETGAMMA            pSetTargetGammaArg
     );
 
-//
-// MIPI DSI2 definitions
-//
-typedef enum _DXGK_TARGET_CONTROL_TYPE
-{
-    DXGKTCTYPE_INVALID = 0,
-    DXGKTCTYPE_DSI2_TRANSMISSION,
-} DXGK_TARGET_CONTROL_TYPE;
-
-typedef enum _DXGK_DSI2_CONTROL_TRANSMISSION_MODE
-{
-    DXGK_DCT_DEFAULT = 0,
-    DXGK_DCT_FORCE_LOW_POWER,
-    DXGK_DCT_FORCE_HIGH_SPEED,
-    DXGK_DCT_FORCE_HIGH_PERFORMANCE = DXGK_DCT_FORCE_HIGH_SPEED,
-} DXGK_DSI2_CONTROL_TRANSMISSION_MODE;
-
-#define DXGK_DSI2_PACKET_EMBEDDED_PAYLOAD_SIZE 8
-
-typedef struct _DXGK_DSI2_PACKET
-{
-    union
-    {
-        UINT    DataId          :8;
-        struct
-        {
-            UINT    DataType        :6;
-            UINT    VirtualChannel  :2;
-        };
-    };
-
-    union
-    {
-        struct
-        {
-            UINT    Data0       :8;
-            UINT    Data1       :8;
-        };
-        UINT    LongWriteWordCount  :16;
-    };
-
-    UINT    EccFiller       :8;
-
-    BYTE    Payload[DXGK_DSI2_PACKET_EMBEDDED_PAYLOAD_SIZE];
-} DXGK_DSI2_PACKET, *PDXGK_DSI2_PACKET;
-
-typedef struct _DXGK_DSI2_TRANSMISSION
-{
-    UINT                    TotalBufferSize;
-
-    struct
-    {
-        UINT    PacketCount          : 8;
-        UINT    FailedPacket         : 8;
-        UINT    TransmissionMode     : 2;
-        UINT    ReportMipiErrors     : 1;
-        UINT    ClearMipiErrors      : 1;
-        UINT    SecondaryPort        : 1;
-        UINT    Reserved             :11;
-    };
-
-    WORD    ReadWordCount;
-    WORD    FinalCommandExtraPayload;
-
-    WORD    MipiErrors;
-    WORD    HostErrors;
-
-    DXGK_DSI2_PACKET    Packets[1];
-} DXGK_DSI2_TRANSMISSION, *PDXGK_DSI2_TRANSMISSION;
-
-//
-// Maximum PacketCount
-//
-#define DXGK_MAX_PACKET_COUNT                          0x80
-
-//
-// If not known or there is no detected packet error, DXGK_DSI2_INVALID_PACKET_INDEX
-// is set to FailedPacket.
-//
-#define DXGK_DSI2_INVALID_PACKET_INDEX                  0xFF
-
-//
-// MipiErrors reported by communication with the peripheral
-//
-#define DXGK_DSI2_SOT_ERROR                             0x0001
-#define DXGK_DSI2_SOT_SYNC_ERROR                        0x0002
-#define DXGK_DSI2_EOT_SYNC_ERROR                        0x0004
-#define DXGK_DSI2_ESCAPE_MODE_ENTRY_COMMAND_ERROR       0x0008
-#define DXGK_DSI2_LOW_POWER_TRANSMIT_SYNC_ERROR         0x0010
-#define DXGK_DSI2_PERIPHERAL_TIMEOUT_ERROR              0x0020
-#define DXGK_DSI2_FALSE_CONTROL_ERROR                   0x0040
-#define DXGK_DSI2_CONTENTION_DETECTED                   0x0080
-#define DXGK_DSI2_CHECKSUM_ERROR_CORRECTED              0x0100
-#define DXGK_DSI2_CHECKSUM_ERROR_NOT_CORRECTED          0x0200
-#define DXGK_DSI2_LONG_PACKET_PAYLOAD_CHECKSUM_ERROR    0x0400
-#define DXGK_DSI2_DSI_DATA_TYPE_NOT_RECOGNIZED          0x0800
-#define DXGK_DSI2_DSI_VC_ID_INVALID                     0x1000
-#define DXGK_DSI2_INVALID_TRANSMISSION_LENGTH           0x2000
-//      RESERVED                                        0x4000
-#define DXGK_DSI2_DSI_PROTOCOL_VIOLATION                0x8000
-
-//
-// HostErrors reported by the graphics driver or OS
-//
-#define DXGK_HOST_DSI2_DEVICE_NOT_READY                 0x0001
-#define DXGK_HOST_DSI2_INTERFACE_RESET                  0x0002
-#define DXGK_HOST_DSI2_DEVICE_RESET                     0x0004
-#define DXGK_HOST_DSI2_TRANSMISSION_CANCELLED           0x0010
-#define DXGK_HOST_DSI2_TRANSMISSION_DROPPED             0x0020
-#define DXGK_HOST_DSI2_TRANSMISSION_TIMEOUT             0x0040
-#define DXGK_HOST_DSI2_INVALID_TRANSMISSION             0x0100
-#define DXGK_HOST_DSI2_OS_REJECTED_PACKET               0x0200
-#define DXGK_HOST_DSI2_DRIVER_REJECTED_PACKET           0x0400
-#define DXGK_HOST_DSI2_BAD_TRANSMISSION_MODE            0x1000
-
-/*++
-Routine Description:
-    SubmitTargetControl -  allows the OS to request control operations to be
-        performed on a target using a control interface to the target owned
-        by the graphics adapter.  In WDDM 2.6 there is only a single type of
-        valid control operation however this is likely to be extended.
-
-Arguments:
-    hAdapter                        WDDM display miniport adapter handle.
-
-    pSubmitTargetControl
-       ->TargetId                   Target to be modified
-
-       ->Type                       Target control type 
-
-       ->pDsi2Transmission          DSI2 transmission
-
-Environment:
-    Kernel mode. PASSIVE_LEVEL.
-
---*/
-typedef struct _DXGKARG_SUBMITTARGETCONTROL
-{
-    IN      D3DDDI_VIDEO_PRESENT_TARGET_ID  TargetId;
-    IN      DXGK_TARGET_CONTROL_TYPE        Type;
-    union
-    {
-        _Inout_ PDXGK_DSI2_TRANSMISSION     pDsi2Transmission;
-    };
-} DXGKARG_SUBMITTARGETCONTROL, *PDXGKARG_SUBMITTARGETCONTROL;
-
-typedef _Inout_ DXGKARG_SUBMITTARGETCONTROL* IN_OUT_PDXGKARG_SUBMITTARGETCONTROL;
-
-typedef
-    _Check_return_
-    _Function_class_DXGK_(DXGKDDI_SUBMITTARGETCONTROL)
-    _IRQL_requires_(PASSIVE_LEVEL)
-NTSTATUS
-APIENTRY
-DXGKDDI_SUBMITTARGETCONTROL(
-    IN_CONST_HANDLE                       hAdapter,
-    IN_OUT_PDXGKARG_SUBMITTARGETCONTROL   pSubmitTargetControl
-    );
-
 /*++
 Routine Description:
     SetTargetContentType - Sets the content type for which the driver should be optimizing
@@ -9138,9 +9006,14 @@ typedef DXGKDDI_SETTRACKEDWORKLOADPOWERLEVEL    *PDXGKDDI_SETTRACKEDWORKLOADPOWE
 
 typedef DXGKDDI_SAVEMEMORYFORHOTUPDATE          *PDXGKDDI_SAVEMEMORYFORHOTUPDATE;
 typedef DXGKDDI_RESTOREMEMORYFORHOTUPDATE       *PDXGKDDI_RESTOREMEMORYFORHOTUPDATE;
-typedef DXGKDDI_SUBMITTARGETCONTROL             *PDXGKDDI_SUBMITTARGETCONTROL;
 
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_6)
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_7)
+
+typedef DXGKDDI_CONTROLINTERRUPT3               *PDXGKDDI_CONTROLINTERRUPT3;
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_7)
 
 #pragma warning(pop)
 

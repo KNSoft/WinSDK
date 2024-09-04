@@ -348,7 +348,7 @@ NtGdiDoPalette(
     _In_ WORD cEntries,
     _In_reads_opt_(cEntries) PALETTEENTRY *pPalEntries,
     _In_ DWORD iFunc,
-    _In_ BOOL bInbound
+    _In_ BOOL bUnused
     );
 
 __kernel_entry W32KAPI BOOL APIENTRY
@@ -2621,7 +2621,7 @@ VOID GreSetDCDpiScaleValue(
 LONG GreGetBitmapDpiScaleValue(
     _In_ HSURF hsurf);
 
-__kernel_entry W32KAPI VOID
+__kernel_entry W32KAPI NTSTATUS
 NtGdiEnsureDpiDepDefaultGuiFontForPlateau(
     _In_ int iDpi);
 

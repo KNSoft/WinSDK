@@ -72,6 +72,12 @@ typedef enum D3D10_SB_TOKENIZED_PROGRAM_TYPE
     D3D11_SB_DOMAIN_SHADER      = 4,
     D3D11_SB_COMPUTE_SHADER     = 5,
 
+    // Subset of D3D12 Shaders where this field is referenced by runtime
+    // Entries from 6-12 are unique to state objects 
+    // (e.g. library, callable and raytracing shaders)
+    D3D12_SB_MESH_SHADER        = 13,
+    D3D12_SB_AMPLIFICATION_SHADER = 14,
+
     D3D11_SB_RESERVED0          = 0xFFF0
 } D3D10_SB_TOKENIZED_PROGRAM_TYPE;
 
@@ -2169,6 +2175,7 @@ typedef enum D3D10_SB_NAME
     // The following are added for D3D12
     D3D12_SB_NAME_BARYCENTRICS = 23,
     D3D12_SB_NAME_SHADINGRATE = 24,
+    D3D12_SB_NAME_CULLPRIMITIVE = 25,
 } D3D10_SB_NAME;
 
 typedef enum D3D10_SB_RESOURCE_DIMENSION

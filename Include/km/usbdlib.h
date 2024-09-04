@@ -393,7 +393,7 @@ _Must_inspect_result_
 NTSTATUS
 USBD_IsochUrbAllocate(
     _In_      USBD_HANDLE  USBDHandle,
-    _In_      ULONG        NumberOfIsochPacket,
+    _In_      ULONG        NumberOfIsochPackets,
     _Outptr_result_bytebuffer_(sizeof(struct _URB_ISOCH_TRANSFER)
                                + (NumberOfIsochPackets * sizeof(USBD_ISO_PACKET_DESCRIPTOR))
                                - sizeof(USBD_ISO_PACKET_DESCRIPTOR))
@@ -523,6 +523,9 @@ DEFINE_GUID(GUID_USB_CAPABILITY_DEVICE_CONNECTION_SUPER_SPEED_COMPATIBLE,
 
 DEFINE_GUID(GUID_USB_CAPABILITY_TIME_SYNC,
     0xbb6e6472, 0x4be5, 0x44a3, 0x96, 0x41, 0x34, 0x5e, 0x56, 0xac, 0x34, 0x85);
+
+DEFINE_GUID(GUID_USB_CAPABILITY_SSP_ISOCH_PIPE_FLAGS,
+    0x59819125, 0x33a3, 0x421a, 0xa5, 0xdd, 0x37, 0x63, 0x9f, 0x30, 0xb9, 0x3e);
 
 #endif /* (NTDDI_VERSION >= NTDDI_VISTA) */
 

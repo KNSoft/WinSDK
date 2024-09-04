@@ -2582,47 +2582,55 @@ typedef struct _PHYSICAL_DEVICE_EXTENSION {
 // Indicates that the device has write caching enabled.
 //
 
-#define DEV_WRITE_CACHE     0x00000001
+#define DEV_WRITE_CACHE        0x00000001
 
 //
 // Build SCSI 1 or SCSI 2 CDBs
 //
 
-#define DEV_USE_SCSI1       0x00000002
+#define DEV_USE_SCSI1          0x00000002
 
 //
 // Indicates whether is is safe to send StartUnit commands
 // to this device. It will only be off for some removeable devices.
 //
 
-#define DEV_SAFE_START_UNIT 0x00000004
+#define DEV_SAFE_START_UNIT    0x00000004
 
 //
 // Indicates whether it is unsafe to send SCSIOP_MECHANISM_STATUS commands to
 // this device.  Some devices don't like these 12 byte commands
 //
 
-#define DEV_NO_12BYTE_CDB   0x00000008
+#define DEV_NO_12BYTE_CDB      0x00000008
 
 //
 // Indicates that the device is connected to a backup power supply
 // and hence write-through and synch cache requests may be ignored
 //
 
-#define DEV_POWER_PROTECTED 0x00000010
+#define DEV_POWER_PROTECTED    0x00000010
 
 //
 // Indicates that the device supports 16 byte CDBs
 //
 
-#define DEV_USE_16BYTE_CDB  0x00000020
+#define DEV_USE_16BYTE_CDB     0x00000020
 
 //
 // Indicates that IRP_MJ_READ, IRP_MJ_WRITE, and IRP_MJ_FLUSH
 // should be forwarded directly to the underlying device
 //
 
-#define DEV_FORWARD_IO      0x00000040
+#define DEV_FORWARD_IO         0x00000040
+
+//
+// Indicates that IRP_MJ_WRITE should be split if size
+// is less than max hardware transfer length, even if
+// DEV_FORWARD_IO is set.
+//
+
+#define DEV_SPLIT_LARGE_WRITE  0x00000080
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)

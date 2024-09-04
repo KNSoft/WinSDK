@@ -721,6 +721,10 @@
       <namedType name="PriorityValue" type="WDI_IHV_TASK_PRIORITY" description="Priority value"/>
     </container>
 
+    <container name="INT32Container" description="Container for a single INT32" type="INT32_CONTAINER">
+      <namedType name="Value" type="INT32" description="INT32 value."/>
+    </container>
+
     <container name="UINT32Container" description="Container for a single UINT32" type="UINT32_CONTAINER">
       <namedType name="Value" type="UINT32" description="UINT32 value."/>
     </container>
@@ -1350,6 +1354,13 @@
     </container>
 
     <container
+      name="StationCapabilitiesContainerV1_1_8"
+      description="Container for Station capabilities"
+      type="WDI_STATION_CAPABILITIES_CONTAINERV1_1_8">
+      <groupRef name="WifiStationCapabilities" ref="WifiStationCapabilitiesStructV1_1_8" description="Parameters for Station capabilities" />
+    </container>
+
+    <container
       name="StationCapabilitiesContainerV1_0"
       description="Container for Station capabilities"
       type="WDI_STATION_CAPABILITIES_CONTAINERV1_0">
@@ -1464,7 +1475,8 @@
     </container> 
 
     <aggregateContainer name="StationAttributesContainer" type="WDI_STATION_ATTRIBUTES_CONTAINER" description="Container for Station attributes.">
-      <containerRef id="WDI_TLV_STATION_CAPABILITIES" name="StationCapabilities" type="StationCapabilitiesContainer" versionAdded="WDI_VERSION_1_1_8"/>
+      <containerRef id="WDI_TLV_STATION_CAPABILITIES" name="StationCapabilities" type="StationCapabilitiesContainer" versionAdded="WDI_VERSION_1_1_9"/>
+      <containerRef id="WDI_TLV_STATION_CAPABILITIES" name="StationCapabilities" type="StationCapabilitiesContainerV1_1_8" versionAdded="WDI_VERSION_1_1_8" versionRemoved="WDI_VERSION_1_1_9" />
       <containerRef id="WDI_TLV_STATION_CAPABILITIES" name="StationCapabilities" type="StationCapabilitiesContainerV1_0" versionRemoved="WDI_VERSION_1_1_8"/>
       <containerRef id="WDI_TLV_UNICAST_ALGORITHM_LIST" name="UnicastAlgorithms" type="AlgorithmPairsContainer" optional="true" />
       <containerRef id="WDI_TLV_MULTICAST_DATA_ALGORITHM_LIST" name="MulticastDataAlgorithms" type="AlgorithmPairsContainer" optional="true" />
@@ -1603,6 +1615,7 @@
       <containerRef id="WDI_TLV_PHY_TYPE_LIST" name="ActivePhyTypeList" type="PhyTypeListContainer" optional="true" />
       <containerRef id="WDI_TLV_DISALLOWED_BSSIDS_LIST" name="DisallowedBSSIDs" type="MacAddressListContainer" optional="true" />
       <containerRef id="WDI_TLV_ALLOWED_BSSIDS_LIST" name="AllowedBSSIDs" type="MacAddressListContainer" optional="true" />
+      <containerRef id="WDI_TLV_OWE_DH_IE" name="OWEDHIE" type="ByteBlob" optional="true" />
     </aggregateContainer>
 
     <container name="BSSSelectionParametersContainer" type="WDI_BSS_SELECTION_PARAMETERS_CONTAINER" description="Container for BSS Selection Parameters">
@@ -1706,14 +1719,24 @@
       <containerRef id="WDI_TLV_CIPHER_KEY_BIP_KEY" name="BIPKey" type="PrivateByteBlob" optional="true" />
       <containerRef id="WDI_TLV_CIPHER_KEY_WEP_KEY" name="WEPKey" type="PrivateByteBlob" optional="true" />
       <containerRef id="WDI_TLV_CIPHER_KEY_IHV_KEY" name="IHVKey" type="PrivateByteBlob" optional="true" />
+      <containerRef id="WDI_TLV_CIPHER_KEY_GCMP_256_KEY" name="GCMP_256Key" type="PrivateByteBlob" optional="true" versionAdded="WDI_VERSION_1_1_9" />
+      <containerRef id="WDI_TLV_CIPHER_KEY_BIP_GMAC_256_KEY" name="BIP_GMAC_256Key" type="PrivateByteBlob" optional="true" versionAdded="WDI_VERSION_1_1_9" />
     </aggregateContainer>
 
-    <container name="RsnKeyInfoContainer" type="WDI_PM_RSN_KEY_INFO_CONTAINER" description="Container for 802.11 Rsn Key information.">
+    <aggregateContainer name="RsnKeyInfoContainer" type="WDI_PM_RSN_KEY_INFO_CONTAINER" description="Container for 802.11 Rsn Key information.">
+      <containerRef id="WDI_TLV_PROTOCOL_OFFLOAD_ID" name="ProtocolOffloadId" type="UINT32Container" />
+      <containerRef id="WDI_TLV_REPLAY_COUNTER" name="ReplayCounter" type="UINT64Container" />
+      <containerRef id="WDI_TLV_KCK_CONTENT" name="KCK_CONTENT" type="PrivateByteBlob" />
+      <containerRef id="WDI_TLV_KEK_CONTENT" name="KEK_CONTENT" type="PrivateByteBlob" />
+    </aggregateContainer>
+
+    <container name="RsnKeyInfoContainerV1_1_8" type="WDI_PM_RSN_KEY_INFO_CONTAINERV1_1_8" description="Container for 802.11 Rsn Key information.">
       <groupRef ref="DOT11RSNREKeyOffloadStruct" name="DOT11RSNREKeyOffload" description="Parameters for PM protocol offload" />
     </container>
 
     <aggregateContainer name="DOT11RSNREKeyOffloadContainer" type="WDI_RSN_OFFLOAD_KEYS_CONTAINER" description="Container for RSN Offload Key(s).">
-      <containerRef id="WDI_TLV_RSN_KEY_INFO" name="RsnKeyInfo" type="RsnKeyInfoContainer" />
+      <containerRef id="WDI_TLV_RSN_KEY_INFO" name="RsnKeyInfo" type="RsnKeyInfoContainer" versionAdded="WDI_VERSION_1_1_9" />
+      <containerRef id="WDI_TLV_RSN_KEY_INFO" name="RsnKeyInfo" type="RsnKeyInfoContainerV1_1_8" versionRemoved="WDI_VERSION_1_1_9" />
       <containerRef id="WDI_TLV_CONFIGURED_CIPHER_KEY" name="CipherKey" type="ConfiguredCipherKeyContainer" multiContainer="true" optional="true" />
     </aggregateContainer>
 
@@ -1728,6 +1751,8 @@
       <containerRef id="WDI_TLV_CIPHER_KEY_BIP_KEY" name="BIPKey" type="PrivateByteBlob" optional="true"/>
       <containerRef id="WDI_TLV_CIPHER_KEY_WEP_KEY" name="WEPKey" type="PrivateByteBlob" optional="true"/>
       <containerRef id="WDI_TLV_CIPHER_KEY_IHV_KEY" name="IHVKey" type="PrivateByteBlob" optional="true"/>
+      <containerRef id="WDI_TLV_CIPHER_KEY_GCMP_256_KEY" name="GCMP_256Key" type="PrivateByteBlob" optional="true" versionAdded="WDI_VERSION_1_1_9" />
+      <containerRef id="WDI_TLV_CIPHER_KEY_BIP_GMAC_256_KEY" name="BIP_GMAC_256Key" type="PrivateByteBlob" optional="true" versionAdded="WDI_VERSION_1_1_9" />
     </aggregateContainer>
 
     <aggregateContainer name="DeleteCipherKeyContainer" type="WDI_SET_DELETE_CIPHER_KEYS_CONTAINER" description="Container for Specifying a Cipher Key Mapping Key entry.">
@@ -1832,6 +1857,14 @@
       <namedType type="WDI_FTM_RESPONSE_STATUS" name="FTMResponseStatus" description="The status of the FTM requested."/>
     </container>
 
+    <container name="FTMBandwidthUsedContainer" type="WDI_FTM_BANDWIDTH_USED_CONTAINER" description="Container for FTM bandwidth used">
+      <namedType type="WDI_FTM_BANDWIDTH" name="FTMBandwidth" description="The negotiated bandwidth used to exercise the FTM requested."/>
+    </container>
+
+    <container name="FTMPropagationPropertyContainer" type="WDI_FTM_PROPAGATION_PROPERTY_CONTAINER" description="Container for FTM propagation property">
+      <namedType type="WDI_FTM_PROPAGATION" name="FTMPropagation" description="The estimated propagation properties of the signal."/>
+    </container>
+
     <container name="LCIReportStatusContainer" type="WDI_LCI_REPORT_STATUS_CONTAINER" description="Container for LCI report status">
       <namedType type="WDI_LCI_REPORT_STATUS" name="LCIReportStatus" description="The status of the LCI report requested."/>
     </container>
@@ -1842,9 +1875,12 @@
       <containerRef id="WDI_TLV_RETRY_AFTER" name="RetryAfter" optional="true" type="UINT16Container" />
       <containerRef id="WDI_TLV_FTM_NUMBER_OF_MEASUREMENTS" name="NumberOfMeasurements" optional="true" type="UINT16Container" />
       <containerRef id="WDI_TLV_BSS_ENTRY_SIGNAL_INFO" name="SignalInfo" optional="true" type="SignalInfoContainer" />
-      <containerRef id="WDI_TLV_RTT" name="RTT" optional="true" type="UINT32Container" />
-      <containerRef id="WDI_TLV_RTT_ACCURACY" name="RTTAccuracy" optional="true" type="UINT32Container" />
+      <containerRef id="WDI_TLV_FTM_BANDWIDTH_USED" name="BandwidthUsed" optional="true" type="FTMBandwidthUsedContainer" versionAdded="WDI_VERSION_1_1_9" />
+      <containerRef id="WDI_TLV_RTT" name="RTT" optional="true" type="UINT32Container" versionRemoved="WDI_VERSION_1_1_9" />
+      <containerRef id="WDI_TLV_RTT" name="RTT" optional="true" type="INT32Container" versionAdded="WDI_VERSION_1_1_9" />
+      <containerRef id="WDI_TLV_RTT_ACCURACY" name="RTTAccuracy" optional="true" type="UINT32Container" versionRemoved="WDI_VERSION_1_1_9" />
       <containerRef id="WDI_TLV_RTT_VARIANCE" name="RTTVariance" optional="true" type="UINT64Container" />
+      <containerRef id="WDI_TLV_FTM_PROPAGATION_PROPERTY" name="PropagationProperty" optional="true" type="FTMPropagationPropertyContainer" versionAdded="WDI_VERSION_1_1_9" />
       <containerRef id="WDI_TLV_LCI_REPORT_STATUS" name="LCIStatus" optional="true" type="LCIReportStatusContainer" />
       <containerRef id="WDI_TLV_LCI_REPORT_BODY" name="LCIReport" optional="true" type="ByteBlob" />
     </aggregateContainer>
@@ -2275,6 +2311,29 @@
     </propertyGroup>
 
     <propertyGroup name="WifiStationCapabilitiesStruct" type="WDI_STATION_CAPABILITIES" description="Structure definition for Station capabilities">
+      <uint32 name="ScanSSIDListSize" description="Scan SSID List size" />
+      <uint32 name="DesiredBSSIDListSize" description="Desired BSSID List size" />
+      <uint32 name="DesiredSSIDListSize" description="Desired SSID List size" />
+      <uint32 name="PrivacyExemptionListSize" description="Privacy Exemption List size" />
+      <uint32 name="KeyMappingTableSize" description="Key Mapping List size" />
+      <uint32 name="DefaultKeyTableSize" description="Default Key table size" />
+      <uint32 name="WEPKeyValueMaxLength" description="WEP Key value Max length" />
+      <uint32 name="MaxNumPerSTA" description="Max num per STA Default key tables" />
+      <uint8 name="SupportedQOSFlags" description="Whether or not WMM QOS is supported" />
+      <uint8 name="HostFIPSModeImplemented" description="Whether or not host FIPS mode is supported" />
+      <uint8 name="MFPCapable" description="Whether or not MFP is supported" />
+      <bool name="AutoPowerSaveMode" description="{0,1} if Auto Power Save is supported. Yes = 1." />
+      <bool name="BSSListCachemanagement" description="{0,1} If the adapter would maintain the Station BSS List cache. Yes = 1" />
+      <bool name="ConnectBSSSelectionOverride" description="{0,1} If on a Station connect the adapter may attempt association to a BSSID that is not specified in the Preferred BSSID list. Yes = 1" />
+      <uint32 name="uMaxNetworkOffloadListSize" description="Support number of Network Offload entries" />
+      <bool name="HESSIDConnectionSupported" description="{0,1} If ability to connect to HESSIDs is supported. Yes = 1." />
+      <bool name="DisconnectedStandbySupported" description="If disconnected standby is supported. Yes = 1" />
+      <bool name="FTMAsInitiatorSupport" description="{0,1} If FTM procedures as Initiator are supported. Yes = 1." />
+      <uint32 name="FTMNumberOfSupportedTargets" description="Number of target STAs supported per FTM request task." />
+      <bool name="HostWPA3FIPSModeEnabled" description="Host-FIPS mode for WPA3 is enabled or not"/>
+    </propertyGroup>
+
+    <propertyGroup name="WifiStationCapabilitiesStructV1_1_8" type="WDI_STATION_CAPABILITIESV1_1_8" description="Structure definition for Station capabilities">
       <uint32 name="ScanSSIDListSize" description="Scan SSID List size" />
       <uint32 name="DesiredBSSIDListSize" description="Desired BSSID List size" />
       <uint32 name="DesiredSSIDListSize" description="Desired SSID List size" />

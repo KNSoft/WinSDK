@@ -224,6 +224,14 @@ ORShutdown (
     VOID
     );
 
+DWORD
+ORAPI
+ORMergeHives (
+    _In_reads_(HiveCount) ORHKEY * HiveHandles,
+    _In_ ULONG HiveCount,
+    _Out_ PORHKEY phkResult
+    );
+
 #ifdef __cplusplus
 }
 #endif

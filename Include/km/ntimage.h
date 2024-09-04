@@ -1409,6 +1409,7 @@ typedef struct _IMAGE_IMPORT_BY_NAME {
 
 #include "pshpack8.h"                       // Use align 8 for the 64-bit IAT.
 
+//@[comment("MVI_tracked")]
 typedef struct _IMAGE_THUNK_DATA64 {
     union {
         ULONGLONG ForwarderString;  // PUCHAR
@@ -1421,6 +1422,7 @@ typedef IMAGE_THUNK_DATA64 * PIMAGE_THUNK_DATA64;
 
 #include "poppack.h"                        // Back to 4 byte packing
 
+//@[comment("MVI_tracked")]
 typedef struct _IMAGE_THUNK_DATA32 {
     union {
         ULONG ForwarderString;      // PUCHAR
@@ -1504,7 +1506,7 @@ typedef IMAGE_TLS_DIRECTORY32           IMAGE_TLS_DIRECTORY;
 typedef PIMAGE_TLS_DIRECTORY32          PIMAGE_TLS_DIRECTORY;
 #endif
 
-////@[comment("MVI_tracked")]
+//@[comment("MVI_tracked")]
 typedef struct _IMAGE_IMPORT_DESCRIPTOR {
     union {
         ULONG   Characteristics;            // 0 for terminating null import descriptor
@@ -1605,7 +1607,7 @@ typedef struct _IMAGE_RESOURCE_DIRECTORY {
 // field points to a resource data entry.
 //
 
-////@[comment("MVI_tracked")]
+//@[comment("MVI_tracked")]
 typedef struct _IMAGE_RESOURCE_DIRECTORY_ENTRY {
     union {
         struct {
@@ -1836,6 +1838,8 @@ typedef struct _IMAGE_LOAD_CONFIG_DIRECTORY32 {
     ULONG   Reserved3;
     ULONG   EnclaveConfigurationPointer;    // VA
     ULONG   VolatileMetadataPointer;        // VA
+    ULONG   GuardEHContinuationTable;       // VA
+    ULONG   GuardEHContinuationCount;
 } IMAGE_LOAD_CONFIG_DIRECTORY32, *PIMAGE_LOAD_CONFIG_DIRECTORY32;
 
 typedef struct _IMAGE_LOAD_CONFIG_DIRECTORY64 {
@@ -1881,6 +1885,8 @@ typedef struct _IMAGE_LOAD_CONFIG_DIRECTORY64 {
     ULONG      Reserved3;
     ULONGLONG  EnclaveConfigurationPointer;     // VA
     ULONGLONG  VolatileMetadataPointer;         // VA
+    ULONGLONG  GuardEHContinuationTable;        // VA
+    ULONGLONG  GuardEHContinuationCount;
 } IMAGE_LOAD_CONFIG_DIRECTORY64, *PIMAGE_LOAD_CONFIG_DIRECTORY64;
 
 // end_ntoshvp
@@ -1986,6 +1992,7 @@ typedef struct _IMAGE_HOT_PATCH_HASHES {
 #define IMAGE_GUARD_RF_ENABLE                          0x00040000 // Module requests that the OS enable return flow protection
 #define IMAGE_GUARD_RF_STRICT                          0x00080000 // Module requests that the OS enable return flow protection in strict mode
 #define IMAGE_GUARD_RETPOLINE_PRESENT                  0x00100000 // Module was built with retpoline support
+#define IMAGE_GUARD_EH_CONTINUATION_TABLE_PRESENT      0x00400000 // Module contains EH continuation target information
 
 #define IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_MASK        0xF0000000 // Stride of Guard CF function table encoded in these bits (additional count of bytes per element)
 #define IMAGE_GUARD_CF_FUNCTION_TABLE_SIZE_SHIFT       28         // Shift to right-justify Guard CF function table stride
@@ -2032,6 +2039,19 @@ typedef struct _IMAGE_ARM_RUNTIME_FUNCTION_ENTRY {
     } DUMMYUNIONNAME;
 } IMAGE_ARM_RUNTIME_FUNCTION_ENTRY, * PIMAGE_ARM_RUNTIME_FUNCTION_ENTRY;
 
+typedef enum ARM64_FNPDATA_FLAGS {
+    PdataRefToFullXdata = 0,
+    PdataPackedUnwindFunction = 1,
+    PdataPackedUnwindFragment = 2,
+} ARM64_FNPDATA_FLAGS;
+
+typedef enum ARM64_FNPDATA_CR {
+    PdataCrUnchained = 0,
+    PdataCrUnchainedSavedLr = 1,
+    PdataCrChainedWithPac = 2,
+    PdataCrChained = 3,
+} ARM64_FNPDATA_CR;
+
 typedef struct _IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY {
     ULONG BeginAddress;
     union {
@@ -2047,6 +2067,18 @@ typedef struct _IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY {
         } DUMMYSTRUCTNAME;
     } DUMMYUNIONNAME;
 } IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY, * PIMAGE_ARM64_RUNTIME_FUNCTION_ENTRY;
+
+typedef union IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA {
+    ULONG HeaderData;
+    struct {
+        ULONG FunctionLength : 18;      // in words (2 bytes)
+        ULONG Version : 2;
+        ULONG ExceptionDataPresent : 1;
+        ULONG EpilogInHeader : 1;
+        ULONG EpilogCount : 5;          // number of epilogs or byte index of the first unwind code for the one only epilog
+        ULONG CodeWords : 5;            // number of dwords with unwind codes
+    };
+} IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA;
 
 typedef struct _IMAGE_ALPHA64_RUNTIME_FUNCTION_ENTRY {
     ULONGLONG BeginAddress;
@@ -2189,23 +2221,31 @@ typedef struct _IMAGE_DEBUG_DIRECTORY {
     ULONG   PointerToRawData;
 } IMAGE_DEBUG_DIRECTORY, *PIMAGE_DEBUG_DIRECTORY;
 
-#define IMAGE_DEBUG_TYPE_UNKNOWN          0
-#define IMAGE_DEBUG_TYPE_COFF             1
-#define IMAGE_DEBUG_TYPE_CODEVIEW         2
-#define IMAGE_DEBUG_TYPE_FPO              3
-#define IMAGE_DEBUG_TYPE_MISC             4
-#define IMAGE_DEBUG_TYPE_EXCEPTION        5
-#define IMAGE_DEBUG_TYPE_FIXUP            6
-#define IMAGE_DEBUG_TYPE_OMAP_TO_SRC      7
-#define IMAGE_DEBUG_TYPE_OMAP_FROM_SRC    8
-#define IMAGE_DEBUG_TYPE_BORLAND          9
-#define IMAGE_DEBUG_TYPE_RESERVED10       10
-#define IMAGE_DEBUG_TYPE_CLSID            11
-#define IMAGE_DEBUG_TYPE_VC_FEATURE       12
-#define IMAGE_DEBUG_TYPE_POGO             13
-#define IMAGE_DEBUG_TYPE_ILTCG            14
-#define IMAGE_DEBUG_TYPE_MPX              15
-#define IMAGE_DEBUG_TYPE_REPRO            16
+#define IMAGE_DEBUG_TYPE_UNKNOWN                0
+#define IMAGE_DEBUG_TYPE_COFF                   1
+#define IMAGE_DEBUG_TYPE_CODEVIEW               2
+#define IMAGE_DEBUG_TYPE_FPO                    3
+#define IMAGE_DEBUG_TYPE_MISC                   4
+#define IMAGE_DEBUG_TYPE_EXCEPTION              5
+#define IMAGE_DEBUG_TYPE_FIXUP                  6
+#define IMAGE_DEBUG_TYPE_OMAP_TO_SRC            7
+#define IMAGE_DEBUG_TYPE_OMAP_FROM_SRC          8
+#define IMAGE_DEBUG_TYPE_BORLAND                9
+#define IMAGE_DEBUG_TYPE_RESERVED10             10
+#define IMAGE_DEBUG_TYPE_CLSID                  11
+#define IMAGE_DEBUG_TYPE_VC_FEATURE             12
+#define IMAGE_DEBUG_TYPE_POGO                   13
+#define IMAGE_DEBUG_TYPE_ILTCG                  14
+#define IMAGE_DEBUG_TYPE_MPX                    15
+#define IMAGE_DEBUG_TYPE_REPRO                  16
+#define IMAGE_DEBUG_TYPE_EX_DLLCHARACTERISTICS  20
+
+#define IMAGE_DLLCHARACTERISTICS_EX_CET_COMPAT                                  0x01
+#define IMAGE_DLLCHARACTERISTICS_EX_CET_COMPAT_STRICT_MODE                      0x02
+#define IMAGE_DLLCHARACTERISTICS_EX_CET_SET_CONTEXT_IP_VALIDATION_RELAXED_MODE  0x04
+#define IMAGE_DLLCHARACTERISTICS_EX_CET_DYNAMIC_APIS_ALLOW_IN_PROC              0x08
+#define IMAGE_DLLCHARACTERISTICS_EX_CET_RESERVED_1                              0x10  // Reserved for CET policy *downgrade* only!
+#define IMAGE_DLLCHARACTERISTICS_EX_CET_RESERVED_2                              0x20  // Reserved for CET policy *downgrade* only!
 
 // end_winnt
 

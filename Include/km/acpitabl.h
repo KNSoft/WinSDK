@@ -952,6 +952,11 @@ typedef PROCLOCALGIC UNALIGNED *PPROCLOCALGIC;
 #define PLGF_PERF_INTERRUPT_EDGE_TRIGGERED \
         (1 << PLGF_PERF_INTERRUPT_EDGE_TRIGGERED_BIT)
 
+#define PLGF_MAINT_INTERRUPT_EDGE_TRIGGERED_BIT 2
+#define PLGF_MAINT_INTERRUPT_EDGE_TRIGGERED \
+        (1 << PLGF_MAINT_INTERRUPT_EDGE_TRIGGERED_BIT)
+
+
 typedef struct _GIC_DISTRIBUTOR  {
     UCHAR Type;
     UCHAR Length;
@@ -2432,6 +2437,10 @@ typedef struct _IVMD_BLOCK {
 #define SDEV_SECURE_PCI_TYPE 1
 
 #define SDEV_ENTRY_FLAG_OPTIONALLY_SECURE 1
+#define SDEV_ENTRY_FLAG_SECURE_RESOURCES_PRESENT 2
+
+#define SDEV_SECURE_RESOURCE_ID_TYPE 0
+#define SDEV_SECURE_RESOURCE_MEMORY_TYPE 1
 
 typedef struct _SDEV_ENTRY_HEADER {
     UCHAR Type;
@@ -2455,7 +2464,26 @@ typedef struct _SDEV_SECURE_ACPI_INFO_ENTRY {
     USHORT IdentifierLength;
     USHORT VendorInfoOffset;
     USHORT VendorInfoLength;
+    USHORT SecureResourcesOffset;
+    USHORT SecureResourcesLength;
 } SDEV_SECURE_ACPI_INFO_ENTRY, *PSDEV_SECURE_ACPI_INFO_ENTRY;
+
+typedef struct _SDEV_SECURE_RESOURCE_ID_ENTRY {
+    SDEV_ENTRY_HEADER Header;
+    USHORT HardwareIdentifierOffset;
+    USHORT HardwareIdentifierLength;
+    USHORT SubsystemIdentifierOffset;
+    USHORT SubsystemIdentifierLength;
+    USHORT HardwareRevision;
+    UCHAR HardwareRevisionPresent;
+} SDEV_SECURE_RESOURCE_ID_ENTRY, *PSDEV_SECURE_RESOURCE_ID_ENTRY;
+
+typedef struct _SDEV_SECURE_RESOURCE_MEMORY_ENTRY {
+    SDEV_ENTRY_HEADER Header;
+    ULONG Reserved;
+    ULONGLONG MemoryAddressBase;
+    ULONGLONG MemoryAddressLength;
+} SDEV_SECURE_RESOURCE_MEMORY_ENTRY, *PSDEV_SECURE_RESOURCE_MEMORY_ENTRY;
 
 typedef struct _SDEV {
     DESCRIPTION_HEADER Header;
@@ -2555,7 +2583,9 @@ typedef struct _PCC_SUBSPACE_HEADER {
     UCHAR Length;
 } PCC_SUBSPACE_HEADER, *PPCC_SUBSPACE_HEADER;
 
-#define PCC_SUBSPACE_TYPE_GENERIC 0
+#define PCC_SUBSPACE_TYPE_GENERIC       0
+#define PCC_SUBSPACE_TYPE_REDUCED_1     1
+#define PCC_SUBSPACE_TYPE_REDUCED_2     2
 
 typedef struct _PCC_GENERIC_SUBSPACE {
     PCC_SUBSPACE_HEADER Header;
@@ -2571,15 +2601,72 @@ typedef struct _PCC_GENERIC_SUBSPACE {
     USHORT MinimumRequestTurnaroundTime;
 } PCC_GENERIC_SUBSPACE, *PPCC_GENERIC_SUBSPACE;
 
+#define PCC_PLATFORM_INTERRUPT_POLARITY_ACTIVE_HIGH     0
+#define PCC_PLATFORM_INTERRUPT_POLARITY_ACTIVE_LOW      1
+
+#define PCC_PLATFORM_INTERRUPT_MODE_LEVEL_TRIGGERED     0
+#define PCC_PLATFORM_INTERRUPT_MODE_EDGE_TRIGGERED      1
+
+typedef struct _PCC_REDUCED_1_SUBSPACE {
+    PCC_SUBSPACE_HEADER Header;
+    ULONG PlatformInterruptGsiv;
+    union {
+        struct {
+            UCHAR PlatformInterruptPolarity : 1;    // PCC_PLATFORM_INTERRUPT_POLARITY_XXX
+            UCHAR PlatformInterruptMode : 1;        // Must be PCC_PLATFORM_INTERRUPT_MODE_EDGE_TRIGGERED
+            UCHAR Reserved1 : 6;
+        };
+
+        UCHAR PlatformInterruptFlags;
+    };
+
+    UCHAR Reserved2;
+    PHYSICAL_ADDRESS BaseAddress;
+    ULONGLONG Length;
+    GEN_ADDR DoorbellRegister;
+    ULONGLONG DoorbellPreserve;
+    ULONGLONG DoorbellWrite;
+    ULONG NominalLatency;
+    ULONG MaximumPeriodicAccessRate;
+    USHORT MinimumRequestTurnaroundTime;
+} PCC_REDUCED_1_SUBSPACE, *PPCC_REDUCED_1_SUBSPACE;
+
+typedef struct _PCC_REDUCED_2_SUBSPACE {
+    PCC_SUBSPACE_HEADER Header;
+    ULONG PlatformInterruptGsiv;
+    union {
+        struct {
+            UCHAR PlatformInterruptPolarity : 1;    // PCC_PLATFORM_INTERRUPT_POLARITY_XXX
+            UCHAR PlatformInterruptMode : 1;        // PCC_PLATFORM_INTERRUPT_MODE_XXX
+            UCHAR Reserved1 : 6;
+        };
+
+        UCHAR PlatformInterruptFlags;
+    };
+
+    UCHAR Reserved2;
+    PHYSICAL_ADDRESS BaseAddress;
+    ULONGLONG Length;
+    GEN_ADDR DoorbellRegister;
+    ULONGLONG DoorbellPreserve;
+    ULONGLONG DoorbellWrite;
+    ULONG NominalLatency;
+    ULONG MaximumPeriodicAccessRate;
+    USHORT MinimumRequestTurnaroundTime;
+    GEN_ADDR PlatformInterruptAckRegister;
+    ULONGLONG PlatformInterruptAckPreserve;
+    ULONGLONG PlatformInterruptAckWrite;
+} PCC_REDUCED_2_SUBSPACE, *PPCC_REDUCED_2_SUBSPACE;
+
 #define PCC_GENERIC_SHARED_REGION_SIGNATURE 0x50434300      // " CCP"
 
 typedef struct _PCC_GENREIC_SHARED_REGION {
     ULONG Signature;
     union {
         struct {
-            USHORT CommandCode:8;     // 7:0
-            USHORT ReservedZ:7;       // 14:8
-            USHORT SciDoorbell:1;     // 15
+            USHORT CommandCode:8;               // 7:0
+            USHORT ReservedZ:7;                 // 14:8
+            USHORT SciDoorbell:1;               // 15 - Notify on completion
         };
 
         USHORT AsUShort;
@@ -2587,11 +2674,11 @@ typedef struct _PCC_GENREIC_SHARED_REGION {
 
     union {
         struct {
-            USHORT CommandComplete:1;      // 0
-            USHORT SciReceived:1;          // 1
-            USHORT Error:1;                // 2
-            USHORT PlatformNotification:1; // 3
-            USHORT Reserved:12;            // 15:4
+            USHORT CommandComplete:1;           // 0
+            USHORT SciReceived:1;               // 1 - Platform interrupt received
+            USHORT Error:1;                     // 2
+            USHORT PlatformNotification:1;      // 3
+            USHORT Reserved:12;                 // 15:4
         };
 
         USHORT AsUShort;
@@ -2605,15 +2692,14 @@ typedef struct _PCC_GENREIC_SHARED_REGION {
 typedef struct _PCC_TABLE    {
     DESCRIPTION_HEADER Header;
     union {
-
         ULONG AsULong;
 
         struct {
-            ULONG SciSupported:1;       // SCI notification is supported
+            ULONG SciSupported:1;       // SCI/Platform Interrupt notification is supported
             ULONG Reserved:31;
         } DUMMYSTRUCTNAME;
-
     } Flags;
+
     ULONG64 Reserved;
     PCC_SUBSPACE_HEADER Subspaces;      // packed list of subspaces
 } PCC_TABLE, *PPCC_TABLE;
@@ -3211,15 +3297,15 @@ DEFINE_GUID(ACPI_PLD_INTERFACE_INSTANCE_GUID_BUFFER_GUID,
 
 //
 // ACPI PLD Container Descriptor Buffer
-// (stored in _PLD custom data buffer, fixed size of 128-bits) 
+// (stored in _PLD custom data buffer, fixed size of 128-bits)
 //
 
-typedef struct _ACPI_PLD_CONTAINER_BUFFER { 
+typedef struct _ACPI_PLD_CONTAINER_BUFFER {
     GUID ContainerId;
-} ACPI_PLD_CONTAINER_BUFFER, *PACPI_PLD_CONTAINER_BUFFER; 
+} ACPI_PLD_CONTAINER_BUFFER, *PACPI_PLD_CONTAINER_BUFFER;
 
 //
-// {c02fa109-6a82-4188-9f66-b190ba62db49} 
+// {c02fa109-6a82-4188-9f66-b190ba62db49}
 //
 
 DEFINE_GUID(ACPI_PLD_CONTAINER_BUFFER_GUID,
@@ -3730,7 +3816,7 @@ struct _PROC_TOPOLOGY_NODE {
         UCHAR Length;
         UCHAR Reserved[2];
     };
-    
+
     union {
         struct {
             PROC_TOPOLOGY_NODE_FLAGS Flags;

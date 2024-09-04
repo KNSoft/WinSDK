@@ -180,8 +180,6 @@ typedef  const wchar_t* STRSAFE_PCNZWCH;
 typedef  const wchar_t UNALIGNED* STRSAFE_PCUNZWCH;
 
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 // prototypes for the worker functions
 
@@ -191,11 +189,7 @@ RtlStringLengthWorkerA(
     _In_ _In_range_(<=, NTSTRSAFE_MAX_CCH) size_t cchMax,
     _Out_opt_ _Deref_out_range_(<, cchMax) _Deref_out_range_(<=, _String_length_(psz)) size_t* pcchLength);
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEWORKERDDI
 RtlStringLengthWorkerW(
@@ -211,11 +205,7 @@ RtlUnalignedStringLengthWorkerW(
     _Out_opt_ _Deref_out_range_(<, cchMax) size_t* pcchLength);
 #endif  // ALIGNMENT_MACHINE
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 _When_(_Old_(*ppszSrc) != NULL, _Unchanged_(*ppszSrc))
 _When_(_Old_(*ppszSrc) == NULL, _At_(*ppszSrc, _Post_z_))
@@ -228,11 +218,7 @@ RtlStringExValidateSrcA(
     _In_ const size_t cchMax,
     _In_ DWORD dwFlags);
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 _When_(_Old_(*ppszSrc) != NULL, _Unchanged_(*ppszSrc))
 _When_(_Old_(*ppszSrc) == NULL, _At_(*ppszSrc, _Post_z_))
@@ -245,11 +231,7 @@ RtlStringExValidateSrcW(
     _In_ const size_t cchMax,
     _In_ DWORD dwFlags);
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 _Post_satisfies_(cchDest > 0 && cchDest <= cchMax)
 NTSTRSAFEWORKERDDI
@@ -266,11 +248,7 @@ RtlStringValidateDestAndLengthA(
     _Out_ _Deref_out_range_(0, cchDest - 1) size_t* pcchDestLength,
     _In_ const size_t cchMax);
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 _Post_satisfies_(cchDest > 0 && cchDest <= cchMax)
 NTSTRSAFEWORKERDDI
@@ -287,11 +265,7 @@ RtlStringValidateDestAndLengthW(
     _Out_ _Deref_out_range_(0, cchDest - 1) size_t* pcchDestLength,
     _In_ const size_t cchMax);
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEWORKERDDI
 RtlStringExValidateDestA(
@@ -308,11 +282,7 @@ RtlStringExValidateDestAndLengthA(
     _In_ const size_t cchMax,
     _In_ DWORD dwFlags);
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEWORKERDDI
 RtlStringExValidateDestW(
@@ -329,11 +299,7 @@ RtlStringExValidateDestAndLengthW(
     _In_ const size_t cchMax,
     _In_ DWORD dwFlags);
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEWORKERDDI
 RtlStringCopyWorkerA(
@@ -343,11 +309,7 @@ RtlStringCopyWorkerA(
     _In_reads_or_z_(cchToCopy) STRSAFE_PCNZCH pszSrc,
     _In_ _In_range_(<, NTSTRSAFE_MAX_CCH) size_t cchToCopy);
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEWORKERDDI
 RtlStringCopyWorkerW(
@@ -357,11 +319,7 @@ RtlStringCopyWorkerW(
     _In_reads_or_z_(cchToCopy) STRSAFE_PCNZWCH pszSrc,
     _In_ _In_range_(<, NTSTRSAFE_MAX_CCH) size_t cchToCopy);
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEWORKERDDI
 RtlStringVPrintfWorkerA(
@@ -371,12 +329,8 @@ RtlStringVPrintfWorkerA(
     _In_ _Printf_format_string_ NTSTRSAFE_PCSTR pszFormat,
     _In_ va_list argList);
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEWORKERDDI
 RtlStringVPrintfWorkerW(
@@ -386,12 +340,8 @@ RtlStringVPrintfWorkerW(
         _In_ _Printf_format_string_ NTSTRSAFE_PCWSTR pszFormat,
         _In_ va_list argList);
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEWORKERDDI
 RtlStringExHandleFillBehindNullA(
@@ -399,11 +349,7 @@ RtlStringExHandleFillBehindNullA(
         _In_ size_t cbRemaining,
         _In_ DWORD dwFlags);
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEWORKERDDI
 RtlStringExHandleFillBehindNullW(
@@ -411,11 +357,7 @@ RtlStringExHandleFillBehindNullW(
         _In_ size_t cbRemaining,
         _In_ DWORD dwFlags);
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 _Success_(1)  // always succeeds, no exit tests needed
     NTSTRSAFEWORKERDDI
@@ -427,11 +369,7 @@ _Success_(1)  // always succeeds, no exit tests needed
             _Out_ _Deref_out_range_(0, cbDest / sizeof(char)) size_t* pcchRemaining,
             _In_ DWORD dwFlags);
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 _Success_(1)  // always succeeds, no exit tests needed
     NTSTRSAFEWORKERDDI
@@ -443,12 +381,8 @@ _Success_(1)  // always succeeds, no exit tests needed
             _Out_ _Deref_out_range_(0, cbDest / sizeof(wchar_t)) size_t* pcchRemaining,
             _In_ DWORD dwFlags);
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 #ifndef NTSTRSAFE_NO_UNICODE_STRING_FUNCTIONS
 
@@ -537,8 +471,6 @@ RtlUnicodeStringExHandleOtherFlags(
 
 #endif  // !NTSTRSAFE_NO_UNICODE_STRING_FUNCTIONS
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 
 // To allow this to stand alone.
@@ -642,8 +574,6 @@ return value of this function.
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCchCopyA(
@@ -671,11 +601,7 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCchCopyW(
@@ -703,8 +629,6 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CCH_FUNCTIONS
 
@@ -776,8 +700,6 @@ return value of this function.
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCbCopyA(
@@ -806,11 +728,7 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #pragma warning(push)
 #pragma warning(disable : __WARNING_POSTCONDITION_NULLTERMINATION_VIOLATION)
@@ -844,8 +762,6 @@ NTSTRSAFEDDI
 
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CB_FUNCTIONS
 
@@ -944,8 +860,6 @@ return value of this function
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCchCopyExA(
@@ -1067,11 +981,7 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCchCopyExW(
@@ -1193,8 +1103,6 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CCH_FUNCTIONS
 
@@ -1293,8 +1201,6 @@ return value of this function
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCbCopyExA(
@@ -1418,11 +1324,7 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #pragma warning(push)
 #pragma warning(disable: __WARNING_POSTCONDITION_NULLTERMINATION_VIOLATION)
@@ -1549,8 +1451,6 @@ NTSTRSAFEDDI
 
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CB_FUNCTIONS
 
@@ -1625,8 +1525,6 @@ return value of this function.
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCchCopyNA(
@@ -1664,11 +1562,7 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCchCopyNW(
@@ -1706,8 +1600,6 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CCH_FUNCTIONS
 
@@ -1782,8 +1674,6 @@ return value of this function.
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCbCopyNA(
@@ -1820,11 +1710,7 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #pragma warning(push)
 #pragma warning(disable : __WARNING_POTENTIAL_BUFFER_OVERFLOW_HIGH_PRIORITY)
@@ -1866,8 +1752,6 @@ NTSTRSAFEDDI
 
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CB_FUNCTIONS
 
@@ -1975,8 +1859,6 @@ return value of this function
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCchCopyNExA(
@@ -2099,11 +1981,7 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCchCopyNExW(
@@ -2226,8 +2104,6 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CCH_FUNCTIONS
 
@@ -2333,8 +2209,6 @@ return value of this function
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCbCopyNExA(
@@ -2456,11 +2330,7 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #pragma warning(push)
 #pragma warning(disable : __WARNING_POTENTIAL_BUFFER_OVERFLOW_HIGH_PRIORITY)
@@ -2585,8 +2455,6 @@ NTSTRSAFEDDI
 
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CB_FUNCTIONS
 
@@ -2652,8 +2520,6 @@ return value of this function
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCchCatA(
@@ -2681,11 +2547,7 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCchCatW(
@@ -2713,8 +2575,6 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CCH_FUNCTIONS
 
@@ -2780,8 +2640,6 @@ return value of this function
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCbCatA(
@@ -2810,11 +2668,7 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCbCatW(
@@ -2843,8 +2697,6 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CB_FUNCTIONS
 
@@ -2946,8 +2798,6 @@ return value of this function
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCchCatExA(
@@ -3058,11 +2908,7 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCchCatExW(
@@ -3173,8 +3019,6 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CCH_FUNCTIONS
 
@@ -3276,8 +3120,6 @@ return value of this function
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCbCatExA(
@@ -3385,11 +3227,7 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCbCatExW(
@@ -3495,8 +3333,6 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CB_FUNCTIONS
 
@@ -3568,8 +3404,6 @@ return value of this function
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCchCatNA(
@@ -3605,11 +3439,7 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCchCatNW(
@@ -3645,8 +3475,6 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CCH_FUNCTIONS
 
@@ -3718,8 +3546,6 @@ return value of this function
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCbCatNA(
@@ -3758,11 +3584,7 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCbCatNW(
@@ -3801,8 +3623,6 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CB_FUNCTIONS
 
@@ -3907,8 +3727,6 @@ return value of this function
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCchCatNExA(
@@ -4020,11 +3838,7 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCchCatNExW(
@@ -4136,8 +3950,6 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CCH_FUNCTIONS
 
@@ -4242,8 +4054,6 @@ return value of this function
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCbCatNExA(
@@ -4353,11 +4163,7 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #pragma warning(push)
 #pragma warning(disable : __WARNING_POTENTIAL_BUFFER_OVERFLOW_HIGH_PRIORITY)
@@ -4470,8 +4276,6 @@ NTSTRSAFEDDI
 
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CB_FUNCTIONS
 
@@ -4541,8 +4345,6 @@ return value of this function
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 #pragma warning(push)
 #pragma warning(disable: __WARNING_POSTCONDITION_NULLTERMINATION_VIOLATION)
@@ -4576,11 +4378,7 @@ NTSTRSAFEDDI
 
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #pragma warning(push)
 #pragma warning(disable: __WARNING_POSTCONDITION_NULLTERMINATION_VIOLATION)
@@ -4614,8 +4412,6 @@ NTSTRSAFEDDI
 
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CCH_FUNCTIONS
 
@@ -4686,8 +4482,6 @@ return value of this function
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCbVPrintfA(
@@ -4717,11 +4511,7 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #pragma warning(push)
 #pragma warning(disable : __WARNING_POSTCONDITION_NULLTERMINATION_VIOLATION)
@@ -4756,8 +4546,6 @@ NTSTRSAFEDDI
 
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CB_FUNCTIONS
 
@@ -4829,8 +4617,6 @@ return value of this function
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCchPrintfA(
@@ -4865,11 +4651,7 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCchPrintfW(
@@ -4904,8 +4686,6 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CCH_FUNCTIONS
 
@@ -4976,8 +4756,6 @@ return value of this function
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEDDI
     RtlStringCbPrintfA(
@@ -5013,11 +4791,7 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #pragma warning(push)
 #pragma warning(disable : __WARNING_POSTCONDITION_NULLTERMINATION_VIOLATION)
@@ -5058,8 +4832,6 @@ NTSTRSAFEDDI
 
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CB_FUNCTIONS
 
@@ -5162,8 +4934,6 @@ return value of this function
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 #pragma warning(push)
 #pragma warning(disable : __WARNING_INCORRECT_ANNOTATION)
@@ -5296,11 +5066,7 @@ NTSTRSAFEDDI
 
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #pragma warning(push)
 #pragma warning(disable : __WARNING_INCORRECT_ANNOTATION)
@@ -5433,8 +5199,6 @@ NTSTRSAFEDDI
 
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CCH_FUNCTIONS
 
@@ -5537,8 +5301,6 @@ return value of this function
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 #pragma warning(push)
 #pragma warning(disable : __WARNING_INCORRECT_ANNOTATION)
@@ -5673,11 +5435,7 @@ NTSTRSAFEDDI
 
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #pragma warning(push)
 #pragma warning(disable : __WARNING_INCORRECT_ANNOTATION)
@@ -5811,8 +5569,6 @@ NTSTRSAFEDDI
 
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CB_FUNCTIONS
 
@@ -5918,8 +5674,6 @@ return value of this function
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 #pragma warning(push)
 #pragma warning(disable: __WARNING_POSTCONDITION_NULLTERMINATION_VIOLATION)
@@ -6048,11 +5802,7 @@ NTSTRSAFEDDI
 
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #pragma warning(push)
 #pragma warning(disable: __WARNING_POSTCONDITION_NULLTERMINATION_VIOLATION)
@@ -6181,8 +5931,6 @@ NTSTRSAFEDDI
 
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CCH_FUNCTIONS
 
@@ -6285,8 +6033,6 @@ return value of this function
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 #pragma warning(push)
 #pragma warning(disable : __WARNING_INCORRECT_ANNOTATION)
@@ -6412,11 +6158,7 @@ NTSTRSAFEDDI
 
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #pragma warning(push)
 #pragma warning(disable : __WARNING_INCORRECT_ANNOTATION)
@@ -6540,8 +6282,6 @@ NTSTRSAFEDDI
 
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CB_FUNCTIONS
 
@@ -6596,8 +6336,6 @@ return value of this function.
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 #pragma warning(push)
 #pragma warning(disable:__WARNING_POTENTIAL_RANGE_POSTCONDITION_VIOLATION)
@@ -6630,11 +6368,7 @@ NTSTRSAFEDDI
 
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #pragma warning(push)
 #pragma warning(disable:__WARNING_POTENTIAL_RANGE_POSTCONDITION_VIOLATION)
@@ -6667,8 +6401,6 @@ NTSTRSAFEDDI
 
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CCH_FUNCTIONS
 
@@ -6723,8 +6455,6 @@ return value of this function.
 
 --*/
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 _Must_inspect_result_
 NTSTRSAFEDDI
@@ -6762,11 +6492,7 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 _Must_inspect_result_
 NTSTRSAFEDDI
@@ -6804,8 +6530,6 @@ NTSTRSAFEDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CB_FUNCTIONS
 
@@ -6856,8 +6580,6 @@ return value of this function.
 
 --*/
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #ifdef ALIGNMENT_MACHINE
 _Must_inspect_result_
@@ -6890,8 +6612,6 @@ NTSTRSAFEDDI
 #define RtlUnalignedStringCchLengthW   RtlStringCchLengthW
 #endif  // !ALIGNMENT_MACHINE
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CCH_FUNCTIONS
 
@@ -6942,8 +6662,6 @@ return value of this function.
 
 --*/
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #ifdef ALIGNMENT_MACHINE
 _Must_inspect_result_
@@ -6986,14 +6704,10 @@ NTSTRSAFEDDI
 
 #endif  // !ALIGNMENT_MACHINE
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // !NTSTRSAFE_NO_CB_FUNCTIONS
 
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 #ifndef NTSTRSAFE_NO_UNICODE_STRING_FUNCTIONS
 
@@ -12080,8 +11794,6 @@ RtlUnicodeStringPrintfEx(
 
 #endif  // !NTSTRSAFE_NO_UNICODE_STRING_FUNCTIONS
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 
 #endif  // !NTSTRSAFE_LIB_IMPL
@@ -12093,8 +11805,6 @@ RtlUnicodeStringPrintfEx(
 #pragma warning(push)
 #pragma warning(disable:__WARNING_RETURNING_BAD_RESULT)
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEWORKERDDI
     RtlStringLengthWorkerA(
@@ -12132,11 +11842,7 @@ NTSTRSAFEWORKERDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEWORKERDDI
     RtlStringLengthWorkerW(
@@ -12212,8 +11918,6 @@ NTSTRSAFEWORKERDDI
 }
 #endif  // ALIGNMENT_MACHINE
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #pragma warning(pop)
 
@@ -12225,8 +11929,6 @@ NTSTRSAFEWORKERDDI
 #pragma warning(disable : __WARNING_RETURNING_BAD_RESULT)
 #pragma warning(disable : __WARNING_MISSING_ZERO_TERMINATION2)
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
     _When_(_Old_(*ppszSrc) != NULL, _Unchanged_(*ppszSrc))
 _When_(_Old_(*ppszSrc) == NULL, _At_(*ppszSrc, _Post_z_))
@@ -12258,11 +11960,7 @@ _When_(_Old_(*ppszSrc) == NULL, _At_(*ppszSrc, _Post_z_))
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
     _When_(_Old_(*ppszSrc) != NULL, _Unchanged_(*ppszSrc))
 _When_(_Old_(*ppszSrc) == NULL, _At_(*ppszSrc, _Post_z_))
@@ -12294,13 +11992,9 @@ _When_(_Old_(*ppszSrc) == NULL, _At_(*ppszSrc, _Post_z_))
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #pragma warning(pop)    // allow null deref
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 #pragma warning(push)
 #pragma warning(disable : 4100) // Unused parameter (pszDest)
@@ -12354,11 +12048,7 @@ _Post_satisfies_(cchDest > 0 && cchDest <= cchMax)
 // End intentionally allow null deref.
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #pragma warning(push)
 #pragma warning(disable : 4100) // Unused parameter (pszDest)
@@ -12412,11 +12102,7 @@ _Post_satisfies_(cchDest > 0 && cchDest <= cchMax)
 // End intentionally allow null deref.
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEWORKERDDI
     RtlStringExValidateDestA(
@@ -12483,11 +12169,7 @@ NTSTRSAFEWORKERDDI
 // End intentionally allow null deref.
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEWORKERDDI
     RtlStringExValidateDestW(
@@ -12554,14 +12236,10 @@ NTSTRSAFEWORKERDDI
 // End intentionally allow null deref.
 #pragma warning(pop)
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #pragma warning(push)
 #pragma warning(disable:__WARNING_RETURNING_BAD_RESULT)
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEWORKERDDI
     RtlStringCopyWorkerA(
@@ -12604,11 +12282,7 @@ NTSTRSAFEWORKERDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEWORKERDDI
     RtlStringCopyWorkerW(
@@ -12651,13 +12325,9 @@ NTSTRSAFEWORKERDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #pragma warning(pop)
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEWORKERDDI
     RtlStringVPrintfWorkerA(
@@ -12717,12 +12387,8 @@ NTSTRSAFEWORKERDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEWORKERDDI
     RtlStringVPrintfWorkerW(
@@ -12782,12 +12448,8 @@ NTSTRSAFEWORKERDDI
     return status;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEWORKERDDI
     RtlStringExHandleFillBehindNullA(
@@ -12803,11 +12465,7 @@ NTSTRSAFEWORKERDDI
     return STATUS_SUCCESS;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 NTSTRSAFEWORKERDDI
     RtlStringExHandleFillBehindNullW(
@@ -12823,8 +12481,6 @@ NTSTRSAFEWORKERDDI
     return STATUS_SUCCESS;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 // ignore false positives due to complexity of bitflag usage
 #pragma warning(push)
@@ -12834,8 +12490,6 @@ NTSTRSAFEWORKERDDI
 #pragma warning(disable : __WARNING_POSTCONDITION_NULLTERMINATION_VIOLATION)
 #pragma warning(disable:__WARNING_POTENTIAL_RANGE_POSTCONDITION_VIOLATION)
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 _Success_(1)  // always succeeds, no exit tests needed
     NTSTRSAFEWORKERDDI
@@ -12900,11 +12554,7 @@ _Success_(1)  // always succeeds, no exit tests needed
     return STATUS_SUCCESS;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 _Success_(1)  // always succeeds, no exit tests needed
     NTSTRSAFEWORKERDDI
@@ -12969,13 +12619,9 @@ _Success_(1)  // always succeeds, no exit tests needed
     return STATUS_SUCCESS;
 }
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #pragma warning(pop)   // ignore false positives due to complexity of bitflag usage
 
-#pragma region Desktop Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
 
 #ifndef NTSTRSAFE_NO_UNICODE_STRING_FUNCTIONS
 
@@ -13348,13 +12994,9 @@ NTSTRSAFEWORKERDDI
 
 #endif  // !NTSTRSAFE_NO_UNICODE_STRING_FUNCTIONS
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #endif  // defined(NTSTRSAFE_LIB_IMPL) || !defined(NTSTRSAFE_LIB)
 
-#pragma region Application Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 // Do not call these functions, they are worker functions for internal use within this file
 #ifdef DEPRECATE_SUPPORTED
@@ -13423,8 +13065,6 @@ NTSTRSAFEWORKERDDI
 #define RtlUnicodeStringExHandleOtherFlags  RtlUnicodeStringExHandleOtherFlags_do_not_call_this_function
 #endif // !DEPRECATE_SUPPORTED
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
-#pragma endregion
 
 #pragma warning(pop)
 #pragma warning(pop)

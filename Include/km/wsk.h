@@ -463,7 +463,8 @@ NTSTATUS
 #define WSK_FLAG_STREAM_SOCKET       0x00000008
 
 typedef
-_At_((void*)Irp->IoStatus.Information, __drv_allocatesMem(Mem))
+_When_(return >= 0 && Irp->IoStatus.Status >= 0,
+    _At_((void*)Irp->IoStatus.Information, __drv_allocatesMem(Mem)))
 NTSTATUS
 (WSKAPI * PFN_WSK_SOCKET) (
     _In_ PWSK_CLIENT              Client,

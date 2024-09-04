@@ -107,7 +107,13 @@ extern "C" {
 //  This defines items that only exist in Windows 19H1 or later.
 //
 
-#define FLT_MGR_WIN10_19H1 (NTDDI_VERSION >= NTDDI_WIN10_19H1) // ABRACADABRA_WIN10_19H1
+#define FLT_MGR_WIN10_19H1 (NTDDI_VERSION >= NTDDI_WIN10_19H1)
+
+//
+//  This defines items that only exist in Windows Vibranium or later.
+//
+
+#define FLT_MGR_WIN10_VB (NTDDI_VERSION >= NTDDI_WIN10_VB)
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -1892,6 +1898,17 @@ typedef ULONG FLT_OPERATION_REGISTRATION_FLAGS;
 
     #define FLTFL_OPERATION_REGISTRATION_SKIP_NON_DASD_IO   0x00000004
 
+#if FLT_MGR_WIN10_VB
+
+    //
+    //  If set read/write operations that are not cached nor paging will be skipped:
+    //  i.e. the mini-filters callback for this operation will be bypassed.
+    //  This flag is relevant only for IRP_MJ_READ & IRP_MJ_WRITE
+    //
+
+    #define FLTFL_OPERATION_REGISTRATION_SKIP_NON_CACHED_NON_PAGING_IO     0x00000008
+
+#endif
 
 //
 //  Structure used for registering operation callback routines
@@ -3558,6 +3575,11 @@ FltFlushBuffers (
 
 #if FLT_MGR_WIN10_19H1
 
+#define FLT_FLUSH_TYPE_FLUSH_AND_PURGE     0x0001
+#define FLT_FLUSH_TYPE_FILE_DATA_ONLY      0x0002
+#define FLT_FLUSH_TYPE_NO_SYNC             0x0004
+#define FLT_FLUSH_TYPE_DATA_SYNC_ONLY      0x0008
+
 _Must_inspect_result_
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSTATUS
@@ -3565,7 +3587,8 @@ FLTAPI
 FltFlushBuffers2 (
     _In_ PFLT_INSTANCE Instance,
     _In_ PFILE_OBJECT FileObject,
-    _In_ ULONG FlushType
+    _In_ ULONG FlushType,
+    _In_opt_ PFLT_CALLBACK_DATA CallbackData
     );
 
 #endif

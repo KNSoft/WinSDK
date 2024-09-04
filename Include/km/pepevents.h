@@ -17,8 +17,6 @@
 //   single binary blob containing the correct number of strings, with a nul
 //   after each string. The size of the blob is specified in characters, and
 //   includes the final nul.
-// - If a SID is provided, its length will be determined by calling
-//   GetLengthSid.
 // - Arrays of SID are treated as a single binary blob. The caller is
 //   responsible for packing the SID values into a single region of memory with
 //   no padding.
@@ -54,9 +52,15 @@
 #include <evntrace.h>
 #include <evntprov.h>
 
-#if !defined(ETW_INLINE)
-#define ETW_INLINE DECLSPEC_NOINLINE __inline
-#endif
+#ifndef ETW_INLINE
+  #ifdef _ETW_KM_
+    // In kernel mode, save stack space by never inlining templates.
+    #define ETW_INLINE DECLSPEC_NOINLINE __inline
+  #else
+    // In user mode, save code size by inlining templates as appropriate.
+    #define ETW_INLINE __inline
+  #endif
+#endif // ETW_INLINE
 
 #if defined(__cplusplus)
 extern "C" {
@@ -122,9 +126,78 @@ extern "C" {
 #endif // MCGEN_HAVE_EVENTSETINFORMATION
 
 //
-// MCGEN_EVENTWRITETRANSFER macro:
-// Override to use a custom API.
+// MCGEN Override Macros
 //
+// The following override macros may be defined before including this header
+// to control the APIs used by this header:
+//
+// - MCGEN_EVENTREGISTER
+// - MCGEN_EVENTUNREGISTER
+// - MCGEN_EVENTSETINFORMATION
+// - MCGEN_EVENTWRITETRANSFER
+//
+// If the the macro is undefined, the MC implementation will default to the
+// corresponding ETW APIs. For example, if the MCGEN_EVENTREGISTER macro is
+// undefined, the EventRegister[MyProviderName] macro will use EventRegister
+// in user mode and will use EtwRegister in kernel mode.
+//
+// To prevent issues from conflicting definitions of these macros, the value
+// of the override macro will be used as a suffix in certain internal function
+// names. Because of this, the override macros must follow certain rules:
+//
+// - The macro must be defined before any MC-generated header is included and
+//   must not be undefined or redefined after any MC-generated header is
+//   included. Different translation units (i.e. different .c or .cpp files)
+//   may set the macros to different values, but within a translation unit
+//   (within a single .c or .cpp file), the macro must be set once and not
+//   changed.
+// - The override must be an object-like macro, not a function-like macro
+//   (i.e. the override macro must not have a parameter list).
+// - The override macro's value must be a simple identifier, i.e. must be
+//   something that starts with a letter or '_' and contains only letters,
+//   numbers, and '_' characters.
+// - If the override macro's value is the name of a second object-like macro,
+//   the second object-like macro must follow the same rules. (The override
+//   macro's value can also be the name of a function-like macro, in which
+//   case the function-like macro does not need to follow the same rules.)
+//
+// For example, the following will cause compile errors:
+//
+//   #define MCGEN_EVENTWRITETRANSFER MyNamespace::MyClass::MyFunction // Value has non-identifier characters (colon).
+//   #define MCGEN_EVENTWRITETRANSFER GetEventWriteFunctionPointer(7)  // Value has non-identifier characters (parentheses).
+//   #define MCGEN_EVENTWRITETRANSFER(h,e,a,r,c,d) EventWrite(h,e,c,d) // Override is defined as a function-like macro.
+//   #define MY_OBJECT_LIKE_MACRO     MyNamespace::MyClass::MyEventWriteFunction
+//   #define MCGEN_EVENTWRITETRANSFER MY_OBJECT_LIKE_MACRO // Evaluates to something with non-identifier characters (colon).
+//
+// The following would be ok:
+//
+//   #define MCGEN_EVENTWRITETRANSFER  MyEventWriteFunction1  // OK, suffix will be "MyEventWriteFunction1".
+//   #define MY_OBJECT_LIKE_MACRO      MyEventWriteFunction2
+//   #define MCGEN_EVENTWRITETRANSFER  MY_OBJECT_LIKE_MACRO   // OK, suffix will be "MyEventWriteFunction2".
+//   #define MY_FUNCTION_LIKE_MACRO(h,e,a,r,c,d) MyNamespace::MyClass::MyEventWriteFunction3(h,e,c,d)
+//   #define MCGEN_EVENTWRITETRANSFER  MY_FUNCTION_LIKE_MACRO // OK, suffix will be "MY_FUNCTION_LIKE_MACRO".
+//
+#ifndef MCGEN_EVENTREGISTER
+  #if MCGEN_USE_KERNEL_MODE_APIS
+    #define MCGEN_EVENTREGISTER        EtwRegister
+  #else
+    #define MCGEN_EVENTREGISTER        EventRegister
+  #endif
+#endif // MCGEN_EVENTREGISTER
+#ifndef MCGEN_EVENTUNREGISTER
+  #if MCGEN_USE_KERNEL_MODE_APIS
+    #define MCGEN_EVENTUNREGISTER      EtwUnregister
+  #else
+    #define MCGEN_EVENTUNREGISTER      EventUnregister
+  #endif
+#endif // MCGEN_EVENTUNREGISTER
+#ifndef MCGEN_EVENTSETINFORMATION
+  #if MCGEN_USE_KERNEL_MODE_APIS
+    #define MCGEN_EVENTSETINFORMATION  EtwSetInformation
+  #else
+    #define MCGEN_EVENTSETINFORMATION  EventSetInformation
+  #endif
+#endif // MCGEN_EVENTSETINFORMATION
 #ifndef MCGEN_EVENTWRITETRANSFER
   #if MCGEN_USE_KERNEL_MODE_APIS
     #define MCGEN_EVENTWRITETRANSFER   EtwWriteTransfer
@@ -134,88 +207,25 @@ extern "C" {
 #endif // MCGEN_EVENTWRITETRANSFER
 
 //
-// MCGEN_EVENTREGISTER macro:
-// Override to use a custom API.
-//
-#ifndef MCGEN_EVENTREGISTER
-  #if MCGEN_USE_KERNEL_MODE_APIS
-    #define MCGEN_EVENTREGISTER        EtwRegister
-  #else
-    #define MCGEN_EVENTREGISTER        EventRegister
-  #endif
-#endif // MCGEN_EVENTREGISTER
-
-//
-// MCGEN_EVENTSETINFORMATION macro:
-// Override to use a custom API.
-// (McGenEventSetInformation also affected by MCGEN_HAVE_EVENTSETINFORMATION.)
-//
-#ifndef MCGEN_EVENTSETINFORMATION
-  #if MCGEN_USE_KERNEL_MODE_APIS
-    #define MCGEN_EVENTSETINFORMATION  EtwSetInformation
-  #else
-    #define MCGEN_EVENTSETINFORMATION  EventSetInformation
-  #endif
-#endif // MCGEN_EVENTSETINFORMATION
-
-//
-// MCGEN_EVENTUNREGISTER macro:
-// Override to use a custom API.
-//
-#ifndef MCGEN_EVENTUNREGISTER
-  #if MCGEN_USE_KERNEL_MODE_APIS
-    #define MCGEN_EVENTUNREGISTER      EtwUnregister
-  #else
-    #define MCGEN_EVENTUNREGISTER      EventUnregister
-  #endif
-#endif // MCGEN_EVENTUNREGISTER
-
-//
-// MCGEN_PENABLECALLBACK macro:
-// Override to use a custom function pointer type.
-// (Should match the type used by MCGEN_EVENTREGISTER.)
-//
-#ifndef MCGEN_PENABLECALLBACK
-  #if MCGEN_USE_KERNEL_MODE_APIS
-    #define MCGEN_PENABLECALLBACK      PETWENABLECALLBACK
-  #else
-    #define MCGEN_PENABLECALLBACK      PENABLECALLBACK
-  #endif
-#endif // MCGEN_PENABLECALLBACK
-
-//
-// MCGEN_GETLENGTHSID macro:
-// Override to use a custom API.
-//
-#ifndef MCGEN_GETLENGTHSID
-  #if MCGEN_USE_KERNEL_MODE_APIS
-    #define MCGEN_GETLENGTHSID(p)      RtlLengthSid((PSID)(p))
-  #else
-    #define MCGEN_GETLENGTHSID(p)      GetLengthSid((PSID)(p))
-  #endif
-#endif // MCGEN_GETLENGTHSID
-
-//
 // MCGEN_EVENT_ENABLED macro:
-// Controls how the EventWrite[EventName] macros determine whether an event is
-// enabled. The default behavior is for EventWrite[EventName] to use the
-// EventEnabled[EventName] macros.
+// Override to control how the EventWrite[EventName] macros determine whether
+// an event is enabled. The default behavior is for EventWrite[EventName] to
+// use the EventEnabled[EventName] macros.
 //
 #ifndef MCGEN_EVENT_ENABLED
 #define MCGEN_EVENT_ENABLED(EventName) EventEnabled##EventName()
 #endif
 
 //
-// MCGEN_EVENT_BIT_SET macro:
-// Implements testing a bit in an array of ULONG, optimized for CPU type.
+// MCGEN_EVENT_ENABLED_FORCONTEXT macro:
+// Override to control how the EventWrite[EventName]_ForContext macros
+// determine whether an event is enabled. The default behavior is for
+// EventWrite[EventName]_ForContext to use the
+// EventEnabled[EventName]_ForContext macros.
 //
-#ifndef MCGEN_EVENT_BIT_SET
-#  if defined(_M_IX86) || defined(_M_X64)
-#    define MCGEN_EVENT_BIT_SET(EnableBits, BitPosition) ((((const unsigned char*)EnableBits)[BitPosition >> 3] & (1u << (BitPosition & 7))) != 0)
-#  else
-#    define MCGEN_EVENT_BIT_SET(EnableBits, BitPosition) ((EnableBits[BitPosition >> 5] & (1u << (BitPosition & 31))) != 0)
-#  endif
-#endif // MCGEN_EVENT_BIT_SET
+#ifndef MCGEN_EVENT_ENABLED_FORCONTEXT
+#define MCGEN_EVENT_ENABLED_FORCONTEXT(pContext, EventName) EventEnabled##EventName##_ForContext(pContext)
+#endif
 
 //
 // MCGEN_ENABLE_CHECK macro:
@@ -229,6 +239,7 @@ extern "C" {
 
 #if !defined(MCGEN_TRACE_CONTEXT_DEF)
 #define MCGEN_TRACE_CONTEXT_DEF
+// This structure is for use by MC-generated code and should not be used directly.
 typedef struct _MCGEN_TRACE_CONTEXT
 {
     TRACEHANDLE            RegistrationHandle;
@@ -308,6 +319,7 @@ McGenEventEnabled(
 #if !defined(MCGEN_CONTROL_CALLBACK)
 #define MCGEN_CONTROL_CALLBACK
 
+// This function is for use by MC-generated code and should not be used directly.
 DECLSPEC_NOINLINE __inline
 VOID
 __stdcall
@@ -386,6 +398,7 @@ Remarks:
             Ctx->MatchAnyKeyword = 0;
             Ctx->MatchAllKeyword = 0;
             if (Ctx->EnableBitsCount > 0) {
+#pragma warning(suppress: 26451) // Arithmetic overflow cannot occur, no matter the value of EnableBitCount
                 RtlZeroMemory(Ctx->EnableBitMask, (((Ctx->EnableBitsCount - 1) / 32) + 1) * sizeof(ULONG));
             }
             break;
@@ -414,8 +427,89 @@ Remarks:
 
 #endif // MCGEN_CONTROL_CALLBACK
 
+#ifndef _mcgen_PENABLECALLBACK
+  #if MCGEN_USE_KERNEL_MODE_APIS
+    #define _mcgen_PENABLECALLBACK      PETWENABLECALLBACK
+  #else
+    #define _mcgen_PENABLECALLBACK      PENABLECALLBACK
+  #endif
+#endif // _mcgen_PENABLECALLBACK
+
+#if !defined(_mcgen_PASTE2)
+// This macro is for use by MC-generated code and should not be used directly.
+#define _mcgen_PASTE2(a, b) _mcgen_PASTE2_imp(a, b)
+#define _mcgen_PASTE2_imp(a, b) a##b
+#endif // _mcgen_PASTE2
+
+#if !defined(_mcgen_PASTE3)
+// This macro is for use by MC-generated code and should not be used directly.
+#define _mcgen_PASTE3(a, b, c) _mcgen_PASTE3_imp(a, b, c)
+#define _mcgen_PASTE3_imp(a, b, c) a##b##_##c
+#endif // _mcgen_PASTE3
+
+//
+// Macro validation
+//
+
+// Validate MCGEN_EVENTREGISTER:
+
+// Trigger an error if MCGEN_EVENTREGISTER is not an unqualified (simple) identifier:
+struct _mcgen_PASTE2(MCGEN_EVENTREGISTER_definition_must_be_an_unqualified_identifier_, MCGEN_EVENTREGISTER);
+
+// Trigger an error if MCGEN_EVENTREGISTER is redefined:
+typedef struct _mcgen_PASTE2(MCGEN_EVENTREGISTER_definition_must_be_an_unqualified_identifier_, MCGEN_EVENTREGISTER)
+    MCGEN_EVENTREGISTER_must_not_be_redefined_between_headers;
+
+// Trigger an error if MCGEN_EVENTREGISTER is defined as a function-like macro:
+typedef void MCGEN_EVENTREGISTER_must_not_be_a_functionLike_macro_MCGEN_EVENTREGISTER;
+typedef int _mcgen_PASTE2(MCGEN_EVENTREGISTER_must_not_be_a_functionLike_macro_, MCGEN_EVENTREGISTER);
+
+// Validate MCGEN_EVENTUNREGISTER:
+
+// Trigger an error if MCGEN_EVENTUNREGISTER is not an unqualified (simple) identifier:
+struct _mcgen_PASTE2(MCGEN_EVENTUNREGISTER_definition_must_be_an_unqualified_identifier_, MCGEN_EVENTUNREGISTER);
+
+// Trigger an error if MCGEN_EVENTUNREGISTER is redefined:
+typedef struct _mcgen_PASTE2(MCGEN_EVENTUNREGISTER_definition_must_be_an_unqualified_identifier_, MCGEN_EVENTUNREGISTER)
+    MCGEN_EVENTUNREGISTER_must_not_be_redefined_between_headers;
+
+// Trigger an error if MCGEN_EVENTUNREGISTER is defined as a function-like macro:
+typedef void MCGEN_EVENTUNREGISTER_must_not_be_a_functionLike_macro_MCGEN_EVENTUNREGISTER;
+typedef int _mcgen_PASTE2(MCGEN_EVENTUNREGISTER_must_not_be_a_functionLike_macro_, MCGEN_EVENTUNREGISTER);
+
+// Validate MCGEN_EVENTSETINFORMATION:
+
+// Trigger an error if MCGEN_EVENTSETINFORMATION is not an unqualified (simple) identifier:
+struct _mcgen_PASTE2(MCGEN_EVENTSETINFORMATION_definition_must_be_an_unqualified_identifier_, MCGEN_EVENTSETINFORMATION);
+
+// Trigger an error if MCGEN_EVENTSETINFORMATION is redefined:
+typedef struct _mcgen_PASTE2(MCGEN_EVENTSETINFORMATION_definition_must_be_an_unqualified_identifier_, MCGEN_EVENTSETINFORMATION)
+    MCGEN_EVENTSETINFORMATION_must_not_be_redefined_between_headers;
+
+// Trigger an error if MCGEN_EVENTSETINFORMATION is defined as a function-like macro:
+typedef void MCGEN_EVENTSETINFORMATION_must_not_be_a_functionLike_macro_MCGEN_EVENTSETINFORMATION;
+typedef int _mcgen_PASTE2(MCGEN_EVENTSETINFORMATION_must_not_be_a_functionLike_macro_, MCGEN_EVENTSETINFORMATION);
+
+// Validate MCGEN_EVENTWRITETRANSFER:
+
+// Trigger an error if MCGEN_EVENTWRITETRANSFER is not an unqualified (simple) identifier:
+struct _mcgen_PASTE2(MCGEN_EVENTWRITETRANSFER_definition_must_be_an_unqualified_identifier_, MCGEN_EVENTWRITETRANSFER);
+
+// Trigger an error if MCGEN_EVENTWRITETRANSFER is redefined:
+typedef struct _mcgen_PASTE2(MCGEN_EVENTWRITETRANSFER_definition_must_be_an_unqualified_identifier_, MCGEN_EVENTWRITETRANSFER)
+    MCGEN_EVENTWRITETRANSFER_must_not_be_redefined_between_headers;;
+
+// Trigger an error if MCGEN_EVENTWRITETRANSFER is defined as a function-like macro:
+typedef void MCGEN_EVENTWRITETRANSFER_must_not_be_a_functionLike_macro_MCGEN_EVENTWRITETRANSFER;
+typedef int _mcgen_PASTE2(MCGEN_EVENTWRITETRANSFER_must_not_be_a_functionLike_macro_, MCGEN_EVENTWRITETRANSFER);
+
 #ifndef McGenEventWrite_def
 #define McGenEventWrite_def
+
+// This macro is for use by MC-generated code and should not be used directly.
+#define McGenEventWrite _mcgen_PASTE2(McGenEventWrite_, MCGEN_EVENTWRITETRANSFER)
+
+// This function is for use by MC-generated code and should not be used directly.
 DECLSPEC_NOINLINE __inline
 ULONG __stdcall
 McGenEventWrite(
@@ -423,7 +517,7 @@ McGenEventWrite(
     _In_ PCEVENT_DESCRIPTOR Descriptor,
     _In_opt_ LPCGUID ActivityId,
     _In_range_(1, 128) ULONG EventDataCount,
-    _Inout_updates_(EventDataCount) EVENT_DATA_DESCRIPTOR* EventData
+    _Pre_cap_(EventDataCount) EVENT_DATA_DESCRIPTOR* EventData
     )
 {
     const USHORT UNALIGNED* Traits;
@@ -456,13 +550,17 @@ McGenEventWrite(
 #if !defined(McGenEventRegisterUnregister)
 #define McGenEventRegisterUnregister
 
+// This macro is for use by MC-generated code and should not be used directly.
+#define McGenEventRegister _mcgen_PASTE2(McGenEventRegister_, MCGEN_EVENTREGISTER)
+
 #pragma warning(push)
 #pragma warning(disable:6103)
+// This function is for use by MC-generated code and should not be used directly.
 DECLSPEC_NOINLINE __inline
 ULONG __stdcall
 McGenEventRegister(
     _In_ LPCGUID ProviderId,
-    _In_opt_ MCGEN_PENABLECALLBACK EnableCallback,
+    _In_opt_ _mcgen_PENABLECALLBACK EnableCallback,
     _In_opt_ PVOID CallbackContext,
     _Inout_ PREGHANDLE RegHandle
     )
@@ -506,6 +604,10 @@ Remarks:
 }
 #pragma warning(pop)
 
+// This macro is for use by MC-generated code and should not be used directly.
+#define McGenEventUnregister _mcgen_PASTE2(McGenEventUnregister_, MCGEN_EVENTUNREGISTER)
+
+// This function is for use by MC-generated code and should not be used directly.
 DECLSPEC_NOINLINE __inline
 ULONG __stdcall
 McGenEventUnregister(_Inout_ PREGHANDLE RegHandle)
@@ -543,6 +645,16 @@ Remarks:
 }
 
 #endif // McGenEventRegisterUnregister
+
+#ifndef _mcgen_EVENT_BIT_SET
+  #if defined(_M_IX86) || defined(_M_X64)
+    // This macro is for use by MC-generated code and should not be used directly.
+    #define _mcgen_EVENT_BIT_SET(EnableBits, BitPosition) ((((const unsigned char*)EnableBits)[BitPosition >> 3] & (1u << (BitPosition & 7))) != 0)
+  #else // CPU type
+    // This macro is for use by MC-generated code and should not be used directly.
+    #define _mcgen_EVENT_BIT_SET(EnableBits, BitPosition) ((EnableBits[BitPosition >> 5] & (1u << (BitPosition & 31))) != 0)
+  #endif // CPU type
+#endif // _mcgen_EVENT_BIT_SET
 
 #endif // MCGEN_DISABLE_PROVIDER_CODE_GENERATION
 
@@ -605,6 +717,7 @@ EXTERN_C __declspec(selectany) const EVENT_DESCRIPTOR POP_PEP_ETW_PLATFORM_IDLE_
 
 //
 // Event Enablement Bits
+// These variables are for use by MC-generated code and should not be used directly.
 //
 EXTERN_C __declspec(selectany) DECLSPEC_CACHEALIGN ULONG Microsoft_Windows_Kernel_PepEnableBits[1];
 EXTERN_C __declspec(selectany) const ULONGLONG Microsoft_Windows_Kernel_PepKeywords[1] = {0x8000000000000001};
@@ -660,102 +773,230 @@ EXTERN_C __declspec(selectany) MCGEN_TRACE_CONTEXT POP_PEP_ETW_PROVIDER_Context 
 #endif
 
 //
-// Enablement check macro for POP_PEP_ETW_RAIL_RUNDOWN
+// MCGEN_ENABLE_FORCONTEXT_CODE_GENERATION macro:
+// Define this macro to enable support for caller-allocated provider context.
 //
-#define EventEnabledPOP_PEP_ETW_RAIL_RUNDOWN() MCGEN_EVENT_BIT_SET(Microsoft_Windows_Kernel_PepEnableBits, 0)
+#ifdef MCGEN_ENABLE_FORCONTEXT_CODE_GENERATION
 
 //
-// Event write macros for POP_PEP_ETW_RAIL_RUNDOWN
+// Advanced scenarios: Caller-allocated provider context.
+// Use when multiple differently-configured provider handles are needed,
+// e.g. for container-aware drivers, one context per container.
+//
+// Usage:
+//
+// - Caller enables the feature before including this header, e.g.
+//   #define MCGEN_ENABLE_FORCONTEXT_CODE_GENERATION 1
+// - Caller allocates memory, e.g. pContext = malloc(sizeof(McGenContext_Microsoft_Windows_Kernel_Pep));
+// - Caller registers the provider, e.g. EventRegisterMicrosoft_Windows_Kernel_Pep_ForContext(pContext);
+// - Caller writes events, e.g. EventWriteMyEvent_ForContext(pContext, ...);
+// - Caller unregisters, e.g. EventUnregisterMicrosoft_Windows_Kernel_Pep_ForContext(pContext);
+// - Caller frees memory, e.g. free(pContext);
+//
+
+typedef struct tagMcGenContext_Microsoft_Windows_Kernel_Pep {
+    // The fields of this structure are subject to change and should not be
+    // accessed directly.
+    MCGEN_TRACE_CONTEXT Context;
+    ULONG EnableBits[1];
+} McGenContext_Microsoft_Windows_Kernel_Pep;
+
+#define EventRegisterMicrosoft_Windows_Kernel_Pep_ForContext(pContext)             _mcgen_PASTE2(_mcgen_RegisterForContext_Microsoft_Windows_Kernel_Pep_, MCGEN_EVENTREGISTER)(&POP_PEP_ETW_PROVIDER, pContext)
+#define EventRegisterByGuidMicrosoft_Windows_Kernel_Pep_ForContext(Guid, pContext) _mcgen_PASTE2(_mcgen_RegisterForContext_Microsoft_Windows_Kernel_Pep_, MCGEN_EVENTREGISTER)(&(Guid), pContext)
+#define EventUnregisterMicrosoft_Windows_Kernel_Pep_ForContext(pContext)           McGenEventUnregister(&(pContext)->Context.RegistrationHandle)
+
+// This function is for use by MC-generated code and should not be used directly.
+// Initialize and register the caller-allocated context.
+__inline
+ULONG __stdcall
+_mcgen_PASTE2(_mcgen_RegisterForContext_Microsoft_Windows_Kernel_Pep_, MCGEN_EVENTREGISTER)(
+    _In_ LPCGUID pProviderId,
+    _Out_ McGenContext_Microsoft_Windows_Kernel_Pep* pContext)
+{
+    RtlZeroMemory(pContext, sizeof(*pContext));
+    pContext->Context.Logger = (ULONG_PTR)POP_PEP_ETW_PROVIDER_Traits;
+    pContext->Context.EnableBitsCount = 1;
+    pContext->Context.EnableBitMask = pContext->EnableBits;
+    pContext->Context.EnableKeyWords = Microsoft_Windows_Kernel_PepKeywords;
+    pContext->Context.EnableLevel = Microsoft_Windows_Kernel_PepLevels;
+    return McGenEventRegister(
+        pProviderId,
+        McGenControlCallbackV2,
+        &pContext->Context,
+        &pContext->Context.RegistrationHandle);
+}
+
+// This function is for use by MC-generated code and should not be used directly.
+// Trigger a compile error if called with the wrong parameter type.
+FORCEINLINE
+_Ret_ McGenContext_Microsoft_Windows_Kernel_Pep*
+_mcgen_CheckContextType_Microsoft_Windows_Kernel_Pep(_In_ McGenContext_Microsoft_Windows_Kernel_Pep* pContext)
+{
+    return pContext;
+}
+
+#endif // MCGEN_ENABLE_FORCONTEXT_CODE_GENERATION
+
+//
+// Enablement check macro for event "POP_PEP_ETW_RAIL_RUNDOWN"
+//
+#define EventEnabledPOP_PEP_ETW_RAIL_RUNDOWN() _mcgen_EVENT_BIT_SET(Microsoft_Windows_Kernel_PepEnableBits, 0)
+#define EventEnabledPOP_PEP_ETW_RAIL_RUNDOWN_ForContext(pContext) _mcgen_EVENT_BIT_SET(_mcgen_CheckContextType_Microsoft_Windows_Kernel_Pep(pContext)->EnableBits, 0)
+
+//
+// Event write macros for event "POP_PEP_ETW_RAIL_RUNDOWN"
 //
 #define EventWritePOP_PEP_ETW_RAIL_RUNDOWN(Activity, VoltageRailId, VoltageRailName, CurrentVoltageMv, MaxVoltageMv) \
         MCGEN_EVENT_ENABLED(POP_PEP_ETW_RAIL_RUNDOWN) \
-        ? McTemplateK0qzqq(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_RAIL_RUNDOWN, Activity, VoltageRailId, VoltageRailName, CurrentVoltageMv, MaxVoltageMv) : 0
+        ? _mcgen_TEMPLATE_FOR_POP_PEP_ETW_RAIL_RUNDOWN(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_RAIL_RUNDOWN, Activity, VoltageRailId, VoltageRailName, CurrentVoltageMv, MaxVoltageMv) : 0
 #define EventWritePOP_PEP_ETW_RAIL_RUNDOWN_AssumeEnabled(VoltageRailId, VoltageRailName, CurrentVoltageMv, MaxVoltageMv) \
-        McTemplateK0qzqq(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_RAIL_RUNDOWN, NULL, VoltageRailId, VoltageRailName, CurrentVoltageMv, MaxVoltageMv)
+        _mcgen_TEMPLATE_FOR_POP_PEP_ETW_RAIL_RUNDOWN(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_RAIL_RUNDOWN, NULL, VoltageRailId, VoltageRailName, CurrentVoltageMv, MaxVoltageMv)
+#define EventWritePOP_PEP_ETW_RAIL_RUNDOWN_ForContext(pContext, Activity, VoltageRailId, VoltageRailName, CurrentVoltageMv, MaxVoltageMv) \
+        MCGEN_EVENT_ENABLED_FORCONTEXT(pContext, POP_PEP_ETW_RAIL_RUNDOWN) \
+        ? _mcgen_TEMPLATE_FOR_POP_PEP_ETW_RAIL_RUNDOWN(&(pContext)->Context, &POP_PEP_ETW_RAIL_RUNDOWN, Activity, VoltageRailId, VoltageRailName, CurrentVoltageMv, MaxVoltageMv) : 0
+#define EventWritePOP_PEP_ETW_RAIL_RUNDOWN_ForContextAssumeEnabled(pContext, VoltageRailId, VoltageRailName, CurrentVoltageMv, MaxVoltageMv) \
+        _mcgen_TEMPLATE_FOR_POP_PEP_ETW_RAIL_RUNDOWN(&_mcgen_CheckContextType_Microsoft_Windows_Kernel_Pep(pContext)->Context, &POP_PEP_ETW_RAIL_RUNDOWN, NULL, VoltageRailId, VoltageRailName, CurrentVoltageMv, MaxVoltageMv)
+
+// This macro is for use by MC-generated code and should not be used directly.
+#define _mcgen_TEMPLATE_FOR_POP_PEP_ETW_RAIL_RUNDOWN _mcgen_PASTE2(McTemplateK0qzqq_, MCGEN_EVENTWRITETRANSFER)
 
 //
-// Enablement check macro for POP_PEP_ETW_DEVICE_RUNDOWN
+// Enablement check macro for event "POP_PEP_ETW_DEVICE_RUNDOWN"
 //
-#define EventEnabledPOP_PEP_ETW_DEVICE_RUNDOWN() MCGEN_EVENT_BIT_SET(Microsoft_Windows_Kernel_PepEnableBits, 0)
+#define EventEnabledPOP_PEP_ETW_DEVICE_RUNDOWN() _mcgen_EVENT_BIT_SET(Microsoft_Windows_Kernel_PepEnableBits, 0)
+#define EventEnabledPOP_PEP_ETW_DEVICE_RUNDOWN_ForContext(pContext) _mcgen_EVENT_BIT_SET(_mcgen_CheckContextType_Microsoft_Windows_Kernel_Pep(pContext)->EnableBits, 0)
 
 //
-// Event write macros for POP_PEP_ETW_DEVICE_RUNDOWN
+// Event write macros for event "POP_PEP_ETW_DEVICE_RUNDOWN"
 //
 #define EventWritePOP_PEP_ETW_DEVICE_RUNDOWN(Activity, DeviceId, DeviceName, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency) \
         MCGEN_EVENT_ENABLED(POP_PEP_ETW_DEVICE_RUNDOWN) \
-        ? McTemplateK0pzqNR2(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_DEVICE_RUNDOWN, Activity, DeviceId, DeviceName, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency) : 0
+        ? _mcgen_TEMPLATE_FOR_POP_PEP_ETW_DEVICE_RUNDOWN(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_DEVICE_RUNDOWN, Activity, DeviceId, DeviceName, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency) : 0
 #define EventWritePOP_PEP_ETW_DEVICE_RUNDOWN_AssumeEnabled(DeviceId, DeviceName, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency) \
-        McTemplateK0pzqNR2(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_DEVICE_RUNDOWN, NULL, DeviceId, DeviceName, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency)
+        _mcgen_TEMPLATE_FOR_POP_PEP_ETW_DEVICE_RUNDOWN(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_DEVICE_RUNDOWN, NULL, DeviceId, DeviceName, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency)
+#define EventWritePOP_PEP_ETW_DEVICE_RUNDOWN_ForContext(pContext, Activity, DeviceId, DeviceName, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency) \
+        MCGEN_EVENT_ENABLED_FORCONTEXT(pContext, POP_PEP_ETW_DEVICE_RUNDOWN) \
+        ? _mcgen_TEMPLATE_FOR_POP_PEP_ETW_DEVICE_RUNDOWN(&(pContext)->Context, &POP_PEP_ETW_DEVICE_RUNDOWN, Activity, DeviceId, DeviceName, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency) : 0
+#define EventWritePOP_PEP_ETW_DEVICE_RUNDOWN_ForContextAssumeEnabled(pContext, DeviceId, DeviceName, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency) \
+        _mcgen_TEMPLATE_FOR_POP_PEP_ETW_DEVICE_RUNDOWN(&_mcgen_CheckContextType_Microsoft_Windows_Kernel_Pep(pContext)->Context, &POP_PEP_ETW_DEVICE_RUNDOWN, NULL, DeviceId, DeviceName, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency)
+
+// This macro is for use by MC-generated code and should not be used directly.
+#define _mcgen_TEMPLATE_FOR_POP_PEP_ETW_DEVICE_RUNDOWN _mcgen_PASTE2(McTemplateK0pzqNR2_, MCGEN_EVENTWRITETRANSFER)
 
 //
-// Enablement check macro for POP_PEP_ETW_COMPONENT_RUNDOWN
+// Enablement check macro for event "POP_PEP_ETW_COMPONENT_RUNDOWN"
 //
-#define EventEnabledPOP_PEP_ETW_COMPONENT_RUNDOWN() MCGEN_EVENT_BIT_SET(Microsoft_Windows_Kernel_PepEnableBits, 0)
+#define EventEnabledPOP_PEP_ETW_COMPONENT_RUNDOWN() _mcgen_EVENT_BIT_SET(Microsoft_Windows_Kernel_PepEnableBits, 0)
+#define EventEnabledPOP_PEP_ETW_COMPONENT_RUNDOWN_ForContext(pContext) _mcgen_EVENT_BIT_SET(_mcgen_CheckContextType_Microsoft_Windows_Kernel_Pep(pContext)->EnableBits, 0)
 
 //
-// Event write macros for POP_PEP_ETW_COMPONENT_RUNDOWN
+// Event write macros for event "POP_PEP_ETW_COMPONENT_RUNDOWN"
 //
 #define EventWritePOP_PEP_ETW_COMPONENT_RUNDOWN(Activity, VoltageRailId, DeviceId, ComponentIndex, CurrentFrequencyKHz, MaxFrequencyKHz, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency, ComponentDescriptionLength, ComponentDescription) \
         MCGEN_EVENT_ENABLED(POP_PEP_ETW_COMPONENT_RUNDOWN) \
-        ? McTemplateK0qpqqqqNR5qzr7(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_COMPONENT_RUNDOWN, Activity, VoltageRailId, DeviceId, ComponentIndex, CurrentFrequencyKHz, MaxFrequencyKHz, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency, ComponentDescriptionLength, ComponentDescription) : 0
+        ? _mcgen_TEMPLATE_FOR_POP_PEP_ETW_COMPONENT_RUNDOWN(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_COMPONENT_RUNDOWN, Activity, VoltageRailId, DeviceId, ComponentIndex, CurrentFrequencyKHz, MaxFrequencyKHz, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency, ComponentDescriptionLength, ComponentDescription) : 0
 #define EventWritePOP_PEP_ETW_COMPONENT_RUNDOWN_AssumeEnabled(VoltageRailId, DeviceId, ComponentIndex, CurrentFrequencyKHz, MaxFrequencyKHz, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency, ComponentDescriptionLength, ComponentDescription) \
-        McTemplateK0qpqqqqNR5qzr7(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_COMPONENT_RUNDOWN, NULL, VoltageRailId, DeviceId, ComponentIndex, CurrentFrequencyKHz, MaxFrequencyKHz, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency, ComponentDescriptionLength, ComponentDescription)
+        _mcgen_TEMPLATE_FOR_POP_PEP_ETW_COMPONENT_RUNDOWN(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_COMPONENT_RUNDOWN, NULL, VoltageRailId, DeviceId, ComponentIndex, CurrentFrequencyKHz, MaxFrequencyKHz, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency, ComponentDescriptionLength, ComponentDescription)
+#define EventWritePOP_PEP_ETW_COMPONENT_RUNDOWN_ForContext(pContext, Activity, VoltageRailId, DeviceId, ComponentIndex, CurrentFrequencyKHz, MaxFrequencyKHz, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency, ComponentDescriptionLength, ComponentDescription) \
+        MCGEN_EVENT_ENABLED_FORCONTEXT(pContext, POP_PEP_ETW_COMPONENT_RUNDOWN) \
+        ? _mcgen_TEMPLATE_FOR_POP_PEP_ETW_COMPONENT_RUNDOWN(&(pContext)->Context, &POP_PEP_ETW_COMPONENT_RUNDOWN, Activity, VoltageRailId, DeviceId, ComponentIndex, CurrentFrequencyKHz, MaxFrequencyKHz, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency, ComponentDescriptionLength, ComponentDescription) : 0
+#define EventWritePOP_PEP_ETW_COMPONENT_RUNDOWN_ForContextAssumeEnabled(pContext, VoltageRailId, DeviceId, ComponentIndex, CurrentFrequencyKHz, MaxFrequencyKHz, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency, ComponentDescriptionLength, ComponentDescription) \
+        _mcgen_TEMPLATE_FOR_POP_PEP_ETW_COMPONENT_RUNDOWN(&_mcgen_CheckContextType_Microsoft_Windows_Kernel_Pep(pContext)->Context, &POP_PEP_ETW_COMPONENT_RUNDOWN, NULL, VoltageRailId, DeviceId, ComponentIndex, CurrentFrequencyKHz, MaxFrequencyKHz, PlatformStateDependencyCount, PlatformStateDependency_Len_, PlatformStateDependency, ComponentDescriptionLength, ComponentDescription)
+
+// This macro is for use by MC-generated code and should not be used directly.
+#define _mcgen_TEMPLATE_FOR_POP_PEP_ETW_COMPONENT_RUNDOWN _mcgen_PASTE2(McTemplateK0qpqqqqNR5qzr7_, MCGEN_EVENTWRITETRANSFER)
 
 //
-// Enablement check macro for POP_PEP_ETW_RAIL_VOLTAGE_CHANGE
+// Enablement check macro for event "POP_PEP_ETW_RAIL_VOLTAGE_CHANGE"
 //
-#define EventEnabledPOP_PEP_ETW_RAIL_VOLTAGE_CHANGE() MCGEN_EVENT_BIT_SET(Microsoft_Windows_Kernel_PepEnableBits, 0)
+#define EventEnabledPOP_PEP_ETW_RAIL_VOLTAGE_CHANGE() _mcgen_EVENT_BIT_SET(Microsoft_Windows_Kernel_PepEnableBits, 0)
+#define EventEnabledPOP_PEP_ETW_RAIL_VOLTAGE_CHANGE_ForContext(pContext) _mcgen_EVENT_BIT_SET(_mcgen_CheckContextType_Microsoft_Windows_Kernel_Pep(pContext)->EnableBits, 0)
 
 //
-// Event write macros for POP_PEP_ETW_RAIL_VOLTAGE_CHANGE
+// Event write macros for event "POP_PEP_ETW_RAIL_VOLTAGE_CHANGE"
 //
 #define EventWritePOP_PEP_ETW_RAIL_VOLTAGE_CHANGE(Activity, VoltageRailId, OldRailVoltageMv, NewRailVoltageMv) \
         MCGEN_EVENT_ENABLED(POP_PEP_ETW_RAIL_VOLTAGE_CHANGE) \
-        ? McTemplateK0qqq(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_RAIL_VOLTAGE_CHANGE, Activity, VoltageRailId, OldRailVoltageMv, NewRailVoltageMv) : 0
+        ? _mcgen_TEMPLATE_FOR_POP_PEP_ETW_RAIL_VOLTAGE_CHANGE(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_RAIL_VOLTAGE_CHANGE, Activity, VoltageRailId, OldRailVoltageMv, NewRailVoltageMv) : 0
 #define EventWritePOP_PEP_ETW_RAIL_VOLTAGE_CHANGE_AssumeEnabled(VoltageRailId, OldRailVoltageMv, NewRailVoltageMv) \
-        McTemplateK0qqq(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_RAIL_VOLTAGE_CHANGE, NULL, VoltageRailId, OldRailVoltageMv, NewRailVoltageMv)
+        _mcgen_TEMPLATE_FOR_POP_PEP_ETW_RAIL_VOLTAGE_CHANGE(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_RAIL_VOLTAGE_CHANGE, NULL, VoltageRailId, OldRailVoltageMv, NewRailVoltageMv)
+#define EventWritePOP_PEP_ETW_RAIL_VOLTAGE_CHANGE_ForContext(pContext, Activity, VoltageRailId, OldRailVoltageMv, NewRailVoltageMv) \
+        MCGEN_EVENT_ENABLED_FORCONTEXT(pContext, POP_PEP_ETW_RAIL_VOLTAGE_CHANGE) \
+        ? _mcgen_TEMPLATE_FOR_POP_PEP_ETW_RAIL_VOLTAGE_CHANGE(&(pContext)->Context, &POP_PEP_ETW_RAIL_VOLTAGE_CHANGE, Activity, VoltageRailId, OldRailVoltageMv, NewRailVoltageMv) : 0
+#define EventWritePOP_PEP_ETW_RAIL_VOLTAGE_CHANGE_ForContextAssumeEnabled(pContext, VoltageRailId, OldRailVoltageMv, NewRailVoltageMv) \
+        _mcgen_TEMPLATE_FOR_POP_PEP_ETW_RAIL_VOLTAGE_CHANGE(&_mcgen_CheckContextType_Microsoft_Windows_Kernel_Pep(pContext)->Context, &POP_PEP_ETW_RAIL_VOLTAGE_CHANGE, NULL, VoltageRailId, OldRailVoltageMv, NewRailVoltageMv)
+
+// This macro is for use by MC-generated code and should not be used directly.
+#define _mcgen_TEMPLATE_FOR_POP_PEP_ETW_RAIL_VOLTAGE_CHANGE _mcgen_PASTE2(McTemplateK0qqq_, MCGEN_EVENTWRITETRANSFER)
 
 //
-// Enablement check macro for POP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE
+// Enablement check macro for event "POP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE"
 //
-#define EventEnabledPOP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE() MCGEN_EVENT_BIT_SET(Microsoft_Windows_Kernel_PepEnableBits, 0)
+#define EventEnabledPOP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE() _mcgen_EVENT_BIT_SET(Microsoft_Windows_Kernel_PepEnableBits, 0)
+#define EventEnabledPOP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE_ForContext(pContext) _mcgen_EVENT_BIT_SET(_mcgen_CheckContextType_Microsoft_Windows_Kernel_Pep(pContext)->EnableBits, 0)
 
 //
-// Event write macros for POP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE
+// Event write macros for event "POP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE"
 //
 #define EventWritePOP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE(Activity, DeviceId, ComponentIndex, OldComponentFrequencyKHz, NewComponentFrequencyKHz) \
         MCGEN_EVENT_ENABLED(POP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE) \
-        ? McTemplateK0pqqq(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE, Activity, DeviceId, ComponentIndex, OldComponentFrequencyKHz, NewComponentFrequencyKHz) : 0
+        ? _mcgen_TEMPLATE_FOR_POP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE, Activity, DeviceId, ComponentIndex, OldComponentFrequencyKHz, NewComponentFrequencyKHz) : 0
 #define EventWritePOP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE_AssumeEnabled(DeviceId, ComponentIndex, OldComponentFrequencyKHz, NewComponentFrequencyKHz) \
-        McTemplateK0pqqq(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE, NULL, DeviceId, ComponentIndex, OldComponentFrequencyKHz, NewComponentFrequencyKHz)
+        _mcgen_TEMPLATE_FOR_POP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE, NULL, DeviceId, ComponentIndex, OldComponentFrequencyKHz, NewComponentFrequencyKHz)
+#define EventWritePOP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE_ForContext(pContext, Activity, DeviceId, ComponentIndex, OldComponentFrequencyKHz, NewComponentFrequencyKHz) \
+        MCGEN_EVENT_ENABLED_FORCONTEXT(pContext, POP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE) \
+        ? _mcgen_TEMPLATE_FOR_POP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE(&(pContext)->Context, &POP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE, Activity, DeviceId, ComponentIndex, OldComponentFrequencyKHz, NewComponentFrequencyKHz) : 0
+#define EventWritePOP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE_ForContextAssumeEnabled(pContext, DeviceId, ComponentIndex, OldComponentFrequencyKHz, NewComponentFrequencyKHz) \
+        _mcgen_TEMPLATE_FOR_POP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE(&_mcgen_CheckContextType_Microsoft_Windows_Kernel_Pep(pContext)->Context, &POP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE, NULL, DeviceId, ComponentIndex, OldComponentFrequencyKHz, NewComponentFrequencyKHz)
+
+// This macro is for use by MC-generated code and should not be used directly.
+#define _mcgen_TEMPLATE_FOR_POP_PEP_ETW_COMPONENT_FREQUENCE_CHANGE _mcgen_PASTE2(McTemplateK0pqqq_, MCGEN_EVENTWRITETRANSFER)
 
 //
-// Enablement check macro for POP_PEP_ETW_PLATFORM_IDLE_RESIDENCY
+// Enablement check macro for event "POP_PEP_ETW_PLATFORM_IDLE_RESIDENCY"
 //
-#define EventEnabledPOP_PEP_ETW_PLATFORM_IDLE_RESIDENCY() MCGEN_EVENT_BIT_SET(Microsoft_Windows_Kernel_PepEnableBits, 0)
+#define EventEnabledPOP_PEP_ETW_PLATFORM_IDLE_RESIDENCY() _mcgen_EVENT_BIT_SET(Microsoft_Windows_Kernel_PepEnableBits, 0)
+#define EventEnabledPOP_PEP_ETW_PLATFORM_IDLE_RESIDENCY_ForContext(pContext) _mcgen_EVENT_BIT_SET(_mcgen_CheckContextType_Microsoft_Windows_Kernel_Pep(pContext)->EnableBits, 0)
 
 //
-// Event write macros for POP_PEP_ETW_PLATFORM_IDLE_RESIDENCY
+// Event write macros for event "POP_PEP_ETW_PLATFORM_IDLE_RESIDENCY"
 //
 #define EventWritePOP_PEP_ETW_PLATFORM_IDLE_RESIDENCY(Activity, PlatformStateCount, PlatformIdleStateResidency_Len_, PlatformIdleStateResidency) \
         MCGEN_EVENT_ENABLED(POP_PEP_ETW_PLATFORM_IDLE_RESIDENCY) \
-        ? McTemplateK0qNR0(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_PLATFORM_IDLE_RESIDENCY, Activity, PlatformStateCount, PlatformIdleStateResidency_Len_, PlatformIdleStateResidency) : 0
+        ? _mcgen_TEMPLATE_FOR_POP_PEP_ETW_PLATFORM_IDLE_RESIDENCY(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_PLATFORM_IDLE_RESIDENCY, Activity, PlatformStateCount, PlatformIdleStateResidency_Len_, PlatformIdleStateResidency) : 0
 #define EventWritePOP_PEP_ETW_PLATFORM_IDLE_RESIDENCY_AssumeEnabled(PlatformStateCount, PlatformIdleStateResidency_Len_, PlatformIdleStateResidency) \
-        McTemplateK0qNR0(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_PLATFORM_IDLE_RESIDENCY, NULL, PlatformStateCount, PlatformIdleStateResidency_Len_, PlatformIdleStateResidency)
+        _mcgen_TEMPLATE_FOR_POP_PEP_ETW_PLATFORM_IDLE_RESIDENCY(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_PLATFORM_IDLE_RESIDENCY, NULL, PlatformStateCount, PlatformIdleStateResidency_Len_, PlatformIdleStateResidency)
+#define EventWritePOP_PEP_ETW_PLATFORM_IDLE_RESIDENCY_ForContext(pContext, Activity, PlatformStateCount, PlatformIdleStateResidency_Len_, PlatformIdleStateResidency) \
+        MCGEN_EVENT_ENABLED_FORCONTEXT(pContext, POP_PEP_ETW_PLATFORM_IDLE_RESIDENCY) \
+        ? _mcgen_TEMPLATE_FOR_POP_PEP_ETW_PLATFORM_IDLE_RESIDENCY(&(pContext)->Context, &POP_PEP_ETW_PLATFORM_IDLE_RESIDENCY, Activity, PlatformStateCount, PlatformIdleStateResidency_Len_, PlatformIdleStateResidency) : 0
+#define EventWritePOP_PEP_ETW_PLATFORM_IDLE_RESIDENCY_ForContextAssumeEnabled(pContext, PlatformStateCount, PlatformIdleStateResidency_Len_, PlatformIdleStateResidency) \
+        _mcgen_TEMPLATE_FOR_POP_PEP_ETW_PLATFORM_IDLE_RESIDENCY(&_mcgen_CheckContextType_Microsoft_Windows_Kernel_Pep(pContext)->Context, &POP_PEP_ETW_PLATFORM_IDLE_RESIDENCY, NULL, PlatformStateCount, PlatformIdleStateResidency_Len_, PlatformIdleStateResidency)
+
+// This macro is for use by MC-generated code and should not be used directly.
+#define _mcgen_TEMPLATE_FOR_POP_PEP_ETW_PLATFORM_IDLE_RESIDENCY _mcgen_PASTE2(McTemplateK0qNR0_, MCGEN_EVENTWRITETRANSFER)
 
 //
-// Enablement check macro for POP_PEP_ETW_PLATFORM_IDLE_TRANSITION
+// Enablement check macro for event "POP_PEP_ETW_PLATFORM_IDLE_TRANSITION"
 //
-#define EventEnabledPOP_PEP_ETW_PLATFORM_IDLE_TRANSITION() MCGEN_EVENT_BIT_SET(Microsoft_Windows_Kernel_PepEnableBits, 0)
+#define EventEnabledPOP_PEP_ETW_PLATFORM_IDLE_TRANSITION() _mcgen_EVENT_BIT_SET(Microsoft_Windows_Kernel_PepEnableBits, 0)
+#define EventEnabledPOP_PEP_ETW_PLATFORM_IDLE_TRANSITION_ForContext(pContext) _mcgen_EVENT_BIT_SET(_mcgen_CheckContextType_Microsoft_Windows_Kernel_Pep(pContext)->EnableBits, 0)
 
 //
-// Event write macros for POP_PEP_ETW_PLATFORM_IDLE_TRANSITION
+// Event write macros for event "POP_PEP_ETW_PLATFORM_IDLE_TRANSITION"
 //
 #define EventWritePOP_PEP_ETW_PLATFORM_IDLE_TRANSITION(Activity, OldPlatformState, NewPlatformState) \
         MCGEN_EVENT_ENABLED(POP_PEP_ETW_PLATFORM_IDLE_TRANSITION) \
-        ? McTemplateK0qq(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_PLATFORM_IDLE_TRANSITION, Activity, OldPlatformState, NewPlatformState) : 0
+        ? _mcgen_TEMPLATE_FOR_POP_PEP_ETW_PLATFORM_IDLE_TRANSITION(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_PLATFORM_IDLE_TRANSITION, Activity, OldPlatformState, NewPlatformState) : 0
 #define EventWritePOP_PEP_ETW_PLATFORM_IDLE_TRANSITION_AssumeEnabled(OldPlatformState, NewPlatformState) \
-        McTemplateK0qq(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_PLATFORM_IDLE_TRANSITION, NULL, OldPlatformState, NewPlatformState)
+        _mcgen_TEMPLATE_FOR_POP_PEP_ETW_PLATFORM_IDLE_TRANSITION(&POP_PEP_ETW_PROVIDER_Context, &POP_PEP_ETW_PLATFORM_IDLE_TRANSITION, NULL, OldPlatformState, NewPlatformState)
+#define EventWritePOP_PEP_ETW_PLATFORM_IDLE_TRANSITION_ForContext(pContext, Activity, OldPlatformState, NewPlatformState) \
+        MCGEN_EVENT_ENABLED_FORCONTEXT(pContext, POP_PEP_ETW_PLATFORM_IDLE_TRANSITION) \
+        ? _mcgen_TEMPLATE_FOR_POP_PEP_ETW_PLATFORM_IDLE_TRANSITION(&(pContext)->Context, &POP_PEP_ETW_PLATFORM_IDLE_TRANSITION, Activity, OldPlatformState, NewPlatformState) : 0
+#define EventWritePOP_PEP_ETW_PLATFORM_IDLE_TRANSITION_ForContextAssumeEnabled(pContext, OldPlatformState, NewPlatformState) \
+        _mcgen_TEMPLATE_FOR_POP_PEP_ETW_PLATFORM_IDLE_TRANSITION(&_mcgen_CheckContextType_Microsoft_Windows_Kernel_Pep(pContext)->Context, &POP_PEP_ETW_PLATFORM_IDLE_TRANSITION, NULL, OldPlatformState, NewPlatformState)
+
+// This macro is for use by MC-generated code and should not be used directly.
+#define _mcgen_TEMPLATE_FOR_POP_PEP_ETW_PLATFORM_IDLE_TRANSITION _mcgen_PASTE2(McTemplateK0qq_, MCGEN_EVENTWRITETRANSFER)
 
 #endif // MCGEN_DISABLE_PROVIDER_CODE_GENERATION
 
@@ -769,14 +1010,16 @@ EXTERN_C __declspec(selectany) MCGEN_TRACE_CONTEXT POP_PEP_ETW_PROVIDER_Context 
 //
 // Template Functions
 //
+
 //
-//Template from manifest : tidPepComponentFrequencyChange
+// Function for template "tidPepComponentFrequencyChange" (and possibly others).
+// This function is for use by MC-generated code and should not be used directly.
 //
 #ifndef McTemplateK0pqqq_def
 #define McTemplateK0pqqq_def
 ETW_INLINE
 ULONG
-McTemplateK0pqqq(
+_mcgen_PASTE2(McTemplateK0pqqq_, MCGEN_EVENTWRITETRANSFER)(
     _In_ PMCGEN_TRACE_CONTEXT Context,
     _In_ PCEVENT_DESCRIPTOR Descriptor,
     _In_opt_ const GUID* Activity,
@@ -803,13 +1046,14 @@ McTemplateK0pqqq(
 #endif // McTemplateK0pqqq_def
 
 //
-//Template from manifest : tidPepDeviceRundown
+// Function for template "tidPepDeviceRundown" (and possibly others).
+// This function is for use by MC-generated code and should not be used directly.
 //
 #ifndef McTemplateK0pzqNR2_def
 #define McTemplateK0pzqNR2_def
 ETW_INLINE
 ULONG
-McTemplateK0pzqNR2(
+_mcgen_PASTE2(McTemplateK0pzqNR2_, MCGEN_EVENTWRITETRANSFER)(
     _In_ PMCGEN_TRACE_CONTEXT Context,
     _In_ PCEVENT_DESCRIPTOR Descriptor,
     _In_opt_ const GUID* Activity,
@@ -839,13 +1083,14 @@ McTemplateK0pzqNR2(
 #endif // McTemplateK0pzqNR2_def
 
 //
-//Template from manifest : tidPepPlatformIdleResidency
+// Function for template "tidPepPlatformIdleResidency" (and possibly others).
+// This function is for use by MC-generated code and should not be used directly.
 //
 #ifndef McTemplateK0qNR0_def
 #define McTemplateK0qNR0_def
 ETW_INLINE
 ULONG
-McTemplateK0qNR0(
+_mcgen_PASTE2(McTemplateK0qNR0_, MCGEN_EVENTWRITETRANSFER)(
     _In_ PMCGEN_TRACE_CONTEXT Context,
     _In_ PCEVENT_DESCRIPTOR Descriptor,
     _In_opt_ const GUID* Activity,
@@ -867,13 +1112,14 @@ McTemplateK0qNR0(
 #endif // McTemplateK0qNR0_def
 
 //
-//Template from manifest : tidPepComponentRundown
+// Function for template "tidPepComponentRundown" (and possibly others).
+// This function is for use by MC-generated code and should not be used directly.
 //
 #ifndef McTemplateK0qpqqqqNR5qzr7_def
 #define McTemplateK0qpqqqqNR5qzr7_def
 ETW_INLINE
 ULONG
-McTemplateK0qpqqqqNR5qzr7(
+_mcgen_PASTE2(McTemplateK0qpqqqqNR5qzr7_, MCGEN_EVENTWRITETRANSFER)(
     _In_ PMCGEN_TRACE_CONTEXT Context,
     _In_ PCEVENT_DESCRIPTOR Descriptor,
     _In_opt_ const GUID* Activity,
@@ -916,13 +1162,14 @@ McTemplateK0qpqqqqNR5qzr7(
 #endif // McTemplateK0qpqqqqNR5qzr7_def
 
 //
-//Template from manifest : tidPepPlatformIdleTransition
+// Function for template "tidPepPlatformIdleTransition" (and possibly others).
+// This function is for use by MC-generated code and should not be used directly.
 //
 #ifndef McTemplateK0qq_def
 #define McTemplateK0qq_def
 ETW_INLINE
 ULONG
-McTemplateK0qq(
+_mcgen_PASTE2(McTemplateK0qq_, MCGEN_EVENTWRITETRANSFER)(
     _In_ PMCGEN_TRACE_CONTEXT Context,
     _In_ PCEVENT_DESCRIPTOR Descriptor,
     _In_opt_ const GUID* Activity,
@@ -943,13 +1190,14 @@ McTemplateK0qq(
 #endif // McTemplateK0qq_def
 
 //
-//Template from manifest : tidPepRailVoltageChange
+// Function for template "tidPepRailVoltageChange" (and possibly others).
+// This function is for use by MC-generated code and should not be used directly.
 //
 #ifndef McTemplateK0qqq_def
 #define McTemplateK0qqq_def
 ETW_INLINE
 ULONG
-McTemplateK0qqq(
+_mcgen_PASTE2(McTemplateK0qqq_, MCGEN_EVENTWRITETRANSFER)(
     _In_ PMCGEN_TRACE_CONTEXT Context,
     _In_ PCEVENT_DESCRIPTOR Descriptor,
     _In_opt_ const GUID* Activity,
@@ -973,13 +1221,14 @@ McTemplateK0qqq(
 #endif // McTemplateK0qqq_def
 
 //
-//Template from manifest : tidPepRailRundown
+// Function for template "tidPepRailRundown" (and possibly others).
+// This function is for use by MC-generated code and should not be used directly.
 //
 #ifndef McTemplateK0qzqq_def
 #define McTemplateK0qzqq_def
 ETW_INLINE
 ULONG
-McTemplateK0qzqq(
+_mcgen_PASTE2(McTemplateK0qzqq_, MCGEN_EVENTWRITETRANSFER)(
     _In_ PMCGEN_TRACE_CONTEXT Context,
     _In_ PCEVENT_DESCRIPTOR Descriptor,
     _In_opt_ const GUID* Activity,
@@ -1010,7 +1259,7 @@ McTemplateK0qzqq(
 #endif // MCGEN_DISABLE_PROVIDER_CODE_GENERATION
 
 #if defined(__cplusplus)
-};
+}
 #endif
 
 #define MSG_PepProviderName                  0x90000001L

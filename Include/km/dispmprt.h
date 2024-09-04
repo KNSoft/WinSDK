@@ -2286,6 +2286,7 @@ typedef enum _DXGK_DIAGNOSTICINFO_TYPE
 {
     DXGK_DI_ADDDEVICE=1,
     DXGK_DI_STARTDEVICE,
+    DXGK_DI_BLACKSCREEN,
 } DXGK_DIAGNOSTICINFO_TYPE;
 
 typedef struct _DXGKARG_COLLECTDIAGNOSTICINFO
@@ -2613,9 +2614,15 @@ typedef struct _DRIVER_INITIALIZATION_DATA {
     PDXGKDDI_SAVEMEMORYFORHOTUPDATE         DxgkDdiSaveMemoryForHotUpdate;
     PDXGKDDI_RESTOREMEMORYFORHOTUPDATE      DxgkDdiRestoreMemoryForHotUpdate;
     PDXGKDDI_COLLECTDIAGNOSTICINFO          DxgkDdiCollectDiagnosticInfo;
-    PDXGKDDI_SUBMITTARGETCONTROL            DxgkDdiSubmitTargetControl;
+    void*                                   Reserved3;
 
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_6)
+
+#if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_7)
+    PDXGKDDI_CONTROLINTERRUPT3              DxgkDdiControlInterrupt3;
+
+#endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_7)
+
 } DRIVER_INITIALIZATION_DATA, *PDRIVER_INITIALIZATION_DATA;
 
 #if (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WIN8)
@@ -3777,6 +3784,596 @@ typedef struct _DXGKDDI_FLEXIOV_DEVICE_INTERFACE
 #endif // (DXGKDDI_INTERFACE_VERSION >= DXGKDDI_INTERFACE_VERSION_WDDM2_1)
 
 ///////////////////////////////// END OF GPU VIRTUALIZATION INTERFACES ////////////////////////
+
+//////////////// DXGK_MIPI_DSI_INTERFACE ///////////////////////////////////
+
+// {14F9DB8B-85E1-4AA5-8DAF-FF4A7806D5E9}
+DEFINE_GUID(GUID_DXGK_MIPI_DSI_INTERFACE, 0x14f9db8b, 0x85e1, 0x4aa5, 0x8d, 0xaf, 0xff, 0x4a, 0x78, 0x6, 0xd5, 0xe9);
+
+#define DXGK_MIPI_DSI_INTERFACE_VERSION_1 0x1
+
+typedef struct _DXGK_DSI_CAPS
+{
+    BYTE    DSITypeMajor;
+    BYTE    DSITypeMinor;
+
+    BYTE    SpecVersionMajor;
+    BYTE    SpecVersionMinor;
+    BYTE    SpecVersionPatch;
+
+    WORD    TargetMaximumReturnPacketSize;
+
+    BYTE    ResultCodeFlags;
+    BYTE    ResultCodeStatus;
+    BYTE    Revision;
+    BYTE    Level;
+    
+    BYTE    DeviceClassHi;
+    BYTE    DeviceClassLo;
+    BYTE    ManufacturerHi;
+    BYTE    ManufacturerLo;
+    
+    BYTE    ProductHi;
+    BYTE    ProductLo;
+    BYTE    LengthHi;
+    BYTE    LengthLo;
+} DXGK_DSI_CAPS, *PDXGK_DSI_CAPS; 
+
+typedef
+_Function_class_(DXGKDDI_DSICAPS)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+DXGKDDI_DSICAPS(
+    _In_  HANDLE Context,
+    _In_  D3DDDI_VIDEO_PRESENT_TARGET_ID TargetId,
+    _Out_ PDXGK_DSI_CAPS pArgs
+    );
+
+typedef DXGKDDI_DSICAPS *PDXGKDDI_DSICAPS;
+
+typedef enum _DXGK_DSI_CONTROL_TRANSMISSION_MODE
+{
+    DXGK_DCT_DEFAULT = 0,
+    DXGK_DCT_FORCE_LOW_POWER,
+    DXGK_DCT_FORCE_HIGH_SPEED,
+} DXGK_DSI_CONTROL_TRANSMISSION_MODE;
+
+#define DXGK_DSI_PACKET_EMBEDDED_PAYLOAD_SIZE 8
+
+typedef struct _DXGK_DSI_PACKET
+{
+    union
+    {
+        BYTE DataId;
+        struct
+        {
+            BYTE DataType       :6;
+            BYTE VirtualChannel :2;
+        };
+    };
+
+    union
+    {
+        struct
+        {
+            BYTE Data0;
+            BYTE Data1;
+        };
+        WORD LongWriteWordCount;
+    };
+
+    BYTE EccFiller;
+
+    BYTE Payload[DXGK_DSI_PACKET_EMBEDDED_PAYLOAD_SIZE];
+} DXGK_DSI_PACKET, *PDXGK_DSI_PACKET;
+
+typedef struct _DXGK_DSI_TRANSMISSION
+{
+    UINT TotalBufferSize;               // in
+    BYTE PacketCount;                   // in
+    BYTE FailedPacket;                  // out
+
+    struct
+    {
+        WORD TransmissionMode     : 2;  // in
+        WORD ReportMipiErrors     : 1;  // in
+        WORD ClearMipiErrors      : 1;  // in
+        WORD SecondaryPort        : 1;  // in
+        WORD ManufacturingMode    : 1;  // in
+        WORD Reserved             :10;
+    };
+
+    WORD ReadWordCount;                 // out
+    WORD FinalCommandExtraPayload;      // in
+
+    WORD MipiErrors;                    // out
+    WORD HostErrors;                    // out
+
+    _Field_size_(PacketCount)
+    DXGK_DSI_PACKET    Packets[1];      // inout
+} DXGK_DSI_TRANSMISSION, *PDXGK_DSI_TRANSMISSION;
+
+//
+// Maximum PacketCount
+//
+#define DXGK_MAX_PACKET_COUNT 0x80
+
+//
+// If not known or there is no detected packet error, DXGK_DSI_INVALID_PACKET_INDEX
+// is set to FailedPacket.
+//
+#define DXGK_DSI_INVALID_PACKET_INDEX                  0xFF
+
+//
+// MipiErrors reported by communication with the peripheral
+//
+#define DXGK_DSI_SOT_ERROR                             0x0001
+#define DXGK_DSI_SOT_SYNC_ERROR                        0x0002
+#define DXGK_DSI_EOT_SYNC_ERROR                        0x0004
+#define DXGK_DSI_ESCAPE_MODE_ENTRY_COMMAND_ERROR       0x0008
+#define DXGK_DSI_LOW_POWER_TRANSMIT_SYNC_ERROR         0x0010
+#define DXGK_DSI_PERIPHERAL_TIMEOUT_ERROR              0x0020
+#define DXGK_DSI_FALSE_CONTROL_ERROR                   0x0040
+#define DXGK_DSI_CONTENTION_DETECTED                   0x0080
+#define DXGK_DSI_CHECKSUM_ERROR_CORRECTED              0x0100
+#define DXGK_DSI_CHECKSUM_ERROR_NOT_CORRECTED          0x0200
+#define DXGK_DSI_LONG_PACKET_PAYLOAD_CHECKSUM_ERROR    0x0400
+#define DXGK_DSI_DSI_DATA_TYPE_NOT_RECOGNIZED          0x0800
+#define DXGK_DSI_DSI_VC_ID_INVALID                     0x1000
+#define DXGK_DSI_INVALID_TRANSMISSION_LENGTH           0x2000
+//      RESERVED                                        0x4000
+#define DXGK_DSI_DSI_PROTOCOL_VIOLATION                0x8000
+
+//
+// HostErrors reported by the graphics driver or OS
+//
+#define DXGK_HOST_DSI_DEVICE_NOT_READY                 0x0001
+#define DXGK_HOST_DSI_INTERFACE_RESET                  0x0002
+#define DXGK_HOST_DSI_DEVICE_RESET                     0x0004
+#define DXGK_HOST_DSI_TRANSMISSION_CANCELLED           0x0010
+#define DXGK_HOST_DSI_TRANSMISSION_DROPPED             0x0020
+#define DXGK_HOST_DSI_TRANSMISSION_TIMEOUT             0x0040
+#define DXGK_HOST_DSI_INVALID_TRANSMISSION             0x0100
+#define DXGK_HOST_DSI_OS_REJECTED_PACKET               0x0200
+#define DXGK_HOST_DSI_DRIVER_REJECTED_PACKET           0x0400
+#define DXGK_HOST_DSI_BAD_TRANSMISSION_MODE            0x1000
+
+typedef
+_Function_class_(DXGKDDI_DSITRANSMISSION)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+DXGKDDI_DSITRANSMISSION(
+    _In_    HANDLE Context,
+    _In_    D3DDDI_VIDEO_PRESENT_TARGET_ID TargetId,
+    _Inout_ PDXGK_DSI_TRANSMISSION pArgs
+    );
+
+typedef DXGKDDI_DSITRANSMISSION *PDXGKDDI_DSITRANSMISSION;
+
+typedef struct _DXGK_DSI_RESET
+{
+    UINT Flags;                             // in
+    union
+    {
+        struct
+        {
+            UINT    MipiErrors     :16;     // out
+            UINT    ResetFailed    : 1;     // out
+            UINT    NeedModeSet    : 1;     // out
+        };
+        UINT    Results;                    // out
+    };
+} DXGK_DSI_RESET, *PDXGK_DSI_RESET;
+
+typedef
+_Function_class_(DXGKDDI_DSIRESET)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+DXGKDDI_DSIRESET(
+    _In_    HANDLE Context,
+    _In_    D3DDDI_VIDEO_PRESENT_TARGET_ID TargetId,
+    _Inout_ PDXGK_DSI_RESET pArgs
+    );
+
+typedef DXGKDDI_DSIRESET *PDXGKDDI_DSIRESET;
+
+typedef struct _DXGK_MIPI_DSI_INTERFACE
+{
+    IN  USHORT                      Size;
+    IN  USHORT                      Version;
+    OUT PVOID                       Context;
+    OUT PINTERFACE_REFERENCE        InterfaceReference;
+    OUT PINTERFACE_DEREFERENCE      InterfaceDereference;
+
+    // Queries DSI caps of a target
+    OUT PDXGKDDI_DSICAPS            DxgkDdiDsiCaps;
+
+    // Sends and receives DSI data
+    OUT PDXGKDDI_DSITRANSMISSION    DxgkDdiDsiTransmission;
+
+    // Resets a MIPI device using a DSI reset command
+    OUT PDXGKDDI_DSIRESET           DxgkDdiDsiReset;
+} DXGK_MIPI_DSI_INTERFACE, *PDXGK_MIPI_DSI_INTERFACE;
+
+///////////////////// END OF DXGK_MIPI_DSI_INTERFACE ////////////////////////
+
+//////////////// DXGK_DISPLAY_DIAGNOSTICS_INTERFACE//////////////////////////
+
+// {962639F3-E9DC-42AB-94EB-06516DECA126}
+DEFINE_GUID(GUID_DXGK_DISPLAY_DIAGNOSTICS_INTERFACE,0x962639f3, 0xe9dc, 0x42ab, 0x94, 0xeb, 0x6, 0x51, 0x6d, 0xec, 0xa1, 0x26);
+
+#define DXGK_DISPLAY_DIAGNOSTICS_INTERFACE_VERSION_1 0x1
+
+typedef enum _DXGK_DIAG_DISPLAY_CONNECTIVITY
+{
+    DXGK_DIAG_DISPLAY_CONNECTIVITY_UNINITIALIZED = 0,
+    DXGK_DIAG_DISPLAY_NOT_CONNECTED              = 1,
+    DXGK_DIAG_DISPLAY_CONNECTED                  = 2,
+} DXGK_DIAG_DISPLAY_CONNECTIVITY;
+
+typedef enum _DXGK_DIAG_BASIC_DISPLAY_TOPOLOGY
+{
+    DXGK_DIAG_BASIC_DISPLAY_TOPOLOGY_UNINITIALIZED   = 0,
+    DXGK_DIAG_DISPLAY_CONNECTED_DIRECTLY             = 1,
+    DXGK_DIAG_DISPLAY_CONNECTED_INDIRECTLY_CONVERTOR = 2,
+    DXGK_DIAG_DISPLAY_CONNECTED_INDIRECTLY_HUB       = 3,
+    DXGK_DIAG_DISPLAY_CONNECTED_INDIRECTLY           = 4,
+    DXGK_DIAG_DISPLAY_CONNECTED_UNKNOWN              = 5,
+} DXGK_DIAG_BASIC_DISPLAY_TOPOLOGY;
+
+typedef enum _DXGK_DIAG_DISPLAY_LINK_STATE
+{
+    DXGK_DIAG_DISPLAY_LINK_STATE_UNINITIALIZED       = 0,
+    DXGK_DIAG_DISPLAY_LINK_STATE_NOTAPPLICABLE       = 1,
+    DXGK_DIAG_DISPLAY_LINK_STATE_STABLE              = 2,
+    DXGK_DIAG_DISPLAY_LINK_STATE_FAILED              = 3,
+    DXGK_DIAG_DISPLAY_LINK_STATE_CONTINUOUS_TRAINING = 4,
+    DXGK_DIAG_DISPLAY_LINK_STATE_CONTINUOUS_TRAINING_STABLE = 5,
+    DXGK_DIAG_DISPLAY_LINK_STATE_CONTINUOUS_TRAINING_FAILED = 6,
+} DXGK_DIAG_DISPLAY_LINK_STATE;
+
+typedef enum _DXGK_DIAG_DISPLAY_MODE_SET
+{
+    DXGK_DIAG_DISPLAY_MODE_SET_UNINITIALIZED    = 0,
+    DXGK_DIAG_DISPLAY_MODE_SET_NO               = 1,
+    DXGK_DIAG_DISPLAY_MODE_SET_YES              = 2,
+} DXGK_DIAG_DISPLAY_MODE_SET;
+
+typedef enum _DXGK_DIAG_DISPLAY_LID_STATE
+{
+    DXGK_DIAG_DISPLAY_LID_STATE_UNINITIALIZED    = 0,
+    DXGK_DIAG_DISPLAY_LID_STATE_NOTAPPLICABLE    = 1,
+    DXGK_DIAG_DISPLAY_LID_STATE_OPEN             = 2,
+    DXGK_DIAG_DISPLAY_LID_STATE_CLOSE            = 3,
+    DXGK_DIAG_DISPLAY_LID_STATE_UNKNOWN          = 4,
+} DXGK_DIAG_DISPLAY_LID_STATE;
+
+typedef enum _DXGK_DIAG_GETDISPLAYSTATE_SUBSTATUS_FLAGS
+{
+    DXGK_DIAG_GETDISPLAYSTATE_SUCCESS                   = 0x0,
+    DXGK_DIAG_GETDISPLAYSTATE_CAUSED_GLITCH             = 0x1,
+    DXGK_DIAG_GETDISPLAYSTATE_CHANGED_DISPLAY_STATE     = 0x2,
+    DXGK_DIAG_GETDISPLAYSTATE_MONITOR_NOT_CONNECTED     = 0x4,
+    DXGK_DIAG_GETDISPLAYSTATE_TIMEOUT                   = 0x8,
+    DXGK_DIAG_GETDISPLAYSTATE_ERROR_HARDWARE            = 0x10,
+    DXGK_DIAG_GETDISPLAYSTATE_ERROR_DRIVER              = 0x20,
+    DXGK_DIAG_GETDISPLAYSTATE_VIDPNTARGETID_NOT_FOUND   = 0x40,
+} DXGK_DIAG_GETDISPLAYSTATE_SUBSTATUS_FLAGS;
+
+typedef struct _DXGK_DISPLAYSTATE_NONINTRUSIVE
+{
+    D3DDDI_VIDEO_PRESENT_TARGET_ID      VidPnTargetId; // In
+    DXGK_DIAG_DISPLAY_CONNECTIVITY      DisplayConnectivity; // Out
+    DXGK_DIAG_DISPLAY_LID_STATE         DisplayLidState; // Out
+    DXGK_DIAG_BASIC_DISPLAY_TOPOLOGY    DisplayTopology; // Out
+    DXGK_DIAG_DISPLAY_LINK_STATE        DisplayLinkState; // Out
+    DXGK_DIAG_DISPLAY_MODE_SET          DisplayModeSet; // Out
+    UINT                                ReturnSubStatus; // Out: DXGK_DIAG_GETDISPLAYSTATE_SUBSTATUS_FLAGS
+} DXGK_DISPLAYSTATE_NONINTRUSIVE;
+
+typedef struct _DXGKARG_GETDISPLAYSTATE_NONINTRUSIVE
+{
+    UINT                                NumOfTargets; // In
+    UINT                                SizeOfDisplayStateNonIntrusiveElement; // In
+
+    _Field_size_(NumOfTargets)
+    DXGK_DISPLAYSTATE_NONINTRUSIVE**    ppDisplayStateNonIntrusive; // In/Out: Pointer to an array of pointers to DXGK_DISPLAYSTATE_NONINTRUSIVE
+} DXGKARG_GETDISPLAYSTATENONINTRUSIVE, *PDXGKARG_GETDISPLAYSTATENONINTRUSIVE;
+
+typedef
+_Function_class_(DXGKDDI_GETDISPLAYSTATENONINTRUSIVE)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+(*DXGKDDI_GETDISPLAYSTATENONINTRUSIVE)(
+    _In_    HANDLE                               Context,
+    _Inout_ PDXGKARG_GETDISPLAYSTATENONINTRUSIVE pArgs
+);
+
+typedef enum _DXGK_DIAG_MONITOR_STATE
+{
+    DXGK_DIAG_MONITOR_STATE_UNINITIALIZED = 0,
+    DXGK_DIAG_MONITOR_READY               = 1,
+    DXGK_DIAG_MONITOR_NOT_READY           = 2,
+    DXGK_DIAG_MONITOR_READY_NOTAPPLICABLE = 3,
+} DXGK_DIAG_MONITOR_STATE;
+
+typedef enum _DXGK_DIAG_DISPLAY_SCANOUT_STATE
+{
+    DXGK_DIAG_DISPLAY_SCANOUT_STATE_UNINITIALIZED = 0,
+    DXGK_DIAG_DISPLAY_SCANOUT_DISABLED            = 1,
+    DXGK_DIAG_DISPLAY_SCANOUT_ACTIVE              = 2,
+    DXGK_DIAG_DISPLAY_SCANOUT_ACTIVE_BLACK        = 3,
+} DXGK_DIAG_DISPLAY_SCANOUT_STATE;
+
+#define MAX_NUM_OF_GAMMA_SAMPLES_FOR_DIAGNOSTICS 16
+
+typedef struct _DXGK_DIAG_DISPLAY_SAMPLED_GAMMA
+{
+    float Red[MAX_NUM_OF_GAMMA_SAMPLES_FOR_DIAGNOSTICS]; // Out
+    float Green[MAX_NUM_OF_GAMMA_SAMPLES_FOR_DIAGNOSTICS]; // Out
+    float Blue[MAX_NUM_OF_GAMMA_SAMPLES_FOR_DIAGNOSTICS]; // Out
+    float ColorMatrix[3][3]; // Out
+} DXGK_DIAG_DISPLAY_SAMPLED_GAMMA;
+
+typedef enum _DXGK_DIAG_DISPLAY_SCANOUT_BUFFER_CRC
+{
+    DXGK_DIAG_DISPLAY_SCANOUT_BUFFER_CRC_UNINITIALIZED = 0,
+    DXGK_DIAG_DISPLAY_SCANOUT_BUFFER_CRC_BLACK         = 1,
+    DXGK_DIAG_DISPLAY_SCANOUT_BUFFER_CRC_NON_BLACK     = 2,
+    DXGK_DIAG_DISPLAY_SCANOUT_BUFFER_CRC_ERROR         = 3,
+    DXGK_DIAG_DISPLAY_SCANOUT_BUFFER_CRC_UNKNOWN       = 4,
+} DXGK_DIAG_DISPLAY_SCANOUT_BUFFER_CRC;
+
+typedef struct _DXGK_DIAG_DISPLAY_SCANOUT_BUFFER_HISTOGRAM
+{
+    INT MinPixelValue; // Out
+    INT MaxPixelValue; // Out
+} DXGK_DIAG_DISPLAY_SCANOUT_BUFFER_HISTOGRAM;
+
+typedef struct _DXGK_DIAG_SCANOUT_BUFFER_CONTENT
+{
+    DXGK_DIAG_DISPLAY_SCANOUT_BUFFER_CRC       ScanoutBufferCrc; // Out
+    DXGK_DIAG_DISPLAY_SCANOUT_BUFFER_HISTOGRAM ScanoutBufferHistogram; // Out
+} DXGK_DIAG_SCANOUT_BUFFER_CONTENT;
+
+typedef enum _DXGK_DIAG_DISPLAY_HARDWARE_ERROR_STATE
+{
+    DXGK_DIAG_DISPLAY_HARDWARE_ERROR_STATE_UNINITIALIZED    = 0,
+    DXGK_DIAG_DISPLAY_HARDWARE_ERROR_NONE                   = 1,
+    DXGK_DIAG_DISPLAY_HARDWARE_ERROR_SCANOUT_UNDERFLOW      = 2,
+    DXGK_DIAG_DISPLAY_HARDWARE_ERROR_TDRNORECOVERY          = 3,
+    DXGK_DIAG_DISPLAY_HARDWARE_ERROR_UNSPECIFIED            = 4,
+} DXGK_DIAG_DISPLAY_HARDWARE_ERROR_STATE;
+
+typedef enum _DXGK_DIAG_DISPLAY_HARDWARE_BANDWIDTH
+{
+    DXGK_DIAG_DISPLAY_HARDWARE_BANDWIDTH_UNINITIALIZED  = 0,
+    DXGK_DIAG_DISPLAY_HARDWARE_BANDWIDTH_SUFFICIENT     = 1,
+    DXGK_DIAG_DISPLAY_HARDWARE_LINK_BANDWIDTH_LIMITED   = 2,
+    DXGK_DIAG_DISPLAY_HARDWARE_SOC_BANDWIDTH_LIMITED    = 3,
+    DXGK_DIAG_DISPLAY_HARDWARE_BANDWIDTH_ERROR          = 4,
+    DXGK_DIAG_DISPLAY_HARDWARE_BANDWIDTH_UNKNOWN        = 5,
+} DXGK_DIAG_DISPLAY_HARDWARE_BANDWIDTH;
+
+typedef struct _DXGKARG_DISPLAYSTATE_INTRUSIVE
+{
+    D3DDDI_VIDEO_PRESENT_TARGET_ID          VidPnTargetId; // In
+    DXGK_DIAG_MONITOR_STATE                 MonitorState; // Out
+    DXGK_DIAG_DISPLAY_SCANOUT_STATE         DisplayScanoutState; // Out
+    DXGK_DIAG_DISPLAY_SAMPLED_GAMMA         DisplaySampledGamma; // Out
+    DXGK_DIAG_SCANOUT_BUFFER_CONTENT        DisplayBufferContent; // Out
+    DXGK_DIAG_DISPLAY_HARDWARE_ERROR_STATE  DisplayErrorState; // Out
+    DXGK_DIAG_DISPLAY_HARDWARE_BANDWIDTH    DisplayBandwidth; // Out
+    UINT                                    ReturnSubStatus; // Out: DXGK_DIAG_GETDISPLAYSTATE_SUBSTATUS_FLAGS
+} DXGK_DISPLAYSTATE_INTRUSIVE;
+
+typedef struct _DXGKARG_GETDISPLAYSTATE_INTRUSIVE
+{
+    UINT                            NumOfTargets; // In
+    UINT                            SizeOfDisplayStateIntrusiveElement; // In
+
+    _Field_size_(NumOfTargets)
+    DXGK_DISPLAYSTATE_INTRUSIVE**   ppDisplayStateIntrusive; // In/Out Pointer to an array of pointers to DXGKARG_DISPLAYSTATE_INTRUSIVE
+} DXGKARG_GETDISPLAYSTATEINTRUSIVE, *PDXGKARG_GETDISPLAYSTATEINTRUSIVE;
+
+typedef
+_Function_class_(DXGKDDI_GETDISPLAYSTATEINTRUSIVE)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+(*DXGKDDI_GETDISPLAYSTATEINTRUSIVE)(
+    _In_    HANDLE                            Context,
+    _Inout_ PDXGKARG_GETDISPLAYSTATEINTRUSIVE pArgs
+);
+
+typedef struct _DXGK_DISPLAY_DIAGNOSTICS_INTERFACE
+{
+    IN USHORT                               Size;
+    IN USHORT                               Version;
+    OUT PVOID                               Context;
+    OUT PINTERFACE_REFERENCE                InterfaceReference;
+    OUT PINTERFACE_DEREFERENCE              InterfaceDereference;
+
+    OUT DXGKDDI_GETDISPLAYSTATENONINTRUSIVE DxgkDdiGetDisplayStateNonIntrusive;
+    OUT DXGKDDI_GETDISPLAYSTATEINTRUSIVE    DxgkDdiGetDisplayStateIntrusive;
+} DXGK_DISPLAY_DIAGNOSTICS_INTERFACE, *PDXGK_DISPLAY_DIAGNOSTICS_INTERFACE;
+
+//////////////// END OF DXGK_DISPLAY_DIAGNOSTICS_INTERFACE ////////////////////////////////
+
+//////////////// DXGK_DP_INTERFACE ///////////////////////////////////
+
+// {2d09818e-dfeb-4173-b5e9-aefd66b202f3}
+DEFINE_GUID(GUID_DXGK_DP_INTERFACE,0x2d09818e, 0xdfeb, 0x4173, 0xb5, 0xe9, 0xae, 0xfd, 0x66, 0xb2, 0x02, 0xf3);
+
+#define DXGK_DP_INTERFACE_VERSION_1 0x1
+
+typedef struct _DXGKARG_QUERYDPCAPS
+{
+    UINT NumRootPorts;
+    BYTE DPVersionMajor;
+    BYTE DPVersionMinor;
+}DXGKARG_QUERYDPCAPS, *PDXGKARG_QUERYDPCAPS;
+
+typedef
+_Function_class_(DXGKDDI_QUERYDPCAPS)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+DXGKDDI_QUERYDPCAPS(
+    _In_  HANDLE Context,
+    _Out_ PDXGKARG_QUERYDPCAPS pArgs
+    );
+
+typedef DXGKDDI_QUERYDPCAPS *PDXGKDDI_QUERYDPCAPS;
+
+//  Per DP spec, the max level of links is 15
+#define MAX_DP_ADDRESS_SIZE 15
+
+typedef struct _DXGKARG_GETDPADDRESS
+{
+    D3DDDI_VIDEO_PRESENT_TARGET_ID  TargetId;                           // in
+    UINT                            DPNativeError;                      // out
+    UINT                            RootPortIndex;                      // out
+    BYTE                            NumLinks;                           // out
+    BYTE                            RelAddress[MAX_DP_ADDRESS_SIZE];    // out
+} DXGKARG_GETDPADDRESS, *PDXGKARG_GETDPADDRESS;
+
+typedef
+_Function_class_(DXGKDDI_GETDPADDRESS)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+DXGKDDI_GETDPADDRESS(
+    _In_    HANDLE Context,
+    _Inout_ PDXGKARG_GETDPADDRESS pArgs
+    );
+
+typedef DXGKDDI_GETDPADDRESS *PDXGKDDI_GETDPADDRESS;
+
+#define MAX_DP_NATIVE_AUX_IO_SIZE   16
+
+typedef struct _DXGKARG_DPAUXIOTRANSMISSION
+{
+    struct                                  // in
+    {
+        UINT Write           : 1;
+        UINT CanUseCachedData: 1;
+        UINT Reserved        : 30;
+    };
+
+    UINT RootPortIndex;                     // in
+    UINT DPCDAddress;                       // in
+    BYTE NumBytesRequested;                 // in
+    UINT DPNativeError;                     // out
+    BYTE NumBytesDone;                      // out
+    BYTE Data[MAX_DP_NATIVE_AUX_IO_SIZE];   // inout
+}DXGKARG_DPAUXIOTRANSMISSION, *PDXGKARG_DPAUXIOTRANSMISSION;
+
+typedef
+_Function_class_(DXGKDDI_DPAUXIOTRANSMISSION)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+DXGKDDI_DPAUXIOTRANSMISSION(
+    _In_    HANDLE Context,
+    _Inout_ PDXGKARG_DPAUXIOTRANSMISSION pArgs
+    );
+
+typedef DXGKDDI_DPAUXIOTRANSMISSION *PDXGKDDI_DPAUXIOTRANSMISSION;
+
+typedef enum _DXGK_I2C_ADDRESS_TYPE
+{
+    DXGK_I2C_ADDRESS_EDDC_SEGMENT_POINT = 0x60,
+    DXGK_I2C_ADDRESS_MCCS               = 0x6E,
+    DXGK_I2C_ADDRESS_DDC                = 0xA0,
+    DXGK_I2C_ADDRESS_MAX                = 0x7F
+} DXGK_I2C_ADDRESS_TYPE;
+
+typedef struct _DXGKARG_DPI2CIOTRANSMISSION
+{
+    struct                          // in
+    {
+        UINT Read             : 1;
+        UINT Write            : 1;
+        UINT EDDCMode         : 1;
+        UINT OffsetSizeInBytes: 3;
+        UINT CanUseCachedData : 1;
+        UINT Reserved         : 25;
+    };
+
+    UINT RootPortIndex;             // in
+    UINT I2CAddress;                // in
+
+    union                           // in
+    {
+        struct
+        {
+            UINT WordOffset     : 8;
+            UINT SegmentPointer : 7;
+            UINT Reserved1      : 17;
+        };
+        UINT Offset;
+    };
+
+    UINT BufferSizeSupplied;        // in
+    UINT BytesToWrite;              // in
+    UINT BytesToRead;               // in
+    UINT DPNativeError;             // out
+    UINT BytesWritten;              // out
+    UINT BytesRead;                 // out
+    _Field_size_bytes_DXGK_(BufferSizeSupplied)
+    BYTE Data[1];                   // inout
+}DXGKARG_DPI2CIOTRANSMISSION, *PDXGKARG_DPI2CIOTRANSMISSION;
+
+typedef
+_Function_class_(PDXGKDDI_DPI2CIOTRANSMISSION)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+DXGKDDI_DPI2CIOTRANSMISSION(
+    _In_    HANDLE Context,
+    _Inout_ PDXGKARG_DPI2CIOTRANSMISSION pArgs
+    );
+
+typedef DXGKDDI_DPI2CIOTRANSMISSION *PDXGKDDI_DPI2CIOTRANSMISSION;
+
+typedef struct _DXGKARG_DPSBMTRANSMISSION
+{
+    struct                              // in
+    {
+        UINT CanUseCachedData: 1;
+        UINT Reserved        : 31;
+    };
+
+    UINT  RootPortIndex;                // in
+    UINT  BufferSizeSupplied;           // in
+    UINT  RequestLength;                // in
+    UINT  MaxReplyLength;               // in
+    UINT  DPNativeError;                // out
+    UINT  ActualReplyLength;            // out
+    _Field_size_bytes_DXGK_(BufferSizeSupplied)
+    BYTE Data[1];                       // inout
+}DXGKARG_DPSBMTRANSMISSION, *PDXGKARG_DPSBMTRANSMISSION;
+
+typedef
+_Function_class_(DXGKDDI_DPSBMTRANSMISSION)
+_IRQL_requires_(PASSIVE_LEVEL)
+NTSTATUS
+DXGKDDI_DPSBMTRANSMISSION(
+    _In_    HANDLE Context,
+    _Inout_ PDXGKARG_DPSBMTRANSMISSION pArgs
+    );
+
+typedef DXGKDDI_DPSBMTRANSMISSION *PDXGKDDI_DPSBMTRANSMISSION;
+
+typedef struct _DXGK_DP_INTERFACE
+{
+    IN  USHORT                          Size;
+    IN  USHORT                          Version;
+    OUT PVOID                           Context;
+    OUT PINTERFACE_REFERENCE            InterfaceReference;
+    OUT PINTERFACE_DEREFERENCE          InterfaceDereference;
+    OUT PDXGKDDI_QUERYDPCAPS            DxgkDdiQueryDPCaps;
+    OUT PDXGKDDI_GETDPADDRESS           DxgkDdiGetDPAddress;
+    OUT PDXGKDDI_DPAUXIOTRANSMISSION    DxgkDdiDPAuxIoTransmission;
+    OUT PDXGKDDI_DPI2CIOTRANSMISSION    DxgkDdiDPI2CIoTransmission;
+    OUT PDXGKDDI_DPSBMTRANSMISSION      DxgkDdiDPSBMTransmission;
+} DXGK_DP_INTERFACE, *PDXGK_DP_INTERFACE;
 
 #pragma warning(pop)
 

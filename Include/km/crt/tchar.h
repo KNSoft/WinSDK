@@ -1869,7 +1869,7 @@ __DEFINE_CPP_OVERLOAD_INLINE_NFUNC_0_3_EX(char *, __RETURN_POLICY_DST, _tcsncset
 
 /* MBCS-specific mappings */
 
-_Check_return_ __inline _PC _tcsdec(_In_reads_z_(_Pos - _Start + 1) _CPC _s1,_In_z_ _CPC _s2) {return (_PC)_mbsdec((_CPUC)_s1,(_CPUC)_s2);}
+_Check_return_ __inline _PC _tcsdec(_In_reads_z_(_s2 - _s1 + 1) _CPC _s1,_In_z_ _CPC _s2) {return (_PC)_mbsdec((_CPUC)_s1,(_CPUC)_s2);}
 _Check_return_ __inline _PC _tcsinc(_In_z_ _CPC _s1) {return (_PC)_mbsinc((_CPUC)_s1);}
 _Check_return_ __inline size_t _tcsnbcnt(_In_reads_bytes_(_n) _Pre_z_ _CPC _s1,_In_ size_t _n) {return _mbsnbcnt((_CPUC)_s1,_n);}
 _Check_return_ __inline size_t _tcsnccnt(_In_reads_bytes_(_n) _CPC _s1,_In_ size_t _n) {return _mbsnccnt((_CPUC)_s1,_n);}

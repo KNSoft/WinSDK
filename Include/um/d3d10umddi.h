@@ -37,7 +37,7 @@
 
 #if !defined ( D3D11DDI_MINOR_HEADER_VERSION )  || ( D3D11DDI_MINOR_HEADER_VERSION < 5 && D3D12DDI_MINOR_HEADER_VERSION >= 1 )
 #undef D3D11DDI_MINOR_HEADER_VERSION
-#define D3D11DDI_MINOR_HEADER_VERSION 15
+#define D3D11DDI_MINOR_HEADER_VERSION 16
 #endif
 
 // Ensure that UMD versions used for include guards below are defined
@@ -85,7 +85,7 @@ typedef struct TYPE \
     { return handle != o.handle; } \
 } TYPE; \
  \
-inline TYPE MAKE_##TYPE##( D3DKMT_HANDLE h ) \
+inline TYPE MAKE_##TYPE( D3DKMT_HANDLE h ) \
 { const TYPE r = { h }; return r; }
 
 #else
@@ -127,7 +127,7 @@ typedef struct TYPE \
     { return handle != o.handle; } \
 } TYPE; \
  \
-inline TYPE MAKE_##TYPE##( VOID* h ) \
+inline TYPE MAKE_##TYPE( VOID* h ) \
 { const TYPE r = { h }; return r; }
 #else
 
@@ -192,7 +192,7 @@ typedef struct TYPE \
     { return handle != o.handle; } \
 } TYPE; \
  \
-inline TYPE MAKE_##TYPE##( VOID* h ) \
+inline TYPE MAKE_##TYPE( VOID* h ) \
 { const TYPE r = { h }; return r; }
 #else
 
@@ -230,7 +230,7 @@ typedef struct TYPE \
     { return pDrvPrivate != o.pDrvPrivate; } \
 } TYPE; \
  \
-inline TYPE MAKE_##TYPE##( VOID* h ) \
+inline TYPE MAKE_##TYPE( VOID* h ) \
 { const TYPE r = { h }; return r; }
 #else
 
@@ -294,7 +294,7 @@ typedef struct TYPE \
     { return pDrvPrivate != o.pDrvPrivate; } \
 } TYPE; \
  \
-inline TYPE MAKE_##TYPE##( VOID* h ) \
+inline TYPE MAKE_##TYPE( VOID* h ) \
 { const TYPE r = { h }; return r; }
 #else
 
@@ -3532,6 +3532,9 @@ typedef struct D3D11_1DDI_AUTHENTICATED_QUERY_INPUT
     UINT                               SequenceNumber;
 } D3D11_1DDI_AUTHENTICATED_QUERY_INPUT;
 
+#ifndef D3D_OMAC_SIZE
+#define D3D_OMAC_SIZE 16
+#endif
 typedef struct D3D11_1DDI_OMAC
 {
     BYTE Omac[D3D_OMAC_SIZE];
@@ -7874,6 +7877,15 @@ typedef HRESULT (APIENTRY *PFND3D10DDI_OPENADAPTER)(_Inout_ D3D10DDIARG_OPENADAP
 
 #define D3DWDDM2_6_DDI_INTERFACE_VERSION ((D3D11_DDI_MAJOR_VERSION << 16) | D3DWDDM2_6_DDI_MINOR_VERSION)
 #define D3DWDDM2_6_DDI_SUPPORTED ((((UINT64)D3DWDDM2_6_DDI_INTERFACE_VERSION) << 32) | (((UINT64)D3DWDDM2_6_DDI_BUILD_VERSION) << 16))
+#endif
+
+#if D3D11DDI_MINOR_HEADER_VERSION >= 16
+#define D3DWDDM2_7_DDI_MINOR_VERSION 40
+#define D3DWDDM2_7_DDI_BUILD_VERSION 1
+
+
+#define D3DWDDM2_7_DDI_INTERFACE_VERSION ((D3D11_DDI_MAJOR_VERSION << 16) | D3DWDDM2_7_DDI_MINOR_VERSION)
+#define D3DWDDM2_7_DDI_SUPPORTED ((((UINT64)D3DWDDM2_7_DDI_INTERFACE_VERSION) << 32) | (((UINT64)D3DWDDM2_7_DDI_BUILD_VERSION) << 16))
 #endif
 
 

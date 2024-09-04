@@ -125,6 +125,11 @@ typedef enum D3D12DDICAPS_TYPE
 
     D3D12DDICAPS_TYPE_QUERY_META_COMMAND_CAPS_0061               = 1068,
     D3D12DDICAPS_TYPE_EXECUTECOMMANDLISTS_PARALLELISM            = 1069, // pData = BOOL
+    
+    D3D12DDICAPS_TYPE_SAMPLER_FEEDBACK_0073                      = 1070,
+    D3D12DDICAPS_TYPE_0073_SUPPORT_BATCHED_MARKERS               = 1071, // pData = BOOL
+    D3D12DDICAPS_TYPE_0074_PROTECTED_RESOURCE_SESSION_TYPE_COUNT = 1072,
+    D3D12DDICAPS_TYPE_0074_PROTECTED_RESOURCE_SESSION_TYPES      = 1073,
 
 } D3D12DDICAPS_TYPE;
 
@@ -358,6 +363,7 @@ typedef enum D3D12DDI_RESOURCE_FLAGS_0003
     D3D12DDI_RESOURCE_FLAG_0041_ONLY_NON_RT_DS_TEXTURE_PLACEMENT = 0x100, // Unused
     D3D12DDI_RESOURCE_FLAG_0041_ONLY_RT_DS_TEXTURE_PLACEMENT = 0x200, // Unused
     D3D12DDI_RESOURCE_FLAG_0041_4MB_ALIGNED = 0x400, // Unused
+    D3D12DDI_RESOURCE_FLAG_0073_SAMPLER_FEEDBACK = 0x800,
 } D3D12DDI_RESOURCE_FLAGS_0003;
 DEFINE_ENUM_FLAG_OPERATORS( D3D12DDI_RESOURCE_FLAGS_0003 );
 
@@ -398,8 +404,8 @@ typedef enum D3D12DDI_RESOURCE_STATES
     D3D12DDI_RESOURCE_STATE_0020_VIDEO_DECODE_WRITE     = 0x00020000,
     D3D12DDI_RESOURCE_STATE_0020_VIDEO_PROCESS_READ     = 0x00040000,
     D3D12DDI_RESOURCE_STATE_0020_VIDEO_PROCESS_WRITE    = 0x00080000,
-    D3D12DDI_RESOURCE_STATE_0020_VIDEO_ENCODE_READ      = 0x00010000,
-    D3D12DDI_RESOURCE_STATE_0020_VIDEO_ENCODE_WRITE     = 0x00020000,
+    D3D12DDI_RESOURCE_STATE_0060_VIDEO_ENCODE_READ      = 0x00200000,
+    D3D12DDI_RESOURCE_STATE_0060_VIDEO_ENCODE_WRITE     = 0x00800000,
     D3D12DDI_RESOURCE_STATE_0062_SHADING_RATE_SOURCE    = 0x01000000,
     D3D12DDI_RESOURCE_STATE_RAYTRACING_ACCELERATION_STRUCTURE = 0x400000,
 } D3D12DDI_RESOURCE_STATES;
@@ -1290,6 +1296,8 @@ typedef enum D3D12DDI_SHADER_VISIBILITY
     D3D12DDI_SHADER_VISIBILITY_DOMAIN = 3,
     D3D12DDI_SHADER_VISIBILITY_GEOMETRY = 4,
     D3D12DDI_SHADER_VISIBILITY_PIXEL = 5,
+    D3D12DDI_SHADER_VISIBILITY_AMPLIFICATION = 6,
+    D3D12DDI_SHADER_VISIBILITY_MESH = 7,
 } D3D12DDI_SHADER_VISIBILITY;
 
 typedef enum D3D12DDI_ROOT_PARAMETER_TYPE
@@ -1315,15 +1323,17 @@ typedef struct D3D12DDI_ROOT_PARAMETER
 
 typedef enum D3D12DDI_ROOT_SIGNATURE_FLAGS
 {
-    D3D12DDI_ROOT_SIGNATURE_FLAG_NONE                               = 0x0,
-    D3D12DDI_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT = 0x1,
-    D3D12DDI_ROOT_SIGNATURE_FLAG_DENY_VERTEX_SHADER_ROOT_ACCESS     = 0x2,
-    D3D12DDI_ROOT_SIGNATURE_FLAG_DENY_HULL_SHADER_ROOT_ACCESS       = 0x4,
-    D3D12DDI_ROOT_SIGNATURE_FLAG_DENY_DOMAIN_SHADER_ROOT_ACCESS     = 0x8,
-    D3D12DDI_ROOT_SIGNATURE_FLAG_DENY_GEOMETRY_SHADER_ROOT_ACCESS   = 0x10,
-    D3D12DDI_ROOT_SIGNATURE_FLAG_DENY_PIXEL_SHADER_ROOT_ACCESS      = 0x20,
-    D3D12DDI_ROOT_SIGNATURE_FLAG_ALLOW_STREAM_OUTPUT                = 0x40,
-    D3D12DDI_ROOT_SIGNATURE_FLAG_LOCAL_ROOT_SIGNATURE               = 0x80,
+    D3D12DDI_ROOT_SIGNATURE_FLAG_NONE                                   = 0x0,
+    D3D12DDI_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT     = 0x1,
+    D3D12DDI_ROOT_SIGNATURE_FLAG_DENY_VERTEX_SHADER_ROOT_ACCESS         = 0x2,
+    D3D12DDI_ROOT_SIGNATURE_FLAG_DENY_HULL_SHADER_ROOT_ACCESS           = 0x4,
+    D3D12DDI_ROOT_SIGNATURE_FLAG_DENY_DOMAIN_SHADER_ROOT_ACCESS         = 0x8,
+    D3D12DDI_ROOT_SIGNATURE_FLAG_DENY_GEOMETRY_SHADER_ROOT_ACCESS       = 0x10,
+    D3D12DDI_ROOT_SIGNATURE_FLAG_DENY_PIXEL_SHADER_ROOT_ACCESS          = 0x20,
+    D3D12DDI_ROOT_SIGNATURE_FLAG_ALLOW_STREAM_OUTPUT                    = 0x40,
+    D3D12DDI_ROOT_SIGNATURE_FLAG_LOCAL_ROOT_SIGNATURE                   = 0x80,
+    D3D12DDI_ROOT_SIGNATURE_FLAG_DENY_AMPLIFICATION_SHADER_ROOT_ACCESS  = 0x100,
+    D3D12DDI_ROOT_SIGNATURE_FLAG_DENY_MESH_SHADER_ROOT_ACCESS           = 0x200,
 } D3D12DDI_ROOT_SIGNATURE_FLAGS;
 DEFINE_ENUM_FLAG_OPERATORS( D3D12DDI_ROOT_SIGNATURE_FLAGS );
 
@@ -2122,6 +2132,36 @@ typedef struct D3D12DDIARG_TESSELLATION_IO_SIGNATURES
     UINT                                    NumPatchConstantSignatureEntries;
 } D3D12DDIARG_TESSELLATION_IO_SIGNATURES;
 
+typedef struct D3D12DDIARG_MESH_IO_SIGNATURES
+{
+// A signature is basically the union of all registers input and output by any
+// shader sharing the signature.  Thus, a signature may be a superset of what a
+// given shader may happen to actually input or output.  Another way to think
+// of a signature is that hardware should assume for an input signature that
+// the upstream stage in the pipeline may provide some or all the data in the
+// signature laid out as specified.  Similarly, hardware should assume for an output
+// signature that the downstream stage in the pipeline may consume some or all
+// of the data in the signature laid out as specified.
+//
+// The reason this full signature is passed to the driver is to assist in the event
+// input/output registers need to be reordered during shader compilation.
+// Such reordering may depend on knowing all of the registers in the signature,
+// as well as which ones have system names ("position", "clipDistance" etc),
+// including registers that don't happen to be present in the current shader.
+//
+// The declarations within the shader code itself will show which registers
+// are actually used by a particular shader (possibly a subset of these signatures).
+// If some hardware doesn't need to reorder input/output registers at
+// compile-time, the full signatures provided by this structure can be
+// completely ignored.  The reference rasterizer, for example, doens't
+// need the information provided here at all.
+//
+    D3D12DDIARG_SIGNATURE_ENTRY_0012*       pPrimitiveOutputSignature;
+    UINT                                    NumPrimitiveOutputSignatureEntries;
+    D3D12DDIARG_SIGNATURE_ENTRY_0012*       pVertexOutputSignature;
+    UINT                                    NumVertexOutputSignatureEntries;
+} D3D12DDIARG_MESH_IO_SIGNATURES;
+
 typedef enum D3D12DDI_CREATE_SHADER_FLAGS
 {
     D3D12DDI_CREATE_SHADER_FLAG_NONE = 0x0,
@@ -2290,6 +2330,13 @@ typedef struct D3D12DDI_DISPATCH_ARGUMENTS
     UINT ThreadGroupCountZ;
 } D3D12DDI_DISPATCH_ARGUMENTS;
 
+typedef struct D3D12DDI_DISPATCH_MESH_ARGUMENTS
+{
+    UINT ThreadGroupCountX;
+    UINT ThreadGroupCountY;
+    UINT ThreadGroupCountZ;
+} D3D12DDI_DISPATCH_MESH_ARGUMENTS;
+
 typedef enum D3D12DDI_INDIRECT_ARGUMENT_TYPE
 {
     D3D12DDI_INDIRECT_ARGUMENT_TYPE_DRAW,
@@ -2301,6 +2348,8 @@ typedef enum D3D12DDI_INDIRECT_ARGUMENT_TYPE
     D3D12DDI_INDIRECT_ARGUMENT_TYPE_CONSTANT_BUFFER_VIEW,
     D3D12DDI_INDIRECT_ARGUMENT_TYPE_SHADER_RESOURCE_VIEW,
     D3D12DDI_INDIRECT_ARGUMENT_TYPE_UNORDERED_ACCESS_VIEW,
+    D3D12DDI_INDIRECT_ARGUMENT_TYPE_DISPATCH_RAYS,
+    D3D12DDI_INDIRECT_ARGUMENT_TYPE_DISPATCH_MESH,
 } D3D12DDI_INDIRECT_ARGUMENT_TYPE;
 
 typedef struct D3D12DDI_INDIRECT_ARGUMENT_DESC
@@ -2395,6 +2444,7 @@ typedef enum D3D12DDI_TABLE_TYPE
     D3D12DDI_TABLE_TYPE_0053_COMMAND_QUEUE_VIDEO_ENCODE             = 22,
     D3D12DDI_TABLE_TYPE_0054_DOWNLEVEL_SUPPORT_CALLBACKS            = 23,
     D3D12DDI_TABLE_TYPE_0054_DEVICE_DOWNLEVEL_SUPPORT               = 24,
+    D3D12DDI_TABLE_TYPE_0076_PIN_RESOURCES_CALLBACKS                = 25,
 
 } D3D12DDI_TABLE_TYPE;
 
@@ -3368,6 +3418,8 @@ typedef enum D3D12DDI_SHADER_MODEL
     D3D12DDI_SHADER_MODEL_6_4_EXPERIMENTAL_0054                 = 0x00060040,
     D3D12DDI_SHADER_MODEL_6_4_RELEASE_0062                      = 0x00060045,
     D3D12DDI_SHADER_MODEL_6_5_EXPERIMENTAL_0062                 = 0x00060050,
+    D3D12DDI_SHADER_MODEL_6_5_RELEASE_0071                      = 0x00060055,
+    D3D12DDI_SHADER_MODEL_6_6_EXPERIMENTAL_0071                 = 0x00060060,
 } D3D12DDI_SHADER_MODEL;
 
 // D3D12DDICAPS_TYPE_0011_D3D12_SHADER_MODELS
@@ -3938,6 +3990,7 @@ typedef enum D3D12DDI_FEATURE_0020
     D3D12DDI_FEATURE_0033_METACOMMAND = 9, //superseded with public APIs
     D3D12DDI_FEATURE_0043_RENDER_PASS = 10,
     D3D12DDI_FEATURE_0054_DOWNLEVEL_SUPPORT = 11,
+    D3D12DDI_FEATURE_0076_PIN_RESOURCES = 12,
 } D3D12DDI_FEATURE_0020;
 
 typedef HRESULT (APIENTRY *PFND3D12DDI_GET_SUPPORTED_EXTENDED_FEATURES_0020)(D3D12DDI_HDEVICE hDevice,
@@ -4164,6 +4217,11 @@ DEFINE_GUID(D3D12DDI_VIDEO_DECODE_PROFILE_HEVC_MAIN10, 0x107af0e0, 0xef1a, 0x4d1
 DEFINE_GUID(D3D12DDI_VIDEO_DECODE_PROFILE_VP9, 0x463707f8, 0xa1d0, 0x4585, 0x87, 0x6d, 0x83, 0xaa, 0x6d, 0x60, 0xb8, 0x9e);
 DEFINE_GUID(D3D12DDI_VIDEO_DECODE_PROFILE_VP9_10BIT_PROFILE2, 0xa4c749ef, 0x6ecf, 0x48aa, 0x84, 0x48, 0x50, 0xa7, 0xa1, 0x16, 0x5f, 0xf7);
 DEFINE_GUID(D3D12DDI_VIDEO_DECODE_PROFILE_VP8, 0x90b899ea, 0x3a62, 0x4705, 0x88, 0xb3, 0x8d, 0xf0, 0x4b, 0x27, 0x44, 0xe7);
+DEFINE_GUID(D3D12DDI_VIDEO_DECODE_PROFILE_AV1_PROFILE0, 0xb8be4ccb, 0xcf53, 0x46ba, 0x8d, 0x59, 0xd6, 0xb8, 0xa6, 0xda, 0x5d, 0x2a);
+DEFINE_GUID(D3D12DDI_VIDEO_DECODE_PROFILE_AV1_PROFILE1, 0x6936ff0f, 0x45b1, 0x4163, 0x9c, 0xc1, 0x64, 0x6e, 0xf6, 0x94, 0x61, 0x08);
+DEFINE_GUID(D3D12DDI_VIDEO_DECODE_PROFILE_AV1_PROFILE2, 0x0c5f2aa1, 0xe541, 0x4089, 0xbb, 0x7b, 0x98, 0x11, 0x0a, 0x19, 0xd7, 0xc8);
+DEFINE_GUID(D3D12DDI_VIDEO_DECODE_PROFILE_AV1_12BIT_PROFILE2, 0x17127009, 0xa00f, 0x4ce1, 0x99, 0x4e, 0xbf, 0x40, 0x81, 0xf6, 0xf3, 0xf0);
+DEFINE_GUID(D3D12DDI_VIDEO_DECODE_PROFILE_AV1_12BIT_PROFILE2_420, 0x2d80bed6, 0x9cac, 0x4835, 0x9e, 0x91, 0x32, 0x7b, 0xbc, 0x4f, 0x9e, 0xe8);
 
 // Bitstream Encryption GUIDS
 DEFINE_GUID(D3D12DDI_VIDEO_DECODE_BITSTREAM_ENCRYPTION_NONE, 0x1b81beD0, 0xa0c7, 0x11d3, 0xb9, 0x84, 0x00, 0xc0, 0x4f, 0x2e, 0x73, 0xc5);
@@ -4171,7 +4229,7 @@ DEFINE_GUID(D3D12DDI_VIDEO_DECODE_BITSTREAM_ENCRYPTION_HARDWARE_CENC, 0x89d6ac4f
 
 typedef enum D3D12DDICAPS_TYPE_VIDEO_0020
 {
-    D3D12DDICAPS_TYPE_VIDEO_0020_DECODE_SUPPORT                             = 0,
+    D3D12DDICAPS_TYPE_VIDEO_0020_DECODE_SUPPORT                                 = 0,
     D3D12DDICAPS_TYPE_VIDEO_0020_DECODE_PROFILES                                = 1,
     D3D12DDICAPS_TYPE_VIDEO_0020_DECODE_FORMATS                                 = 2,
     D3D12DDICAPS_TYPE_VIDEO_0020_DECODE_CONVERSION_SUPPORT                      = 3,
@@ -4198,6 +4256,9 @@ typedef enum D3D12DDICAPS_TYPE_VIDEO_0020
     D3D12DDICAPS_TYPE_VIDEO_0063_EXTENSION_COMMAND_PARAMETERS                   = 25,
     D3D12DDICAPS_TYPE_VIDEO_0063_EXTENSION_COMMAND_CAPS                         = 26,
     D3D12DDICAPS_TYPE_VIDEO_0063_EXTENSION_COMMAND_SIZE                         = 27,
+    D3D12DDICAPS_TYPE_VIDEO_0072_DECODE_PROTECTED_RESOURCES                     = 28,
+    D3D12DDICAPS_TYPE_VIDEO_0072_PROCESS_PROTECTED_RESOURCES                    = 29,
+    D3D12DDICAPS_TYPE_VIDEO_0072_MOTION_ESTIMATOR_PROTECTED_RESOURCES           = 30,
 
 } D3D12DDICAPS_TYPE_VIDEO_0020;
 
@@ -4225,8 +4286,8 @@ typedef enum D3D12DDI_VIDEO_DECODE_STATUS_0020
 
 typedef enum D3D12DDI_VIDEO_DECODE_SUPPORT_FLAGS_0020
 {
-    D3D12DDI_VIDEO_DECODE_SUPPORT_FLAG_0020_NONE = 0,
-    D3D12DDI_VIDEO_DECODE_SUPPORT_FLAG_0020_SUPPORTED = 0x1,
+    D3D12DDI_VIDEO_DECODE_SUPPORT_FLAG_0020_NONE                    = 0,
+    D3D12DDI_VIDEO_DECODE_SUPPORT_FLAG_0020_SUPPORTED               = 0x1,
 
 } D3D12DDI_VIDEO_DECODE_SUPPORT_FLAGS_0020;
 DEFINE_ENUM_FLAG_OPERATORS( D3D12DDI_VIDEO_DECODE_SUPPORT_FLAGS_0020 );
@@ -4930,8 +4991,8 @@ DEFINE_ENUM_FLAG_OPERATORS(D3D12DDI_VIDEO_SCALE_SUPPORT_FLAGS_0022 );
 
 typedef enum D3D12DDI_VIDEO_PROCESS_SUPPORT_FLAGS_0022
 {
-    D3D12DDI_VIDEO_PROCESS_SUPPORT_FLAG_0022_NONE = 0,
-    D3D12DDI_VIDEO_PROCESS_SUPPORT_FLAG_0022_SUPPORTED = 0x1,
+    D3D12DDI_VIDEO_PROCESS_SUPPORT_FLAG_0022_NONE                   = 0x0,
+    D3D12DDI_VIDEO_PROCESS_SUPPORT_FLAG_0022_SUPPORTED              = 0x1,
 
 } D3D12DDI_VIDEO_PROCESS_SUPPORT_FLAGS_0022;
 DEFINE_ENUM_FLAG_OPERATORS( D3D12DDI_VIDEO_PROCESS_SUPPORT_FLAGS_0022 );
@@ -5365,6 +5426,7 @@ typedef struct D3D12DDIARG_CREATE_SHADER_0026
     {
         CONST D3D12DDIARG_STAGE_IO_SIGNATURES* Standard;
         CONST D3D12DDIARG_TESSELLATION_IO_SIGNATURES* Tessellation;
+        CONST D3D12DDIARG_MESH_IO_SIGNATURES* Mesh;
     } IOSignatures;
     D3D12DDI_CREATE_SHADER_FLAGS Flags;
     D3D12DDI_LIBRARY_REFERENCE_0010 LibraryReference;
@@ -5558,6 +5620,9 @@ typedef enum D3D12DDI_RESOLVE_MODE
     D3D12DDI_RESOLVE_MODE_MIN = 1,
     D3D12DDI_RESOLVE_MODE_MAX = 2,
     D3D12DDI_RESOLVE_MODE_AVERAGE = 3,
+    D3D12DDI_RESOLVE_MODE_ENCODE_SAMPLER_FEEDBACK_0073 = 4,
+    D3D12DDI_RESOLVE_MODE_DECODE_SAMPLER_FEEDBACK_0073 = 5,
+
 } D3D12DDI_RESOLVE_MODE;
 
 typedef VOID ( APIENTRY* PFND3D12DDI_RESOURCERESOLVESUBRESOURCEREGION_0027 )(
@@ -7502,6 +7567,7 @@ typedef enum D3D12DDI_RAYTRACING_TIER
 {
     D3D12DDI_RAYTRACING_TIER_NOT_SUPPORTED = 0,
     D3D12DDI_RAYTRACING_TIER_1_0 = 10,
+    D3D12DDI_RAYTRACING_TIER_1_1 = 11,
 } D3D12DDI_RAYTRACING_TIER;
 
 // D3D12DDICAPS_TYPE_D3D12_OPTIONS
@@ -7539,7 +7605,8 @@ typedef enum D3D12DDI_STATE_SUBOBJECT_TYPE
     // skip value from API not needed in DDI
     // skip value from API not needed in DDI
     D3D12DDI_STATE_SUBOBJECT_TYPE_RAYTRACING_SHADER_CONFIG = 9, // D3D12DDI_RAYTRACING_SHADER_CONFIG_0054
-    D3D12DDI_STATE_SUBOBJECT_TYPE_RAYTRACING_PIPELINE_CONFIG = 10,  // D3D12DDI_RAYTRACING_PIPELINE_CONFIG_0054
+    D3D12DDI_STATE_SUBOBJECT_TYPE_RAYTRACING_PIPELINE_CONFIG = 10,  // D3D12DDI_RAYTRACING_PIPELINE_CONFIG_0054 for old drivers,
+                                                                    // D3D12DDI_RAYTRACING_PIPELINE_CONFIG_0075 for new drivers
     D3D12DDI_STATE_SUBOBJECT_TYPE_HIT_GROUP = 11,  // D3D12DDI_HIT_GROUP_DESC_0054
 
     // DDI only objects
@@ -7557,6 +7624,7 @@ typedef enum D3D12DDI_STATE_OBJECT_FLAGS
     D3D12DDI_STATE_OBJECT_FLAG_NONE = 0x0,
     D3D12DDI_STATE_OBJECT_FLAG_ALLOW_LOCAL_DEPENDENCIES_ON_EXTERNAL_DEFINITIONS = 0x1,
     D3D12DDI_STATE_OBJECT_FLAG_ALLOW_EXTERNAL_DEPENDENCIES_ON_LOCAL_DEFINITIONS = 0x2,
+    D3D12DDI_STATE_OBJECT_FLAG_ALLOW_STATE_OBJECT_ADDITIONS = 0x4,
 } D3D12DDI_STATE_OBJECT_FLAGS;
 DEFINE_ENUM_FLAG_OPERATORS( D3D12DDI_STATE_OBJECT_FLAGS );
 
@@ -7657,6 +7725,20 @@ typedef struct D3D12DDI_RAYTRACING_PIPELINE_CONFIG_0054
 {
     UINT    MaxTraceRecursionDepth;
 } D3D12DDI_RAYTRACING_PIPELINE_CONFIG_0054;
+
+typedef enum D3D12DDI_RAYTRACING_PIPELINE_FLAGS
+{
+    D3D12DDI_RAYTRACING_PIPELINE_FLAG_NONE                          = 0x0,
+    D3D12DDI_RAYTRACING_PIPELINE_FLAG_SKIP_TRIANGLES                = 0x100,
+    D3D12DDI_RAYTRACING_PIPELINE_FLAG_SKIP_PROCEDURAL_PRIMITIVES    = 0x200,
+} D3D12DDI_RAYTRACING_PIPELINE_FLAGS; 
+DEFINE_ENUM_FLAG_OPERATORS( D3D12DDI_RAYTRACING_PIPELINE_FLAGS );
+
+typedef struct D3D12DDI_RAYTRACING_PIPELINE_CONFIG_0075
+{
+    UINT                                MaxTraceRecursionDepth;
+    D3D12DDI_RAYTRACING_PIPELINE_FLAGS  Flags;
+} D3D12DDI_RAYTRACING_PIPELINE_CONFIG_0075;
 
 typedef enum D3D12DDI_STATE_OBJECT_TYPE
 {
@@ -8754,6 +8836,1156 @@ typedef struct D3D12DDI_DEVICE_FUNCS_CORE_0063
 #define D3D12DDI_SUPPORTED_0064 ((((UINT64)D3D12DDI_INTERFACE_VERSION_R6) << 32) | (((UINT64)D3D12DDI_BUILD_VERSION_0064) << 16))
 
 //----------------------------------------------------------------------------------------------------------------------------------
+// D3D12 Release 6, Build rev 5.
+// This version is introduced to detect the presence of new timestamp array stride and sync object
+// fields in the SubmitHistorySequence callback in the KT callback table.
+
+#define D3D12DDI_BUILD_VERSION_0065 5
+#define D3D12DDI_SUPPORTED_0065 ((((UINT64)D3D12DDI_INTERFACE_VERSION_R6) << 32) | (((UINT64)D3D12DDI_BUILD_VERSION_0065) << 16))
+
+//----------------------------------------------------------------------------------------------------------------------------------
+// D3D12 Release 7, Build rev 0.
+// This adds new raytracing features.
+
+#define D3D12DDI_MINOR_VERSION_R7 70
+#define D3D12DDI_INTERFACE_VERSION_R7 ((D3D12DDI_MAJOR_VERSION << 16) | D3D12DDI_MINOR_VERSION_R7)
+
+#define D3D12DDI_BUILD_VERSION_0070 0
+#define D3D12DDI_SUPPORTED_0070 ((((UINT64)D3D12DDI_INTERFACE_VERSION_R7) << 32) | (((UINT64)D3D12DDI_BUILD_VERSION_0070) << 16))
+
+typedef D3D12DDIARG_CREATE_STATE_OBJECT_0054 D3D12DDIARG_ADD_TO_STATE_OBJECT_0070;
+
+typedef HRESULT ( APIENTRY* PFND3D12DDI_ADD_TO_STATE_OBJECT_0070 ) ( D3D12DDI_HDEVICE, _In_ CONST D3D12DDIARG_ADD_TO_STATE_OBJECT_0070*, D3D12DDI_HSTATEOBJECT_0054 );
+
+typedef struct D3D12DDI_DEVICE_FUNCS_CORE_0070
+{
+    PFND3D12DDI_CHECKFORMATSUPPORT                                      pfnCheckFormatSupport;
+    PFND3D12DDI_CHECKMULTISAMPLEQUALITYLEVELS                           pfnCheckMultisampleQualityLevels;
+    PFND3D12DDI_GETMIPPACKING                                           pfnGetMipPacking;
+
+    PFND3D12DDI_CALCPRIVATEELEMENTLAYOUTSIZE_0010                       pfnCalcPrivateElementLayoutSize;
+    PFND3D12DDI_CREATEELEMENTLAYOUT_0010                                pfnCreateElementLayout;
+    PFND3D12DDI_DESTROYELEMENTLAYOUT                                    pfnDestroyElementLayout;
+
+    PFND3D12DDI_CALCPRIVATEBLENDSTATESIZE_0010                          pfnCalcPrivateBlendStateSize;
+    PFND3D12DDI_CREATEBLENDSTATE_0010                                   pfnCreateBlendState;
+    PFND3D12DDI_DESTROYBLENDSTATE                                       pfnDestroyBlendState;
+
+    PFND3D12DDI_CALCPRIVATEDEPTHSTENCILSTATESIZE_0025                   pfnCalcPrivateDepthStencilStateSize;
+    PFND3D12DDI_CREATEDEPTHSTENCILSTATE_0025                            pfnCreateDepthStencilState;
+    PFND3D12DDI_DESTROYDEPTHSTENCILSTATE                                pfnDestroyDepthStencilState;
+
+    PFND3D12DDI_CALCPRIVATERASTERIZERSTATESIZE_0010                     pfnCalcPrivateRasterizerStateSize;
+    PFND3D12DDI_CREATERASTERIZERSTATE_0010                              pfnCreateRasterizerState;
+    PFND3D12DDI_DESTROYRASTERIZERSTATE                                  pfnDestroyRasterizerState;
+
+    PFND3D12DDI_CALC_PRIVATE_SHADER_SIZE_0026                           pfnCalcPrivateShaderSize;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateVertexShader;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreatePixelShader;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateGeometryShader;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateComputeShader;
+
+    PFND3D12DDI_CALC_PRIVATE_GEOMETRY_SHADER_WITH_STREAM_OUTPUT_0026    pfnCalcPrivateGeometryShaderWithStreamOutput;
+    PFND3D12DDI_CREATE_GEOMETRY_SHADER_WITH_STREAM_OUTPUT_0026          pfnCreateGeometryShaderWithStreamOutput;
+
+    PFND3D12DDI_CALC_PRIVATE_SHADER_SIZE_0026                           pfnCalcPrivateTessellationShaderSize;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateHullShader;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateDomainShader;
+
+    PFND3D12DDI_DESTROYSHADER                                           pfnDestroyShader;
+
+    PFND3D12DDI_CALCPRIVATECOMMANDQUEUESIZE_0050                        pfnCalcPrivateCommandQueueSize;
+    PFND3D12DDI_CREATECOMMANDQUEUE_0050                                 pfnCreateCommandQueue;
+    PFND3D12DDI_DESTROYCOMMANDQUEUE                                     pfnDestroyCommandQueue;
+
+    PFND3D12DDI_CALC_PRIVATE_COMMAND_POOL_SIZE_0040                     pfnCalcPrivateCommandPoolSize;
+    PFND3D12DDI_CREATE_COMMAND_POOL_0040                                pfnCreateCommandPool;
+    PFND3D12DDI_DESTROY_COMMAND_POOL_0040                               pfnDestroyCommandPool;
+    PFND3D12DDI_RESET_COMMAND_POOL_0040                                 pfnResetCommandPool;
+
+    PFND3D12DDI_CALC_PRIVATE_PIPELINE_STATE_SIZE_0033                   pfnCalcPrivatePipelineStateSize;
+    PFND3D12DDI_CREATE_PIPELINE_STATE_0033                              pfnCreatePipelineState;
+    PFND3D12DDI_DESTROY_PIPELINE_STATE                                  pfnDestroyPipelineState;
+
+    PFND3D12DDI_CALC_PRIVATE_COMMAND_LIST_SIZE_0040                     pfnCalcPrivateCommandListSize;
+    PFND3D12DDI_CREATE_COMMAND_LIST_0040                                pfnCreateCommandList;
+    PFND3D12DDI_DESTROYCOMMANDLIST                                      pfnDestroyCommandList;
+
+    PFND3D12DDI_CALCPRIVATEFENCESIZE                                    pfnCalcPrivateFenceSize;
+    PFND3D12DDI_CREATEFENCE                                             pfnCreateFence;
+    PFND3D12DDI_DESTROYFENCE                                            pfnDestroyFence;
+
+    PFND3D12DDI_CALC_PRIVATE_DESCRIPTOR_HEAP_SIZE_0001                  pfnCalcPrivateDescriptorHeapSize;
+    PFND3D12DDI_CREATE_DESCRIPTOR_HEAP_0001                             pfnCreateDescriptorHeap;
+    PFND3D12DDI_DESTROY_DESCRIPTOR_HEAP                                 pfnDestroyDescriptorHeap;
+    PFND3D12DDI_GET_DESCRIPTOR_SIZE_IN_BYTES                            pfnGetDescriptorSizeInBytes;
+    PFND3D12DDI_GET_CPU_DESCRIPTOR_HANDLE_FOR_HEAP_START                pfnGetCPUDescriptorHandleForHeapStart;
+    PFND3D12DDI_GET_GPU_DESCRIPTOR_HANDLE_FOR_HEAP_START                pfnGetGPUDescriptorHandleForHeapStart;
+    PFND3D12DDI_CREATE_SHADER_RESOURCE_VIEW_0002                        pfnCreateShaderResourceView;
+    PFND3D12DDI_CREATE_CONSTANT_BUFFER_VIEW                             pfnCreateConstantBufferView;
+    PFND3D12DDI_CREATE_SAMPLER                                          pfnCreateSampler;
+    PFND3D12DDI_CREATE_UNORDERED_ACCESS_VIEW_0002                       pfnCreateUnorderedAccessView;
+    PFND3D12DDI_CREATE_RENDER_TARGET_VIEW_0002                          pfnCreateRenderTargetView;
+    PFND3D12DDI_CREATE_DEPTH_STENCIL_VIEW                               pfnCreateDepthStencilView;
+    PFND3D12DDI_CALC_PRIVATE_ROOT_SIGNATURE_SIZE_0013                   pfnCalcPrivateRootSignatureSize;
+    PFND3D12DDI_CREATE_ROOT_SIGNATURE_0013                              pfnCreateRootSignature;
+    PFND3D12DDI_DESTROY_ROOT_SIGNATURE                                  pfnDestroyRootSignature;
+
+    PFND3D12DDI_MAPHEAP                                                 pfnMapHeap;
+    PFND3D12DDI_UNMAPHEAP                                               pfnUnmapHeap;
+    PFND3D12DDI_CALCPRIVATEHEAPANDRESOURCESIZES_0030                    pfnCalcPrivateHeapAndResourceSizes;
+    PFND3D12DDI_CREATEHEAPANDRESOURCE_0030                              pfnCreateHeapAndResource;
+    PFND3D12DDI_DESTROYHEAPANDRESOURCE                                  pfnDestroyHeapAndResource;
+
+    PFND3D12DDI_MAKERESIDENT_0001                                       pfnMakeResident;
+    PFND3D12DDI_EVICT2                                                  pfnEvict;
+    PFND3D12DDI_CALCPRIVATEOPENEDHEAPANDRESOURCESIZES_0043              pfnCalcPrivateOpenedHeapAndResourceSizes;
+    PFND3D12DDI_OPENHEAPANDRESOURCE_0043                                pfnOpenHeapAndResource;
+
+    PFND3D12DDI_COPY_DESCRIPTORS_0003                                   pfnCopyDescriptors;
+    PFND3D12DDI_COPY_DESCRIPTORS_SIMPLE_0003                            pfnCopyDescriptorsSimple;
+
+    PFND3D12DDI_CALC_PRIVATE_QUERY_HEAP_SIZE_0001                       pfnCalcPrivateQueryHeapSize;
+    PFND3D12DDI_CREATE_QUERY_HEAP_0001                                  pfnCreateQueryHeap;
+    PFND3D12DDI_DESTROY_QUERY_HEAP                                      pfnDestroyQueryHeap;
+
+    PFND3D12DDI_CALC_PRIVATE_COMMAND_SIGNATURE_SIZE_0001                pfnCalcPrivateCommandSignatureSize;
+    PFND3D12DDI_CREATE_COMMAND_SIGNATURE_0001                           pfnCreateCommandSignature;
+    PFND3D12DDI_DESTROY_COMMAND_SIGNATURE                               pfnDestroyCommandSignature;
+
+    PFND3D12DDI_CHECKRESOURCEVIRTUALADDRESS                             pfnCheckResourceVirtualAddress;
+
+    PFND3D12DDI_CHECKRESOURCEALLOCATIONINFO_0022                        pfnCheckResourceAllocationInfo;
+    PFND3D12DDI_CHECKSUBRESOURCEINFO                                    pfnCheckSubresourceInfo;
+    PFND3D12DDI_CHECKEXISITINGRESOURCEALLOCATIONINFO_0022               pfnCheckExistingResourceAllocationInfo;
+
+    PFND3D12DDI_OFFERRESOURCES                                          pfnOfferResources;
+    PFND3D12DDI_RECLAIMRESOURCES_0001                                   pfnReclaimResources;
+
+    PFND3D12DDI_GETIMPLICITPHYSICALADAPTERMASK                          pfnGetImplicitPhysicalAdapterMask;
+    PFND3D12DDI_GET_PRESENT_PRIVATE_DRIVER_DATA_SIZE                    pfnGetPresentPrivateDriverDataSize;
+    PFND3D12DDI_QUERY_NODE_MAP                                          pfnQueryNodeMap;
+    PFND3D12DDI_RETRIEVE_SHADER_COMMENT_0003                            pfnRetrieveShaderComment;
+
+    PFND3D12DDI_CHECKRESOURCEALLOCATIONHANDLE                           pfnCheckResourceAllocationHandle;
+
+    PFND3D12DDI_CALC_PRIVATE_PIPELINE_LIBRARY_SIZE_0010                 pfnCalcPrivatePipelineLibrarySize;
+    PFND3D12DDI_CREATE_PIPELINE_LIBRARY_0010                            pfnCreatePipelineLibrary;
+    PFND3D12DDI_DESTROY_PIPELINE_LIBRARY_0010                           pfnDestroyPipelineLibrary;
+
+    PFND3D12DDI_ADD_PIPELINE_STATE_TO_LIBRARY_0010                      pfnAddPipelineStateToLibrary;
+    PFND3D12DDI_CALC_SERIALIZED_LIBRARY_SIZE_0010                       pfnCalcSerializedLibrarySize;
+    PFND3D12DDI_SERIALIZE_LIBRARY_0010                                  pfnSerializeLibrary;
+    PFND3D12DDI_GET_DEBUG_ALLOCATION_INFO_0014                          pfnGetDebugAllocationInfo;
+
+    PFND3D12DDI_CALC_PRIVATE_COMMAND_RECORDER_SIZE_0040                 pfnCalcPrivateCommandRecorderSize;
+    PFND3D12DDI_CREATE_COMMAND_RECORDER_0040                            pfnCreateCommandRecorder;
+    PFND3D12DDI_DESTROY_COMMAND_RECORDER_0040                           pfnDestroyCommandRecorder;
+    PFND3D12DDI_COMMAND_RECORDER_SET_COMMAND_POOL_AS_TARGET_0040        pfnCommandRecorderSetCommandPoolAsTarget;
+
+    PFND3D12DDI_CALCPRIVATESCHEDULINGGROUPSIZE_0050                     pfnCalcPrivateSchedulingGroupSize;
+    PFND3D12DDI_CREATESCHEDULINGGROUP_0050                              pfnCreateSchedulingGroup;
+    PFND3D12DDI_DESTROYSCHEDULINGGROUP_0050                             pfnDestroySchedulingGroup;
+
+    PFND3D12DDI_ENUMERATE_META_COMMANDS_0052                            pfnEnumerateMetaCommands;
+    PFND3D12DDI_ENUMERATE_META_COMMAND_PARAMETERS_0052                  pfnEnumerateMetaCommandParameters;
+    PFND3D12DDI_CALC_PRIVATE_META_COMMAND_SIZE_0052                     pfnCalcPrivateMetaCommandSize;
+    PFND3D12DDI_CREATE_META_COMMAND_0052                                pfnCreateMetaCommand;
+    PFND3D12DDI_DESTROY_META_COMMAND_0052                               pfnDestroyMetaCommand;
+    PFND3D12DDI_GET_META_COMMAND_REQUIRED_PARAMETER_INFO_0052           pfnGetMetaCommandRequiredParameterInfo;
+
+    PFND3D12DDI_CALC_PRIVATE_STATE_OBJECT_SIZE_0054                     pfnCalcPrivateStateObjectSize;
+    PFND3D12DDI_CREATE_STATE_OBJECT_0054                                pfnCreateStateObject;
+    PFND3D12DDI_DESTROY_STATE_OBJECT_0054                               pfnDestroyStateObject;
+    PFND3D12DDI_GET_RAYTRACING_ACCELERATION_STRUCTURE_PREBUILD_INFO_0054     pfnGetRaytracingAccelerationStructurePrebuildInfo;
+    PFND3D12DDI_CHECK_DRIVER_MATCHING_IDENTIFIER_0054                   pfnCheckDriverMatchingIdentifier;
+
+    PFND3D12DDI_GET_SHADER_IDENTIFIER_0054                              pfnGetShaderIdentifier;
+    PFND3D12DDI_GET_SHADER_STACK_SIZE_0054                              pfnGetShaderStackSize; 
+    PFND3D12DDI_GET_PIPELINE_STACK_SIZE_0054                            pfnGetPipelineStackSize;
+    PFND3D12DDI_SET_PIPELINE_STACK_SIZE_0054                            pfnSetPipelineStackSize;
+
+    PFND3D12DDI_SET_BACKGROUND_PROCESSING_MODE_0063                     pfnSetBackgroundProcessingMode;
+    PFND3D12DDI_ADD_TO_STATE_OBJECT_0070                                pfnAddToStateObject;
+} D3D12DDI_DEVICE_FUNCS_CORE_0070;
+
+//----------------------------------------------------------------------------------------------------------------------------------
+// D3D12 Release 7, Build rev 1.
+// Added raytracing tier 1.1 cap and shader model 6.5, 6.6 experimental enums
+
+#define D3D12DDI_BUILD_VERSION_0071 1
+#define D3D12DDI_SUPPORTED_0071 ((((UINT64)D3D12DDI_INTERFACE_VERSION_R7) << 32) | (((UINT64)D3D12DDI_BUILD_VERSION_0071) << 16))
+
+//----------------------------------------------------------------------------------------------------------------------------------
+// D3D12 Release 7, Build rev 2.
+// Revised AddToStateObject DDI
+
+#define D3D12DDI_BUILD_VERSION_0072 2
+#define D3D12DDI_SUPPORTED_0072 ((((UINT64)D3D12DDI_INTERFACE_VERSION_R7) << 32) | (((UINT64)D3D12DDI_BUILD_VERSION_0072) << 16))
+
+typedef struct D3D12DDIARG_ADD_TO_STATE_OBJECT_0072
+{
+    D3D12DDI_STATE_OBJECT_TYPE Type;
+    UINT NumSubobjects;
+    _In_reads_(NumSubobjects) const D3D12DDI_STATE_SUBOBJECT_0054* pSubobjects; 
+    D3D12DDI_HSTATEOBJECT_0054 StateObjectToGrowFrom;
+} D3D12DDIARG_ADD_TO_STATE_OBJECT_0072;
+
+typedef HRESULT ( APIENTRY* PFND3D12DDI_ADD_TO_STATE_OBJECT_0072 ) ( D3D12DDI_HDEVICE, _In_ CONST D3D12DDIARG_ADD_TO_STATE_OBJECT_0072*, D3D12DDI_HSTATEOBJECT_0054, D3D12DDI_HRTSTATEOBJECT_0054 );
+typedef SIZE_T ( APIENTRY* PFND3D12DDI_CALC_PRIVATE_ADD_TO_STATE_OBJECT_SIZE_0072 )( D3D12DDI_HDEVICE, _In_ CONST D3D12DDIARG_ADD_TO_STATE_OBJECT_0072* );
+
+typedef struct D3D12DDI_DEVICE_FUNCS_CORE_0072
+{
+    PFND3D12DDI_CHECKFORMATSUPPORT                                      pfnCheckFormatSupport;
+    PFND3D12DDI_CHECKMULTISAMPLEQUALITYLEVELS                           pfnCheckMultisampleQualityLevels;
+    PFND3D12DDI_GETMIPPACKING                                           pfnGetMipPacking;
+
+    PFND3D12DDI_CALCPRIVATEELEMENTLAYOUTSIZE_0010                       pfnCalcPrivateElementLayoutSize;
+    PFND3D12DDI_CREATEELEMENTLAYOUT_0010                                pfnCreateElementLayout;
+    PFND3D12DDI_DESTROYELEMENTLAYOUT                                    pfnDestroyElementLayout;
+
+    PFND3D12DDI_CALCPRIVATEBLENDSTATESIZE_0010                          pfnCalcPrivateBlendStateSize;
+    PFND3D12DDI_CREATEBLENDSTATE_0010                                   pfnCreateBlendState;
+    PFND3D12DDI_DESTROYBLENDSTATE                                       pfnDestroyBlendState;
+
+    PFND3D12DDI_CALCPRIVATEDEPTHSTENCILSTATESIZE_0025                   pfnCalcPrivateDepthStencilStateSize;
+    PFND3D12DDI_CREATEDEPTHSTENCILSTATE_0025                            pfnCreateDepthStencilState;
+    PFND3D12DDI_DESTROYDEPTHSTENCILSTATE                                pfnDestroyDepthStencilState;
+
+    PFND3D12DDI_CALCPRIVATERASTERIZERSTATESIZE_0010                     pfnCalcPrivateRasterizerStateSize;
+    PFND3D12DDI_CREATERASTERIZERSTATE_0010                              pfnCreateRasterizerState;
+    PFND3D12DDI_DESTROYRASTERIZERSTATE                                  pfnDestroyRasterizerState;
+
+    PFND3D12DDI_CALC_PRIVATE_SHADER_SIZE_0026                           pfnCalcPrivateShaderSize;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateVertexShader;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreatePixelShader;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateGeometryShader;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateComputeShader;
+
+    PFND3D12DDI_CALC_PRIVATE_GEOMETRY_SHADER_WITH_STREAM_OUTPUT_0026    pfnCalcPrivateGeometryShaderWithStreamOutput;
+    PFND3D12DDI_CREATE_GEOMETRY_SHADER_WITH_STREAM_OUTPUT_0026          pfnCreateGeometryShaderWithStreamOutput;
+
+    PFND3D12DDI_CALC_PRIVATE_SHADER_SIZE_0026                           pfnCalcPrivateTessellationShaderSize;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateHullShader;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateDomainShader;
+
+    PFND3D12DDI_DESTROYSHADER                                           pfnDestroyShader;
+
+    PFND3D12DDI_CALCPRIVATECOMMANDQUEUESIZE_0050                        pfnCalcPrivateCommandQueueSize;
+    PFND3D12DDI_CREATECOMMANDQUEUE_0050                                 pfnCreateCommandQueue;
+    PFND3D12DDI_DESTROYCOMMANDQUEUE                                     pfnDestroyCommandQueue;
+
+    PFND3D12DDI_CALC_PRIVATE_COMMAND_POOL_SIZE_0040                     pfnCalcPrivateCommandPoolSize;
+    PFND3D12DDI_CREATE_COMMAND_POOL_0040                                pfnCreateCommandPool;
+    PFND3D12DDI_DESTROY_COMMAND_POOL_0040                               pfnDestroyCommandPool;
+    PFND3D12DDI_RESET_COMMAND_POOL_0040                                 pfnResetCommandPool;
+
+    PFND3D12DDI_CALC_PRIVATE_PIPELINE_STATE_SIZE_0033                   pfnCalcPrivatePipelineStateSize;
+    PFND3D12DDI_CREATE_PIPELINE_STATE_0033                              pfnCreatePipelineState;
+    PFND3D12DDI_DESTROY_PIPELINE_STATE                                  pfnDestroyPipelineState;
+
+    PFND3D12DDI_CALC_PRIVATE_COMMAND_LIST_SIZE_0040                     pfnCalcPrivateCommandListSize;
+    PFND3D12DDI_CREATE_COMMAND_LIST_0040                                pfnCreateCommandList;
+    PFND3D12DDI_DESTROYCOMMANDLIST                                      pfnDestroyCommandList;
+
+    PFND3D12DDI_CALCPRIVATEFENCESIZE                                    pfnCalcPrivateFenceSize;
+    PFND3D12DDI_CREATEFENCE                                             pfnCreateFence;
+    PFND3D12DDI_DESTROYFENCE                                            pfnDestroyFence;
+
+    PFND3D12DDI_CALC_PRIVATE_DESCRIPTOR_HEAP_SIZE_0001                  pfnCalcPrivateDescriptorHeapSize;
+    PFND3D12DDI_CREATE_DESCRIPTOR_HEAP_0001                             pfnCreateDescriptorHeap;
+    PFND3D12DDI_DESTROY_DESCRIPTOR_HEAP                                 pfnDestroyDescriptorHeap;
+    PFND3D12DDI_GET_DESCRIPTOR_SIZE_IN_BYTES                            pfnGetDescriptorSizeInBytes;
+    PFND3D12DDI_GET_CPU_DESCRIPTOR_HANDLE_FOR_HEAP_START                pfnGetCPUDescriptorHandleForHeapStart;
+    PFND3D12DDI_GET_GPU_DESCRIPTOR_HANDLE_FOR_HEAP_START                pfnGetGPUDescriptorHandleForHeapStart;
+    PFND3D12DDI_CREATE_SHADER_RESOURCE_VIEW_0002                        pfnCreateShaderResourceView;
+    PFND3D12DDI_CREATE_CONSTANT_BUFFER_VIEW                             pfnCreateConstantBufferView;
+    PFND3D12DDI_CREATE_SAMPLER                                          pfnCreateSampler;
+    PFND3D12DDI_CREATE_UNORDERED_ACCESS_VIEW_0002                       pfnCreateUnorderedAccessView;
+    PFND3D12DDI_CREATE_RENDER_TARGET_VIEW_0002                          pfnCreateRenderTargetView;
+    PFND3D12DDI_CREATE_DEPTH_STENCIL_VIEW                               pfnCreateDepthStencilView;
+    PFND3D12DDI_CALC_PRIVATE_ROOT_SIGNATURE_SIZE_0013                   pfnCalcPrivateRootSignatureSize;
+    PFND3D12DDI_CREATE_ROOT_SIGNATURE_0013                              pfnCreateRootSignature;
+    PFND3D12DDI_DESTROY_ROOT_SIGNATURE                                  pfnDestroyRootSignature;
+
+    PFND3D12DDI_MAPHEAP                                                 pfnMapHeap;
+    PFND3D12DDI_UNMAPHEAP                                               pfnUnmapHeap;
+    PFND3D12DDI_CALCPRIVATEHEAPANDRESOURCESIZES_0030                    pfnCalcPrivateHeapAndResourceSizes;
+    PFND3D12DDI_CREATEHEAPANDRESOURCE_0030                              pfnCreateHeapAndResource;
+    PFND3D12DDI_DESTROYHEAPANDRESOURCE                                  pfnDestroyHeapAndResource;
+
+    PFND3D12DDI_MAKERESIDENT_0001                                       pfnMakeResident;
+    PFND3D12DDI_EVICT2                                                  pfnEvict;
+    PFND3D12DDI_CALCPRIVATEOPENEDHEAPANDRESOURCESIZES_0043              pfnCalcPrivateOpenedHeapAndResourceSizes;
+    PFND3D12DDI_OPENHEAPANDRESOURCE_0043                                pfnOpenHeapAndResource;
+
+    PFND3D12DDI_COPY_DESCRIPTORS_0003                                   pfnCopyDescriptors;
+    PFND3D12DDI_COPY_DESCRIPTORS_SIMPLE_0003                            pfnCopyDescriptorsSimple;
+
+    PFND3D12DDI_CALC_PRIVATE_QUERY_HEAP_SIZE_0001                       pfnCalcPrivateQueryHeapSize;
+    PFND3D12DDI_CREATE_QUERY_HEAP_0001                                  pfnCreateQueryHeap;
+    PFND3D12DDI_DESTROY_QUERY_HEAP                                      pfnDestroyQueryHeap;
+
+    PFND3D12DDI_CALC_PRIVATE_COMMAND_SIGNATURE_SIZE_0001                pfnCalcPrivateCommandSignatureSize;
+    PFND3D12DDI_CREATE_COMMAND_SIGNATURE_0001                           pfnCreateCommandSignature;
+    PFND3D12DDI_DESTROY_COMMAND_SIGNATURE                               pfnDestroyCommandSignature;
+
+    PFND3D12DDI_CHECKRESOURCEVIRTUALADDRESS                             pfnCheckResourceVirtualAddress;
+
+    PFND3D12DDI_CHECKRESOURCEALLOCATIONINFO_0022                        pfnCheckResourceAllocationInfo;
+    PFND3D12DDI_CHECKSUBRESOURCEINFO                                    pfnCheckSubresourceInfo;
+    PFND3D12DDI_CHECKEXISITINGRESOURCEALLOCATIONINFO_0022               pfnCheckExistingResourceAllocationInfo;
+
+    PFND3D12DDI_OFFERRESOURCES                                          pfnOfferResources;
+    PFND3D12DDI_RECLAIMRESOURCES_0001                                   pfnReclaimResources;
+
+    PFND3D12DDI_GETIMPLICITPHYSICALADAPTERMASK                          pfnGetImplicitPhysicalAdapterMask;
+    PFND3D12DDI_GET_PRESENT_PRIVATE_DRIVER_DATA_SIZE                    pfnGetPresentPrivateDriverDataSize;
+    PFND3D12DDI_QUERY_NODE_MAP                                          pfnQueryNodeMap;
+    PFND3D12DDI_RETRIEVE_SHADER_COMMENT_0003                            pfnRetrieveShaderComment;
+
+    PFND3D12DDI_CHECKRESOURCEALLOCATIONHANDLE                           pfnCheckResourceAllocationHandle;
+
+    PFND3D12DDI_CALC_PRIVATE_PIPELINE_LIBRARY_SIZE_0010                 pfnCalcPrivatePipelineLibrarySize;
+    PFND3D12DDI_CREATE_PIPELINE_LIBRARY_0010                            pfnCreatePipelineLibrary;
+    PFND3D12DDI_DESTROY_PIPELINE_LIBRARY_0010                           pfnDestroyPipelineLibrary;
+
+    PFND3D12DDI_ADD_PIPELINE_STATE_TO_LIBRARY_0010                      pfnAddPipelineStateToLibrary;
+    PFND3D12DDI_CALC_SERIALIZED_LIBRARY_SIZE_0010                       pfnCalcSerializedLibrarySize;
+    PFND3D12DDI_SERIALIZE_LIBRARY_0010                                  pfnSerializeLibrary;
+    PFND3D12DDI_GET_DEBUG_ALLOCATION_INFO_0014                          pfnGetDebugAllocationInfo;
+
+    PFND3D12DDI_CALC_PRIVATE_COMMAND_RECORDER_SIZE_0040                 pfnCalcPrivateCommandRecorderSize;
+    PFND3D12DDI_CREATE_COMMAND_RECORDER_0040                            pfnCreateCommandRecorder;
+    PFND3D12DDI_DESTROY_COMMAND_RECORDER_0040                           pfnDestroyCommandRecorder;
+    PFND3D12DDI_COMMAND_RECORDER_SET_COMMAND_POOL_AS_TARGET_0040        pfnCommandRecorderSetCommandPoolAsTarget;
+
+    PFND3D12DDI_CALCPRIVATESCHEDULINGGROUPSIZE_0050                     pfnCalcPrivateSchedulingGroupSize;
+    PFND3D12DDI_CREATESCHEDULINGGROUP_0050                              pfnCreateSchedulingGroup;
+    PFND3D12DDI_DESTROYSCHEDULINGGROUP_0050                             pfnDestroySchedulingGroup;
+
+    PFND3D12DDI_ENUMERATE_META_COMMANDS_0052                            pfnEnumerateMetaCommands;
+    PFND3D12DDI_ENUMERATE_META_COMMAND_PARAMETERS_0052                  pfnEnumerateMetaCommandParameters;
+    PFND3D12DDI_CALC_PRIVATE_META_COMMAND_SIZE_0052                     pfnCalcPrivateMetaCommandSize;
+    PFND3D12DDI_CREATE_META_COMMAND_0052                                pfnCreateMetaCommand;
+    PFND3D12DDI_DESTROY_META_COMMAND_0052                               pfnDestroyMetaCommand;
+    PFND3D12DDI_GET_META_COMMAND_REQUIRED_PARAMETER_INFO_0052           pfnGetMetaCommandRequiredParameterInfo;
+
+    PFND3D12DDI_CALC_PRIVATE_STATE_OBJECT_SIZE_0054                     pfnCalcPrivateStateObjectSize;
+    PFND3D12DDI_CREATE_STATE_OBJECT_0054                                pfnCreateStateObject;
+    PFND3D12DDI_DESTROY_STATE_OBJECT_0054                               pfnDestroyStateObject;
+    PFND3D12DDI_GET_RAYTRACING_ACCELERATION_STRUCTURE_PREBUILD_INFO_0054     pfnGetRaytracingAccelerationStructurePrebuildInfo;
+    PFND3D12DDI_CHECK_DRIVER_MATCHING_IDENTIFIER_0054                   pfnCheckDriverMatchingIdentifier;
+
+    PFND3D12DDI_GET_SHADER_IDENTIFIER_0054                              pfnGetShaderIdentifier;
+    PFND3D12DDI_GET_SHADER_STACK_SIZE_0054                              pfnGetShaderStackSize; 
+    PFND3D12DDI_GET_PIPELINE_STACK_SIZE_0054                            pfnGetPipelineStackSize;
+    PFND3D12DDI_SET_PIPELINE_STACK_SIZE_0054                            pfnSetPipelineStackSize;
+
+    PFND3D12DDI_SET_BACKGROUND_PROCESSING_MODE_0063                     pfnSetBackgroundProcessingMode;
+    PFND3D12DDI_CALC_PRIVATE_ADD_TO_STATE_OBJECT_SIZE_0072              pfnCalcPrivateAddToStateObjectSize;
+    PFND3D12DDI_ADD_TO_STATE_OBJECT_0072                                pfnAddToStateObject;
+} D3D12DDI_DEVICE_FUNCS_CORE_0072;
+
+//----------------------------------------------------------------------------------------------------------------------------------
+// D3D12 Release 7, Build rev 3.
+// Added sampler feedback DDI
+
+#define D3D12DDI_BUILD_VERSION_0073 3
+#define D3D12DDI_SUPPORTED_0073 ((((UINT64)D3D12DDI_INTERFACE_VERSION_R7) << 32) | (((UINT64)D3D12DDI_BUILD_VERSION_0073) << 16))
+
+typedef enum D3D12DDI_MESH_SHADER_TIER
+{
+    D3D12DDI_MESH_SHADER_TIER_NOT_SUPPORTED = 0,
+    D3D12DDI_MESH_SHADER_TIER_1 = 10,
+} D3D12DDI_MESH_SHADER_TIER;
+
+typedef enum D3D12DDI_SAMPLER_FEEDBACK_TIER
+{    
+    D3D12DDI_SAMPLER_FEEDBACK_TIER_NOT_SUPPORTED = 0,
+    D3D12DDI_SAMPLER_FEEDBACK_TIER_0_9 = 90,
+    D3D12DDI_SAMPLER_FEEDBACK_TIER_1_0 = 100
+} D3D12DDI_SAMPLER_FEEDBACK_TIER;
+
+// D3D12DDICAPS_TYPE_D3D12_OPTIONS
+typedef struct D3D12DDI_D3D12_OPTIONS_DATA_0073
+{
+    D3D12DDI_RESOURCE_BINDING_TIER ResourceBindingTier;
+    D3D12DDI_CONSERVATIVE_RASTERIZATION_TIER ConservativeRasterizationTier;
+    D3D12DDI_TILED_RESOURCES_TIER TiledResourcesTier;
+    D3D12DDI_CROSS_NODE_SHARING_TIER CrossNodeSharingTier;
+    BOOL VPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation;
+    BOOL OutputMergerLogicOp;
+    D3D12DDI_RESOURCE_HEAP_TIER ResourceHeapTier;
+    BOOL DepthBoundsTestSupported;
+    D3D12DDI_PROGRAMMABLE_SAMPLE_POSITIONS_TIER ProgrammableSamplePositionsTier;
+    BOOL CopyQueueTimestampQueriesSupported;
+    D3D12DDI_COMMAND_QUEUE_FLAGS WriteBufferImmediateQueueFlags;
+    D3D12DDI_VIEW_INSTANCING_TIER ViewInstancingTier;
+    BOOL BarycentricsSupported;
+    BOOL ReservedBufferPlacementSupported; // Actually just 64KB aligned MSAA support
+    BOOL Deterministic64KBUndefinedSwizzle;
+    BOOL SRVOnlyTiledResourceTier3;
+    D3D12DDI_RENDER_PASS_TIER RenderPassTier;
+    D3D12DDI_RAYTRACING_TIER RaytracingTier;
+    D3D12DDI_VARIABLE_SHADING_RATE_TIER VariableShadingRateTier;
+    BOOL PerPrimitiveShadingRateSupportedWithViewportIndexing; 
+    BOOL AdditionalShadingRatesSupported;
+    UINT ShadingRateImageTileSize;
+    BOOL BackgroundProcessingSupported;
+    D3D12DDI_MESH_SHADER_TIER MeshShaderTier;
+    D3D12DDI_SAMPLER_FEEDBACK_TIER SamplerFeedbackTier;
+} D3D12DDI_D3D12_OPTIONS_DATA_0073;
+
+typedef struct D3D12DDI_LOD_REGION_0073
+{
+    UINT Width;
+    UINT Height;
+} D3D12DDI_LOD_REGION_0073;
+
+typedef enum D3D12DDI_SAMPLER_FEEDBACK_TYPE_0073
+{
+    D3D12DDI_SHADING_RATE_COMBINER_0073_MINLOD = 0,
+    D3D12DDI_SHADING_RATE_COMBINER_0073_TILED = 1
+} D3D12DDI_SAMPLER_FEEDBACK_TYPE_0073;
+
+typedef struct D3D12DDI_SAMPLER_FEEDBACK_DESC_0073
+{
+    D3D12DDI_SAMPLER_FEEDBACK_TYPE_0073 Type;
+    D3D12DDI_LOD_REGION_0073 LODRegion;  
+} D3D12DDI_SAMPLER_FEEDBACK_DESC_0073;
+
+typedef struct D3D12DDI_SAMPLER_FEEDBACK_TARGETED_RESOURCE_0073
+{
+    UINT64 Width;
+    UINT64 Height;
+    UINT16 DepthOrArraySize;
+    UINT16 MipLevels;
+} D3D12DDI_SAMPLER_FEEDBACK_TARGETED_RESOURCE_0073;
+
+typedef struct D3D12DDI_SAMPLER_FEEDBACK_MAP_SIZE_0073
+{
+    UINT64 Width;
+    UINT64 Height;
+} D3D12DDI_SAMPLER_FEEDBACK_MAP_SIZE_0073;
+
+typedef struct D3D12DDICAPS_SAMPLER_FEEDBACK_CAPS_0073
+{
+    // Inputs:
+    D3D12DDI_SAMPLER_FEEDBACK_DESC_0073 Desc;
+    D3D12DDI_SAMPLER_FEEDBACK_TARGETED_RESOURCE_0073 TargetedResource;
+
+    // Outputs:
+    D3D12DDI_SAMPLER_FEEDBACK_MAP_SIZE_0073 FeedbackMapSize;
+
+} D3D12DDICAPS_SAMPLER_FEEDBACK_CAPS_0073;
+
+typedef struct D3D12DDIARG_CREATERESOURCE_0073
+{
+    D3D12DDIARG_BUFFER_PLACEMENT    ReuseBufferGPUVA;
+    D3D12DDI_RESOURCE_TYPE          ResourceType;
+    UINT64                          Width; // Virtual coords
+    UINT                            Height; // Virtual coords
+    UINT16                          DepthOrArraySize; 
+    UINT16                          MipLevels;
+    DXGI_FORMAT                     Format; 
+    DXGI_SAMPLE_DESC                SampleDesc;
+    D3D12DDI_TEXTURE_LAYOUT         Layout; // See standard swizzle spec
+    D3D12DDI_RESOURCE_FLAGS_0003    Flags;
+    D3D12DDI_RESOURCE_STATES        InitialResourceState;
+
+    // When Layout = D3D12DDI_TL_ROW_MAJOR and pRowMajorLayout is non-null
+    // then *pRowMajorLayout specifies the layout of the resource
+    CONST D3D12DDIARG_ROW_MAJOR_RESOURCE_LAYOUT* pRowMajorLayout;
+
+    D3D12DDI_SAMPLER_FEEDBACK_DESC_0073 SamplerFeedbackDesc;
+} D3D12DDIARG_CREATERESOURCE_0073;
+
+typedef HRESULT ( APIENTRY* PFND3D12DDI_CREATEHEAPANDRESOURCE_0073 )( 
+    D3D12DDI_HDEVICE, _In_opt_ CONST D3D12DDIARG_CREATEHEAP_0001*, D3D12DDI_HHEAP, D3D12DDI_HRTRESOURCE,
+    _In_opt_ CONST D3D12DDIARG_CREATERESOURCE_0073*, _In_opt_ CONST D3D12DDI_CLEAR_VALUES*, 
+    D3D12DDI_HPROTECTEDRESOURCESESSION_0030, D3D12DDI_HRESOURCE );
+    
+typedef D3D12DDI_HEAP_AND_RESOURCE_SIZES ( APIENTRY* PFND3D12DDI_CALCPRIVATEHEAPANDRESOURCESIZES_0073 )(
+     D3D12DDI_HDEVICE, _In_opt_ CONST D3D12DDIARG_CREATEHEAP_0001*, _In_opt_ CONST D3D12DDIARG_CREATERESOURCE_0073*,
+     D3D12DDI_HPROTECTEDRESOURCESESSION_0030 );
+
+typedef HRESULT ( APIENTRY* PFND3D12DDI_CREATE_SAMPLER_FEEDBACK_UNORDERED_ACCESS_VIEW_0073 ) (
+    _In_ D3D12DDI_HDEVICE hDrvDevice,
+    _In_ D3D12DDI_HRESOURCE hDrvTargetedResource,
+    _In_ D3D12DDI_HRESOURCE hDrvFeedbackResource,
+    _In_ D3D12DDI_CPU_DESCRIPTOR_HANDLE DestDescriptor );
+
+typedef VOID ( APIENTRY* PFND3D12DDI_CHECKRESOURCEALLOCATIONINFO_0073 )(
+    D3D12DDI_HDEVICE, _In_ CONST D3D12DDIARG_CREATERESOURCE_0073*, D3D12DDI_RESOURCE_OPTIMIZATION_FLAGS,
+    UINT32 AlignmentRestriction, UINT VisibleNodeMask, _Out_ D3D12DDI_RESOURCE_ALLOCATION_INFO_0022* );
+
+typedef struct D3D12DDI_DEVICE_FUNCS_CORE_0073
+{
+    PFND3D12DDI_CHECKFORMATSUPPORT                                      pfnCheckFormatSupport;
+    PFND3D12DDI_CHECKMULTISAMPLEQUALITYLEVELS                           pfnCheckMultisampleQualityLevels;
+    PFND3D12DDI_GETMIPPACKING                                           pfnGetMipPacking;
+
+    PFND3D12DDI_CALCPRIVATEELEMENTLAYOUTSIZE_0010                       pfnCalcPrivateElementLayoutSize;
+    PFND3D12DDI_CREATEELEMENTLAYOUT_0010                                pfnCreateElementLayout;
+    PFND3D12DDI_DESTROYELEMENTLAYOUT                                    pfnDestroyElementLayout;
+
+    PFND3D12DDI_CALCPRIVATEBLENDSTATESIZE_0010                          pfnCalcPrivateBlendStateSize;
+    PFND3D12DDI_CREATEBLENDSTATE_0010                                   pfnCreateBlendState;
+    PFND3D12DDI_DESTROYBLENDSTATE                                       pfnDestroyBlendState;
+
+    PFND3D12DDI_CALCPRIVATEDEPTHSTENCILSTATESIZE_0025                   pfnCalcPrivateDepthStencilStateSize;
+    PFND3D12DDI_CREATEDEPTHSTENCILSTATE_0025                            pfnCreateDepthStencilState;
+    PFND3D12DDI_DESTROYDEPTHSTENCILSTATE                                pfnDestroyDepthStencilState;
+
+    PFND3D12DDI_CALCPRIVATERASTERIZERSTATESIZE_0010                     pfnCalcPrivateRasterizerStateSize;
+    PFND3D12DDI_CREATERASTERIZERSTATE_0010                              pfnCreateRasterizerState;
+    PFND3D12DDI_DESTROYRASTERIZERSTATE                                  pfnDestroyRasterizerState;
+
+    PFND3D12DDI_CALC_PRIVATE_SHADER_SIZE_0026                           pfnCalcPrivateShaderSize;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateVertexShader;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreatePixelShader;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateGeometryShader;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateComputeShader;
+
+    PFND3D12DDI_CALC_PRIVATE_GEOMETRY_SHADER_WITH_STREAM_OUTPUT_0026    pfnCalcPrivateGeometryShaderWithStreamOutput;
+    PFND3D12DDI_CREATE_GEOMETRY_SHADER_WITH_STREAM_OUTPUT_0026          pfnCreateGeometryShaderWithStreamOutput;
+
+    PFND3D12DDI_CALC_PRIVATE_SHADER_SIZE_0026                           pfnCalcPrivateTessellationShaderSize;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateHullShader;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateDomainShader;
+
+    PFND3D12DDI_DESTROYSHADER                                           pfnDestroyShader;
+
+    PFND3D12DDI_CALCPRIVATECOMMANDQUEUESIZE_0050                        pfnCalcPrivateCommandQueueSize;
+    PFND3D12DDI_CREATECOMMANDQUEUE_0050                                 pfnCreateCommandQueue;
+    PFND3D12DDI_DESTROYCOMMANDQUEUE                                     pfnDestroyCommandQueue;
+
+    PFND3D12DDI_CALC_PRIVATE_COMMAND_POOL_SIZE_0040                     pfnCalcPrivateCommandPoolSize;
+    PFND3D12DDI_CREATE_COMMAND_POOL_0040                                pfnCreateCommandPool;
+    PFND3D12DDI_DESTROY_COMMAND_POOL_0040                               pfnDestroyCommandPool;
+    PFND3D12DDI_RESET_COMMAND_POOL_0040                                 pfnResetCommandPool;
+
+    PFND3D12DDI_CALC_PRIVATE_PIPELINE_STATE_SIZE_0033                   pfnCalcPrivatePipelineStateSize;
+    PFND3D12DDI_CREATE_PIPELINE_STATE_0033                              pfnCreatePipelineState;
+    PFND3D12DDI_DESTROY_PIPELINE_STATE                                  pfnDestroyPipelineState;
+
+    PFND3D12DDI_CALC_PRIVATE_COMMAND_LIST_SIZE_0040                     pfnCalcPrivateCommandListSize;
+    PFND3D12DDI_CREATE_COMMAND_LIST_0040                                pfnCreateCommandList;
+    PFND3D12DDI_DESTROYCOMMANDLIST                                      pfnDestroyCommandList;
+
+    PFND3D12DDI_CALCPRIVATEFENCESIZE                                    pfnCalcPrivateFenceSize;
+    PFND3D12DDI_CREATEFENCE                                             pfnCreateFence;
+    PFND3D12DDI_DESTROYFENCE                                            pfnDestroyFence;
+
+    PFND3D12DDI_CALC_PRIVATE_DESCRIPTOR_HEAP_SIZE_0001                  pfnCalcPrivateDescriptorHeapSize;
+    PFND3D12DDI_CREATE_DESCRIPTOR_HEAP_0001                             pfnCreateDescriptorHeap;
+    PFND3D12DDI_DESTROY_DESCRIPTOR_HEAP                                 pfnDestroyDescriptorHeap;
+    PFND3D12DDI_GET_DESCRIPTOR_SIZE_IN_BYTES                            pfnGetDescriptorSizeInBytes;
+    PFND3D12DDI_GET_CPU_DESCRIPTOR_HANDLE_FOR_HEAP_START                pfnGetCPUDescriptorHandleForHeapStart;
+    PFND3D12DDI_GET_GPU_DESCRIPTOR_HANDLE_FOR_HEAP_START                pfnGetGPUDescriptorHandleForHeapStart;
+    PFND3D12DDI_CREATE_SHADER_RESOURCE_VIEW_0002                        pfnCreateShaderResourceView;
+    PFND3D12DDI_CREATE_CONSTANT_BUFFER_VIEW                             pfnCreateConstantBufferView;
+    PFND3D12DDI_CREATE_SAMPLER                                          pfnCreateSampler;
+    PFND3D12DDI_CREATE_UNORDERED_ACCESS_VIEW_0002                       pfnCreateUnorderedAccessView;
+    PFND3D12DDI_CREATE_RENDER_TARGET_VIEW_0002                          pfnCreateRenderTargetView;
+    PFND3D12DDI_CREATE_DEPTH_STENCIL_VIEW                               pfnCreateDepthStencilView;
+    PFND3D12DDI_CALC_PRIVATE_ROOT_SIGNATURE_SIZE_0013                   pfnCalcPrivateRootSignatureSize;
+    PFND3D12DDI_CREATE_ROOT_SIGNATURE_0013                              pfnCreateRootSignature;
+    PFND3D12DDI_DESTROY_ROOT_SIGNATURE                                  pfnDestroyRootSignature;
+
+    PFND3D12DDI_MAPHEAP                                                 pfnMapHeap;
+    PFND3D12DDI_UNMAPHEAP                                               pfnUnmapHeap;
+
+    PFND3D12DDI_CALCPRIVATEHEAPANDRESOURCESIZES_0073                    pfnCalcPrivateHeapAndResourceSizes;
+    PFND3D12DDI_CREATEHEAPANDRESOURCE_0073                              pfnCreateHeapAndResource;
+
+    PFND3D12DDI_DESTROYHEAPANDRESOURCE                                  pfnDestroyHeapAndResource;
+
+    PFND3D12DDI_MAKERESIDENT_0001                                       pfnMakeResident;
+    PFND3D12DDI_EVICT2                                                  pfnEvict;
+    PFND3D12DDI_CALCPRIVATEOPENEDHEAPANDRESOURCESIZES_0043              pfnCalcPrivateOpenedHeapAndResourceSizes;
+    PFND3D12DDI_OPENHEAPANDRESOURCE_0043                                pfnOpenHeapAndResource;
+
+    PFND3D12DDI_COPY_DESCRIPTORS_0003                                   pfnCopyDescriptors;
+    PFND3D12DDI_COPY_DESCRIPTORS_SIMPLE_0003                            pfnCopyDescriptorsSimple;
+
+    PFND3D12DDI_CALC_PRIVATE_QUERY_HEAP_SIZE_0001                       pfnCalcPrivateQueryHeapSize;
+    PFND3D12DDI_CREATE_QUERY_HEAP_0001                                  pfnCreateQueryHeap;
+    PFND3D12DDI_DESTROY_QUERY_HEAP                                      pfnDestroyQueryHeap;
+
+    PFND3D12DDI_CALC_PRIVATE_COMMAND_SIGNATURE_SIZE_0001                pfnCalcPrivateCommandSignatureSize;
+    PFND3D12DDI_CREATE_COMMAND_SIGNATURE_0001                           pfnCreateCommandSignature;
+    PFND3D12DDI_DESTROY_COMMAND_SIGNATURE                               pfnDestroyCommandSignature;
+
+    PFND3D12DDI_CHECKRESOURCEVIRTUALADDRESS                             pfnCheckResourceVirtualAddress;
+
+    PFND3D12DDI_CHECKRESOURCEALLOCATIONINFO_0073                        pfnCheckResourceAllocationInfo;
+    PFND3D12DDI_CHECKSUBRESOURCEINFO                                    pfnCheckSubresourceInfo;
+    PFND3D12DDI_CHECKEXISITINGRESOURCEALLOCATIONINFO_0022               pfnCheckExistingResourceAllocationInfo;
+
+    PFND3D12DDI_OFFERRESOURCES                                          pfnOfferResources;
+    PFND3D12DDI_RECLAIMRESOURCES_0001                                   pfnReclaimResources;
+
+    PFND3D12DDI_GETIMPLICITPHYSICALADAPTERMASK                          pfnGetImplicitPhysicalAdapterMask;
+    PFND3D12DDI_GET_PRESENT_PRIVATE_DRIVER_DATA_SIZE                    pfnGetPresentPrivateDriverDataSize;
+    PFND3D12DDI_QUERY_NODE_MAP                                          pfnQueryNodeMap;
+    PFND3D12DDI_RETRIEVE_SHADER_COMMENT_0003                            pfnRetrieveShaderComment;
+
+    PFND3D12DDI_CHECKRESOURCEALLOCATIONHANDLE                           pfnCheckResourceAllocationHandle;
+
+    PFND3D12DDI_CALC_PRIVATE_PIPELINE_LIBRARY_SIZE_0010                 pfnCalcPrivatePipelineLibrarySize;
+    PFND3D12DDI_CREATE_PIPELINE_LIBRARY_0010                            pfnCreatePipelineLibrary;
+    PFND3D12DDI_DESTROY_PIPELINE_LIBRARY_0010                           pfnDestroyPipelineLibrary;
+
+    PFND3D12DDI_ADD_PIPELINE_STATE_TO_LIBRARY_0010                      pfnAddPipelineStateToLibrary;
+    PFND3D12DDI_CALC_SERIALIZED_LIBRARY_SIZE_0010                       pfnCalcSerializedLibrarySize;
+    PFND3D12DDI_SERIALIZE_LIBRARY_0010                                  pfnSerializeLibrary;
+    PFND3D12DDI_GET_DEBUG_ALLOCATION_INFO_0014                          pfnGetDebugAllocationInfo;
+
+    PFND3D12DDI_CALC_PRIVATE_COMMAND_RECORDER_SIZE_0040                 pfnCalcPrivateCommandRecorderSize;
+    PFND3D12DDI_CREATE_COMMAND_RECORDER_0040                            pfnCreateCommandRecorder;
+    PFND3D12DDI_DESTROY_COMMAND_RECORDER_0040                           pfnDestroyCommandRecorder;
+    PFND3D12DDI_COMMAND_RECORDER_SET_COMMAND_POOL_AS_TARGET_0040        pfnCommandRecorderSetCommandPoolAsTarget;
+
+    PFND3D12DDI_CALCPRIVATESCHEDULINGGROUPSIZE_0050                     pfnCalcPrivateSchedulingGroupSize;
+    PFND3D12DDI_CREATESCHEDULINGGROUP_0050                              pfnCreateSchedulingGroup;
+    PFND3D12DDI_DESTROYSCHEDULINGGROUP_0050                             pfnDestroySchedulingGroup;
+
+    PFND3D12DDI_ENUMERATE_META_COMMANDS_0052                            pfnEnumerateMetaCommands;
+    PFND3D12DDI_ENUMERATE_META_COMMAND_PARAMETERS_0052                  pfnEnumerateMetaCommandParameters;
+    PFND3D12DDI_CALC_PRIVATE_META_COMMAND_SIZE_0052                     pfnCalcPrivateMetaCommandSize;
+    PFND3D12DDI_CREATE_META_COMMAND_0052                                pfnCreateMetaCommand;
+    PFND3D12DDI_DESTROY_META_COMMAND_0052                               pfnDestroyMetaCommand;
+    PFND3D12DDI_GET_META_COMMAND_REQUIRED_PARAMETER_INFO_0052           pfnGetMetaCommandRequiredParameterInfo;
+
+    PFND3D12DDI_CALC_PRIVATE_STATE_OBJECT_SIZE_0054                     pfnCalcPrivateStateObjectSize;
+    PFND3D12DDI_CREATE_STATE_OBJECT_0054                                pfnCreateStateObject;
+    PFND3D12DDI_DESTROY_STATE_OBJECT_0054                               pfnDestroyStateObject;
+    PFND3D12DDI_GET_RAYTRACING_ACCELERATION_STRUCTURE_PREBUILD_INFO_0054     pfnGetRaytracingAccelerationStructurePrebuildInfo;
+    PFND3D12DDI_CHECK_DRIVER_MATCHING_IDENTIFIER_0054                   pfnCheckDriverMatchingIdentifier;
+
+    PFND3D12DDI_GET_SHADER_IDENTIFIER_0054                              pfnGetShaderIdentifier;
+    PFND3D12DDI_GET_SHADER_STACK_SIZE_0054                              pfnGetShaderStackSize; 
+    PFND3D12DDI_GET_PIPELINE_STACK_SIZE_0054                            pfnGetPipelineStackSize;
+    PFND3D12DDI_SET_PIPELINE_STACK_SIZE_0054                            pfnSetPipelineStackSize;
+
+    PFND3D12DDI_SET_BACKGROUND_PROCESSING_MODE_0063                     pfnSetBackgroundProcessingMode;
+
+    PFND3D12DDI_CALC_PRIVATE_ADD_TO_STATE_OBJECT_SIZE_0072              pfnCalcPrivateAddToStateObjectSize;
+    PFND3D12DDI_ADD_TO_STATE_OBJECT_0072                                pfnAddToStateObject;
+
+    PFND3D12DDI_CREATE_SAMPLER_FEEDBACK_UNORDERED_ACCESS_VIEW_0073      pfnCreateSamplerFeedbackUnorderedAccessView;
+} D3D12DDI_DEVICE_FUNCS_CORE_0073;
+
+//----------------------------------------------------------------------------------------------------------------------------------
+// D3D12 Release 7, Build rev 4.
+// Added mesh shader DDI 
+
+#define D3D12DDI_BUILD_VERSION_0074 4
+#define D3D12DDI_SUPPORTED_0074 ((((UINT64)D3D12DDI_INTERFACE_VERSION_R7) << 32) | (((UINT64)D3D12DDI_BUILD_VERSION_0074) << 16))
+
+typedef VOID ( APIENTRY* PFND3D12DDI_DISPATCH_MESH_0074 )(
+    D3D12DDI_HCOMMANDLIST, UINT, UINT, UINT );
+
+typedef struct D3D12DDI_COMMAND_LIST_FUNCS_3D_0074
+{
+    PFND3D12DDI_CLOSECOMMANDLIST                            pfnCloseCommandList;
+    PFND3D12DDI_RESETCOMMANDLIST_0040                       pfnResetCommandList;
+
+    PFND3D12DDI_DRAWINSTANCED                               pfnDrawInstanced;
+    PFND3D12DDI_DRAWINDEXEDINSTANCED                        pfnDrawIndexedInstanced;
+    PFND3D12DDI_DISPATCH                                    pfnDispatch;
+    PFND3D12DDI_CLEAR_UNORDERED_ACCESS_VIEW_UINT_0003       pfnClearUnorderedAccessViewUint;
+    PFND3D12DDI_CLEAR_UNORDERED_ACCESS_VIEW_FLOAT_0003      pfnClearUnorderedAccessViewFloat;
+    PFND3D12DDI_CLEAR_RENDER_TARGET_VIEW_0003               pfnClearRenderTargetView;
+    PFND3D12DDI_CLEAR_DEPTH_STENCIL_VIEW_0003               pfnClearDepthStencilView;
+    PFND3D12DDI_DISCARD_RESOURCE_0003                       pfnDiscardResource;
+    PFND3D12DDI_COPYTEXTUREREGION_0003                      pfnCopyTextureRegion;
+    PFND3D12DDI_RESOURCECOPY                                pfnResourceCopy;
+    PFND3D12DDI_COPYTILES                                   pfnCopyTiles;
+    PFND3D12DDI_COPYBUFFERREGION_0003                       pfnCopyBufferRegion;
+    PFND3D12DDI_RESOURCERESOLVESUBRESOURCE                  pfnResourceResolveSubresource;
+    PFND3D12DDI_EXECUTE_BUNDLE                              pfnExecuteBundle;
+    PFND3D12DDI_EXECUTE_INDIRECT                            pfnExecuteIndirect;
+    PFND3D12DDI_RESOURCEBARRIER_0022                        pfnResourceBarrier;
+    PFND3D12DDI_BLT                                         pfnBlt;
+    PFND3D12DDI_PRESENT_0051                                pfnPresent;
+    PFND3D12DDI_BEGIN_END_QUERY_0003                        pfnBeginQuery;
+    PFND3D12DDI_BEGIN_END_QUERY_0003                        pfnEndQuery;
+    PFND3D12DDI_RESOLVE_QUERY_DATA                          pfnResolveQueryData;
+    PFND3D12DDI_SET_PREDICATION                             pfnSetPredication;
+
+    PFND3D12DDI_IA_SETTOPOLOGY_0003                         pfnIaSetTopology;
+    PFND3D12DDI_RS_SETVIEWPORTS_0003                        pfnRsSetViewports;
+    PFND3D12DDI_RS_SETSCISSORRECTS_0003                     pfnRsSetScissorRects;
+    PFND3D12DDI_OM_SETBLENDFACTOR                           pfnOmSetBlendFactor;
+    PFND3D12DDI_OM_SETSTENCILREF                            pfnOmSetStencilRef;
+    PFND3D12DDI_SET_PIPELINE_STATE                          pfnSetPipelineState;
+
+    PFND3D12DDI_SET_DESCRIPTOR_HEAPS_0003                   pfnSetDescriptorHeaps;
+    PFND3D12DDI_SET_ROOT_SIGNATURE                          pfnSetComputeRootSignature;
+    PFND3D12DDI_SET_ROOT_SIGNATURE                          pfnSetGraphicsRootSignature;
+    PFND3D12DDI_SET_ROOT_DESCRIPTOR_TABLE                   pfnSetComputeRootDescriptorTable;
+    PFND3D12DDI_SET_ROOT_DESCRIPTOR_TABLE                   pfnSetGraphicsRootDescriptorTable;
+    PFND3D12DDI_SET_ROOT_32BIT_CONSTANT                     pfnSetComputeRoot32BitConstant;
+    PFND3D12DDI_SET_ROOT_32BIT_CONSTANT                     pfnSetGraphicsRoot32BitConstant;
+    PFND3D12DDI_SET_ROOT_32BIT_CONSTANTS_0003               pfnSetComputeRoot32BitConstants;
+    PFND3D12DDI_SET_ROOT_32BIT_CONSTANTS_0003               pfnSetGraphicsRoot32BitConstants;
+    PFND3D12DDI_SET_ROOT_BUFFER_VIEW                        pfnSetComputeRootConstantBufferView;
+    PFND3D12DDI_SET_ROOT_BUFFER_VIEW                        pfnSetGraphicsRootConstantBufferView;
+    PFND3D12DDI_SET_ROOT_BUFFER_VIEW                        pfnSetComputeRootShaderResourceView;
+    PFND3D12DDI_SET_ROOT_BUFFER_VIEW                        pfnSetGraphicsRootShaderResourceView;
+    PFND3D12DDI_SET_ROOT_BUFFER_VIEW                        pfnSetComputeRootUnorderedAccessView;
+    PFND3D12DDI_SET_ROOT_BUFFER_VIEW                        pfnSetGraphicsRootUnorderedAccessView;
+
+    PFND3D12DDI_IA_SET_INDEX_BUFFER                         pfnIASetIndexBuffer;
+    PFND3D12DDI_IA_SET_VERTEX_BUFFERS_0003                  pfnIASetVertexBuffers;
+    PFND3D12DDI_SO_SET_TARGETS_0003                         pfnSOSetTargets;
+    PFND3D12DDI_OM_SET_RENDER_TARGETS_0003                  pfnOMSetRenderTargets;
+    PFND3D12DDI_SET_MARKER                                  pfnSetMarker;
+
+    PFND3D12DDI_CLEAR_ROOT_ARGUMENTS                        pfnClearRootArguments;
+    PFND3D12DDI_COPYBUFFERREGION_0003                       pfnAtomicCopyBufferRegion;
+    PFND3D12DDI_OM_SETDEPTHBOUNDS_0025                      pfnOMSetDepthBounds;
+    PFND3D12DDI_SETSAMPLEPOSITIONS_0027                     pfnSetSamplePositions;
+    PFND3D12DDI_RESOURCERESOLVESUBRESOURCEREGION_0027       pfnResourceResolveSubresourceRegion;
+    PFND3D12DDI_SETPROTECTEDRESOURCESESSION_0030            pfnSetProtectedResourceSession;
+    PFND3D12DDI_WRITEBUFFERIMMEDIATE_0032                   pfnWriteBufferImmediate;
+    PFND3D12DDI_SETVIEWINSTANCEMASK_0033                    pfnSetViewInstanceMask;
+    PFND3D12DDI_INITIALIZE_META_COMMAND_0052                pfnInitializeMetaCommand;
+    PFND3D12DDI_EXECUTE_META_COMMAND_0052                   pfnExecuteMetaCommand;
+
+    PFND3D12DDI_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_0054  pfnBuildRaytracingAccelerationStructure;
+    PFND3D12DDI_EMIT_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_0054  pfnEmitRaytracingAccelerationStructurePostbuildInfo;
+    PFND3D12DDI_COPY_RAYTRACING_ACCELERATION_STRUCTURE_0054   pfnCopyRaytracingAccelerationStructure;
+    PFND3D12DDI_SET_PIPELINE_STATE1_0054                    pfnSetPipelineState1;
+    PFND3D12DDI_DISPATCH_RAYS_0054                          pfnDispatchRays;
+    PFND3D12DDI_RS_SET_SHADING_RATE_0062                    pfnRSSetShadingRate;
+    PFND3D12DDI_RS_SET_SHADING_RATE_IMAGE_0062              pfnRSSetShadingRateImage;
+    PFND3D12DDI_DISPATCH_MESH_0074                          pfnDispatchMesh;
+} D3D12DDI_COMMAND_LIST_FUNCS_3D_0074;
+
+typedef struct D3D12DDI_DEVICE_FUNCS_CORE_0074
+{
+    PFND3D12DDI_CHECKFORMATSUPPORT                                      pfnCheckFormatSupport;
+    PFND3D12DDI_CHECKMULTISAMPLEQUALITYLEVELS                           pfnCheckMultisampleQualityLevels;
+    PFND3D12DDI_GETMIPPACKING                                           pfnGetMipPacking;
+
+    PFND3D12DDI_CALCPRIVATEELEMENTLAYOUTSIZE_0010                       pfnCalcPrivateElementLayoutSize;
+    PFND3D12DDI_CREATEELEMENTLAYOUT_0010                                pfnCreateElementLayout;
+    PFND3D12DDI_DESTROYELEMENTLAYOUT                                    pfnDestroyElementLayout;
+
+    PFND3D12DDI_CALCPRIVATEBLENDSTATESIZE_0010                          pfnCalcPrivateBlendStateSize;
+    PFND3D12DDI_CREATEBLENDSTATE_0010                                   pfnCreateBlendState;
+    PFND3D12DDI_DESTROYBLENDSTATE                                       pfnDestroyBlendState;
+
+    PFND3D12DDI_CALCPRIVATEDEPTHSTENCILSTATESIZE_0025                   pfnCalcPrivateDepthStencilStateSize;
+    PFND3D12DDI_CREATEDEPTHSTENCILSTATE_0025                            pfnCreateDepthStencilState;
+    PFND3D12DDI_DESTROYDEPTHSTENCILSTATE                                pfnDestroyDepthStencilState;
+
+    PFND3D12DDI_CALCPRIVATERASTERIZERSTATESIZE_0010                     pfnCalcPrivateRasterizerStateSize;
+    PFND3D12DDI_CREATERASTERIZERSTATE_0010                              pfnCreateRasterizerState;
+    PFND3D12DDI_DESTROYRASTERIZERSTATE                                  pfnDestroyRasterizerState;
+
+    PFND3D12DDI_CALC_PRIVATE_SHADER_SIZE_0026                           pfnCalcPrivateShaderSize;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateVertexShader;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreatePixelShader;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateGeometryShader;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateComputeShader;
+
+    PFND3D12DDI_CALC_PRIVATE_GEOMETRY_SHADER_WITH_STREAM_OUTPUT_0026    pfnCalcPrivateGeometryShaderWithStreamOutput;
+    PFND3D12DDI_CREATE_GEOMETRY_SHADER_WITH_STREAM_OUTPUT_0026          pfnCreateGeometryShaderWithStreamOutput;
+
+    PFND3D12DDI_CALC_PRIVATE_SHADER_SIZE_0026                           pfnCalcPrivateTessellationShaderSize;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateHullShader;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateDomainShader;
+
+    PFND3D12DDI_DESTROYSHADER                                           pfnDestroyShader;
+
+    PFND3D12DDI_CALCPRIVATECOMMANDQUEUESIZE_0050                        pfnCalcPrivateCommandQueueSize;
+    PFND3D12DDI_CREATECOMMANDQUEUE_0050                                 pfnCreateCommandQueue;
+    PFND3D12DDI_DESTROYCOMMANDQUEUE                                     pfnDestroyCommandQueue;
+
+    PFND3D12DDI_CALC_PRIVATE_COMMAND_POOL_SIZE_0040                     pfnCalcPrivateCommandPoolSize;
+    PFND3D12DDI_CREATE_COMMAND_POOL_0040                                pfnCreateCommandPool;
+    PFND3D12DDI_DESTROY_COMMAND_POOL_0040                               pfnDestroyCommandPool;
+    PFND3D12DDI_RESET_COMMAND_POOL_0040                                 pfnResetCommandPool;
+
+    PFND3D12DDI_CALC_PRIVATE_PIPELINE_STATE_SIZE_0033                   pfnCalcPrivatePipelineStateSize;
+    PFND3D12DDI_CREATE_PIPELINE_STATE_0033                              pfnCreatePipelineState;
+    PFND3D12DDI_DESTROY_PIPELINE_STATE                                  pfnDestroyPipelineState;
+
+    PFND3D12DDI_CALC_PRIVATE_COMMAND_LIST_SIZE_0040                     pfnCalcPrivateCommandListSize;
+    PFND3D12DDI_CREATE_COMMAND_LIST_0040                                pfnCreateCommandList;
+    PFND3D12DDI_DESTROYCOMMANDLIST                                      pfnDestroyCommandList;
+
+    PFND3D12DDI_CALCPRIVATEFENCESIZE                                    pfnCalcPrivateFenceSize;
+    PFND3D12DDI_CREATEFENCE                                             pfnCreateFence;
+    PFND3D12DDI_DESTROYFENCE                                            pfnDestroyFence;
+
+    PFND3D12DDI_CALC_PRIVATE_DESCRIPTOR_HEAP_SIZE_0001                  pfnCalcPrivateDescriptorHeapSize;
+    PFND3D12DDI_CREATE_DESCRIPTOR_HEAP_0001                             pfnCreateDescriptorHeap;
+    PFND3D12DDI_DESTROY_DESCRIPTOR_HEAP                                 pfnDestroyDescriptorHeap;
+    PFND3D12DDI_GET_DESCRIPTOR_SIZE_IN_BYTES                            pfnGetDescriptorSizeInBytes;
+    PFND3D12DDI_GET_CPU_DESCRIPTOR_HANDLE_FOR_HEAP_START                pfnGetCPUDescriptorHandleForHeapStart;
+    PFND3D12DDI_GET_GPU_DESCRIPTOR_HANDLE_FOR_HEAP_START                pfnGetGPUDescriptorHandleForHeapStart;
+    PFND3D12DDI_CREATE_SHADER_RESOURCE_VIEW_0002                        pfnCreateShaderResourceView;
+    PFND3D12DDI_CREATE_CONSTANT_BUFFER_VIEW                             pfnCreateConstantBufferView;
+    PFND3D12DDI_CREATE_SAMPLER                                          pfnCreateSampler;
+    PFND3D12DDI_CREATE_UNORDERED_ACCESS_VIEW_0002                       pfnCreateUnorderedAccessView;
+    PFND3D12DDI_CREATE_RENDER_TARGET_VIEW_0002                          pfnCreateRenderTargetView;
+    PFND3D12DDI_CREATE_DEPTH_STENCIL_VIEW                               pfnCreateDepthStencilView;
+    PFND3D12DDI_CALC_PRIVATE_ROOT_SIGNATURE_SIZE_0013                   pfnCalcPrivateRootSignatureSize;
+    PFND3D12DDI_CREATE_ROOT_SIGNATURE_0013                              pfnCreateRootSignature;
+    PFND3D12DDI_DESTROY_ROOT_SIGNATURE                                  pfnDestroyRootSignature;
+
+    PFND3D12DDI_MAPHEAP                                                 pfnMapHeap;
+    PFND3D12DDI_UNMAPHEAP                                               pfnUnmapHeap;
+
+    PFND3D12DDI_CALCPRIVATEHEAPANDRESOURCESIZES_0073                    pfnCalcPrivateHeapAndResourceSizes;
+    PFND3D12DDI_CREATEHEAPANDRESOURCE_0073                              pfnCreateHeapAndResource;
+
+    PFND3D12DDI_DESTROYHEAPANDRESOURCE                                  pfnDestroyHeapAndResource;
+
+    PFND3D12DDI_MAKERESIDENT_0001                                       pfnMakeResident;
+    PFND3D12DDI_EVICT2                                                  pfnEvict;
+    PFND3D12DDI_CALCPRIVATEOPENEDHEAPANDRESOURCESIZES_0043              pfnCalcPrivateOpenedHeapAndResourceSizes;
+    PFND3D12DDI_OPENHEAPANDRESOURCE_0043                                pfnOpenHeapAndResource;
+
+    PFND3D12DDI_COPY_DESCRIPTORS_0003                                   pfnCopyDescriptors;
+    PFND3D12DDI_COPY_DESCRIPTORS_SIMPLE_0003                            pfnCopyDescriptorsSimple;
+
+    PFND3D12DDI_CALC_PRIVATE_QUERY_HEAP_SIZE_0001                       pfnCalcPrivateQueryHeapSize;
+    PFND3D12DDI_CREATE_QUERY_HEAP_0001                                  pfnCreateQueryHeap;
+    PFND3D12DDI_DESTROY_QUERY_HEAP                                      pfnDestroyQueryHeap;
+
+    PFND3D12DDI_CALC_PRIVATE_COMMAND_SIGNATURE_SIZE_0001                pfnCalcPrivateCommandSignatureSize;
+    PFND3D12DDI_CREATE_COMMAND_SIGNATURE_0001                           pfnCreateCommandSignature;
+    PFND3D12DDI_DESTROY_COMMAND_SIGNATURE                               pfnDestroyCommandSignature;
+
+    PFND3D12DDI_CHECKRESOURCEVIRTUALADDRESS                             pfnCheckResourceVirtualAddress;
+
+    PFND3D12DDI_CHECKRESOURCEALLOCATIONINFO_0073                        pfnCheckResourceAllocationInfo;
+    PFND3D12DDI_CHECKSUBRESOURCEINFO                                    pfnCheckSubresourceInfo;
+    PFND3D12DDI_CHECKEXISITINGRESOURCEALLOCATIONINFO_0022               pfnCheckExistingResourceAllocationInfo;
+
+    PFND3D12DDI_OFFERRESOURCES                                          pfnOfferResources;
+    PFND3D12DDI_RECLAIMRESOURCES_0001                                   pfnReclaimResources;
+
+    PFND3D12DDI_GETIMPLICITPHYSICALADAPTERMASK                          pfnGetImplicitPhysicalAdapterMask;
+    PFND3D12DDI_GET_PRESENT_PRIVATE_DRIVER_DATA_SIZE                    pfnGetPresentPrivateDriverDataSize;
+    PFND3D12DDI_QUERY_NODE_MAP                                          pfnQueryNodeMap;
+    PFND3D12DDI_RETRIEVE_SHADER_COMMENT_0003                            pfnRetrieveShaderComment;
+
+    PFND3D12DDI_CHECKRESOURCEALLOCATIONHANDLE                           pfnCheckResourceAllocationHandle;
+
+    PFND3D12DDI_CALC_PRIVATE_PIPELINE_LIBRARY_SIZE_0010                 pfnCalcPrivatePipelineLibrarySize;
+    PFND3D12DDI_CREATE_PIPELINE_LIBRARY_0010                            pfnCreatePipelineLibrary;
+    PFND3D12DDI_DESTROY_PIPELINE_LIBRARY_0010                           pfnDestroyPipelineLibrary;
+
+    PFND3D12DDI_ADD_PIPELINE_STATE_TO_LIBRARY_0010                      pfnAddPipelineStateToLibrary;
+    PFND3D12DDI_CALC_SERIALIZED_LIBRARY_SIZE_0010                       pfnCalcSerializedLibrarySize;
+    PFND3D12DDI_SERIALIZE_LIBRARY_0010                                  pfnSerializeLibrary;
+    PFND3D12DDI_GET_DEBUG_ALLOCATION_INFO_0014                          pfnGetDebugAllocationInfo;
+
+    PFND3D12DDI_CALC_PRIVATE_COMMAND_RECORDER_SIZE_0040                 pfnCalcPrivateCommandRecorderSize;
+    PFND3D12DDI_CREATE_COMMAND_RECORDER_0040                            pfnCreateCommandRecorder;
+    PFND3D12DDI_DESTROY_COMMAND_RECORDER_0040                           pfnDestroyCommandRecorder;
+    PFND3D12DDI_COMMAND_RECORDER_SET_COMMAND_POOL_AS_TARGET_0040        pfnCommandRecorderSetCommandPoolAsTarget;
+
+    PFND3D12DDI_CALCPRIVATESCHEDULINGGROUPSIZE_0050                     pfnCalcPrivateSchedulingGroupSize;
+    PFND3D12DDI_CREATESCHEDULINGGROUP_0050                              pfnCreateSchedulingGroup;
+    PFND3D12DDI_DESTROYSCHEDULINGGROUP_0050                             pfnDestroySchedulingGroup;
+
+    PFND3D12DDI_ENUMERATE_META_COMMANDS_0052                            pfnEnumerateMetaCommands;
+    PFND3D12DDI_ENUMERATE_META_COMMAND_PARAMETERS_0052                  pfnEnumerateMetaCommandParameters;
+    PFND3D12DDI_CALC_PRIVATE_META_COMMAND_SIZE_0052                     pfnCalcPrivateMetaCommandSize;
+    PFND3D12DDI_CREATE_META_COMMAND_0052                                pfnCreateMetaCommand;
+    PFND3D12DDI_DESTROY_META_COMMAND_0052                               pfnDestroyMetaCommand;
+    PFND3D12DDI_GET_META_COMMAND_REQUIRED_PARAMETER_INFO_0052           pfnGetMetaCommandRequiredParameterInfo;
+
+    PFND3D12DDI_CALC_PRIVATE_STATE_OBJECT_SIZE_0054                     pfnCalcPrivateStateObjectSize;
+    PFND3D12DDI_CREATE_STATE_OBJECT_0054                                pfnCreateStateObject;
+    PFND3D12DDI_DESTROY_STATE_OBJECT_0054                               pfnDestroyStateObject;
+    PFND3D12DDI_GET_RAYTRACING_ACCELERATION_STRUCTURE_PREBUILD_INFO_0054     pfnGetRaytracingAccelerationStructurePrebuildInfo;
+    PFND3D12DDI_CHECK_DRIVER_MATCHING_IDENTIFIER_0054                   pfnCheckDriverMatchingIdentifier;
+
+    PFND3D12DDI_GET_SHADER_IDENTIFIER_0054                              pfnGetShaderIdentifier;
+    PFND3D12DDI_GET_SHADER_STACK_SIZE_0054                              pfnGetShaderStackSize; 
+    PFND3D12DDI_GET_PIPELINE_STACK_SIZE_0054                            pfnGetPipelineStackSize;
+    PFND3D12DDI_SET_PIPELINE_STACK_SIZE_0054                            pfnSetPipelineStackSize;
+
+    PFND3D12DDI_SET_BACKGROUND_PROCESSING_MODE_0063                     pfnSetBackgroundProcessingMode;
+
+    PFND3D12DDI_CALC_PRIVATE_ADD_TO_STATE_OBJECT_SIZE_0072              pfnCalcPrivateAddToStateObjectSize;
+    PFND3D12DDI_ADD_TO_STATE_OBJECT_0072                                pfnAddToStateObject;
+
+    PFND3D12DDI_CREATE_SAMPLER_FEEDBACK_UNORDERED_ACCESS_VIEW_0073      pfnCreateSamplerFeedbackUnorderedAccessView;
+
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateAmplificationShader;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateMeshShader;
+    PFND3D12DDI_CALC_PRIVATE_SHADER_SIZE_0026                           pfnCalcPrivateMeshShaderSize;
+
+} D3D12DDI_DEVICE_FUNCS_CORE_0074;
+
+//----------------------------------------------------------------------------------------------------------------------------------
+// D3D12 Release 7, Build rev 5.
+// Added mesh shader to D3CreatePipelineState DDI and added D3D12DDI_
+// Revised sampler feedback LOD region with {width, height} --> Mip region with {width, height, depth}
+
+#define D3D12DDI_BUILD_VERSION_0075 5
+#define D3D12DDI_SUPPORTED_0075 ((((UINT64)D3D12DDI_INTERFACE_VERSION_R7) << 32) | (((UINT64)D3D12DDI_BUILD_VERSION_0075) << 16))
+
+typedef struct D3D12DDIARG_CREATE_PIPELINE_STATE_0075
+{
+    D3D12DDI_HSHADER hComputeShader;
+    D3D12DDI_HSHADER hVertexShader;
+    D3D12DDI_HSHADER hPixelShader;
+    D3D12DDI_HSHADER hDomainShader;
+    D3D12DDI_HSHADER hHullShader;
+    D3D12DDI_HSHADER hGeometryShader;
+    D3D12DDI_HROOTSIGNATURE hRootSignature;
+    D3D12DDI_HBLENDSTATE hBlendState;
+    UINT SampleMask;
+    D3D12DDI_HRASTERIZERSTATE hRasterizerState;
+    D3D12DDI_HDEPTHSTENCILSTATE hDepthStencilState;
+    D3D12DDI_HELEMENTLAYOUT hElementLayout;
+    D3D12DDI_INDEX_BUFFER_STRIP_CUT_VALUE IBStripCutValue;
+    D3D12DDI_PRIMITIVE_TOPOLOGY_TYPE PrimitiveTopologyType;
+    UINT NumRenderTargets;
+    DXGI_FORMAT RTVFormats[8];
+    DXGI_FORMAT DSVFormat;
+    DXGI_SAMPLE_DESC SampleDesc;
+    UINT NodeMask;
+    D3D12DDI_LIBRARY_REFERENCE_0010 LibraryReference;
+    D3D12DDI_VIEW_INSTANCING_DESC ViewInstancingDesc;
+    D3D12DDI_HSHADER hMeshShader;
+    D3D12DDI_HSHADER hAmplificationShader;
+} D3D12DDIARG_CREATE_PIPELINE_STATE_0075;
+
+typedef HRESULT ( APIENTRY* PFND3D12DDI_CREATE_PIPELINE_STATE_0075 ) ( D3D12DDI_HDEVICE, _In_ CONST D3D12DDIARG_CREATE_PIPELINE_STATE_0075*, D3D12DDI_HPIPELINESTATE, D3D12DDI_HRTPIPELINESTATE );
+typedef SIZE_T ( APIENTRY* PFND3D12DDI_CALC_PRIVATE_PIPELINE_STATE_SIZE_0075 )( D3D12DDI_HDEVICE, _In_ CONST D3D12DDIARG_CREATE_PIPELINE_STATE_0075* );
+
+typedef struct D3D12DDI_MIP_REGION_0075
+{
+    UINT Width;
+    UINT Height;
+    UINT Depth;
+} D3D12DDI_MIP_REGION_0075;
+
+typedef struct D3D12DDIARG_CREATERESOURCE_0075
+{
+    D3D12DDIARG_BUFFER_PLACEMENT    ReuseBufferGPUVA;
+    D3D12DDI_RESOURCE_TYPE          ResourceType;
+    UINT64                          Width; // Virtual coords
+    UINT                            Height; // Virtual coords
+    UINT16                          DepthOrArraySize; 
+    UINT16                          MipLevels;
+    DXGI_FORMAT                     Format; 
+    DXGI_SAMPLE_DESC                SampleDesc;
+    D3D12DDI_TEXTURE_LAYOUT         Layout; // See standard swizzle spec
+    D3D12DDI_RESOURCE_FLAGS_0003    Flags;
+    D3D12DDI_RESOURCE_STATES        InitialResourceState;
+
+    // When Layout = D3D12DDI_TL_ROW_MAJOR and pRowMajorLayout is non-null
+    // then *pRowMajorLayout specifies the layout of the resource
+    CONST D3D12DDIARG_ROW_MAJOR_RESOURCE_LAYOUT* pRowMajorLayout;
+
+    D3D12DDI_MIP_REGION_0075        SamplerFeedbackMipRegion;
+} D3D12DDIARG_CREATERESOURCE_0075;
+
+
+typedef HRESULT ( APIENTRY* PFND3D12DDI_CREATEHEAPANDRESOURCE_0075 )( 
+    D3D12DDI_HDEVICE, _In_opt_ CONST D3D12DDIARG_CREATEHEAP_0001*, D3D12DDI_HHEAP, D3D12DDI_HRTRESOURCE,
+    _In_opt_ CONST D3D12DDIARG_CREATERESOURCE_0075*, _In_opt_ CONST D3D12DDI_CLEAR_VALUES*, 
+    D3D12DDI_HPROTECTEDRESOURCESESSION_0030, D3D12DDI_HRESOURCE );
+    
+typedef D3D12DDI_HEAP_AND_RESOURCE_SIZES ( APIENTRY* PFND3D12DDI_CALCPRIVATEHEAPANDRESOURCESIZES_0075 )(
+     D3D12DDI_HDEVICE, _In_opt_ CONST D3D12DDIARG_CREATEHEAP_0001*, _In_opt_ CONST D3D12DDIARG_CREATERESOURCE_0075*,
+     D3D12DDI_HPROTECTEDRESOURCESESSION_0030 );
+
+typedef VOID ( APIENTRY* PFND3D12DDI_CHECKRESOURCEALLOCATIONINFO_0075 )(
+    D3D12DDI_HDEVICE, _In_ CONST D3D12DDIARG_CREATERESOURCE_0075*, D3D12DDI_RESOURCE_OPTIMIZATION_FLAGS,
+    UINT32 AlignmentRestriction, UINT VisibleNodeMask, _Out_ D3D12DDI_RESOURCE_ALLOCATION_INFO_0022* );    
+
+typedef VOID ( APIENTRY* PFND3D12DDI_CREATE_SAMPLER_FEEDBACK_UNORDERED_ACCESS_VIEW_0075 ) (
+    _In_ D3D12DDI_HDEVICE hDrvDevice,
+    _In_ D3D12DDI_HRESOURCE hDrvTargetedResource,
+    _In_ D3D12DDI_HRESOURCE hDrvFeedbackResource,
+    _In_ D3D12DDI_CPU_DESCRIPTOR_HANDLE DestDescriptor );
+
+typedef struct D3D12DDI_DEVICE_FUNCS_CORE_0075
+{
+    PFND3D12DDI_CHECKFORMATSUPPORT                                      pfnCheckFormatSupport;
+    PFND3D12DDI_CHECKMULTISAMPLEQUALITYLEVELS                           pfnCheckMultisampleQualityLevels;
+    PFND3D12DDI_GETMIPPACKING                                           pfnGetMipPacking;
+
+    PFND3D12DDI_CALCPRIVATEELEMENTLAYOUTSIZE_0010                       pfnCalcPrivateElementLayoutSize;
+    PFND3D12DDI_CREATEELEMENTLAYOUT_0010                                pfnCreateElementLayout;
+    PFND3D12DDI_DESTROYELEMENTLAYOUT                                    pfnDestroyElementLayout;
+
+    PFND3D12DDI_CALCPRIVATEBLENDSTATESIZE_0010                          pfnCalcPrivateBlendStateSize;
+    PFND3D12DDI_CREATEBLENDSTATE_0010                                   pfnCreateBlendState;
+    PFND3D12DDI_DESTROYBLENDSTATE                                       pfnDestroyBlendState;
+
+    PFND3D12DDI_CALCPRIVATEDEPTHSTENCILSTATESIZE_0025                   pfnCalcPrivateDepthStencilStateSize;
+    PFND3D12DDI_CREATEDEPTHSTENCILSTATE_0025                            pfnCreateDepthStencilState;
+    PFND3D12DDI_DESTROYDEPTHSTENCILSTATE                                pfnDestroyDepthStencilState;
+
+    PFND3D12DDI_CALCPRIVATERASTERIZERSTATESIZE_0010                     pfnCalcPrivateRasterizerStateSize;
+    PFND3D12DDI_CREATERASTERIZERSTATE_0010                              pfnCreateRasterizerState;
+    PFND3D12DDI_DESTROYRASTERIZERSTATE                                  pfnDestroyRasterizerState;
+
+    PFND3D12DDI_CALC_PRIVATE_SHADER_SIZE_0026                           pfnCalcPrivateShaderSize;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateVertexShader;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreatePixelShader;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateGeometryShader;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateComputeShader;
+
+    PFND3D12DDI_CALC_PRIVATE_GEOMETRY_SHADER_WITH_STREAM_OUTPUT_0026    pfnCalcPrivateGeometryShaderWithStreamOutput;
+    PFND3D12DDI_CREATE_GEOMETRY_SHADER_WITH_STREAM_OUTPUT_0026          pfnCreateGeometryShaderWithStreamOutput;
+
+    PFND3D12DDI_CALC_PRIVATE_SHADER_SIZE_0026                           pfnCalcPrivateTessellationShaderSize;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateHullShader;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateDomainShader;
+
+    PFND3D12DDI_DESTROYSHADER                                           pfnDestroyShader;
+
+    PFND3D12DDI_CALCPRIVATECOMMANDQUEUESIZE_0050                        pfnCalcPrivateCommandQueueSize;
+    PFND3D12DDI_CREATECOMMANDQUEUE_0050                                 pfnCreateCommandQueue;
+    PFND3D12DDI_DESTROYCOMMANDQUEUE                                     pfnDestroyCommandQueue;
+
+    PFND3D12DDI_CALC_PRIVATE_COMMAND_POOL_SIZE_0040                     pfnCalcPrivateCommandPoolSize;
+    PFND3D12DDI_CREATE_COMMAND_POOL_0040                                pfnCreateCommandPool;
+    PFND3D12DDI_DESTROY_COMMAND_POOL_0040                               pfnDestroyCommandPool;
+    PFND3D12DDI_RESET_COMMAND_POOL_0040                                 pfnResetCommandPool;
+
+    PFND3D12DDI_CALC_PRIVATE_PIPELINE_STATE_SIZE_0075                   pfnCalcPrivatePipelineStateSize;
+    PFND3D12DDI_CREATE_PIPELINE_STATE_0075                              pfnCreatePipelineState;
+    PFND3D12DDI_DESTROY_PIPELINE_STATE                                  pfnDestroyPipelineState;
+
+    PFND3D12DDI_CALC_PRIVATE_COMMAND_LIST_SIZE_0040                     pfnCalcPrivateCommandListSize;
+    PFND3D12DDI_CREATE_COMMAND_LIST_0040                                pfnCreateCommandList;
+    PFND3D12DDI_DESTROYCOMMANDLIST                                      pfnDestroyCommandList;
+
+    PFND3D12DDI_CALCPRIVATEFENCESIZE                                    pfnCalcPrivateFenceSize;
+    PFND3D12DDI_CREATEFENCE                                             pfnCreateFence;
+    PFND3D12DDI_DESTROYFENCE                                            pfnDestroyFence;
+
+    PFND3D12DDI_CALC_PRIVATE_DESCRIPTOR_HEAP_SIZE_0001                  pfnCalcPrivateDescriptorHeapSize;
+    PFND3D12DDI_CREATE_DESCRIPTOR_HEAP_0001                             pfnCreateDescriptorHeap;
+    PFND3D12DDI_DESTROY_DESCRIPTOR_HEAP                                 pfnDestroyDescriptorHeap;
+    PFND3D12DDI_GET_DESCRIPTOR_SIZE_IN_BYTES                            pfnGetDescriptorSizeInBytes;
+    PFND3D12DDI_GET_CPU_DESCRIPTOR_HANDLE_FOR_HEAP_START                pfnGetCPUDescriptorHandleForHeapStart;
+    PFND3D12DDI_GET_GPU_DESCRIPTOR_HANDLE_FOR_HEAP_START                pfnGetGPUDescriptorHandleForHeapStart;
+    PFND3D12DDI_CREATE_SHADER_RESOURCE_VIEW_0002                        pfnCreateShaderResourceView;
+    PFND3D12DDI_CREATE_CONSTANT_BUFFER_VIEW                             pfnCreateConstantBufferView;
+    PFND3D12DDI_CREATE_SAMPLER                                          pfnCreateSampler;
+    PFND3D12DDI_CREATE_UNORDERED_ACCESS_VIEW_0002                       pfnCreateUnorderedAccessView;
+    PFND3D12DDI_CREATE_RENDER_TARGET_VIEW_0002                          pfnCreateRenderTargetView;
+    PFND3D12DDI_CREATE_DEPTH_STENCIL_VIEW                               pfnCreateDepthStencilView;
+    PFND3D12DDI_CALC_PRIVATE_ROOT_SIGNATURE_SIZE_0013                   pfnCalcPrivateRootSignatureSize;
+    PFND3D12DDI_CREATE_ROOT_SIGNATURE_0013                              pfnCreateRootSignature;
+    PFND3D12DDI_DESTROY_ROOT_SIGNATURE                                  pfnDestroyRootSignature;
+
+    PFND3D12DDI_MAPHEAP                                                 pfnMapHeap;
+    PFND3D12DDI_UNMAPHEAP                                               pfnUnmapHeap;
+
+    PFND3D12DDI_CALCPRIVATEHEAPANDRESOURCESIZES_0075                    pfnCalcPrivateHeapAndResourceSizes;
+    PFND3D12DDI_CREATEHEAPANDRESOURCE_0075                              pfnCreateHeapAndResource;
+
+    PFND3D12DDI_DESTROYHEAPANDRESOURCE                                  pfnDestroyHeapAndResource;
+
+    PFND3D12DDI_MAKERESIDENT_0001                                       pfnMakeResident;
+    PFND3D12DDI_EVICT2                                                  pfnEvict;
+    PFND3D12DDI_CALCPRIVATEOPENEDHEAPANDRESOURCESIZES_0043              pfnCalcPrivateOpenedHeapAndResourceSizes;
+    PFND3D12DDI_OPENHEAPANDRESOURCE_0043                                pfnOpenHeapAndResource;
+
+    PFND3D12DDI_COPY_DESCRIPTORS_0003                                   pfnCopyDescriptors;
+    PFND3D12DDI_COPY_DESCRIPTORS_SIMPLE_0003                            pfnCopyDescriptorsSimple;
+
+    PFND3D12DDI_CALC_PRIVATE_QUERY_HEAP_SIZE_0001                       pfnCalcPrivateQueryHeapSize;
+    PFND3D12DDI_CREATE_QUERY_HEAP_0001                                  pfnCreateQueryHeap;
+    PFND3D12DDI_DESTROY_QUERY_HEAP                                      pfnDestroyQueryHeap;
+
+    PFND3D12DDI_CALC_PRIVATE_COMMAND_SIGNATURE_SIZE_0001                pfnCalcPrivateCommandSignatureSize;
+    PFND3D12DDI_CREATE_COMMAND_SIGNATURE_0001                           pfnCreateCommandSignature;
+    PFND3D12DDI_DESTROY_COMMAND_SIGNATURE                               pfnDestroyCommandSignature;
+
+    PFND3D12DDI_CHECKRESOURCEVIRTUALADDRESS                             pfnCheckResourceVirtualAddress;
+
+    PFND3D12DDI_CHECKRESOURCEALLOCATIONINFO_0075                        pfnCheckResourceAllocationInfo;
+    PFND3D12DDI_CHECKSUBRESOURCEINFO                                    pfnCheckSubresourceInfo;
+    PFND3D12DDI_CHECKEXISITINGRESOURCEALLOCATIONINFO_0022               pfnCheckExistingResourceAllocationInfo;
+
+    PFND3D12DDI_OFFERRESOURCES                                          pfnOfferResources;
+    PFND3D12DDI_RECLAIMRESOURCES_0001                                   pfnReclaimResources;
+
+    PFND3D12DDI_GETIMPLICITPHYSICALADAPTERMASK                          pfnGetImplicitPhysicalAdapterMask;
+    PFND3D12DDI_GET_PRESENT_PRIVATE_DRIVER_DATA_SIZE                    pfnGetPresentPrivateDriverDataSize;
+    PFND3D12DDI_QUERY_NODE_MAP                                          pfnQueryNodeMap;
+    PFND3D12DDI_RETRIEVE_SHADER_COMMENT_0003                            pfnRetrieveShaderComment;
+
+    PFND3D12DDI_CHECKRESOURCEALLOCATIONHANDLE                           pfnCheckResourceAllocationHandle;
+
+    PFND3D12DDI_CALC_PRIVATE_PIPELINE_LIBRARY_SIZE_0010                 pfnCalcPrivatePipelineLibrarySize;
+    PFND3D12DDI_CREATE_PIPELINE_LIBRARY_0010                            pfnCreatePipelineLibrary;
+    PFND3D12DDI_DESTROY_PIPELINE_LIBRARY_0010                           pfnDestroyPipelineLibrary;
+
+    PFND3D12DDI_ADD_PIPELINE_STATE_TO_LIBRARY_0010                      pfnAddPipelineStateToLibrary;
+    PFND3D12DDI_CALC_SERIALIZED_LIBRARY_SIZE_0010                       pfnCalcSerializedLibrarySize;
+    PFND3D12DDI_SERIALIZE_LIBRARY_0010                                  pfnSerializeLibrary;
+    PFND3D12DDI_GET_DEBUG_ALLOCATION_INFO_0014                          pfnGetDebugAllocationInfo;
+
+    PFND3D12DDI_CALC_PRIVATE_COMMAND_RECORDER_SIZE_0040                 pfnCalcPrivateCommandRecorderSize;
+    PFND3D12DDI_CREATE_COMMAND_RECORDER_0040                            pfnCreateCommandRecorder;
+    PFND3D12DDI_DESTROY_COMMAND_RECORDER_0040                           pfnDestroyCommandRecorder;
+    PFND3D12DDI_COMMAND_RECORDER_SET_COMMAND_POOL_AS_TARGET_0040        pfnCommandRecorderSetCommandPoolAsTarget;
+
+    PFND3D12DDI_CALCPRIVATESCHEDULINGGROUPSIZE_0050                     pfnCalcPrivateSchedulingGroupSize;
+    PFND3D12DDI_CREATESCHEDULINGGROUP_0050                              pfnCreateSchedulingGroup;
+    PFND3D12DDI_DESTROYSCHEDULINGGROUP_0050                             pfnDestroySchedulingGroup;
+
+    PFND3D12DDI_ENUMERATE_META_COMMANDS_0052                            pfnEnumerateMetaCommands;
+    PFND3D12DDI_ENUMERATE_META_COMMAND_PARAMETERS_0052                  pfnEnumerateMetaCommandParameters;
+    PFND3D12DDI_CALC_PRIVATE_META_COMMAND_SIZE_0052                     pfnCalcPrivateMetaCommandSize;
+    PFND3D12DDI_CREATE_META_COMMAND_0052                                pfnCreateMetaCommand;
+    PFND3D12DDI_DESTROY_META_COMMAND_0052                               pfnDestroyMetaCommand;
+    PFND3D12DDI_GET_META_COMMAND_REQUIRED_PARAMETER_INFO_0052           pfnGetMetaCommandRequiredParameterInfo;
+
+    PFND3D12DDI_CALC_PRIVATE_STATE_OBJECT_SIZE_0054                     pfnCalcPrivateStateObjectSize;
+    PFND3D12DDI_CREATE_STATE_OBJECT_0054                                pfnCreateStateObject;
+    PFND3D12DDI_DESTROY_STATE_OBJECT_0054                               pfnDestroyStateObject;
+    PFND3D12DDI_GET_RAYTRACING_ACCELERATION_STRUCTURE_PREBUILD_INFO_0054     pfnGetRaytracingAccelerationStructurePrebuildInfo;
+    PFND3D12DDI_CHECK_DRIVER_MATCHING_IDENTIFIER_0054                   pfnCheckDriverMatchingIdentifier;
+
+    PFND3D12DDI_GET_SHADER_IDENTIFIER_0054                              pfnGetShaderIdentifier;
+    PFND3D12DDI_GET_SHADER_STACK_SIZE_0054                              pfnGetShaderStackSize; 
+    PFND3D12DDI_GET_PIPELINE_STACK_SIZE_0054                            pfnGetPipelineStackSize;
+    PFND3D12DDI_SET_PIPELINE_STACK_SIZE_0054                            pfnSetPipelineStackSize;
+
+    PFND3D12DDI_SET_BACKGROUND_PROCESSING_MODE_0063                     pfnSetBackgroundProcessingMode;
+
+    PFND3D12DDI_CALC_PRIVATE_ADD_TO_STATE_OBJECT_SIZE_0072              pfnCalcPrivateAddToStateObjectSize;
+    PFND3D12DDI_ADD_TO_STATE_OBJECT_0072                                pfnAddToStateObject;
+
+    PFND3D12DDI_CREATE_SAMPLER_FEEDBACK_UNORDERED_ACCESS_VIEW_0075      pfnCreateSamplerFeedbackUnorderedAccessView;
+
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateAmplificationShader;
+    PFND3D12DDI_CREATE_SHADER_0026                                      pfnCreateMeshShader;
+    PFND3D12DDI_CALC_PRIVATE_SHADER_SIZE_0026                           pfnCalcPrivateMeshShaderSize;
+
+} D3D12DDI_DEVICE_FUNCS_CORE_0075;
+
+//----------------------------------------------------------------------------------------------------------------------------------
+// D3D12 Release 7, Build rev 6.
+// Add DXGI_FORMAT_R11G11B10_FLOAT Cross API Sharing
+
+#define D3D12DDI_BUILD_VERSION_0076 6
+#define D3D12DDI_SUPPORTED_0076 ((((UINT64)D3D12DDI_INTERFACE_VERSION_R7) << 32) | (((UINT64)D3D12DDI_BUILD_VERSION_0076) << 16))
+
+//----------------------------------------------------------------------------------------------------------------------------------
 // D3D12 Extended Feature Content Protection Resources
 // Feature: D3D12DDI_FEATURE_0030_CONTENT_PROTECTION_RESOURCES
 // Version: D3D12DDI_FEATURE_VERSION_CONTENT_PROTECTION_RESOURCES_0030_0
@@ -8925,9 +10157,63 @@ typedef struct D3D12DDI_CONTENT_PROTECTION_CALLBACKS_0030
 //----------------------------------------------------------------------------------------------------------------------------------
 // D3D12 Extended Feature Content Protection Resources
 // Feature: D3D12DDI_FEATURE_0030_CONTENT_PROTECTION_RESOURCES
-// Version: D3D12DDI_FEATURE_VERSION_CONTENT_PROTECTION_RESOURCES_0030_0
+// Version: D3D12DDI_FEATURE_VERSION_CONTENT_PROTECTION_RESOURCES_0040_0
 // Usermode DDI Min Version: D3D12DDI_SUPPORTED_0040
 #define D3D12DDI_FEATURE_VERSION_CONTENT_PROTECTION_RESOURCES_0040_0 2u
+
+//----------------------------------------------------------------------------------------------------------------------------------
+// D3D12 Extended Feature Content Protection Resources
+// Feature: D3D12DDI_FEATURE_0030_CONTENT_PROTECTION_RESOURCES
+// Version: D3D12DDI_FEATURE_VERSION_CONTENT_PROTECTION_RESOURCES_0074_0
+// Usermode DDI Min Version: D3D12DDI_SUPPORTED_0040
+#define D3D12DDI_FEATURE_VERSION_CONTENT_PROTECTION_RESOURCES_0074_0 3u
+
+DEFINE_GUID(D3D12DDI_PROTECTED_RESOURCES_SESSION_HARDWARE_PROTECTED,                           0x62B0084E, 0xC70E, 0x4DAA, 0xA1, 0x09, 0x30, 0xFF, 0x8D, 0x5A, 0x04, 0x82);
+
+
+// D3D12DDICAPS_TYPE_0074_PROTECTED_RESOURCE_SESSION_TYPE_COUNT
+typedef struct D3D12DDI_PROTECTED_RESOURCE_SESSION_TYPE_COUNT_DATA_0074
+{
+    UINT                                        NodeIndex;              // input
+    UINT                                        Count;                  // output
+} D3D12DDI_PROTECTED_RESOURCE_SESSION_TYPE_COUNT_DATA_0074;
+
+// D3D12DDICAPS_TYPE_0074_PROTECTED_RESOURCE_SESSION_TYPES
+typedef struct D3D12DDI_PROTECTED_RESOURCE_SESSION_TYPES_DATA_0074
+{
+    UINT                                        NodeIndex;              // input
+    UINT                                        Count;                  // input
+    GUID*                                       pTypes;                 // output
+} D3D12DDI_PROTECTED_RESOURCE_SESSION_TYPES_DATA_0074;
+
+typedef struct D3D12DDIARG_CREATE_PROTECTED_RESOURCE_SESSION_0074
+{
+    UINT                                        NodeMask;
+    GUID                                        ProtectionType;
+} D3D12DDIARG_CREATE_PROTECTED_RESOURCE_SESSION_0074;
+
+typedef SIZE_T ( APIENTRY* PFND3D12DDI_CALCPRIVATEPROTECTEDRESOURCESESSIONSIZE_0074 )( 
+    D3D12DDI_HDEVICE hDrvDevice, 
+    _In_ CONST D3D12DDIARG_CREATE_PROTECTED_RESOURCE_SESSION_0074* pArgs 
+    );
+
+typedef HRESULT ( APIENTRY* PFND3D12DDI_CREATEPROTECTEDRESOURCESESSION_0074 )( 
+    D3D12DDI_HDEVICE hDrvDevice, 
+    _In_ CONST D3D12DDIARG_CREATE_PROTECTED_RESOURCE_SESSION_0074* pArgs,
+    D3D12DDI_HPROTECTEDRESOURCESESSION_0030 hDrvProtectedResourceSession,
+    D3D12DDI_HRTPROTECTEDSESSION_0030 hRtProtectedSession
+    );
+
+// D3D12DDI_TABLE_TYPE_0030_DEVICE_CONTENT_PROTECTION_RESOURCES
+typedef struct D3D12DDI_DEVICE_FUNCS_CONTENT_PROTECTION_RESOURCES_0074
+{
+    PFND3D12DDI_CALCPRIVATEPROTECTEDRESOURCESESSIONSIZE_0074            pfnCalcPrivateProtectedResourceSessionSize;
+    PFND3D12DDI_CREATEPROTECTEDRESOURCESESSION_0074                     pfnCreateProtectedResourceSession;
+    PFND3D12DDI_CALCPRIVATEOPENEDPROTECTEDRESOURCESESSIONSIZE_0030      pfnCalcPrivateOpenedProtectedResourceSessionSize;
+    PFND3D12DDI_OPENPROTECTEDRESOURCESESSION_0030                       pfnOpenProtectedResourceSession;
+    PFND3D12DDI_DESTROYPROTECTEDRESOURCESESSION_0030                    pfnDestroyProtectedResourceSession;
+
+} D3D12DDI_DEVICE_FUNCS_CONTENT_PROTECTION_RESOURCES_0074;
 
 //----------------------------------------------------------------------------------------------------------------------------------
 // D3D12 Extended Feature Content Protection Streaming
@@ -10038,6 +11324,8 @@ typedef enum D3D12DDI_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE_0063
     D3D12DDI_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE_0063_EXECUTION = 2,
     D3D12DDI_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE_0063_CAPS_INPUT = 3,
     D3D12DDI_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE_0063_CAPS_OUTPUT = 4,
+    D3D12DDI_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE_0076_DEVICE_EXECUTE_INPUT = 5,
+    D3D12DDI_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE_0076_DEVICE_EXECUTE_OUTPUT = 6,
 } D3D12DDI_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE_0063;
 
 typedef enum D3D12DDI_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE_0063
@@ -10247,6 +11535,188 @@ typedef struct D3D12DDI_COMMAND_LIST_FUNCS_VIDEO_ENCODE_0063
     PFND3D12DDI_INITIALIZE_VIDEO_EXTENSION_COMMAND_0063     pfnInitializeVideoExtensionCommand;
     PFND3D12DDI_EXECUTE_VIDEO_EXTENSION_COMMAND_0063        pfnExecuteVideoExtensionCommand;
 } D3D12DDI_COMMAND_LIST_FUNCS_VIDEO_ENCODE_0063;
+
+//----------------------------------------------------------------------------------------------------------------------------------
+// D3D12 Extended Feature Video
+// Version: D3D12DDI_FEATURE_VERSION_VIDEO_0072_0
+// Usermode DDI Min Version: D3D12DDI_SUPPORTED_0043
+
+#define D3D12DDI_FEATURE_VERSION_VIDEO_0072_0 16u
+
+typedef enum D3D12DDI_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAGS_0072
+{
+    D3D12DDI_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAG_0072_NONE                    = 0,
+    D3D12DDI_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAG_0072_SUPPORTED               = 0x1,
+
+} D3D12DDI_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAGS_0072;
+DEFINE_ENUM_FLAG_OPERATORS( D3D12DDI_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAGS_0072 );
+
+// D3D12DDICAPS_TYPE_VIDEO_0072_DECODE_PROTECTED_RESOURCES
+// *pInfo = nullptr
+// pData = D3D12DDI_VIDEO_DECODE_PROTECTED_RESOURCES_DATA_0072
+// DataSize = sizeof(D3D12DDI_VIDEO_DECODE_PROTECTED_RESOURCES_DATA_0072)
+typedef struct D3D12DDI_VIDEO_DECODE_PROTECTED_RESOURCES_DATA_0072 
+{
+    UINT NodeIndex;                                                         // input
+    D3D12DDI_VIDEO_DECODE_CONFIGURATION_0020 Configuration;                 // input
+    D3D12DDI_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAGS_0072 SupportFlags;      // output
+} D3D12DDI_VIDEO_DECODE_PROTECTED_RESOURCES_DATA_0072;
+
+// D3D12DDICAPS_TYPE_VIDEO_0072_PROCESS_PROTECTED_RESOURCES
+// *pInfo = nullptr
+// pData = D3D12DDI_VIDEO_PROCESS_PROTECTED_RESOURCES_DATA_0072
+// DataSize = sizeof(D3D12DDI_VIDEO_PROCESS_PROTECTED_RESOURCES_DATA_0072)
+typedef struct D3D12DDI_VIDEO_PROCESS_PROTECTED_RESOURCES_DATA_0072
+{
+    UINT NodeIndex;                                                                           // input
+    D3D12DDI_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAGS_0072 SupportFlags;                        // output
+} D3D12DDI_VIDEO_PROCESS_PROTECTED_RESOURCES_DATA_0072;
+
+// D3D12DDICAPS_TYPE_VIDEO_0072_MOTION_ESTIMATOR_PROTECTED_RESOURCES
+// *pInfo = nullptr
+// pData = D3D12DDI_VIDEO_MOTION_ESTIMATOR_PROTECTED_RESOURCES_DATA_0072
+// DataSize = sizeof(D3D12DDI_VIDEO_MOTION_ESTIMATOR_PROTECTED_RESOURCES_DATA_0072)
+typedef struct D3D12DDI_VIDEO_MOTION_ESTIMATOR_PROTECTED_RESOURCES_DATA_0072
+{
+    UINT NodeIndex;                                                                           // input
+    D3D12DDI_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAGS_0072 SupportFlags;                        // output
+} D3D12DDI_VIDEO_MOTION_ESTIMATOR_PROTECTED_RESOURCES_DATA_0072;
+
+// D3D12DDICAPS_TYPE_VIDEO_0032_DECODER_HEAP_SIZE
+// *pInfo = nullptr
+// pData = D3D12DDI_VIDEO_DECODER_HEAP_SIZE_DATA_0072
+// DataSize = sizeof(D3D12DDI_VIDEO_DECODER_HEAP_SIZE_DATA_0072)
+typedef struct D3D12DDI_VIDEO_DECODER_HEAP_SIZE_DATA_0072
+{
+    UINT NodeMask;
+    D3D12DDI_VIDEO_DECODE_CONFIGURATION_0020    Configuration;                  // input 
+    UINT                                        DecodeWidth;                    // input 
+    UINT                                        DecodeHeight;                   // input 
+    DXGI_FORMAT                                 Format;                         // input 
+    DXGI_RATIONAL                               FrameRate;                      // input 
+    UINT                                        BitRate;                        // input 
+    UINT                                        MaxDecodePictureBufferCount;    // input 
+    BOOL                                        Protected;                      // input 
+    UINT64                                      MemoryPoolL0Size;               // output
+    UINT64                                      MemoryPoolL1Size;               // output
+} D3D12DDI_VIDEO_DECODER_HEAP_SIZE_DATA_0072;
+
+// D3D12DDICAPS_TYPE_VIDEO_0032_PROCESSOR_SIZE
+// *pInfo = nullptr
+// pData = D3D12DDI_VIDEO_PROCESSOR_SIZE_DATA_0072
+// DataSize = sizeof(D3D12DDI_VIDEO_PROCESSOR_SIZE_DATA_0072)
+typedef struct D3D12DDI_VIDEO_PROCESSOR_SIZE_DATA_0072
+{
+    UINT NodeMask;                                                      // input 
+    D3D12DDI_VIDEO_PROCESS_OUTPUT_STREAM_DESC_0032 OutputStream;        // input 
+    D3D12DDI_VIDEO_PROCESSOR_INPUT_STREAM_DESC_0043* pInputStreams;     // input 
+    UINT NumInputStreams;                                               // input 
+    BOOL Protected;                                                     // input 
+    UINT64 MemoryPoolL0Size;                                            // output
+    UINT64 MemoryPoolL1Size;                                            // output
+} D3D12DDI_VIDEO_PROCESSOR_SIZE_DATA_0072;
+
+typedef struct D3D12DDIARG_CREATE_VIDEO_DECODER_0072
+{
+    UINT NodeMask;
+    D3D12DDI_VIDEO_DECODE_CONFIGURATION_0020    Configuration;
+    D3D12DDI_HPROTECTEDRESOURCESESSION_0030     hDrvProtectedResourceSession;
+} D3D12DDIARG_CREATE_VIDEO_DECODER_0072;
+
+typedef struct D3D12DDIARG_CREATE_VIDEO_DECODER_HEAP_0072
+{
+    UINT NodeMask;
+    D3D12DDI_VIDEO_DECODE_CONFIGURATION_0020    Configuration;
+    UINT                                        DecodeWidth; 
+    UINT                                        DecodeHeight;
+    DXGI_FORMAT                                 Format;
+    DXGI_RATIONAL                               FrameRate;
+    UINT                                        BitRate;
+    UINT                                        MaxDecodePictureBufferCount;
+    D3D12DDI_HPROTECTEDRESOURCESESSION_0030     hDrvProtectedResourceSession;
+} D3D12DDIARG_CREATE_VIDEO_DECODER_HEAP_0072;
+
+typedef struct D3D12DDIARG_CREATE_VIDEO_PROCESSOR_0072
+{
+    UINT NodeMask;
+    D3D12DDI_VIDEO_PROCESS_OUTPUT_STREAM_DESC_0032 OutputStream;
+    D3D12DDI_VIDEO_PROCESSOR_INPUT_STREAM_DESC_0043* pInputStreams;
+    UINT NumInputStreams;
+    D3D12DDI_HPROTECTEDRESOURCESESSION_0030 hDrvProtectedResourceSession;
+} D3D12DDIARG_CREATE_VIDEO_PROCESSOR_0072;
+
+typedef SIZE_T ( APIENTRY* PFND3D12DDI_CALCPRIVATEVIDEODECODERSIZE_0072 )( D3D12DDI_HDEVICE hDrvDevice, _In_ CONST D3D12DDIARG_CREATE_VIDEO_DECODER_0072* pArgs);
+typedef HRESULT ( APIENTRY* PFND3D12DDI_CREATEVIDEODECODER_0072 )( D3D12DDI_HDEVICE hDrvDevice, _In_ CONST D3D12DDIARG_CREATE_VIDEO_DECODER_0072* pArgs, D3D12DDI_HVIDEODECODER_0020 hDrvVideoDecoder );
+
+typedef SIZE_T ( APIENTRY* PFND3D12DDI_CALCPRIVATEVIDEODECODERHEAPSIZE_0072 )( D3D12DDI_HDEVICE hDrvDevice, _In_ CONST D3D12DDIARG_CREATE_VIDEO_DECODER_HEAP_0072* pArgs);
+typedef HRESULT ( APIENTRY* PFND3D12DDI_CREATEVIDEODECODERHEAP_0072 )( D3D12DDI_HDEVICE hDrvDevice, _In_ CONST D3D12DDIARG_CREATE_VIDEO_DECODER_HEAP_0072*, D3D12DDI_HVIDEODECODERHEAP_0032 hDrvVideoDecoderHeap );
+
+typedef SIZE_T ( APIENTRY* PFND3D12DDI_CALCPRIVATEVIDEOPROCESSORSIZE_0072 )( D3D12DDI_HDEVICE hDrvDevice, _In_ CONST D3D12DDIARG_CREATE_VIDEO_PROCESSOR_0072* pArgs);
+typedef HRESULT ( APIENTRY* PFND3D12DDI_CREATEVIDEOPROCESSOR_0072 )( D3D12DDI_HDEVICE hDrvDevice, _In_ CONST D3D12DDIARG_CREATE_VIDEO_PROCESSOR_0072* pArgs, D3D12DDI_HVIDEOPROCESSOR_0020 hDrvVideoProcessor);
+
+// D3D12DDI_TABLE_TYPE_0020_DEVICE_VIDEO
+typedef struct D3D12DDI_DEVICE_FUNCS_VIDEO_0072
+{
+    PFND3D12DDI_VIDEO_GETCAPS                                           pfnGetCaps;
+    PFND3D12DDI_CALCPRIVATEVIDEODECODERSIZE_0072                        pfnCalcPrivateVideoDecoderSize;
+    PFND3D12DDI_CREATEVIDEODECODER_0072                                 pfnCreateVideoDecoder;
+    PFND3D12DDI_DESTROYVIDEODECODER_0021                                pfnDestroyVideoDecoder;
+    PFND3D12DDI_CALCPRIVATEVIDEODECODERHEAPSIZE_0072                    pfnCalcPrivateVideoDecoderHeapSize;
+    PFND3D12DDI_CREATEVIDEODECODERHEAP_0072                             pfnCreateVideoDecoderHeap;
+    PFND3D12DDI_DESTROYVIDEODECODERHEAP_0032                            pfnDestroyVideoDecoderHeap;
+    PFND3D12DDI_CALCPRIVATEVIDEOPROCESSORSIZE_0072                      pfnCalcPrivateVideoProcessorSize;
+    PFND3D12DDI_CREATEVIDEOPROCESSOR_0072                               pfnCreateVideoProcessor;
+    PFND3D12DDI_DESTROYVIDEOPROCESSOR_0021                              pfnDestroyVideoProcessor;
+    PFND3D12DDI_CALCPRIVATEVIDEOMOTIONESTIMATORSIZE_0060                pfnCalcPrivateVideoMotionEstimatorSize;
+    PFND3D12DDI_CREATEVIDEOMOTIONESTIMATOR_0060                         pfnCreateVideoMotionEstimator;
+    PFND3D12DDI_DESTROYVIDEOMOTIONESTIMATOR_0053                        pfnDestroyVideoMotionEstimator;
+    PFND3D12DDI_CALCPRIVATEVIDEOMOTIONVECTORHEAPSIZE_0060               pfnCalcPrivateVideoMotionVectorHeapSize;
+    PFND3D12DDI_CREATEVIDEOMOTIONVECTORHEAP_0060                        pfnCreateVideoMotionVectorHeap;
+    PFND3D12DDI_DESTROYVIDEOMOTIONVECTORHEAP_0053                       pfnDestroyVideoMotionVectorHeap;
+    PFND3D12DDI_CALCPRIVATEVIDEOEXTENSIONCOMMANDSIZE_0061               pfnCalcPrivateVideoExtensionCommandSize;
+    PFND3D12DDI_CREATEVIDEOEXTENSIONCOMMAND_0063                        pfnCreateVideoExtensionCommand;
+    PFND3D12DDI_DESTROYVIDEOEXTENSIONCOMMAND_0063                       pfnDestroyVideoExtensionCommand;
+} D3D12DDI_DEVICE_FUNCS_VIDEO_0072;
+
+//----------------------------------------------------------------------------------------------------------------------------------
+// D3D12 Extended Feature Video
+// Version: D3D12DDI_FEATURE_VERSION_VIDEO_0076_0
+// Usermode DDI Min Version: D3D12DDI_SUPPORTED_0043
+
+#define D3D12DDI_FEATURE_VERSION_VIDEO_0076_0 17u
+
+typedef HRESULT(APIENTRY* PFND3D12DDI_EXECUTEDEVICEVIDEOEXTENSIONCOMMAND_0076)(
+    D3D12DDI_HDEVICE hDrvDevice, 
+    D3D12DDI_HVIDEOEXTENSIONCOMMAND_0063 hDrvVideoExtensionCommand, 
+    _In_reads_bytes_ (ExecutionParametersSizeInBytes) CONST void *pExecutionParameters, 
+    _In_ SIZE_T ExecutionParametersSizeInBytes,
+    _Out_writes_bytes_(OutputDataSizeInBytes) void *pOutputData,
+    SIZE_T OutputDataSizeInBytes);
+
+// D3D12DDI_TABLE_TYPE_0020_DEVICE_VIDEO
+typedef struct D3D12DDI_DEVICE_FUNCS_VIDEO_0076
+{
+    PFND3D12DDI_VIDEO_GETCAPS                                           pfnGetCaps;
+    PFND3D12DDI_CALCPRIVATEVIDEODECODERSIZE_0072                        pfnCalcPrivateVideoDecoderSize;
+    PFND3D12DDI_CREATEVIDEODECODER_0072                                 pfnCreateVideoDecoder;
+    PFND3D12DDI_DESTROYVIDEODECODER_0021                                pfnDestroyVideoDecoder;
+    PFND3D12DDI_CALCPRIVATEVIDEODECODERHEAPSIZE_0072                    pfnCalcPrivateVideoDecoderHeapSize;
+    PFND3D12DDI_CREATEVIDEODECODERHEAP_0072                             pfnCreateVideoDecoderHeap;
+    PFND3D12DDI_DESTROYVIDEODECODERHEAP_0032                            pfnDestroyVideoDecoderHeap;
+    PFND3D12DDI_CALCPRIVATEVIDEOPROCESSORSIZE_0072                      pfnCalcPrivateVideoProcessorSize;
+    PFND3D12DDI_CREATEVIDEOPROCESSOR_0072                               pfnCreateVideoProcessor;
+    PFND3D12DDI_DESTROYVIDEOPROCESSOR_0021                              pfnDestroyVideoProcessor;
+    PFND3D12DDI_CALCPRIVATEVIDEOMOTIONESTIMATORSIZE_0060                pfnCalcPrivateVideoMotionEstimatorSize;
+    PFND3D12DDI_CREATEVIDEOMOTIONESTIMATOR_0060                         pfnCreateVideoMotionEstimator;
+    PFND3D12DDI_DESTROYVIDEOMOTIONESTIMATOR_0053                        pfnDestroyVideoMotionEstimator;
+    PFND3D12DDI_CALCPRIVATEVIDEOMOTIONVECTORHEAPSIZE_0060               pfnCalcPrivateVideoMotionVectorHeapSize;
+    PFND3D12DDI_CREATEVIDEOMOTIONVECTORHEAP_0060                        pfnCreateVideoMotionVectorHeap;
+    PFND3D12DDI_DESTROYVIDEOMOTIONVECTORHEAP_0053                       pfnDestroyVideoMotionVectorHeap;
+    PFND3D12DDI_CALCPRIVATEVIDEOEXTENSIONCOMMANDSIZE_0061               pfnCalcPrivateVideoExtensionCommandSize;
+    PFND3D12DDI_CREATEVIDEOEXTENSIONCOMMAND_0063                        pfnCreateVideoExtensionCommand;
+    PFND3D12DDI_DESTROYVIDEOEXTENSIONCOMMAND_0063                       pfnDestroyVideoExtensionCommand;
+    PFND3D12DDI_EXECUTEDEVICEVIDEOEXTENSIONCOMMAND_0076                 pfnExecuteDeviceVideoExtensionCommand;
+} D3D12DDI_DEVICE_FUNCS_VIDEO_0076;
 
 
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -10722,6 +12192,41 @@ typedef struct D3D12DDI_DEVICE_DOWNLEVEL_SUPPORT_FUNCS_0054
     PFND3D12DDI_QUERY_VIDEO_MEMORY_INFO_0054 pfnQueryVideoMemoryInfo;
     PFND3D12DDI_QUERY_CLOCK_CALIBRATION_0054 pfnQueryClockCalibration;
 } D3D12DDI_DEVICE_DOWNLEVEL_SUPPORT_FUNCS_0054;
+
+
+//----------------------------------------------------------------------------------------------------------------------------------
+// D3D12 Extended Feature Pin Resources
+// Feature: D3D12DDI_FEATURE_0076_PIN_RESOURCES
+// Version: D3D12DDI_FEATURE_VERSION_PIN_RESOURCES_0076_0
+// Usermode DDI Min Version: D3D12DDI_SUPPORTED_0065
+
+#define D3D12DDI_FEATURE_VERSION_PIN_RESOURCES_0076_0 1u
+
+typedef struct D3D12DDICB_PIN_RESOURCES_0076
+{
+    UINT NumResources;
+    _Field_size_(NumResources) const D3D12DDI_HRTRESOURCE* hResources;
+} D3D12DDICB_PIN_RESOURCES_0076;
+
+typedef struct D3D12DDICB_UNPIN_RESOURCES_0076
+{
+    UINT NumResources;
+    _Field_size_(NumResources) const D3D12DDI_HRTRESOURCE* hResources;
+} D3D12DDICB_UNPIN_RESOURCES_0076;
+
+typedef HRESULT (APIENTRY CALLBACK *PFND3D12DDI_PINRESOURCES_CB_0076)(
+    D3D12DDI_HRTDEVICE hRTDevice,
+    CONST D3D12DDICB_PIN_RESOURCES_0076* );
+typedef HRESULT(APIENTRY CALLBACK *PFND3D12DDI_UNPINRESOURCES_CB_0076)(
+    D3D12DDI_HRTDEVICE hRTDevice,
+    CONST D3D12DDICB_UNPIN_RESOURCES_0076* );
+
+// D3D12DDI_TABLE_TYPE_0076_PIN_RESOURCES_CALLBACKS with D3D12DDI_FEATURE_VERSION_PIN_RESOURCES_0076_0
+typedef struct D3D12DDI_PIN_RESOURCES_CALLBACKS_0076
+{
+    PFND3D12DDI_PINRESOURCES_CB_0076   pfnPinResourcesCb;
+    PFND3D12DDI_UNPINRESOURCES_CB_0076 pfnUnpinResourcesCb;
+} D3D12DDI_PIN_RESOURCES_CALLBACKS_0076;
 
 #endif // D3D12DDI_MINOR_HEADER_VERSION >= 2
 

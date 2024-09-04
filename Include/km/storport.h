@@ -101,6 +101,7 @@ Revision History:
 // SCSI I/O Request Block
 //
 
+//@[comment("MVI_tracked")]
 typedef struct _SCSI_REQUEST_BLOCK {
     USHORT Length;                  // offset 0
     UCHAR Function;                 // offset 2
@@ -395,6 +396,8 @@ typedef struct _SCSI_PNP_REQUEST_BLOCK {
 #define SRB_STATUS_ERROR_RECOVERY           0x23
 #define SRB_STATUS_NOT_POWERED              0x24
 #define SRB_STATUS_LINK_DOWN                0x25
+#define SRB_STATUS_INSUFFICIENT_RESOURCES   0x26
+#define SRB_STATUS_THROTTLED_REQUEST        0x27
 
 
 //
@@ -8056,14 +8059,14 @@ typedef struct _PORT_CONFIGURATION_INFORMATION {
     // Indicator for wide scsi.
     //
 
-    UCHAR   MaximumNumberOfTargets;
+    UCHAR MaximumNumberOfTargets;
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 
     // Use 2 reserved UCHARs to pass info on SRB and address type used.
-    UCHAR   SrbType;
-    UCHAR   AddressType;
+    UCHAR SrbType;
+    UCHAR AddressType;
 
 #else
 
@@ -8071,7 +8074,7 @@ typedef struct _PORT_CONFIGURATION_INFORMATION {
     // Ensure quadword alignment.
     //
 
-    UCHAR   ReservedUchars[2];
+    UCHAR ReservedUchars[2];
 
 #endif
 
@@ -8113,7 +8116,7 @@ typedef struct _PORT_CONFIGURATION_INFORMATION {
     // 64-bit physical addresses.  See SCSI_DMA64_* flags below.
     //
 
-    UCHAR  Dma64BitAddresses;        /* New */
+    UCHAR Dma64BitAddresses;        /* New */
 
     //
     // Indicates that the miniport can accept a SRB_FUNCTION_RESET_DEVICE
@@ -8149,26 +8152,29 @@ typedef struct _PORT_CONFIGURATION_INFORMATION {
 
     MEMORY_REGION DumpRegion;
 
-    ULONG         RequestedDumpBufferSize;
+    ULONG RequestedDumpBufferSize;
 
-    BOOLEAN       VirtualDevice;
+    BOOLEAN VirtualDevice;
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
-    UCHAR         DumpMode;
-    // 2 pad bytes unused
+    UCHAR DumpMode;
+#if (NTDDI_VERSION >= NTDDI_WIN10_VB)
+    UCHAR DmaAddressWidth;
+#endif
+    // 1 pad byte unused
 #endif
 
-    ULONG         ExtendedFlags1;
+    ULONG ExtendedFlags1;
 
-    ULONG         MaxNumberOfIO;
+    ULONG MaxNumberOfIO;
 
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 
-    ULONG         MaxIOsPerLun;
-    ULONG         InitialLunQueueDepth;
-    ULONG         BusResetHoldTime;         // in usec
-    ULONG         FeatureSupport;
+    ULONG MaxIOsPerLun;
+    ULONG InitialLunQueueDepth;
+    ULONG BusResetHoldTime;         // in usec
+    ULONG FeatureSupport;
 
 #endif
 
@@ -8181,6 +8187,7 @@ typedef struct _PORT_CONFIGURATION_INFORMATION {
 #define STOR_ADAPTER_DMA_V3_PREFERRED                       0x00000008  // Indicating that miniport driver prefers to use DMA V3 kernel API for the adapter.
 #define STOR_ADAPTER_FEATURE_ABORT_COMMAND                  0x00000010  // Indicating the miniport driver supports the ability to abort an outstanding command via SRB_FUNCTION_ABORT_COMMAND.
 #define STOR_ADAPTER_FEATURE_RICH_TEMPERATURE_THRESHOLD     0x00000020  // Indicating the adapter supports richer temperature threshold information than defined in SCSI SPC4 spec.
+#define STOR_ADAPTER_DMA_ADDRESS_WIDTH_SPECIFIED            0x00000040  // Indicating that miniport driver specified DMA address width for the adapter.
 
 // DumpMode values
 #define DUMP_MODE_CRASH         0x01    // crashdump
@@ -8492,6 +8499,7 @@ typedef enum _SCSI_UNIT_CONTROL_TYPE {
     ScsiUnitRemove,
     ScsiUnitSurpriseRemoval,
     ScsiUnitRichDescription,
+    ScsiUnitQueryBusType,
     ScsiUnitControlMax,
     MakeUnitControlTypeSizeOfUlong = 0xffffffff
 } SCSI_UNIT_CONTROL_TYPE, *PSCSI_UNIT_CONTROL_TYPE;
@@ -8732,6 +8740,14 @@ typedef struct _SCSI_SUPPORTED_CONTROL_TYPE_LIST {
     BOOLEAN SupportedTypeList[0];
 
 } SCSI_SUPPORTED_CONTROL_TYPE_LIST, *PSCSI_SUPPORTED_CONTROL_TYPE_LIST;
+
+//
+// Parameter to miniport driver for ScsiUnitQueryBusType.
+//
+typedef struct _STOR_UNIT_CONTROL_QUERY_BUS_TYPE {
+    PSTOR_ADDRESS Address;
+    ULONG BusType;
+} STOR_UNIT_CONTROL_QUERY_BUS_TYPE, *PSTOR_UNIT_CONTROL_QUERY_BUS_TYPE;
 
 //
 // DPC Data Structure
@@ -9504,7 +9520,12 @@ typedef enum _STORPORT_FUNCTION_CODE {
     ExtFunctionCancelDpc,
     ExtFunctionMiniportTelemetryEx,
     ExtFunctionQueryConfiguration,
-    ExtFunctionLogHardwareError
+    ExtFunctionLogHardwareError,
+    ExtFunctionInitializeEvent,
+    ExtFunctionWaitForEvent,
+    ExtFunctionSetEvent,
+    ExtFunctionDeviceReset,
+    ExtFunctionSetFeatureList
 
 } STORPORT_FUNCTION_CODE, *PSTORPORT_FUNCTION_CODE;
 
@@ -9527,6 +9548,7 @@ typedef enum _STORPORT_FUNCTION_CODE {
 #define STOR_STATUS_INVALID_BUFFER_SIZE         (0xC100000AL)
 #define STOR_STATUS_UNSUPPORTED_VERSION         (0xC100000BL)
 #define STOR_STATUS_BUSY                        (0xC100000CL)
+#define STOR_STATUS_THROTTLED_REQUEST           (0xC100000DL)
 
 //
 // Port driver error codes
@@ -9592,7 +9614,8 @@ typedef enum _SCSI_NOTIFICATION_TYPE {
     InitializeDpcWithContext,
     InitializeThreadedDpc,
     SetTargetProcessorDpc,
-    MarkDeviceFailed
+    MarkDeviceFailed,
+    MarkDeviceFailedEx
 
 } SCSI_NOTIFICATION_TYPE, *PSCSI_NOTIFICATION_TYPE;
 
@@ -13526,6 +13549,7 @@ typedef enum _STORPORT_ETW_LEVEL {
 #define STORPORT_ETW_EVENT_KEYWORD_ENUMERATION      0x08
 #define STORPORT_ETW_EVENT_KEYWORD_COMMAND_TRACE    0x10
 #define STORPORT_ETW_EVENT_KEYWORD_ASYNC_EVENT      0x20
+#define STORPORT_ETW_EVENT_KEYWORD_NON_IO           0x40
 
 typedef enum _STORPORT_ETW_EVENT_OPCODE {
     StorportEtwEventOpcodeInfo = 0,
@@ -13551,13 +13575,21 @@ typedef enum _STORPORT_ETW_EVENT_CHANNEL{
 } STORPORT_ETW_EVENT_CHANNEL, *PSTORPORT_ETW_EVENT_CHANNEL;
 
 //
-// The event description must not exceed 32 characters and the parameter
-// names must not exceed 16 characters (not including the NULL terminator),
-// if release < NTDDI_WIN10_19H1. Otherwise name should not exceed 32 characters
+// The event description must not exceed 32 characters if
+// release < NTDDI_WIN10_VB. Otherwise it should not
+// exceed 64 characters. The parameter names must not exceed
+// 16 characters if release < NTDDI_WIN10_VB. Otherwise
+// they should not exceed 32 characters. These do not include
+// the NULL terminator.
 //
-#define STORPORT_ETW_MAX_DESCRIPTION_LENGTH 32
 
-#if (NTDDI_VERSION >= NTDDI_WIN10_19H1)
+#if (NTDDI_VERSION >= NTDDI_WIN10_VB)
+#define STORPORT_ETW_MAX_DESCRIPTION_LENGTH 64
+#else
+#define STORPORT_ETW_MAX_DESCRIPTION_LENGTH 32
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_VB)
 #define STORPORT_ETW_MAX_PARAM_NAME_LENGTH 32
 #else
 #define STORPORT_ETW_MAX_PARAM_NAME_LENGTH 16
@@ -13606,7 +13638,7 @@ Parameters:
         name is NULL or empty, the value will be logged as 0.
 
 Returns:
-    STOR_STATUS_SUCCESS if the ETW event was successuflly logged.
+    STOR_STATUS_SUCCESS if the ETW event was successfully logged.
     STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter. This is
         typically returned if a passed-in string has too many characters.
     STOR_STATUS_UNSUCCESSFUL may also be returned for other, internal reasons.
@@ -13711,7 +13743,7 @@ Parameters:
         name is NULL or empty, the value will be logged as 0.
 
 Returns:
-    STOR_STATUS_SUCCESS if the ETW event was successuflly logged.
+    STOR_STATUS_SUCCESS if the ETW event was successfully logged.
     STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter. This is
         typically returned if a passed-in string has too many characters.
     STOR_STATUS_UNSUCCESSFUL may also be returned for other, internal reasons.
@@ -13836,7 +13868,7 @@ Parameters:
         name is NULL or empty, the value will be logged as 0.
 
 Returns:
-    STOR_STATUS_SUCCESS if the ETW event was successuflly logged.
+    STOR_STATUS_SUCCESS if the ETW event was successfully logged.
     STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter. This is
         typically returned if a passed-in string has too many characters.
     STOR_STATUS_UNSUCCESSFUL may also be returned for other, internal reasons.
@@ -13975,7 +14007,7 @@ Parameters:
         name is NULL or empty, the value will be logged as 0.
 
 Returns:
-    STOR_STATUS_SUCCESS if the ETW event was successuflly logged.
+    STOR_STATUS_SUCCESS if the ETW event was successfully logged.
     STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter. This is
         typically returned if a passed-in string has too many characters.
     STOR_STATUS_UNSUCCESSFUL may also be returned for other, internal reasons.
@@ -14068,7 +14100,7 @@ Parameters:
         name is NULL or empty, the value will be logged as 0.
 
 Returns:
-    STOR_STATUS_SUCCESS if the ETW event was successuflly logged.
+    STOR_STATUS_SUCCESS if the ETW event was successfully logged.
     STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter. This is
         typically returned if a passed-in string has too many characters.
     STOR_STATUS_UNSUCCESSFUL may also be returned for other, internal reasons.
@@ -14177,7 +14209,7 @@ Parameters:
         name is NULL or empty, the value will be logged as 0.
 
 Returns:
-    STOR_STATUS_SUCCESS if the ETW event was successuflly logged.
+    STOR_STATUS_SUCCESS if the ETW event was successfully logged.
     STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter. This is
         typically returned if a passed-in string has too many characters.
     STOR_STATUS_UNSUCCESSFUL may also be returned for other, internal reasons.
@@ -14751,14 +14783,109 @@ Returns:
 
 
 //
-// Storport mark device failed flag definitions.
+// Storport mark device failed API related definitions.
+//
+
+#define STORPORT_MAX_ADDITIONAL_DATA_SIZE       1024
+#define STORPORT_MAX_CRITICAL_DATA_SIZE         8
+
+//
+// N.B. Below bit flags are exclusive to each other.
 //
 
 //
-// Miniport can set this bit to remove the device, otherwise, storport
-// will only log the event.
+// Miniport should set this bit in Flags field if it wants to remove the device.
 //
 #define STORPORT_MARK_DEVICE_FAILED_FLAG_REMOVE_DEVICE      0x1
+
+//
+// Miniport sets this bit in Flags field to indicate this is a predicted device
+// failure.
+//
+#define STORPORT_MARK_DEVICE_FAILED_FLAG_PREDICTED_FAILURE  0x2
+
+ULONG
+FORCEINLINE
+StorPortMarkDeviceFailedEx(
+    _In_ PVOID HwDeviceExtension,
+    _In_opt_ PSTOR_ADDRESS StorAddress,
+    _In_ ULONG Flags,
+    _In_ USHORT FaultCode,
+    _In_ PWSTR FaultDescription,
+    _In_range_(0, STORPORT_MAX_ADDITIONAL_DATA_SIZE) USHORT AdditionalDataSize,
+    _In_reads_bytes_opt_(AdditionalDataSize) PUCHAR AdditionalData,
+    _In_range_(0, STORPORT_MAX_CRITICAL_DATA_SIZE) USHORT CriticalDataSize,
+    _In_reads_bytes_opt_(CriticalDataSize) PUCHAR CriticalData
+    )
+/*
+
+Description:
+
+    A miniport can call this function to mark a failed device and
+    provide data that might be needed for diagnosis.
+
+    Afer this call, PnP manager will send IRP to query device PnP state, then try
+    to remove the failed device.
+
+Parameters:
+
+    HwDeviceExtension - The miniport's device extension.
+
+    Address - NULL if the device is an adapter, otherwise the address specifies
+        the unit object.
+
+    Flags - Indicates the specific behavior that miniport wants to do.
+
+    FaultCode - Miniport specific fault code.
+
+    FaultDescription - Human readable description for the fault.
+
+    AdditionalDataSize - Size of additional data associated with this condition.
+
+    AdditionalData - Additional data associated with this condition.
+
+    CriticalDataSize - Size of critical data associated with this condition.
+
+    CriticalData - Critical data associated with this condition.
+
+Returns:
+
+    None.
+
+*/
+{
+    ULONG Status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_VB)
+
+    StorPortNotification(MarkDeviceFailedEx,
+                         HwDeviceExtension,
+                         StorAddress,
+                         Flags,
+                         FaultCode,
+                         FaultDescription,
+                         AdditionalDataSize,
+                         AdditionalData,
+                         CriticalDataSize,
+                         CriticalData,
+                         &Status);
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(StorAddress);
+    UNREFERENCED_PARAMETER(Flags);
+    UNREFERENCED_PARAMETER(FaultCode);
+    UNREFERENCED_PARAMETER(FaultDescription);
+    UNREFERENCED_PARAMETER(AdditionalDataSize);
+    UNREFERENCED_PARAMETER(AdditionalData);
+    UNREFERENCED_PARAMETER(CriticalDataSize);
+    UNREFERENCED_PARAMETER(CriticalData);
+
+#endif
+
+    return Status;
+}
+
 
 VOID
 FORCEINLINE
@@ -14784,7 +14911,7 @@ Parameters:
     Address - NULL if the device is an adapter, otherwise the address specifies
         the unit object.
 
-    Flags - Indicates whether miniport wants to to remove failed device.
+    Flags - Indicates the specific behavior that miniport wants to do.
 
     FailReason - Indicates device failure reason and details.
 
@@ -14794,14 +14921,26 @@ Returns:
 
 */
 {
+#if (NTDDI_VERSION > NTDDI_WIN10_19H1)
 
-#if (NTDDI_VERSION >= NTDDI_WIN10_19H1)
+    StorPortMarkDeviceFailedEx(HwDeviceExtension,
+                               StorAddress,
+                               Flags,
+                               0xFFFF,
+                               FailReason,
+                               0,
+                               NULL,
+                               0,
+                               NULL);
+
+#elif (NTDDI_VERSION == NTDDI_WIN10_19H1)
 
     StorPortNotification(MarkDeviceFailed,
                          HwDeviceExtension,
                          StorAddress,
                          Flags,
                          FailReason);
+
 #else
 
     UNREFERENCED_PARAMETER(HwDeviceExtension);
@@ -14846,7 +14985,7 @@ Parameters:
 
 Returns:
 
-    STOR_STATUS_SUCCESS if the ETW event was successuflly logged.
+    STOR_STATUS_SUCCESS if the ETW event was successfully logged.
     STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter.
     STOR_STATUS_UNSUCCESSFUL may also be returned for other, internal reasons.
 
@@ -14872,6 +15011,293 @@ Returns:
     UNREFERENCED_PARAMETER(DataBufferLength);
     UNREFERENCED_PARAMETER(DataBuffer);
 
+#endif
+
+    return status;
+}
+
+typedef struct _STOR_DISPATCHER_HEADER {
+    union {
+        struct {
+            UCHAR Type;
+            UCHAR Flags;
+            UCHAR Size;
+            union {
+                UCHAR Inserted;
+                BOOLEAN DebugActive;
+            };
+        }Data;
+
+        volatile LONG Lock;
+    };
+
+    LONG SignalState;
+    STOR_LIST_ENTRY WaitListHead;
+} STOR_DISPATCHER_HEADER, *PSTOR_DISPATCHER_HEADER;
+
+typedef struct _STOR_EVENT {
+    STOR_DISPATCHER_HEADER Header;
+} STOR_EVENT, *PSTOR_EVENT, *PRSTOR_EVENT;
+
+typedef enum _STOR_EVENT_TYPE {
+    StorNotificationEvent = 0, 
+    StorSynchronizationEvent = 1
+} STOR_EVENT_TYPE, *PSTOR_EVENT_TYPE;
+
+ULONG
+FORCEINLINE
+StorPortInitializeEvent(
+    _In_ PVOID HwDeviceExtension,
+    _In_ PSTOR_EVENT Event,
+    _In_ STOR_EVENT_TYPE Type,
+    _In_ BOOLEAN State
+)
+/*
+Description:
+
+    A miniport can call this function to initialize an event object as a synchronization or 
+    notification type event and sets it in a signaled or not-signaled state
+
+Parameters:
+
+    HwDeviceExtension - The miniport's device extension.
+
+    Event - Pointer to event object.
+
+    Type - Event type as specified in STOR_EVENT_TYPE.
+
+    State - Initial state of the event.
+
+    DataBuffer - Event binary data.
+
+Returns:
+
+    STOR_STATUS_SUCCESS if initialized.
+    STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter.
+*/
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_VB)
+
+    status = StorPortExtendedFunction(ExtFunctionInitializeEvent,
+                                      HwDeviceExtension,
+                                      Event,
+                                      Type,
+                                      State);
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(Event);
+    UNREFERENCED_PARAMETER(Type);
+    UNREFERENCED_PARAMETER(State);
+#endif
+
+    return status;
+}
+
+ULONG
+FORCEINLINE
+StorPortWaitForSingleObject(
+    _In_ PVOID HwDeviceExtension,
+    _In_ PVOID Object,
+    _In_ BOOLEAN Alertable,
+    _In_opt_ PLARGE_INTEGER Timeout
+)
+/*
+Description:
+
+    A miniport can call this function to put current thread into a wait state
+    until the given dispatcher object is set to signaled state or times out (optional)
+
+Parameters:
+
+    HwDeviceExtension - The miniport's device extension.
+
+    Object - Pointer to initialized dispatcher object (event, mutex, semaphore, thread or timer).
+
+    Alertable - TRUE if wait is alertable and FALSE otherwise.
+
+    Timeout - Pointer to the timeout value.
+              Positive value specifies absolute time, relative to Jan 1, 1601 (keeps tab of change in system time)
+              Negative value specifies an interval relative to the current time
+              If value is 0 (*Timeout = 0), routine returns without waiting
+              If NULL, routine waits indefinitely until signaled.
+
+Returns:
+
+    STOR_STATUS_SUCCESS if the ETW event was successfully logged.
+    STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter.
+    STOR_STATUS_UNSUCCESSFUL may also be returned for other, internal reasons.
+
+*/
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_VB)
+
+    status = StorPortExtendedFunction(ExtFunctionWaitForEvent,
+                                      HwDeviceExtension,
+                                      Object,
+                                      Alertable,
+                                      Timeout);
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(Object);
+    UNREFERENCED_PARAMETER(Alertable);
+    UNREFERENCED_PARAMETER(Timeout);
+#endif
+
+    return status;
+}
+
+ULONG
+FORCEINLINE
+StorPortSetEvent(
+    _In_ PVOID HwDeviceExtension,
+    _In_ PSTOR_EVENT Event
+)
+/*
+Description:
+
+    A miniport can call this function to set an event object to signaled state
+
+Parameters:
+
+    HwDeviceExtension - The miniport's device extension.
+
+    Event - Pointer to event object.
+
+Returns:
+
+    STOR_STATUS_SUCCESS if the ETW event was successfully logged.
+    STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter.
+    STOR_STATUS_UNSUCCESSFUL may also be returned for other, internal reasons.
+
+*/
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_VB)
+
+    status = StorPortExtendedFunction(ExtFunctionSetEvent,
+                                      HwDeviceExtension,
+                                      Event);
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(Event);
+#endif
+    return status;
+}
+
+typedef enum _STOR_DEVICE_RESET_TYPE
+{
+    StorFunctionLevelReset,
+    StorPlatformLevelReset
+} STOR_DEVICE_RESET_TYPE;
+
+ULONG
+FORCEINLINE
+StorPortHardwareReset(
+    _In_ PVOID HwDeviceExtension,
+    _In_ STOR_DEVICE_RESET_TYPE Type
+)
+/*
+Description:
+
+    A miniport can call this function to issue hardware reset
+
+Parameters:
+
+    HwDeviceExtension - The miniport's device extension.
+
+    Type - Type of reset to be issued
+
+Returns:
+
+    STOR_STATUS_SUCCESS if the ETW event was successfully logged.
+    STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter.
+    STOR_STATUS_UNSUCCESSFUL may also be returned for other, internal reasons.
+
+*/
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_VB)
+
+    status = StorPortExtendedFunction(ExtFunctionDeviceReset,
+                                      HwDeviceExtension,
+                                      Type);
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(Type);
+#endif
+
+    return status;
+}
+
+//
+// Storport interface to allow miniports to set the supported features list
+//
+
+typedef enum _STORPORT_FEATURE_TYPE
+{
+    //
+    // Whether ScsiUnitQueryBusType control type query
+    // is supported
+    //
+    StorportFeatureBusTypeUnitControl = 0,
+
+    StorportFeatureMax
+
+} STORPORT_FEATURE_TYPE;
+
+ULONG
+FORCEINLINE
+StorPortSetFeatureList(
+    _In_ PVOID HwDeviceExtension,
+    _In_range_(1, StorportFeatureMax) ULONG FeatureCount,
+    _In_reads_(FeatureCount) PBOOLEAN FeatureList
+)
+/*
+Description:
+
+    A miniport can call this function to set the storport features it supports.
+    It should be called for each adapter in the beginning of HwFindAdapter routine.
+
+Parameters:
+
+    HwDeviceExtension - The miniport's device extension.
+
+    FeatureCount - Number of features in the feature list
+
+    FeatureList - List of storport features for the miniport.
+                  This is based on STORPORT_FEATURE_TYPE enum values.
+
+Returns:
+
+    STOR_STATUS_SUCCESS if the feature list was set successfully.
+    STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter.
+    STOR_STATUS_UNSUCCESSFUL may also be returned for other, internal reasons.
+
+*/
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_VB)
+
+    status = StorPortExtendedFunction(ExtFunctionSetFeatureList,
+                                      HwDeviceExtension,
+                                      FeatureCount,
+                                      FeatureList);
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(FeatureCount);
+    UNREFERENCED_PARAMETER(FeatureList);
 #endif
 
     return status;

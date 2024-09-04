@@ -237,6 +237,14 @@ Revision History:
 #endif
 #endif
 
+#ifndef DECLSPEC_RESTRICT
+#if (_MSC_VER >= 1915) && !defined(MIDL_PASS)
+#define DECLSPEC_RESTRICT   __declspec(restrict)
+#else
+#define DECLSPEC_RESTRICT
+#endif
+#endif
+
 #ifndef DECLSPEC_ALIGN
 #if (_MSC_VER >= 1300) && !defined(MIDL_PASS)
 #define DECLSPEC_ALIGN(x)   __declspec(align(x))
@@ -2635,6 +2643,28 @@ YieldProcessor (
 #pragma intrinsic(_BitScanForward)
 #pragma intrinsic(_BitScanReverse)
 
+_Success_(return != 0)
+FORCEINLINE
+BOOLEAN
+_InlineBitScanReverse64 (
+    _Out_ ULONG *Index,
+    _In_ ULONG64 Mask
+    )
+{
+    if (_BitScanReverse(Index, (ULONG)(Mask >> 32))) {
+        *Index += 32;
+        return 1;
+    }
+
+    if (_BitScanReverse(Index, (ULONG)Mask)) {
+        return 1;
+    }
+
+    return 0;
+}
+
+#define BitScanReverse64 _InlineBitScanReverse64
+
 //
 // Interlocked intrinsic functions.
 //
@@ -3906,7 +3936,7 @@ WriteNoFence64 (
 
 extern ULONG64 (*_os_wowa64_rdtsc) (VOID);
 
-#endif
+#endif // defined(_M_HYBRID_X86_ARM64)
 
 //
 // Define function to read the value of the time stamp counter.
@@ -3916,7 +3946,7 @@ extern ULONG64 (*_os_wowa64_rdtsc) (VOID);
 
 DECLSPEC_GUARDNOCF
 
-#endif
+#endif // defined(_M_HYBRID_X86_ARM64)
 
 FORCEINLINE
 ULONG64
@@ -3934,11 +3964,11 @@ ReadTimeStampCounter(
 
     return (*_os_wowa64_rdtsc)();
 
-#else
+#else // defined(_M_HYBRID_X86_ARM64)
 
     return (ULONG64)_ReadStatusReg(ARM64_PMCCNTR_EL0);
 
-#endif
+#endif // defined(_M_HYBRID_X86_ARM64)
 
 }
 
@@ -8750,6 +8780,22 @@ typedef enum {
 
 } PCI_EXPRESS_L1_EXIT_LATENCY;
 
+typedef enum {
+
+    RCB64Bytes = 0,
+    RCB128Bytes
+
+} PCI_EXPRESS_RCB;
+
+typedef enum {
+
+    PciExpressPciPmLinkSubState_L11_BitIndex = 0,
+    PciExpressPciPmLinkSubState_L12_BitIndex,
+    PciExpressASPMLinkSubState_L11_BitIndex,
+    PciExpressASPMLinkSubState_L12_BitIndex
+
+} PCI_EXPRESS_LINK_SUBSTATE;
+
 // begin_ntoshvp
 
 typedef enum {
@@ -8834,6 +8880,7 @@ typedef union _PCI_EXPRESS_PME_REQUESTOR_ID {
 #define PCI_EXPRESS_FRS_QUEUEING_CAP_ID                                 0x0021
 #define PCI_EXPRESS_READINESS_TIME_REPORTING_CAP_ID                     0x0022
 #define PCI_EXPRESS_DESIGNATED_VENDOR_SPECIFIC_CAP_ID                   0x0023
+#define PCI_EXPRESS_NPEM_CAP_ID                                         0x0029
 
 
 //

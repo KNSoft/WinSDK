@@ -16,17 +16,17 @@ extern "C" {
 //
 // client ID for the purpose of network interface power control
 //
-#define NETPWRDEPBROKER_CLIENT_WIFICALLING          0
+#define NETPWRDEPBROKER_CLIENT_WIFICALLING 0
 
 //
 // predefined macros for timeout
 //
 // use default timeout while acquiring referece to the network interface activation
-#define NETPWRDEPBROKER_TIMEOUT_MS_USEDEFAULT       (-1)
+#define NETPWRDEPBROKER_TIMEOUT_MS_USEDEFAULT (-1)
 // use minimum timeout while acquiring referece to the network interface activation
-#define NETPWRDEPBROKER_TIMEOUT_MS_USEMIN           (-2)
+#define NETPWRDEPBROKER_TIMEOUT_MS_USEMIN (-2)
 // use maximum timeout while acquiring referece to the network interface activation
-#define NETPWRDEPBROKER_TIMEOUT_MS_USEMAX           (-3)
+#define NETPWRDEPBROKER_TIMEOUT_MS_USEMAX (-3)
 
 //
 // Description:
@@ -41,11 +41,7 @@ extern "C" {
 //      The returned handle must be released by calling NpdBrokerUninitialize.
 //
 _IRQL_requires_(PASSIVE_LEVEL)
-NTSTATUS
-NpdBrokerInitialize(
-ULONG ulClientID,
-OUT PHANDLE phBroker
-);
+NTSTATUS NpdBrokerInitialize(ULONG ulClientID, OUT PHANDLE phBroker);
 
 //
 // Description:
@@ -59,10 +55,7 @@ OUT PHANDLE phBroker
 //      Once this API is called, the handle is no longer valid.
 //
 _IRQL_requires_(PASSIVE_LEVEL)
-NTSTATUS
-NpdBrokerUninitialize(
-IN HANDLE hBroker
-);
+NTSTATUS NpdBrokerUninitialize(IN HANDLE hBroker);
 
 //
 // Description:
@@ -84,11 +77,7 @@ IN HANDLE hBroker
 //      Otherwise, lTimeoutMS cannot be smaller than minimum nor bigger than maximum.
 //
 _IRQL_requires_(PASSIVE_LEVEL)
-NTSTATUS
-NpdBrokerAcquireWithTimeout(
-IN HANDLE hBroker,
-LONG lTimeoutMS
-);
+NTSTATUS NpdBrokerAcquireWithTimeout(IN HANDLE hBroker, LONG lTimeoutMS);
 
 #ifdef __cplusplus
 }

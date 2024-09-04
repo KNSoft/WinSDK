@@ -243,6 +243,14 @@ Revision History:
 #endif
 #endif
 
+#ifndef DECLSPEC_RESTRICT
+#if (_MSC_VER >= 1915) && !defined(MIDL_PASS)
+#define DECLSPEC_RESTRICT   __declspec(restrict)
+#else
+#define DECLSPEC_RESTRICT
+#endif
+#endif
+
 #ifndef DECLSPEC_ALIGN
 #if (_MSC_VER >= 1300) && !defined(MIDL_PASS)
 #define DECLSPEC_ALIGN(x)   __declspec(align(x))
@@ -1700,6 +1708,7 @@ typedef struct _STORAGE_FAILURE_PREDICTION_CONFIG {
 // SCSI I/O Request Block
 //
 
+//@[comment("MVI_tracked")]
 typedef struct _SCSI_REQUEST_BLOCK {
     USHORT Length;                  // offset 0
     UCHAR Function;                 // offset 2
@@ -2000,6 +2009,8 @@ typedef struct _SCSI_PNP_REQUEST_BLOCK {
 #define SRB_STATUS_ERROR_RECOVERY           0x23
 #define SRB_STATUS_NOT_POWERED              0x24
 #define SRB_STATUS_LINK_DOWN                0x25
+#define SRB_STATUS_INSUFFICIENT_RESOURCES   0x26
+#define SRB_STATUS_THROTTLED_REQUEST        0x27
 
 
 //

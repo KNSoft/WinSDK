@@ -498,19 +498,12 @@ wsprintfW(
 #define VK_KANA           0x15
 #define VK_HANGEUL        0x15  /* old name - should be here for compatibility */
 #define VK_HANGUL         0x15
-
-/*
- * 0x16 : unassigned
- */
-
+#define VK_IME_ON         0x16
 #define VK_JUNJA          0x17
 #define VK_FINAL          0x18
 #define VK_HANJA          0x19
 #define VK_KANJI          0x19
-
-/*
- * 0x1A : unassigned
- */
+#define VK_IME_OFF        0x1A
 
 #define VK_ESCAPE         0x1B
 
@@ -2014,6 +2007,9 @@ typedef struct tagMSG {
 #if(WINVER >= 0x0400)
 #define WM_SETTINGCHANGE                WM_WININICHANGE
 #endif /* WINVER >= 0x0400 */
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_19H1)
+#endif // NTDDI_VERSION >= NTDDI_WIN10_19H1
 
 
 #define WM_DEVMODECHANGE                0x001B
@@ -4761,6 +4757,7 @@ SetWindowPlacement(
 #if(_WIN32_WINNT >= 0x0601)
 #define WDA_NONE        0x00000000
 #define WDA_MONITOR     0x00000001
+#define WDA_EXCLUDEFROMCAPTURE 0x00000011
 
 
 WINUSERAPI
@@ -6094,6 +6091,16 @@ typedef struct tagKEYBDINPUT {
     WORD    wScan;
     DWORD   dwFlags;
     DWORD   time;
+
+    /*
+     * When dwFlags has KEYEVENTF_SYSTEMINJECTION specified this field may carry
+     * KEY_UNICODE_SEQUENCE_ITEM or KEY_UNICODE_SEQUENCE_END which are used by InputService
+     * to distinguish injected unicode sequences. Those flags are stored in low word.
+     * When dwFlags has KEYEVENTF_ATTRIBUTED_INPUT specified this field carries in its high word
+     * ID of attributes associated with injected input. This ID is assigned by InputService and
+     * recognized only by it.
+     * For all other usage scenarios please refer to official documentation.
+     */
     ULONG_PTR dwExtraInfo;
 } KEYBDINPUT, *PKEYBDINPUT, FAR* LPKEYBDINPUT;
 
@@ -6665,8 +6672,9 @@ IsMouseInPointerEnabled(
 WINUSERAPI
 BOOL
 WINAPI
-EnableMouseInPointerForThread();
+EnableMouseInPointerForThread(VOID);
 #endif
+
 
 #define TOUCH_HIT_TESTING_DEFAULT 0x0
 #define TOUCH_HIT_TESTING_CLIENT  0x1
@@ -8713,11 +8721,11 @@ ScrollWindowEx(
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
 
-#define SW_SCROLLCHILDREN   0x0001  /* Scroll children within *lprcScroll. */
-#define SW_INVALIDATE       0x0002  /* Invalidate after scrolling */
-#define SW_ERASE            0x0004  /* If SW_INVALIDATE, don't send WM_ERASEBACKGROUND */
+#define SW_SCROLLCHILDREN           0x0001  /* Scroll children within *lprcScroll. */
+#define SW_INVALIDATE               0x0002  /* Invalidate after scrolling */
+#define SW_ERASE                    0x0004  /* If SW_INVALIDATE, don't send WM_ERASEBACKGROUND */
 #if(WINVER >= 0x0500)
-#define SW_SMOOTHSCROLL     0x0010  /* Use smooth scrolling */
+#define SW_SMOOTHSCROLL             0x0010  /* Use smooth scrolling */
 #endif /* WINVER >= 0x0500 */
 
 #pragma region Desktop Family
@@ -10306,6 +10314,7 @@ SetWindowsHookExW(
 #else
 #define SetWindowsHookEx  SetWindowsHookExA
 #endif // !UNICODE
+
 
 WINUSERAPI
 BOOL
@@ -12542,6 +12551,10 @@ typedef struct tagTouchPredictionParameters
 #endif /* WINVER >= 0x0602 */
 
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_19H1)
+#endif
+
+
 #if(WINVER >= 0x0500)
 #define SPI_GETACTIVEWINDOWTRACKING         0x1000
 #define SPI_SETACTIVEWINDOWTRACKING         0x1001
@@ -12914,15 +12927,16 @@ typedef LPHIGHCONTRASTA LPHIGHCONTRAST;
 #pragma endregion
 
 /* flags for HIGHCONTRAST dwFlags field */
-#define HCF_HIGHCONTRASTON  0x00000001
-#define HCF_AVAILABLE       0x00000002
-#define HCF_HOTKEYACTIVE    0x00000004
-#define HCF_CONFIRMHOTKEY   0x00000008
-#define HCF_HOTKEYSOUND     0x00000010
-#define HCF_INDICATOR       0x00000020
-#define HCF_HOTKEYAVAILABLE 0x00000040
-#define HCF_LOGONDESKTOP    0x00000100
-#define HCF_DEFAULTDESKTOP  0x00000200
+#define HCF_HIGHCONTRASTON          0x00000001
+#define HCF_AVAILABLE               0x00000002
+#define HCF_HOTKEYACTIVE            0x00000004
+#define HCF_CONFIRMHOTKEY           0x00000008
+#define HCF_HOTKEYSOUND             0x00000010
+#define HCF_INDICATOR               0x00000020
+#define HCF_HOTKEYAVAILABLE         0x00000040
+#define HCF_LOGONDESKTOP            0x00000100
+#define HCF_DEFAULTDESKTOP          0x00000200
+#define HCF_OPTION_NOTHEMECHANGE    0x00001000
 
 /* Flags for ChangeDisplaySettings */
 #define CDS_UPDATEREGISTRY           0x00000001
@@ -14448,7 +14462,7 @@ SetThreadDpiHostingBehavior(
 WINUSERAPI
 DPI_HOSTING_BEHAVIOR
 WINAPI
-GetThreadDpiHostingBehavior();
+GetThreadDpiHostingBehavior(VOID);
 
 WINUSERAPI
 DPI_HOSTING_BEHAVIOR
@@ -14615,6 +14629,7 @@ typedef struct tagMENUBARINFO
     HWND hwndMenu;       // hwnd of item submenu if one
     BOOL fBarFocused:1;  // bar, popup has the focus
     BOOL fFocused:1;     // item has the focus
+    BOOL fUnused:30;     // reserved. Cleared to prevent Information Disclosure
 } MENUBARINFO, *PMENUBARINFO, *LPMENUBARINFO;
 
 WINUSERAPI

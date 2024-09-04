@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.phone.restricted.cellular.videotelephony.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0226 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0229 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -118,11 +118,11 @@
 #endif // defined(WINDOWS_DEVICES_SMS_LEGACYSMSAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION 0x30000
+#define WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x80000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0xa0000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION)
@@ -186,11 +186,11 @@
 #endif // defined(WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION)
 
 #if !defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
-#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x30000
+#define WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_STORAGE_PROVIDER_CLOUDFILESCONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
-#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x60000
+#define WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION 0x70000
 #endif // defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
 
 #if !defined(WINDOWS_UI_SHELL_SECURITYAPPMANAGERCONTRACT_VERSION)
@@ -233,7 +233,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CILocalVideoStream ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::ILocalVideoStream
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CILocalVideoStream_FWD_DEFINED__
@@ -251,7 +252,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRemoteVideoStream ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IRemoteVideoStream
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRemoteVideoStream_FWD_DEFINED__
@@ -269,7 +271,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIResolutionChangeEventArgs ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IResolutionChangeEventArgs
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIResolutionChangeEventArgs_FWD_DEFINED__
@@ -287,7 +290,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRotationChangeEventArgs ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IRotationChangeEventArgs
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRotationChangeEventArgs_FWD_DEFINED__
@@ -305,7 +309,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCall ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoCall
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCall_FWD_DEFINED__
@@ -323,7 +328,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallFactory ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoCallFactory
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallFactory_FWD_DEFINED__
@@ -341,7 +347,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallInitializationParameters ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoCallInitializationParameters
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallInitializationParameters_FWD_DEFINED__
@@ -359,7 +366,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoQualityChangeEventArgs ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoQualityChangeEventArgs
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoQualityChangeEventArgs_FWD_DEFINED__
@@ -377,7 +385,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStateChangeEventArgs ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoStateChangeEventArgs
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStateChangeEventArgs_FWD_DEFINED__
@@ -395,7 +404,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoStream
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream_FWD_DEFINED__
@@ -413,7 +423,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStreamExt ABI::Windows::Phone::Restricted::Cellular::VideoTelephony::IVideoStreamExt
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStreamExt_FWD_DEFINED__
@@ -432,7 +443,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 namespace ABI {
@@ -446,7 +458,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
@@ -494,7 +507,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
@@ -541,7 +555,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 namespace ABI {
@@ -555,7 +570,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
@@ -603,7 +619,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
@@ -648,7 +665,8 @@ namespace ABI {
         namespace Foundation {
             interface IAsyncAction;
         } /* Foundation */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CFoundation_CIAsyncAction ABI::Windows::Foundation::IAsyncAction
 
 #endif // ____x_ABI_CWindows_CFoundation_CIAsyncAction_FWD_DEFINED__
@@ -661,7 +679,8 @@ namespace ABI {
         namespace Foundation {
             interface IClosable;
         } /* Foundation */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CFoundation_CIClosable ABI::Windows::Foundation::IClosable
 
 #endif // ____x_ABI_CWindows_CFoundation_CIClosable_FWD_DEFINED__
@@ -674,7 +693,8 @@ namespace ABI {
             typedef struct Size Size;
             
         } /* Foundation */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 
@@ -687,7 +707,8 @@ namespace ABI {
                 
             } /* Display */
         } /* Graphics */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 
@@ -706,7 +727,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -721,7 +743,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -736,7 +759,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -751,7 +775,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 
@@ -775,7 +800,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 
@@ -792,7 +818,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 namespace ABI {
@@ -806,7 +833,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 
@@ -846,7 +874,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 
 
@@ -877,7 +906,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 
 
@@ -909,7 +939,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 
 
@@ -943,7 +974,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_VIDEOTELEPHONY_INTERNALVIDEOTELEPHONYCONTRACT_VERSION >= 0x10000
 
 
@@ -989,7 +1021,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CILocalVideoStream;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CILocalVideoStream_INTERFACE_DEFINED__) */
@@ -1055,7 +1088,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRemoteVideoStream;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRemoteVideoStream_INTERFACE_DEFINED__) */
@@ -1100,7 +1134,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIResolutionChangeEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIResolutionChangeEventArgs_INTERFACE_DEFINED__) */
@@ -1145,7 +1180,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRotationChangeEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIRotationChangeEventArgs_INTERFACE_DEFINED__) */
@@ -1214,7 +1250,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCall;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCall_INTERFACE_DEFINED__) */
@@ -1260,7 +1297,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallFactory;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallFactory_INTERFACE_DEFINED__) */
@@ -1332,7 +1370,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallInitializationParameters;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoCallInitializationParameters_INTERFACE_DEFINED__) */
@@ -1377,7 +1416,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoQualityChangeEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoQualityChangeEventArgs_INTERFACE_DEFINED__) */
@@ -1422,7 +1462,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStateChangeEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStateChangeEventArgs_INTERFACE_DEFINED__) */
@@ -1490,7 +1531,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStream_INTERFACE_DEFINED__) */
@@ -1536,7 +1578,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStreamExt;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CVideoTelephony_CIVideoStreamExt_INTERFACE_DEFINED__) */

@@ -2622,6 +2622,28 @@ YieldProcessor (
 #pragma intrinsic(_BitScanForward)
 #pragma intrinsic(_BitScanReverse)
 
+_Success_(return != 0)
+FORCEINLINE
+BOOLEAN
+_InlineBitScanReverse64 (
+    _Out_ ULONG *Index,
+    _In_ ULONG64 Mask
+    )
+{
+    if (_BitScanReverse(Index, (ULONG)(Mask >> 32))) {
+        *Index += 32;
+        return 1;
+    }
+
+    if (_BitScanReverse(Index, (ULONG)Mask)) {
+        return 1;
+    }
+
+    return 0;
+}
+
+#define BitScanReverse64 _InlineBitScanReverse64
+
 //
 // Interlocked intrinsic functions.
 //
@@ -3902,7 +3924,7 @@ WriteNoFence64 (
 
 extern ULONG64 (*_os_wowa64_rdtsc) (VOID);
 
-#endif
+#endif // defined(_M_HYBRID_X86_ARM64)
 
 //
 // Define function to read the value of the time stamp counter.
@@ -3912,7 +3934,7 @@ extern ULONG64 (*_os_wowa64_rdtsc) (VOID);
 
 DECLSPEC_GUARDNOCF
 
-#endif
+#endif // defined(_M_HYBRID_X86_ARM64)
 
 FORCEINLINE
 ULONG64
@@ -3930,11 +3952,11 @@ ReadTimeStampCounter(
 
     return (*_os_wowa64_rdtsc)();
 
-#else
+#else // defined(_M_HYBRID_X86_ARM64)
 
     return (ULONG64)_ReadStatusReg(ARM64_PMCCNTR_EL0);
 
-#endif
+#endif // defined(_M_HYBRID_X86_ARM64)
 
 }
 
@@ -4002,7 +4024,7 @@ YieldProcessor (
 #define KeQueryTickCount(CurrentCount)                                      \
     *((PULONG64)(CurrentCount)) = ReadNoFence64((const volatile LONG64 *)(SharedTickCount))
 
-#endif
+#endif // (defined(_KERNEL_MODE) || defined(_BOOT_ENVIRONMENT)) && defined(_ARM64_)
 
 
 #endif // defined(_ARM64_) || defined(_CHPE_X86_ARM64_)
@@ -6476,6 +6498,7 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 
 #define TREE_CONNECT_NO_CLIENT_BUFFERING          0x00000008  // matches with FILE_NO_INTERMEDIATE_BUFFERING
 #define TREE_CONNECT_WRITE_THROUGH                0x00000002  // matches with FILE_WRITE_THROUGH
+#define TREE_CONNECT_USE_COMPRESSION              0x00008000  // matches with FILE_NO_COMPRESSION
 
 #endif  // _WIN32_WINNT_WIN10_RS5
 
@@ -6563,6 +6586,7 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 #define FILE_CHARACTERISTIC_CSV                     0x00010000
 #define FILE_DEVICE_ALLOW_APPCONTAINER_TRAVERSAL    0x00020000
 #define FILE_PORTABLE_DEVICE                        0x00040000
+#define FILE_DEVICE_REQUIRE_SECURITY_CHECK          0x00100000
 
 
 
@@ -7313,6 +7337,7 @@ typedef struct _IO_ERROR_LOG_MESSAGE {
 #define REG_FLUSH_HIVE_FILE_GROWTH      (0x00001000L)   // Flush changes to primary hive file size as part of all flushes
 #define REG_OPEN_READ_ONLY              (0x00002000L)   // Open a hive's files in read-only mode
 #define REG_IMMUTABLE                   (0x00004000L)   // Load the hive, but don't allow any modification of it
+#define REG_NO_IMPERSONATION_FALLBACK   (0x00008000L)   // Do not fall back to impersonating the caller if hive file access fails
 #define REG_APP_HIVE_OPEN_READ_ONLY     (REG_OPEN_READ_ONLY)   // Open an app hive's files in read-only mode (if the hive was not previously loaded)
 
 //
@@ -7601,6 +7626,7 @@ typedef enum _SECTION_INHERIT {
 #define PAGE_GRAPHICS_EXECUTE_READ       0x8000    
 #define PAGE_GRAPHICS_EXECUTE_READWRITE 0x10000    
 #define PAGE_GRAPHICS_COHERENT          0x20000    
+#define PAGE_GRAPHICS_NOCACHE           0x40000    
 
 //
 // PAGE_REVERT_TO_FILE_MAP can be combined with other protection
@@ -7617,7 +7643,10 @@ typedef enum _SECTION_INHERIT {
 #define PAGE_TARGETS_INVALID        0x40000000  
 #define PAGE_ENCLAVE_UNVALIDATED    0x20000000  
 #define PAGE_ENCLAVE_NO_CHANGE      0x20000000
-#define PAGE_ENCLAVE_DECOMMIT       0x10000000  
+#define PAGE_ENCLAVE_MASK           0x10000000  
+#define PAGE_ENCLAVE_DECOMMIT       (PAGE_ENCLAVE_MASK | 0) 
+#define PAGE_ENCLAVE_SS_FIRST       (PAGE_ENCLAVE_MASK | 1) 
+#define PAGE_ENCLAVE_SS_REST        (PAGE_ENCLAVE_MASK | 2) 
 
 #define MEM_COMMIT                      0x00001000  
 #define MEM_RESERVE                     0x00002000  
@@ -7642,6 +7671,7 @@ typedef struct _MEM_ADDRESS_REQUIREMENTS {
 #define MEM_EXTENDED_PARAMETER_ZERO_PAGES_OPTIONAL      0x00000004
 #define MEM_EXTENDED_PARAMETER_NONPAGED_LARGE           0x00000008
 #define MEM_EXTENDED_PARAMETER_NONPAGED_HUGE            0x00000010
+#define MEM_EXTENDED_PARAMETER_SOFT_FAULT_PAGES         0x00000020
 
 //
 // Use the high ULONG64 bit of the MEM_EXTENDED_PARAMETER to indicate
@@ -8087,6 +8117,11 @@ DEFINE_GUID( GUID_DISK_BURST_IGNORE_THRESHOLD, 0x80e3c60e, 0xbb94, 0x4ad8, 0xbb,
 // previous behavior) to power down the disk,
 //
 DEFINE_GUID( GUID_DISK_ADAPTIVE_POWERDOWN, 0x396A32E1, 0x499A, 0x40B2, 0x91, 0x24, 0xA9, 0x6A, 0xFE, 0x70, 0x76, 0x67 );
+
+//
+// Specifies whether NVMe non-operational power state permissive mode is enabled.
+//
+DEFINE_GUID(GUID_DISK_NVME_NOPPME, 0xfc7372b6, 0xab2d, 0x43ee, 0x87, 0x97, 0x15, 0xe9, 0x84, 0x1f, 0x2c, 0xca);
 
 // System sleep settings
 // ---------------------
@@ -8874,6 +8909,15 @@ DEFINE_GUID( GUID_PROCESSOR_PARKING_HEADROOM_THRESHOLD, 0xf735a673, 0x2066, 0x4f
 DEFINE_GUID( GUID_PROCESSOR_PARKING_DISTRIBUTION_THRESHOLD, 0x4bdaf4e9, 0xd103, 0x46d7, 0xa5, 0xf0, 0x62, 0x80, 0x12, 0x16, 0x16, 0xef);
 
 //
+// Specify the anticipated execution latency at which a soft parked core can be
+// used by the scheduler.
+//
+// {97CFAC41-2217-47eb-992D-618B1977C907}
+//
+DEFINE_GUID(GUID_PROCESSOR_SOFT_PARKING_LATENCY,
+0x97cfac41, 0x2217, 0x47eb, 0x99, 0x2d, 0x61, 0x8b, 0x19, 0x77, 0xc9, 0x7);
+
+//
 // Specifies the number of perf time check intervals to average utility over.
 //
 // {7d24baa7-0b84-480f-840c-1b0743c00f5f}
@@ -9096,7 +9140,7 @@ DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_ENABLE_THRESHOLD_1,
 // responsivenss overrides will be disabled.
 //
 // {F565999F-3FB0-411a-A226-3F0198DEC130}
-DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_DISABLE_TIME, 
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_DISABLE_TIME,
 0xf565999f, 0x3fb0, 0x411a, 0xa2, 0x26, 0x3f, 0x1, 0x98, 0xde, 0xc1, 0x30);
 
 //
@@ -9104,7 +9148,7 @@ DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_DISABLE_TIME,
 // responsivenss overrides will be disabled for efficiency class 1 processors.
 //
 // {F565999F-3FB0-411a-A226-3F0198DEC131}
-DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_DISABLE_TIME_1, 
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_DISABLE_TIME_1,
 0xf565999f, 0x3fb0, 0x411a, 0xa2, 0x26, 0x3f, 0x1, 0x98, 0xde, 0xc1, 0x31);
 
 //
@@ -9112,7 +9156,7 @@ DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_DISABLE_TIME_1,
 // responsivenss overrides will be enabled.
 //
 // {3D915188-7830-49ae-A79A-0FB0A1E5A200}
-DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_ENABLE_TIME, 
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_ENABLE_TIME,
 0x3d915188, 0x7830, 0x49ae, 0xa7, 0x9a, 0xf, 0xb0, 0xa1, 0xe5, 0xa2, 0x0);
 
 //
@@ -9120,14 +9164,14 @@ DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_ENABLE_TIME,
 // responsivenss overrides will be enabled for efficiency class 1 processors.
 //
 // {3D915188-7830-49ae-A79A-0FB0A1E5A201}
-DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_ENABLE_TIME_1, 
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_ENABLE_TIME_1,
 0x3d915188, 0x7830, 0x49ae, 0xa7, 0x9a, 0xf, 0xb0, 0xa1, 0xe5, 0xa2, 0x1);
 
 //
 // Specifies the ceiling placed on EPP when responsiveness hints are enabled.
 //
 // {4427C73B-9756-4a5c-B84B-C7BDA79C7320}
-DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_EPP_CEILING, 
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_EPP_CEILING,
 0x4427c73b, 0x9756, 0x4a5c, 0xb8, 0x4b, 0xc7, 0xbd, 0xa7, 0x9c, 0x73, 0x20);
 
 //
@@ -9135,7 +9179,7 @@ DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_EPP_CEILING,
 // for efficiency class 1 processors.
 //
 // {4427C73B-9756-4a5c-B84B-C7BDA79C7321}
-DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_EPP_CEILING_1, 
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_EPP_CEILING_1,
 0x4427c73b, 0x9756, 0x4a5c, 0xb8, 0x4b, 0xc7, 0xbd, 0xa7, 0x9c, 0x73, 0x21);
 
 //
@@ -9143,7 +9187,7 @@ DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_EPP_CEILING_1,
 // are enabled.
 //
 // {CE8E92EE-6A86-4572-BFE0-20C21D03CD40}
-DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_PERF_FLOOR, 
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_PERF_FLOOR,
 0xce8e92ee, 0x6a86, 0x4572, 0xbf, 0xe0, 0x20, 0xc2, 0x1d, 0x3, 0xcd, 0x40);
 
 //
@@ -9151,7 +9195,7 @@ DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_PERF_FLOOR,
 // are enabled for efficiency class 1 processors.
 //
 // {CE8E92EE-6A86-4572-BFE0-20C21D03CD41}
-DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_PERF_FLOOR_1, 
+DEFINE_GUID(GUID_PROCESSOR_RESPONSIVENESS_PERF_FLOOR_1,
 0xce8e92ee, 0x6a86, 0x4572, 0xbf, 0xe0, 0x20, 0xc2, 0x1d, 0x3, 0xcd, 0x41);
 
 // Lock Console on Wake
@@ -9690,6 +9734,7 @@ typedef enum {
     EnergyTrackerCreate,
     EnergyTrackerQuery,
     UpdateBlackBoxRecorder,
+    SessionAllowExternalDmaDevices,
     PowerInformationLevelMaximum
 } POWER_INFORMATION_LEVEL;
 
@@ -9736,6 +9781,13 @@ typedef struct _POWER_SESSION_WINLOGON {
     BOOLEAN Console; // TRUE - for console session, FALSE - for remote session
     BOOLEAN Locked; // TRUE - lock, FALSE - unlock
 } POWER_SESSION_WINLOGON, *PPOWER_SESSION_WINLOGON;
+
+//
+// Winlogon notification to unblock external DMA devices.
+//
+typedef struct _POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES {
+    BOOLEAN IsAllowed;
+} POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES, *PPOWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES;
 
 //
 // Idle resiliency
@@ -9799,6 +9851,11 @@ typedef enum {
     MonitorRequestReasonPdcSignalHolographicShell,              // PDC_SIGNAL_PROVIDER_HOLOSI_CRITICAL_BATTERY_WAKE
     MonitorRequestReasonPdcSignalFingerprint,                   // PDC_SIGNAL_PROVIDER_WINBIO
     MonitorRequestReasonDirectedDrips,
+    MonitorRequestReasonDim,
+    MonitorRequestReasonBuiltinPanel,
+    MonitorRequestReasonDisplayRequiredUnDim,
+    MonitorRequestReasonBatteryCountChangeSuppressed,
+    MonitorRequestReasonResumeModernStandby,
     MonitorRequestReasonMax
 } POWER_MONITOR_REQUEST_REASON;
 
@@ -11424,6 +11481,10 @@ RtlAssert(
 #define FAST_FAIL_CONTROL_INVALID_RETURN_ADDRESS    57
 #define FAST_FAIL_UNEXPECTED_HOST_BEHAVIOR          58
 #define FAST_FAIL_FLAGS_CORRUPTION                  59
+#define FAST_FAIL_VEH_CORRUPTION                    60
+#define FAST_FAIL_ETW_CORRUPTION                    61
+#define FAST_FAIL_RIO_ABORT                         62
+#define FAST_FAIL_INVALID_PFN                       63
 #define FAST_FAIL_INVALID_FAST_FAIL_CODE            0xFFFFFFFF
 
 #if _MSC_VER >= 1610
@@ -12051,6 +12112,17 @@ RtlInitAnsiString(
     );
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_VB)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+NTSYSAPI
+VOID
+NTAPI
+RtlInitUTF8String(
+    _Out_ PUTF8_STRING DestinationString,
+    _In_opt_z_ __drv_aliasesMem PCSZ SourceString
+    );
+#endif
+
 
 
 //@[comment("MVI_tracked")]
@@ -12251,7 +12323,9 @@ RtlQueryRegistryValues(
 
 #if (NTDDI_VERSION >= NTDDI_WIN8) && !defined(MIDL_PASS)
 _IRQL_requires_max_(PASSIVE_LEVEL)
+#if !defined(_NTHALLIB_)
 DECLSPEC_IMPORT
+#endif
 PVOID
 NTAPI
 MmGetSystemRoutineAddress (
@@ -12389,6 +12463,17 @@ NTSTATUS
 NTAPI
 RtlInitStringEx(
     _Out_ PSTRING DestinationString,
+    _In_opt_z_ __drv_aliasesMem PCSZ SourceString
+    );
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_VB)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+NTSYSAPI
+NTSTATUS
+NTAPI
+RtlInitUTF8StringEx(
+    _Out_ PUTF8_STRING DestinationString,
     _In_opt_z_ __drv_aliasesMem PCSZ SourceString
     );
 #endif
@@ -12610,6 +12695,17 @@ RtlFreeAnsiString(
     );
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_VB)
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSYSAPI
+VOID
+NTAPI
+RtlFreeUTF8String(
+    _Inout_ _At_(utf8String->Buffer, _Frees_ptr_opt_)
+        PUTF8_STRING utf8String
+    );
+#endif
+
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
 _IRQL_requires_max_(PASSIVE_LEVEL)
@@ -12685,6 +12781,40 @@ RtlUTF8ToUnicodeN(
     _Out_                            PULONG UnicodeStringActualByteCount,
     _In_reads_bytes_(UTF8StringByteCount) PCCH   UTF8StringSource,
     _In_                             ULONG  UTF8StringByteCount
+    );
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_VB)
+_When_(AllocateDestinationString,
+       _At_(DestinationString->MaximumLength,
+            _Out_range_(<=, (SourceString->MaximumLength / sizeof(WCHAR)))))
+_When_(!AllocateDestinationString,
+       _At_(DestinationString->Buffer, _Const_)
+       _At_(DestinationString->MaximumLength, _Const_))
+_IRQL_requires_max_(PASSIVE_LEVEL)
+_When_(AllocateDestinationString, _Must_inspect_result_)
+NTSYSAPI
+NTSTATUS
+NTAPI
+RtlUnicodeStringToUTF8String(
+    _When_(AllocateDestinationString, _Out_ _At_(DestinationString->Buffer, __drv_allocatesMem(Mem)))
+    _When_(!AllocateDestinationString, _Inout_)
+        PUTF8_STRING DestinationString,
+    _In_ PCUNICODE_STRING SourceString,
+    _In_ BOOLEAN AllocateDestinationString
+    );
+
+_IRQL_requires_max_(PASSIVE_LEVEL)
+_Must_inspect_result_
+NTSYSAPI
+NTSTATUS
+NTAPI
+RtlUTF8StringToUnicodeString(
+    _When_(AllocateDestinationString, _Out_ _At_(DestinationString->Buffer, __drv_allocatesMem(Mem)))
+    _When_(!AllocateDestinationString, _Inout_)
+        PUNICODE_STRING DestinationString,
+    _In_ PUTF8_STRING SourceString,
+    _In_ BOOLEAN AllocateDestinationString
     );
 #endif
 
@@ -13955,6 +14085,7 @@ RtlSetAllBits (
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
 _Success_(return != -1)
+_Ret_range_(<=, BitMapHeader->SizeOfBitMap - NumberToFind)
 _Must_inspect_result_
 NTSYSAPI
 ULONG
@@ -13968,6 +14099,7 @@ RtlFindClearBits (
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
 _Success_(return != -1)
+_Ret_range_(<=, BitMapHeader->SizeOfBitMap - NumberToFind)
 _Must_inspect_result_
 NTSYSAPI
 ULONG
@@ -13992,6 +14124,7 @@ RtlFindSetBits (
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
 _Success_(return != -1)
+_Ret_range_(<=, BitMapHeader->SizeOfBitMap - NumberToFind)
 NTSYSAPI
 ULONG
 NTAPI
@@ -14004,6 +14137,7 @@ RtlFindClearBitsAndSet (
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
 _Success_(return != -1)
+_Ret_range_(<=, BitMapHeader->SizeOfBitMap - NumberToFind)
 NTSYSAPI
 ULONG
 NTAPI
@@ -14618,7 +14752,7 @@ VerSetConditionMask(
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
 
-////@[comment("MVI_tracked")]
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSYSAPI
 NTSTATUS
@@ -15037,8 +15171,8 @@ __pragma(const_seg(pop))
 
 #include <apiset.h>
 
-#pragma region Desktop Family or OneCore Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+#pragma region Application Family or OneCore Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM)
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
 
@@ -15055,7 +15189,7 @@ RtlCompareMemory(
 
 #endif
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM) */
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM) */
 #pragma endregion
 
 #ifndef _NTTMAPI_
@@ -16640,10 +16774,24 @@ void __PREfastPagedCodeLocked(void);
 #endif
 
 
-#define NTKERNELAPI DECLSPEC_IMPORT     
+
+#if !defined(NTKERNELAPI)
+
+#if defined(_NTHALLIB_)
+
+#define NTKERNELAPI
+
+#else
+
+#define NTKERNELAPI DECLSPEC_IMPORT     // wdm ntndis ntifs
+
+#endif
+
+#endif
 
 
-#if defined(_X86_) && !defined(_NTHAL_)
+
+#if defined(_X86_) && !defined(_NTHAL_) && !defined(_NTHALLIB_)
 
 #define _DECL_HAL_KE_IMPORT  DECLSPEC_IMPORT
 
@@ -16658,7 +16806,7 @@ void __PREfastPagedCodeLocked(void);
 #endif
 
 
-#if !defined(_NTHALDLL_) && !defined(_BLDR_)
+#if !defined(_NTHALDLL_) && !defined(_BLDR_) && !defined(_NTHALLIB_)
 
 #define NTHALAPI DECLSPEC_IMPORT            
 
@@ -16802,7 +16950,8 @@ typedef struct _DISPATCHER_HEADER {
                     BOOLEAN ActiveDR7 : 1;
                     BOOLEAN Instrumented : 1;
                     BOOLEAN Minimal : 1;
-                    BOOLEAN Reserved4 : 3;
+                    BOOLEAN Reserved4 : 2;
+                    BOOLEAN AltSyscall : 1;
                     BOOLEAN UmsScheduled : 1;
                     BOOLEAN UmsPrimary : 1;
                 } DUMMYSTRUCTNAME;
@@ -16859,7 +17008,8 @@ typedef struct _KTIMER {
 
 #if !defined(KENCODED_TIMER_PROCESSOR)
 
-    ULONG Processor;
+    USHORT Processor;
+    USHORT TimerType;
 
 #endif
 
@@ -18286,6 +18436,15 @@ KeRestoreFloatingPointState (
 #if defined(_AMD64_) && !defined(MIDL_PASS)
 
 
+#if defined(_NTHALLIB_)
+
+#define KfRaiseIrql KzRaiseIrql
+#define KfLowerIrql KzLowerIrql
+#define KeLowerIrql KzLowerIrql
+#define KeInitializeSpinLock KzInitializeSpinLock
+
+#endif
+
 _IRQL_requires_max_(HIGH_LEVEL)
 _IRQL_saves_
 CFORCEINLINE
@@ -18431,8 +18590,12 @@ Return Value:
     return OldIrql;
 }
 
+#if !defined(_NTHALLIB_)
+
 #define KeLowerIrql KzLowerIrql
 #define KfRaiseIrql KzRaiseIrql
+
+#endif
 
 #endif
 
@@ -19201,7 +19364,6 @@ KeRestoreFloatingPointState (
 //
 // Platform specific kernel functions to raise and lower IRQL.
 //
-
 
 #if defined(_ARM_) && !defined(MIDL_PASS)
 
@@ -20141,6 +20303,7 @@ KeRestoreFloatingPointState (
 //
 
 
+
 #if defined(_ARM64_) && !defined(MIDL_PASS)
 
 
@@ -20343,6 +20506,13 @@ _Struct_size_bytes_(Size) struct _SYSTEM_CPU_SET_INFORMATION {
 typedef struct _SYSTEM_CPU_SET_INFORMATION SYSTEM_CPU_SET_INFORMATION, *PSYSTEM_CPU_SET_INFORMATION;
 
 
+
+
+typedef struct _SYSTEM_POOL_ZEROING_INFORMATION {
+    BOOLEAN PoolZeroingSupportPresent;
+} SYSTEM_POOL_ZEROING_INFORMATION, *PSYSTEM_POOL_ZEROING_INFORMATION;
+
+
 //
 // Defined processor features
 //
@@ -20383,6 +20553,12 @@ typedef struct _SYSTEM_CPU_SET_INFORMATION SYSTEM_CPU_SET_INFORMATION, *PSYSTEM_
 #define PF_RDPID_INSTRUCTION_AVAILABLE              33   
 #define PF_ARM_V81_ATOMIC_INSTRUCTIONS_AVAILABLE    34   
 #define PF_MONITORX_INSTRUCTION_AVAILABLE           35   
+#define PF_SSSE3_INSTRUCTIONS_AVAILABLE             36   
+#define PF_SSE4_1_INSTRUCTIONS_AVAILABLE            37   
+#define PF_SSE4_2_INSTRUCTIONS_AVAILABLE            38   
+#define PF_AVX_INSTRUCTIONS_AVAILABLE               39   
+#define PF_AVX2_INSTRUCTIONS_AVAILABLE              40   
+#define PF_AVX512F_INSTRUCTIONS_AVAILABLE           41   
 
 typedef enum _ALTERNATIVE_ARCHITECTURE_TYPE {
     StandardDesign,                 // None == 0 == standard design
@@ -21406,6 +21582,10 @@ KeIpiGenericCall (
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
 
+#if defined(_NTHALLIB_) && !defined(KeInitializeSpinLock)
+#define KeInitializeSpinLock KzInitializeSpinLock
+#endif
+
 NTKERNELAPI
 VOID
 NTAPI
@@ -21446,7 +21626,9 @@ Return Value:
     return;
 }
 
+#if !defined(KeInitializeSpinLock)
 #define KeInitializeSpinLock KzInitializeSpinLock
+#endif
 
 #endif
 
@@ -21936,6 +22118,13 @@ typedef struct _KADDRESS_RANGE_DESCRIPTOR {
 //
 // KbCallbackTriageDumpData related definitions
 //
+
+//
+// Maximum size of memory a triage dump data array map to.
+// Now it is set to 32MB.
+//
+
+#define KE_MAX_TRIAGE_DUMP_DATA_MEMORY_SIZE (0x2000000)
 
 typedef
 _Struct_size_bytes_(FIELD_OFFSET(KTRIAGE_DUMP_DATA_ARRAY, Blocks) +
@@ -22641,7 +22830,7 @@ typedef struct _KWAIT_CHAIN {
 // Define external data.
 //
 
-#if defined(_NTDDK_) || defined(_NTIFS_) || defined(_NTHAL_) || defined(_WDMDDK_) || defined(_NTOSP_)
+#if (defined(_NTDDK_) || defined(_NTIFS_) || defined(_NTHAL_) || defined(_WDMDDK_) || defined(_NTOSP_)) && !defined(_NTHALLIB_)
 
 extern PBOOLEAN KdDebuggerNotPresent;
 extern PBOOLEAN KdDebuggerEnabled;
@@ -22756,6 +22945,44 @@ typedef _Enum_is_bitflag_ enum _POOL_TYPE {
 
 #define POOL_NX_ALLOCATION   512     // Note this cannot encode into the header.
 
+#define POOL_ZERO_ALLOCATION      1024
+
+//
+// POOL_FLAG values
+//
+// Low 32-bits of ULONG64 are for required parameters (allocation fails if they
+// cannot be satisfied).
+// High 32-bits of ULONG64 is for optional parameters (allocation succeeds if
+// they cannot be satisfied or are unrecognized).
+//
+
+#define POOL_FLAG_REQUIRED_START          0x0000000000000001UI64
+#define POOL_FLAG_USE_QUOTA               0x0000000000000001UI64     // Charge quota
+#define POOL_FLAG_UNINITIALIZED           0x0000000000000002UI64     // Don't zero-initialize allocation
+#define POOL_FLAG_SESSION                 0x0000000000000004UI64     // Use session specific pool
+#define POOL_FLAG_CACHE_ALIGNED           0x0000000000000008UI64     // Cache aligned allocation
+#define POOL_FLAG_RESERVED1               0x0000000000000010UI64     // Reserved for system use
+#define POOL_FLAG_RAISE_ON_FAILURE        0x0000000000000020UI64     // Raise exception on failure
+#define POOL_FLAG_NON_PAGED               0x0000000000000040UI64     // Non paged pool NX
+#define POOL_FLAG_NON_PAGED_EXECUTE       0x0000000000000080UI64     // Non paged pool executable
+#define POOL_FLAG_PAGED                   0x0000000000000100UI64     // Paged pool
+#define POOL_FLAG_RESERVED2               0x0000000000000200UI64     // Reserved for system use
+#define POOL_FLAG_RESERVED3               0x0000000000000400UI64     // Reserved for system use
+#define POOL_FLAG_LAST_KNOWN_REQUIRED     POOL_FLAG_RESERVED3         // Must be set to the last known required entry.
+#define POOL_FLAG_REQUIRED_END            0x0000000080000000UI64
+
+#define POOL_FLAG_OPTIONAL_START          0x0000000100000000UI64
+#define POOL_FLAG_SPECIAL_POOL            0x0000000100000000UI64     // Make special pool allocation
+#define POOL_FLAG_OPTIONAL_END            0x8000000000000000UI64
+
+#define POOL_FLAG_REQUIRED_MASK           0x00000000FFFFFFFFUI64
+
+//
+// Bits from the "required" flags that are currently not used.
+//
+
+#define POOL_FLAG_UNUSED_REQUIRED_BITS (POOL_FLAG_REQUIRED_MASK & ~(POOL_FLAG_LAST_KNOWN_REQUIRED | (POOL_FLAG_LAST_KNOWN_REQUIRED-1)))
+
 
 
 //
@@ -22819,6 +23046,11 @@ DECLSPEC_SELECTANY ULONG ExDefaultMdlProtection = 0;
 
 #endif // !POOL_NX_OPTOUT
 
+
+//
+// The following two definitions control the raising of exceptions on quota
+// and allocation failures.
+//
 
 #define POOL_QUOTA_FAIL_INSTEAD_OF_RAISE 8
 #define POOL_RAISE_IF_ALLOCATION_FAILURE 16
@@ -22964,6 +23196,71 @@ ExAllocatePoolWithTagPriority (
 
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_VB)
+
+typedef enum POOL_EXTENDED_PARAMETER_TYPE {
+    PoolExtendedParameterInvalidType = 0,
+    PoolExtendedParameterPriority,
+    PoolExtendedParameterMax
+} POOL_EXTENDED_PARAMETER_TYPE, *PPOOL_EXTENDED_PARAMETER_TYPE;
+
+#define POOL_EXTENDED_PARAMETER_TYPE_BITS    8
+#define POOL_EXTENDED_PARAMETER_REQUIRED_FIELD_BITS    1
+#define POOL_EXTENDED_PARAMETER_RESERVED_BITS    (64 - POOL_EXTENDED_PARAMETER_TYPE_BITS - POOL_EXTENDED_PARAMETER_REQUIRED_FIELD_BITS)
+
+typedef struct _POOL_EXTENDED_PARAMETER {
+    struct {
+        ULONG64 Type : POOL_EXTENDED_PARAMETER_TYPE_BITS;
+        ULONG64 Optional : POOL_EXTENDED_PARAMETER_REQUIRED_FIELD_BITS;
+        ULONG64 Reserved : POOL_EXTENDED_PARAMETER_RESERVED_BITS;
+    } DUMMYSTRUCTNAME;
+
+    union {
+        ULONG64 Reserved2;
+        PVOID Reserved3;
+        EX_POOL_PRIORITY Priority;
+    } DUMMYUNIONNAME;
+} POOL_EXTENDED_PARAMETER, *PPOOL_EXTENDED_PARAMETER;
+typedef CONST POOL_EXTENDED_PARAMETER *PCPOOL_EXTENDED_PARAMETER;
+
+typedef ULONG64 POOL_FLAGS;
+
+__drv_allocatesMem(Mem)
+_Check_return_
+_Ret_maybenull_
+DECLSPEC_RESTRICT
+_When_((Flags & POOL_FLAG_PAGED) != 0, _IRQL_requires_max_(APC_LEVEL))
+_When_((Flags & POOL_FLAG_PAGED) == 0, _IRQL_requires_max_(DISPATCH_LEVEL))
+_Post_writable_byte_size_(NumberOfBytes)
+NTKERNELAPI
+PVOID
+NTAPI
+ExAllocatePool2 (
+    _In_ POOL_FLAGS Flags,
+    _In_ SIZE_T NumberOfBytes,
+    _In_ ULONG Tag
+    );
+
+__drv_allocatesMem(Mem)
+_Check_return_
+_Ret_maybenull_
+DECLSPEC_RESTRICT
+_When_((Flags & POOL_FLAG_PAGED) != 0, _IRQL_requires_max_(APC_LEVEL))
+_When_((Flags & POOL_FLAG_PAGED) == 0, _IRQL_requires_max_(DISPATCH_LEVEL))
+_Post_writable_byte_size_(NumberOfBytes)
+NTKERNELAPI
+PVOID
+NTAPI
+ExAllocatePool3 (
+    _In_ POOL_FLAGS Flags,
+    _In_ SIZE_T NumberOfBytes,
+    _In_ ULONG Tag,
+    _In_reads_opt_(ExtendedParameterCount) PCPOOL_EXTENDED_PARAMETER ExtendedParameters,
+    _In_ ULONG ExtendedParametersCount
+    );
+
+#endif
+
 #ifndef POOL_TAGGING
 #define ExAllocatePoolWithTag(a,b,c) ExAllocatePool(a,b)
 #endif //POOL_TAGGING
@@ -22987,6 +23284,227 @@ ExAllocatePoolWithQuotaTag (
     _In_ SIZE_T NumberOfBytes,
     _In_ ULONG Tag
     );
+
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN2K)
+
+//
+// This variable indicates if the platform supports pool zeroing natively.
+// It is set in ExInitializeDriverRuntime. If the platform does support pool
+// zeroing natively, simply call ExAllocatePoolWithTag. If the platform does
+// not support pool zeroing but the caller still requests it, then manually
+// zero the allocation.
+//
+
+DECLSPEC_SELECTANY BOOLEAN ExPoolZeroingNativelySupported = FALSE;
+
+//
+// If POOL_ZERO_DOWN_LEVEL_SUPPORT is defined, this code must 
+// be able to run downlevel.
+//
+
+FORCEINLINE
+__drv_allocatesMem(Mem)
+_When_((PoolType & PagedPool) != 0, _IRQL_requires_max_(APC_LEVEL))
+_When_((PoolType & PagedPool) == 0, _IRQL_requires_max_(DISPATCH_LEVEL))
+_When_((PoolType & NonPagedPoolMustSucceed) != 0,
+       __drv_reportError("Must succeed pool allocations are forbidden. "
+                         "Allocation failures cause a system crash"))
+_When_((PoolType & (NonPagedPoolMustSucceed |
+                    POOL_RAISE_IF_ALLOCATION_FAILURE)) == 0,
+       _Post_maybenull_ _Must_inspect_result_)
+_When_((PoolType & (NonPagedPoolMustSucceed |
+                    POOL_RAISE_IF_ALLOCATION_FAILURE)) != 0,
+       _Post_notnull_)
+_Post_writable_byte_size_(NumberOfBytes)
+PVOID
+NTAPI
+ExAllocatePoolZero (
+    _In_ __drv_strictTypeMatch(__drv_typeExpr) POOL_TYPE PoolType,
+    _In_ SIZE_T NumberOfBytes,
+    _In_ ULONG Tag
+    )
+{
+    PVOID Allocation;
+
+    Allocation = ExAllocatePoolWithTag((POOL_TYPE) (PoolType | POOL_ZERO_ALLOCATION),
+                                       NumberOfBytes,
+                                       Tag);
+
+#if defined(POOL_ZERO_DOWN_LEVEL_SUPPORT)
+
+    if ((!ExPoolZeroingNativelySupported) && (Allocation != NULL)) {
+        RtlZeroMemory(Allocation, NumberOfBytes);
+    }
+
+#endif
+
+    return Allocation;
+}
+
+FORCEINLINE
+__drv_allocatesMem(Mem)
+_When_((PoolType & PagedPool) != 0, _IRQL_requires_max_(APC_LEVEL))
+_When_((PoolType & PagedPool) == 0, _IRQL_requires_max_(DISPATCH_LEVEL))
+_When_((PoolType & NonPagedPoolMustSucceed) != 0,
+       __drv_reportError("Must succeed pool allocations are forbidden. "
+                         "Allocation failures cause a system crash"))
+_When_((PoolType & (NonPagedPoolMustSucceed |
+                    POOL_RAISE_IF_ALLOCATION_FAILURE)) == 0,
+       _Post_maybenull_ _Must_inspect_result_)
+_When_((PoolType & (NonPagedPoolMustSucceed |
+                    POOL_RAISE_IF_ALLOCATION_FAILURE)) != 0,
+       _Post_notnull_)
+_Post_writable_byte_size_(NumberOfBytes)
+PVOID
+NTAPI
+ExAllocatePoolUninitialized (
+    _In_ __drv_strictTypeMatch(__drv_typeExpr) POOL_TYPE PoolType,
+    _In_ SIZE_T NumberOfBytes,
+    _In_ ULONG Tag
+    )
+{
+    return ExAllocatePoolWithTag(PoolType,
+                                 NumberOfBytes,
+                                 Tag);
+}
+
+FORCEINLINE
+__drv_allocatesMem(Mem)
+_When_((PoolType & PagedPool) != 0, _IRQL_requires_max_(APC_LEVEL))
+_When_((PoolType & PagedPool) == 0, _IRQL_requires_max_(DISPATCH_LEVEL))
+_When_((PoolType & NonPagedPoolMustSucceed) != 0,
+       __drv_reportError("Must succeed pool allocations are forbidden. "
+                         "Allocation failures cause a system crash"))
+_When_((PoolType & (NonPagedPoolMustSucceed |
+                    POOL_RAISE_IF_ALLOCATION_FAILURE)) == 0,
+       _Post_maybenull_ _Must_inspect_result_)
+_When_((PoolType & (NonPagedPoolMustSucceed |
+                    POOL_RAISE_IF_ALLOCATION_FAILURE)) != 0,
+       _Post_notnull_)
+_Post_writable_byte_size_(NumberOfBytes)
+PVOID
+NTAPI
+ExAllocatePoolQuotaZero (
+    _In_ __drv_strictTypeMatch(__drv_typeExpr) POOL_TYPE PoolType,
+    _In_ SIZE_T NumberOfBytes,
+    _In_ ULONG Tag
+    )
+{
+    PVOID Allocation;
+
+    Allocation = ExAllocatePoolWithQuotaTag((POOL_TYPE) (PoolType | POOL_ZERO_ALLOCATION),
+                                            NumberOfBytes,
+                                            Tag);
+
+#if defined(POOL_ZERO_DOWN_LEVEL_SUPPORT)
+
+    if ((!ExPoolZeroingNativelySupported) && (Allocation != NULL)) {
+        RtlZeroMemory(Allocation, NumberOfBytes);
+    }
+
+#endif
+
+    return Allocation;
+}
+
+FORCEINLINE
+__drv_allocatesMem(Mem)
+_When_((PoolType & PagedPool) != 0, _IRQL_requires_max_(APC_LEVEL))
+_When_((PoolType & PagedPool) == 0, _IRQL_requires_max_(DISPATCH_LEVEL))
+_When_((PoolType & NonPagedPoolMustSucceed) != 0,
+       __drv_reportError("Must succeed pool allocations are forbidden. "
+                         "Allocation failures cause a system crash"))
+_When_((PoolType & (NonPagedPoolMustSucceed |
+                    POOL_RAISE_IF_ALLOCATION_FAILURE)) == 0,
+       _Post_maybenull_ _Must_inspect_result_)
+_When_((PoolType & (NonPagedPoolMustSucceed |
+                    POOL_RAISE_IF_ALLOCATION_FAILURE)) != 0,
+       _Post_notnull_)
+_Post_writable_byte_size_(NumberOfBytes)
+PVOID
+NTAPI
+ExAllocatePoolQuotaUninitialized (
+    _In_ __drv_strictTypeMatch(__drv_typeExpr) POOL_TYPE PoolType,
+    _In_ SIZE_T NumberOfBytes,
+    _In_ ULONG Tag
+    )
+{
+    return ExAllocatePoolWithQuotaTag(PoolType,
+                                      NumberOfBytes,
+                                      Tag);
+}
+
+FORCEINLINE
+__drv_allocatesMem(Mem)
+_When_((PoolType & PagedPool) != 0, _IRQL_requires_max_(APC_LEVEL))
+_When_((PoolType & PagedPool) == 0, _IRQL_requires_max_(DISPATCH_LEVEL))
+_When_((PoolType & NonPagedPoolMustSucceed) != 0,
+       __drv_reportError("Must succeed pool allocations are forbidden. "
+                         "Allocation failures cause a system crash"))
+_When_((PoolType & (NonPagedPoolMustSucceed |
+                    POOL_RAISE_IF_ALLOCATION_FAILURE)) == 0,
+       _Post_maybenull_ _Must_inspect_result_)
+_When_((PoolType & (NonPagedPoolMustSucceed |
+                    POOL_RAISE_IF_ALLOCATION_FAILURE)) != 0,
+       _Post_notnull_)
+_Post_writable_byte_size_(NumberOfBytes)
+PVOID
+NTAPI
+ExAllocatePoolPriorityZero (
+    _In_ __drv_strictTypeMatch(__drv_typeExpr) POOL_TYPE PoolType,
+    _In_ SIZE_T NumberOfBytes,
+    _In_ ULONG Tag,
+    _In_ EX_POOL_PRIORITY Priority
+    )
+{
+    PVOID Allocation;
+
+    Allocation = ExAllocatePoolWithTagPriority((POOL_TYPE) (PoolType | POOL_ZERO_ALLOCATION),
+                                               NumberOfBytes,
+                                               Tag,
+                                               Priority);
+
+#if defined(POOL_ZERO_DOWN_LEVEL_SUPPORT)
+
+    if ((!ExPoolZeroingNativelySupported) && (Allocation != NULL)) {
+        RtlZeroMemory(Allocation, NumberOfBytes);
+    }
+
+#endif
+
+    return Allocation;
+}
+
+FORCEINLINE
+__drv_allocatesMem(Mem)
+_When_((PoolType & PagedPool) != 0, _IRQL_requires_max_(APC_LEVEL))
+_When_((PoolType & PagedPool) == 0, _IRQL_requires_max_(DISPATCH_LEVEL))
+_When_((PoolType & NonPagedPoolMustSucceed) != 0,
+       __drv_reportError("Must succeed pool allocations are forbidden. "
+                         "Allocation failures cause a system crash"))
+_When_((PoolType & (NonPagedPoolMustSucceed |
+                    POOL_RAISE_IF_ALLOCATION_FAILURE)) == 0,
+       _Post_maybenull_ _Must_inspect_result_)
+_When_((PoolType & (NonPagedPoolMustSucceed |
+                    POOL_RAISE_IF_ALLOCATION_FAILURE)) != 0,
+       _Post_notnull_)
+_Post_writable_byte_size_(NumberOfBytes)
+PVOID
+NTAPI
+ExAllocatePoolPriorityUninitialized (
+    _In_ __drv_strictTypeMatch(__drv_typeExpr) POOL_TYPE PoolType,
+    _In_ SIZE_T NumberOfBytes,
+    _In_ ULONG Tag,
+    _In_ EX_POOL_PRIORITY Priority
+    )
+{
+    return ExAllocatePoolWithTagPriority(PoolType,
+                                         NumberOfBytes,
+                                         Tag,
+                                         Priority);
+}
 
 #endif
 
@@ -25939,6 +26457,25 @@ CmGetBoundTransaction(_In_  PLARGE_INTEGER  Cookie,
 
 #endif // NTDDI_VERSION >= NTDDI_VISTA
 
+#if (NTDDI_VERSION >= NTDDI_WIN7)
+
+typedef struct _REG_LOAD_KEY_INFORMATION_V2 {
+    PVOID               Object;
+    PUNICODE_STRING     KeyName;
+    PUNICODE_STRING     SourceFile;
+    ULONG               Flags;
+    PVOID               TrustClassObject;
+    PVOID               UserEvent;
+    ACCESS_MASK         DesiredAccess;
+    PHANDLE             RootHandle;
+    PVOID               CallContext;
+    PVOID               ObjectContext;
+    ULONG_PTR           Version;
+    PVOID               FileAccessToken;
+} REG_LOAD_KEY_INFORMATION_V2, *PREG_LOAD_KEY_INFORMATION_V2;
+
+#endif // NTDDI_VERSION >= NTDDI_WIN7
+
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 
 _IRQL_requires_max_(APC_LEVEL)
@@ -26083,7 +26620,15 @@ CmCallbackReleaseKeyObjectIDEx (
 //  Indicates the system may do I/O to physical addresses above 4 GB.
 //
 
+#if defined(_NTHALLIB_)
+
+extern BOOLEAN Mm64BitPhysicalAddress;
+
+#else
+
 extern PBOOLEAN Mm64BitPhysicalAddress;
+
+#endif
 
 
 //
@@ -26095,6 +26640,8 @@ extern PBOOLEAN Mm64BitPhysicalAddress;
 extern PVOID MmBadPointer;
 
 
+#if !defined(_NTHALLIB_)
+
 #define MM_BAD_POINTER (                               \
                        __pragma(warning(push))         \
                        __pragma(warning(disable:4995)) \
@@ -26103,6 +26650,12 @@ extern PVOID MmBadPointer;
                         )
 
 #pragma deprecated(MmBadPointer)  // Use MM_BAD_POINTER instead
+
+#else
+
+#define MM_BAD_POINTER MmBadPointer
+
+#endif
 
 
 //
@@ -26560,6 +27113,23 @@ MmMapMdl (
     _In_ PMM_MDL_ROUTINE DriverRoutine,
     _In_opt_ PVOID DriverContext
     );
+
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_VB)
+
+#define MM_DUMP_MAP_CACHED          0x1
+#define MM_DUMP_MAP_INVALIDATE      0x2
+
+NTKERNELAPI
+NTSTATUS
+MmMapMemoryDumpMdlEx (
+    _In_ PVOID Va,
+    _In_ PFN_NUMBER PageTotal,
+    _Inout_ PMDL MemoryDumpMdl,
+    _In_ ULONG Flags
+    );
+
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WS03)
@@ -26574,7 +27144,7 @@ MmIsIoSpaceActive (
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
-_IRQL_requires_max_(PASSIVE_LEVEL)
+_IRQL_requires_max_(APC_LEVEL)
 NTKERNELAPI
 PVOID
 NTAPI
@@ -26582,6 +27152,19 @@ MmGetSystemRoutineAddress (
     _In_ PUNICODE_STRING SystemRoutineName
     );
 #endif
+
+#if defined(XBOX_SYSTEMOS) || defined(XBOX_GAMECOREOS)
+
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTKERNELAPI
+PVOID
+NTAPI
+MmGetSystemRoutineAddressEx (
+    _In_ PUNICODE_STRING ModuleName,
+    _In_ PSTR FunctionName
+    );
+
+#endif // defined(XBOX_SYSTEMOS) || defined(XBOX_GAMECOREOS)
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
 _IRQL_requires_max_(DISPATCH_LEVEL)
@@ -26718,6 +27301,21 @@ MmUnmapLockedPages (
     _In_ PVOID BaseAddress,
     _Inout_ PMDL MemoryDescriptorList
     );
+#endif
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_19H1)
+
+#define MM_MAPPING_ADDRESS_DIVISIBLE        0x1
+
+_Must_inspect_result_
+_IRQL_requires_max_(APC_LEVEL)
+NTKERNELAPI
+_When_ (return != NULL, _Out_writes_bytes_opt_ (NumberOfBytes)) PVOID
+MmAllocateMappingAddressEx (
+     _In_ SIZE_T NumberOfBytes,
+     _In_ ULONG PoolTag,
+     _In_ ULONG Flags
+     );
 #endif
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
@@ -27559,6 +28157,7 @@ typedef enum _SE_IMAGE_VERIFICATION_CALLBACK_TYPE {
 typedef PVOID SE_IMAGE_VERIFICATION_CALLBACK_TOKEN, *PSE_IMAGE_VERIFICATION_CALLBACK_TOKEN;
 
 #if (NTDDI_VERSION >= NTDDI_WINBLUE)
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTKERNELAPI
 NTSTATUS
@@ -27571,6 +28170,7 @@ SeRegisterImageVerificationCallback(
     _Out_ PVOID* CallbackHandle
     );
 
+//@[comment("MVI_tracked")]
 _IRQL_requires_max_(PASSIVE_LEVEL)
 NTKERNELAPI
 VOID
@@ -28759,7 +29359,7 @@ typedef struct _DEVICE_OBJECT *PDEVICE_OBJECT;
 
 struct  _DEVICE_OBJECT_POWER_EXTENSION;
 
-////@[comment("MVI_tracked")]
+//@[comment("MVI_tracked")]
 typedef struct _DEVOBJ_EXTENSION {
 
     CSHORT          Type;
@@ -28782,6 +29382,7 @@ typedef struct _DEVOBJ_EXTENSION {
     PVPB           Vpb;                                     
     PVOID DependencyNode;                                   
     PVOID InterruptContext;                                 
+    __volatile LONG InterruptCount;                         
 
     __volatile PVOID VerifierContext;
 
@@ -33311,6 +33912,62 @@ IoUnregisterContainerNotification(
 #endif
 
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_19H1)
+
+_Must_inspect_result_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTKERNELAPI
+NTSTATUS
+IoReserveKsrPersistentMemory (
+    _In_ PDRIVER_OBJECT DriverObject,
+    _In_opt_ PDEVICE_OBJECT PhysicalDeviceObject,
+    _In_ SIZE_T Size,
+    _In_ ULONG Flags,
+    _Out_ PVOID * DataHandle
+    );
+
+_Must_inspect_result_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTKERNELAPI
+NTSTATUS
+IoFreeKsrPersistentMemory (
+    _In_ PVOID DataHandle
+    );
+
+_Must_inspect_result_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTKERNELAPI
+NTSTATUS
+IoQueryKsrPersistentMemorySize (
+    _In_ PDRIVER_OBJECT DriverObject,
+    _In_opt_ PDEVICE_OBJECT PhysicalDeviceObject,
+    _Out_ PSIZE_T BufferSize
+    );
+
+_Must_inspect_result_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTKERNELAPI
+NTSTATUS
+IoAcquireKsrPersistentMemory (
+    _In_ PDRIVER_OBJECT DriverObject,
+    _In_opt_ PDEVICE_OBJECT PhysicalDeviceObject,
+    _Out_writes_bytes_(*Size) PVOID Buffer,
+    _Inout_ PSIZE_T Size
+    );
+
+_Must_inspect_result_
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTKERNELAPI
+NTSTATUS
+IoWriteKsrPersistentMemory (
+    _In_ PVOID DataHandle,
+    _In_reads_bytes_(Size) PVOID Buffer,
+    _In_ SIZE_T Size
+    );
+
+#endif
+
+
 #ifdef RUN_WPP
 
 #include <evntrace.h>
@@ -34216,6 +34873,86 @@ typedef struct _BUS_RESOURCE_UPDATE_INTERFACE {
     PGET_UPDATED_BUS_RESOURCE              GetUpdatedBusResource;
 } BUS_RESOURCE_UPDATE_INTERFACE, *PBUS_RESOURCE_UPDATE_INTERFACE;
 
+typedef enum _NPEM_CONTROL_STANDARD_CONTROL_BIT {
+    InitiateReset = 1,
+    OkControl,
+    LocateControl,
+    FailControl,
+    RebuildControl,
+    PFAControl,
+    HotSpareControl,
+    InACriticalArrayControl,
+    InAFailedArrayControl,
+    InvalidDeviceTypeControl,
+    DisabledControl,
+} NPEM_CONTROL_STANDARD_CONTROL_BIT, *PNPEM_CONTROL_STANDARD_CONTROL_BIT;
+
+typedef union _NPEM_CAPABILITY_STANDARD {
+    struct {
+        ULONG Capable:1;
+        ULONG ResetCapable:1;
+        ULONG OkCapable:1;
+        ULONG LocateCapable:1;
+        ULONG FailCapable:1;
+        ULONG RebuildCapable:1;
+        ULONG PFACapable:1;
+        ULONG HotSpareCapable:1;
+        ULONG InACriticalArrayCapable:1;
+        ULONG InAFailedArrayCapable:1;
+        ULONG InvalidDeviceTypeCapable:1;
+        ULONG DisabledCapable:1;
+        ULONG Rsvd:20;
+    } DUMMYSTRUCTNAME;
+
+    ULONG AsULONG;
+} NPEM_CAPABILITY_STANDARD, *PNPEM_CAPABILITY_STANDARD;
+
+typedef
+_Function_class_(NPEM_CONTROL_ENABLE_DISABLE)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+NTSTATUS
+NPEM_CONTROL_ENABLE_DISABLE (
+    _In_reads_opt_(_Inexpressible_("varies")) PVOID Context,
+    _In_ BOOLEAN EnableNpem
+    );
+
+typedef NPEM_CONTROL_ENABLE_DISABLE *PNPEM_CONTROL_ENABLE_DISABLE;
+
+typedef
+_Function_class_(NPEM_CONTROL_QUERY_STANDARD_CAPABILITIES)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+NTSTATUS
+NPEM_CONTROL_QUERY_STANDARD_CAPABILITIES (
+    _In_reads_opt_(_Inexpressible_("varies")) PVOID Context,
+    _Out_ PNPEM_CAPABILITY_STANDARD StandardCapabilities
+    );
+
+typedef NPEM_CONTROL_QUERY_STANDARD_CAPABILITIES *PNPEM_CONTROL_QUERY_STANDARD_CAPABILITIES;
+
+typedef
+_Function_class_(NPEM_CONTROL_SET_STANDARD_CONTROL)
+_IRQL_requires_max_(DISPATCH_LEVEL)
+NTSTATUS
+NPEM_CONTROL_SET_STANDARD_CONTROL (
+    _In_reads_opt_(_Inexpressible_("varies")) PVOID Context,
+    _In_ NPEM_CONTROL_STANDARD_CONTROL_BIT StandardControl,
+    _In_ BOOLEAN Set
+    );
+
+typedef NPEM_CONTROL_SET_STANDARD_CONTROL *PNPEM_CONTROL_SET_STANDARD_CONTROL;
+
+typedef struct _NPEM_CONTROL_INTERFACE {
+    USHORT Size;
+    USHORT Version;
+    PVOID Context;
+    PINTERFACE_REFERENCE InterfaceReference;
+    PINTERFACE_DEREFERENCE InterfaceDereference;
+
+    PNPEM_CONTROL_ENABLE_DISABLE                         SetNpemSupportState;
+    PNPEM_CONTROL_QUERY_STANDARD_CAPABILITIES            QueryStandardCapabilities;
+    PNPEM_CONTROL_SET_STANDARD_CONTROL                   SetStandardControl;
+} NPEM_CONTROL_INTERFACE, *PNPEM_CONTROL_INTERFACE;
+
 
 //
 // The following definitions are used in ACPI QueryInterface
@@ -34817,6 +35554,8 @@ typedef struct _KERNEL_SOFT_RESTART_NOTIFICATION {
     // (No event-specific data)
     //
 } KERNEL_SOFT_RESTART_NOTIFICATION, *PKERNEL_SOFT_RESTART_NOTIFICATION;
+
+#define KERNEL_SOFT_RESTART_NOTIFICATION_VERSION 1
 
 //
 // The following structure header is used for all other (i.e., 3rd-party)
@@ -36188,6 +36927,7 @@ typedef struct _IOMMU_DMA_DOMAIN IOMMU_DMA_DOMAIN, *PIOMMU_DMA_DOMAIN;
 typedef enum _FAULT_INFORMATION_ARCH {
     FaultInformationInvalid,
     FaultInformationArm64,
+    FaultInformationX64
 } FAULT_INFORMATION_ARCH, *PFAULT_INFORMATION_ARCH;
 
 typedef enum _FAULT_INFORMATION_ARM64_TYPE {
@@ -36201,6 +36941,14 @@ typedef enum _FAULT_INFORMATION_ARM64_TYPE {
     MaxFaultType
 } FAULT_INFORMATION_ARM64_TYPE, *PFAULT_INFORMATION_ARM64_TYPE;
 
+typedef enum _FAULT_INFORMATION_ARM64_TYPE FAULT_INFORMATION_X64_TYPE,
+                                      *PFAULT_INFORMATION_X64_TYPE;
+
+typedef struct _FAULT_INFORMATION_X64_FLAGS {
+    ULONG FaultAddressValid : 1;
+    ULONG Reserved : 31;
+} FAULT_INFORMATION_X64_FLAGS, *PFAULT_INFORMATION_X64_FLAGS;
+
 typedef struct _FAULT_INFORMATION_ARM64_FLAGS {
     ULONG WriteNotRead : 1;
     ULONG InstructionNotData : 1;
@@ -36209,6 +36957,15 @@ typedef struct _FAULT_INFORMATION_ARM64_FLAGS {
     ULONG Reserved : 28;
 } FAULT_INFORMATION_ARM64_FLAGS, *PFAULT_INFORMATION_ARM64_FLAGS;
 
+typedef struct _FAULT_INFORMATION_X64 {
+    PVOID DomainHandle;
+    PVOID FaultAddress;
+    FAULT_INFORMATION_X64_FLAGS Flags;
+    FAULT_INFORMATION_X64_TYPE Type;
+    ULONG64 IommuBaseAddress;
+    ULONG PciSegment;
+} FAULT_INFORMATION_X64, *PFAULT_INFORMATION_X64;
+
 typedef struct _FAULT_INFORMATION_ARM64 {
     PVOID DomainHandle;
     PVOID FaultAddress;
@@ -36216,12 +36973,15 @@ typedef struct _FAULT_INFORMATION_ARM64 {
     ULONG InputMappingId;
     FAULT_INFORMATION_ARM64_FLAGS Flags;
     FAULT_INFORMATION_ARM64_TYPE Type;
+    ULONG64 IommuBaseAddress;
 } FAULT_INFORMATION_ARM64, *PFAULT_INFORMATION_ARM64;
 
 typedef struct _FAULT_INFORMATION {
     FAULT_INFORMATION_ARCH Type;
+    BOOLEAN IsStage1;
     union {
         FAULT_INFORMATION_ARM64 Arm64;
+        FAULT_INFORMATION_X64 X64;
     };
 } FAULT_INFORMATION, *PFAULT_INFORMATION;
 
@@ -38411,6 +39171,7 @@ typedef struct {
 #define PCI_EXPRESS_FRS_QUEUEING_CAP_ID                                 0x0021
 #define PCI_EXPRESS_READINESS_TIME_REPORTING_CAP_ID                     0x0022
 #define PCI_EXPRESS_DESIGNATED_VENDOR_SPECIFIC_CAP_ID                   0x0023
+#define PCI_EXPRESS_NPEM_CAP_ID                                         0x0029
 
 
 //
@@ -43591,6 +44352,22 @@ typedef enum _DRIVER_RUNTIME_INIT_FLAGS {
 
 typedef const enum _DRIVER_RUNTIME_INIT_FLAGS * PCDRIVER_RUNTIME_INIT_FLAGS;
 
+#if defined(POOL_ZERO_DOWN_LEVEL_SUPPORT)
+
+#define POOL_ZEROING_INFORMATION 227
+
+typedef
+NTSYSCALLAPI
+NTSTATUS
+(*NT_QUERY_SYSTEM_INFORMATION) (
+    __in ULONG InformationClass,
+    __out_bcount_part_opt(InformationLength, *ReturnLength) PVOID Information,
+    __in ULONG InformationLength,
+    __out_opt PULONG ReturnLength
+    );
+
+#endif
+
 FORCEINLINE
 VOID
 ExInitializeDriverRuntime(
@@ -43598,25 +44375,52 @@ ExInitializeDriverRuntime(
     )
 
 {
-
-#if POOL_NX_OPTIN && !POOL_NX_OPTOUT
+#if defined(POOL_ZERO_DOWN_LEVEL_SUPPORT) || (POOL_NX_OPTIN && !POOL_NX_OPTOUT)
+    ULONG BuildNumber;
     ULONG MajorVersion;
     ULONG MinorVersion;
+#if defined(POOL_ZERO_DOWN_LEVEL_SUPPORT)
+    SYSTEM_POOL_ZEROING_INFORMATION PoolZeroingInformation;
+    NT_QUERY_SYSTEM_INFORMATION QuerySystemInformation;
+    UNICODE_STRING QuerySystemInformationName  = RTL_CONSTANT_STRING (L"NtQuerySystemInformation");
+#endif
     NTSTATUS Status;
     RTL_OSVERSIONINFOW VersionInfo;
 
     VersionInfo.dwOSVersionInfoSize = sizeof (VersionInfo);
-
     Status = RtlGetVersion (&VersionInfo);
-
     if (!NT_VERIFY (NT_SUCCESS (Status))) {
         MajorVersion = 5;
         MinorVersion = 0;
+        BuildNumber = 0;
     } else {
         MajorVersion = VersionInfo.dwMajorVersion;
         MinorVersion = VersionInfo.dwMinorVersion;
+        BuildNumber = VersionInfo.dwBuildNumber;
+    }
+#endif
+
+#ifdef POOL_ZERO_DOWN_LEVEL_SUPPORT
+
+    QuerySystemInformation =
+        (NT_QUERY_SYSTEM_INFORMATION)MmGetSystemRoutineAddress(&QuerySystemInformationName);
+
+    if (QuerySystemInformation != NULL) {
+        Status = QuerySystemInformation(POOL_ZEROING_INFORMATION,
+                                        (PVOID)&PoolZeroingInformation,
+                                        sizeof(SYSTEM_POOL_ZEROING_INFORMATION),
+                                        NULL);
+
+        if ((NT_SUCCESS(Status)) &&
+            (PoolZeroingInformation.PoolZeroingSupportPresent != FALSE)) {
+
+            ExPoolZeroingNativelySupported = TRUE;
+        }
     }
 
+#endif
+
+#if POOL_NX_OPTIN && !POOL_NX_OPTOUT
     if ((RuntimeFlags & DrvRtPoolNxOptIn) != 0) {
 
         //
@@ -43638,7 +44442,20 @@ ExInitializeDriverRuntime(
 }
 
 
-
+#if defined(_NTHALLIB_)
+extern POBJECT_TYPE CmKeyObjectType;
+extern POBJECT_TYPE IoFileObjectType;
+extern POBJECT_TYPE ExEventObjectType;
+extern POBJECT_TYPE ExSemaphoreObjectType;
+extern POBJECT_TYPE TmTransactionManagerObjectType;
+extern POBJECT_TYPE TmResourceManagerObjectType;
+extern POBJECT_TYPE TmEnlistmentObjectType;
+extern POBJECT_TYPE TmTransactionObjectType;
+extern POBJECT_TYPE PsProcessType;
+extern POBJECT_TYPE PsThreadType;
+extern POBJECT_TYPE PsJobType;
+extern POBJECT_TYPE SeTokenObjectType;
+#else
 extern POBJECT_TYPE *CmKeyObjectType;
 extern POBJECT_TYPE *IoFileObjectType;
 extern POBJECT_TYPE *ExEventObjectType;
@@ -43651,6 +44468,8 @@ extern POBJECT_TYPE *PsProcessType;
 extern POBJECT_TYPE *PsThreadType;
 extern POBJECT_TYPE *PsJobType;
 extern POBJECT_TYPE *SeTokenObjectType;
+#endif
+
 #if (NTDDI_VERSION >= NTDDI_THRESHOLD)
 extern POBJECT_TYPE *ExDesktopObjectType;
 #endif

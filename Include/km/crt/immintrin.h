@@ -1561,6 +1561,8 @@ void _xabort(const unsigned int imm);
 }; /* End "C" */
 #endif /* __cplusplus */
 
+#include <zmmintrin.h>
+
 #endif /* defined(_M_CEE_PURE) */
 
 #endif

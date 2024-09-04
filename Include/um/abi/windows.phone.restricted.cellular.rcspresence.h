@@ -1,6 +1,6 @@
 /* Header file automatically generated from windows.phone.restricted.cellular.rcspresence.idl */
 /*
- * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0226 
+ * File built with Microsoft(R) MIDLRT Compiler Engine Version 10.00.0229 
  */
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
@@ -54,11 +54,11 @@
 #endif // defined(WINDOWS_APPLICATIONMODEL_CALLS_CALLSPHONECONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION 0x30000
+#define WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION 0x40000
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0x80000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0xa0000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION)
@@ -108,7 +108,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsAddress ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsAddress
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsAddress_FWD_DEFINED__
@@ -126,7 +127,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsCapabilitiesReceivedArgs ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsCapabilitiesReceivedArgs
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsCapabilitiesReceivedArgs_FWD_DEFINED__
@@ -144,7 +146,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceService ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsPresenceService
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceService_FWD_DEFINED__
@@ -162,7 +165,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceSettings ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsPresenceSettings
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceSettings_FWD_DEFINED__
@@ -180,7 +184,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceSettings2 ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsPresenceSettings2
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceSettings2_FWD_DEFINED__
@@ -198,7 +203,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPublishCapabilitiesRequestedArgs ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsPublishCapabilitiesRequestedArgs
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPublishCapabilitiesRequestedArgs_FWD_DEFINED__
@@ -216,7 +222,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResource ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsResource
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResource_FWD_DEFINED__
@@ -234,7 +241,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResourceInstance ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsResourceInstance
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResourceInstance_FWD_DEFINED__
@@ -252,7 +260,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResourceList ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsResourceList
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResourceList_FWD_DEFINED__
@@ -270,7 +279,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResponse ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsResponse
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResponse_FWD_DEFINED__
@@ -288,7 +298,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsService ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsService
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsService_FWD_DEFINED__
@@ -306,7 +317,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceAvailabilityChangedArgs ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsServiceAvailabilityChangedArgs
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceAvailabilityChangedArgs_FWD_DEFINED__
@@ -324,7 +336,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceDescription ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsServiceDescription
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceDescription_FWD_DEFINED__
@@ -342,7 +355,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceStatusChangedArgs ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsServiceStatusChangedArgs
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceStatusChangedArgs_FWD_DEFINED__
@@ -360,7 +374,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceTuple ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsServiceTuple
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceTuple_FWD_DEFINED__
@@ -378,7 +393,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsSubscriptionReceivedArgs ABI::Windows::Phone::Restricted::Cellular::RcsPresence::IRcsSubscriptionReceivedArgs
 
 #endif // ____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsSubscriptionReceivedArgs_FWD_DEFINED__
@@ -397,7 +413,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -506,7 +523,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -583,7 +601,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -660,7 +679,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 namespace ABI {
@@ -674,7 +694,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -722,7 +743,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -769,7 +791,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -847,7 +870,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -894,7 +918,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -1003,7 +1028,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -1112,7 +1138,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 #ifndef DEF___FIAsyncOperationCompletedHandler_1_Windows__CPhone__CRestricted__CCellular__CRcsPresence__CRcsServiceStatus_USE
@@ -1185,7 +1212,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -1233,7 +1261,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 #if WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
@@ -1278,7 +1307,8 @@ namespace ABI {
             typedef struct DateTime DateTime;
             
         } /* Foundation */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -1287,14 +1317,16 @@ namespace ABI {
             typedef struct TimeSpan TimeSpan;
             
         } /* Foundation */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 namespace ABI {
     namespace Windows {
         namespace Foundation {
             class Uri;
         } /* Foundation */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 #ifndef ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
 #define ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
@@ -1303,7 +1335,8 @@ namespace ABI {
         namespace Foundation {
             interface IUriRuntimeClass;
         } /* Foundation */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #define __x_ABI_CWindows_CFoundation_CIUriRuntimeClass ABI::Windows::Foundation::IUriRuntimeClass
 
 #endif // ____x_ABI_CWindows_CFoundation_CIUriRuntimeClass_FWD_DEFINED__
@@ -1325,7 +1358,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -1340,7 +1374,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -1355,7 +1390,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -1370,7 +1406,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -1385,7 +1422,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -1400,7 +1438,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 namespace ABI {
     namespace Windows {
@@ -1415,7 +1454,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 
@@ -1447,7 +1487,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 
@@ -1464,7 +1505,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 
 
@@ -1508,7 +1550,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 
@@ -1546,7 +1589,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 
@@ -1577,7 +1621,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 
@@ -1610,7 +1655,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 
@@ -1641,7 +1687,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 
@@ -1674,7 +1721,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 
@@ -1706,7 +1754,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 #endif // WINDOWS_PHONE_RESTRICTED_CELLULAR_RCSPRESENCE_INTERNALRCSPRESENCECONTRACT_VERSION >= 0x10000
 
 
@@ -1748,7 +1797,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsAddress;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsAddress_INTERFACE_DEFINED__) */
@@ -1796,7 +1846,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsCapabilitiesReceivedArgs;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsCapabilitiesReceivedArgs_INTERFACE_DEFINED__) */
@@ -1878,7 +1929,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceService;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceService_INTERFACE_DEFINED__) */
@@ -1932,7 +1984,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceSettings;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceSettings_INTERFACE_DEFINED__) */
@@ -2028,7 +2081,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceSettings2;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPresenceSettings2_INTERFACE_DEFINED__) */
@@ -2076,7 +2130,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPublishCapabilitiesRequestedArgs;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsPublishCapabilitiesRequestedArgs_INTERFACE_DEFINED__) */
@@ -2127,7 +2182,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResource;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResource_INTERFACE_DEFINED__) */
@@ -2184,7 +2240,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResourceInstance;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResourceInstance_INTERFACE_DEFINED__) */
@@ -2238,7 +2295,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResourceList;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResourceList_INTERFACE_DEFINED__) */
@@ -2286,7 +2344,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResponse;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsResponse_INTERFACE_DEFINED__) */
@@ -2354,7 +2413,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsService;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsService_INTERFACE_DEFINED__) */
@@ -2399,7 +2459,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceAvailabilityChangedArgs;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceAvailabilityChangedArgs_INTERFACE_DEFINED__) */
@@ -2462,7 +2523,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceDescription;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceDescription_INTERFACE_DEFINED__) */
@@ -2507,7 +2569,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceStatusChangedArgs;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceStatusChangedArgs_INTERFACE_DEFINED__) */
@@ -2558,7 +2621,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceTuple;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsServiceTuple_INTERFACE_DEFINED__) */
@@ -2603,7 +2667,8 @@ namespace ABI {
                 } /* Cellular */
             } /* Restricted */
         } /* Phone */
-    } /* Windows */} /* ABI */
+    } /* Windows */
+} /* ABI */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsSubscriptionReceivedArgs;
 #endif /* !defined(____x_ABI_CWindows_CPhone_CRestricted_CCellular_CRcsPresence_CIRcsSubscriptionReceivedArgs_INTERFACE_DEFINED__) */

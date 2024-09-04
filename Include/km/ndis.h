@@ -40,7 +40,8 @@ Notes:
 
         Version     First available in
         ------------------------------------------------------------------
-        683         Windows 10, RS6 Release
+        684         Windows 10, vibranium release
+        683         Windows 10, version 1903
         682         Windows 10, version 1809
         681         Windows 10, version 1803
         680         Windows 10, version 1709
@@ -232,7 +233,9 @@ typedef enum _NET_DEVICE_POWER_STATE
 
 #ifdef NETCX_ADAPTER_2
 
-#if (defined(NDIS683_MINIPORT) || \
+#if ( \
+    defined(NDIS684_MINIPORT) || \
+    defined(NDIS683_MINIPORT) || \
     defined(NDIS682_MINIPORT) || \
     defined(NDIS681_MINIPORT) || \
     defined(NDIS680_MINIPORT) || \
@@ -249,7 +252,7 @@ typedef enum _NET_DEVICE_POWER_STATE
     defined(NDIS50_MINIPORT))
 #error NDISXXX_MINIPORT macros are reserved
 #endif
-#define NDIS683_MINIPORT 1
+#define NDIS684_MINIPORT 1
 
 #ifdef NDIS_MINIPORT_DRIVER
 #error NDIS_MINIPORT_DRIVER macro is reserved
@@ -370,7 +373,10 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 // for Miniports versions 5.0 and up, provide a consistent way to match
 // Ndis version in their characteristics with their makefile defines
 //
-#if (defined(NDIS683_MINIPORT))
+#if (defined(NDIS684_MINIPORT))
+#define NDIS_MINIPORT_MAJOR_VERSION 6
+#define NDIS_MINIPORT_MINOR_VERSION 84
+#elif (defined(NDIS683_MINIPORT))
 #define NDIS_MINIPORT_MAJOR_VERSION 6
 #define NDIS_MINIPORT_MINOR_VERSION 83
 #elif (defined(NDIS682_MINIPORT))
@@ -476,12 +482,16 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 #elif (defined(NDIS683_MINIPORT))
 #define NDIS_MINIPORT_MINIMUM_MAJOR_VERSION 6
 #define NDIS_MINIPORT_MINIMUM_MINOR_VERSION 83
+#elif (defined(NDIS684_MINIPORT))
+#define NDIS_MINIPORT_MINIMUM_MAJOR_VERSION 6
+#define NDIS_MINIPORT_MINIMUM_MINOR_VERSION 84
 #endif
 
 //
 // Disallow invalid major/minor combination
 //
 #if ((NDIS_MINIPORT_MAJOR_VERSION == 6) && \
+       (NDIS_MINIPORT_MINOR_VERSION != 84) && \
        (NDIS_MINIPORT_MINOR_VERSION != 83) && \
        (NDIS_MINIPORT_MINOR_VERSION != 82) && \
        (NDIS_MINIPORT_MINOR_VERSION != 81) && \
@@ -506,11 +516,9 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 //
 // Make sure the target platform is consistent with miniport version
 //
-#ifndef NTDDI_WIN10_19H1
-#define DEFINED_NTDDI_WIN10_19H1
-#define NTDDI_WIN10_19H1 WDK_NTDDI_VERSION
-#endif // NTDDI_WIN10_19H1
+
 #if  (NDIS_MINIPORT_MINIMUM_MAJOR_VERSION == 6) && (\
+      (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 84 && NTDDI_VERSION < NTDDI_WIN10_VB) || \
       (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 83 && NTDDI_VERSION < NTDDI_WIN10_19H1)  || \
       (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 82 && NTDDI_VERSION < NTDDI_WIN10_RS5)  || \
       (NDIS_MINIPORT_MINIMUM_MINOR_VERSION == 81 && NTDDI_VERSION < NTDDI_WIN10_RS4)  || \
@@ -531,12 +539,6 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 #error NDIS: Wrong NDIS or DDI version specified
 #endif
 
-#ifdef DEFINED_NTDDI_WIN10_19H1
-#undef DEFINED_NTDDI_WIN10_19H1
-#undef NTDDI_WIN10_19H1
-#endif // DEFINED_NTDDI_WIN10_19H1
-
-
 #endif // NDIS_MINIPORT_DRIVER
 
 
@@ -553,7 +555,12 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 // a protocol only or filter driver
 //
 
-#if (defined(NDIS683))
+#if (defined(NDIS684))
+#define NDIS_PROTOCOL_MAJOR_VERSION 6
+#define NDIS_PROTOCOL_MINOR_VERSION 84
+#define NDIS_FILTER_MAJOR_VERSION 6
+#define NDIS_FILTER_MINOR_VERSION 84
+#elif (defined(NDIS683))
 #define NDIS_PROTOCOL_MAJOR_VERSION 6
 #define NDIS_PROTOCOL_MINOR_VERSION 83
 #define NDIS_FILTER_MAJOR_VERSION 6
@@ -711,6 +718,11 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 #define NDIS_PROTOCOL_MINIMUM_MINOR_VERSION 83
 #define NDIS_FILTER_MINIMUM_MAJOR_VERSION 6
 #define NDIS_FILTER_MINIMUM_MINOR_VERSION 83
+#elif (defined(NDIS684))
+#define NDIS_PROTOCOL_MINIMUM_MAJOR_VERSION 6
+#define NDIS_PROTOCOL_MINIMUM_MINOR_VERSION 84
+#define NDIS_FILTER_MINIMUM_MAJOR_VERSION 6
+#define NDIS_FILTER_MINIMUM_MINOR_VERSION 84
 #endif
 
 
@@ -742,6 +754,7 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 // disallow invalid major/minor combination
 //
 #if ((NDIS_FILTER_MAJOR_VERSION == 6) && \
+     (NDIS_FILTER_MINOR_VERSION != 84) && \
      (NDIS_FILTER_MINOR_VERSION != 83) && \
      (NDIS_FILTER_MINOR_VERSION != 82) && \
      (NDIS_FILTER_MINOR_VERSION != 81) && \
@@ -770,6 +783,7 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 // disallow invalid major/minor combination
 //
 #if ((NDIS_PROTOCOL_MAJOR_VERSION == 6) && \
+     (NDIS_PROTOCOL_MINOR_VERSION != 84) && \
      (NDIS_PROTOCOL_MINOR_VERSION != 83) && \
      (NDIS_PROTOCOL_MINOR_VERSION != 82) && \
      (NDIS_PROTOCOL_MINOR_VERSION != 81) && \
@@ -799,11 +813,9 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 //
 // Make sure the target platform is consistent with miniport version
 //
-#ifndef NTDDI_WIN10_19H1
-#define DEFINED_NTDDI_WIN10_19H1
-#define NTDDI_WIN10_19H1 WDK_NTDDI_VERSION
-#endif // NTDDI_WIN10_19H1
+
 #if  (NDIS_PROTOCOL_MINIMUM_MAJOR_VERSION == 6) && ( \
+      (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 84 && NTDDI_VERSION < NTDDI_WIN10_VB) || \
       (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 83 && NTDDI_VERSION < NTDDI_WIN10_19H1)  || \
       (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 82 && NTDDI_VERSION < NTDDI_WIN10_RS5)  || \
       (NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 81 && NTDDI_VERSION < NTDDI_WIN10_RS4)  || \
@@ -823,11 +835,6 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
          ((NDIS_PROTOCOL_MINIMUM_MINOR_VERSION == 0) && (NTDDI_VERSION < NTDDI_WIN2K))))
 #error NDIS: Wrong NDIS or DDI version specified
 #endif
-
-#ifdef DEFINED_NTDDI_WIN10_19H1
-#undef DEFINED_NTDDI_WIN10_19H1
-#undef NTDDI_WIN10_19H1
-#endif // DEFINED_NTDDI_WIN10_19H1
 
 #endif // defined (NDIS_PROTOCOL_MAJOR_VERSION)
 
@@ -917,6 +924,7 @@ typedef _Return_type_success_(return >= 0) int NDIS_STATUS, *PNDIS_STATUS; // no
 #define NDIS_RUNTIME_VERSION_681    ((6 << 16) | 81)
 #define NDIS_RUNTIME_VERSION_682    ((6 << 16) | 82)
 #define NDIS_RUNTIME_VERSION_683    ((6 << 16) | 83)
+#define NDIS_RUNTIME_VERSION_684    ((6 << 16) | 84)
 
 
 #define NDIS_DECLARE_CONTEXT_INNER(datatype,purpose) \
@@ -2118,6 +2126,11 @@ typedef struct _REFERENCE
 #define NDIS_STATUS_WWAN_MODEM_LOGGING_CONFIG               ((NDIS_STATUS)0x40041048L)
 #define NDIS_STATUS_WWAN_UICC_RECORD_RESPONSE               ((NDIS_STATUS)0x40041049L)
 #define NDIS_STATUS_WWAN_UICC_BINARY_RESPONSE               ((NDIS_STATUS)0x4004104aL)
+#endif
+
+#if (NDIS_SUPPORT_NDIS684)
+#define NDIS_STATUS_WWAN_REGISTER_PARAMS_STATE              ((NDIS_STATUS)0x4004104bL)
+#define NDIS_STATUS_WWAN_NETWORK_PARAMS_STATE               ((NDIS_STATUS)0x4004104cL)
 #endif
 
 //
@@ -6607,6 +6620,9 @@ typedef enum _NDIS_NET_BUFFER_LIST_INFO
     NblReAuthWfpFlowContext = NblOriginalInterfaceIfIndex,
     TcpReceiveBytesTransferred,
     NrtNameResolutionId = TcpReceiveBytesTransferred,
+#if (NDIS_SUPPORT_NDIS684)
+    UdpRecvSegCoalesceOffloadInfo = TcpReceiveBytesTransferred,
+#endif //(NDIS_SUPPORT_NDIS684)
 
 #if (NDIS_SUPPORT_NDIS630)
 
@@ -7395,10 +7411,6 @@ C_ASSERT(sizeof(NDIS_RSC_NBL_INFO)==sizeof(PVOID));
 
 #define NET_BUFFER_LIST_DUP_ACK_COUNT(_NBL)        \
     (( (PNDIS_RSC_NBL_INFO)&NET_BUFFER_LIST_INFO((_NBL), TcpRecvSegCoalesceInfo))->Info.DupAckCount)
-
-#define NET_BUFFER_LIST_COALESCED_SEG_SIZE(_NBL)        \
-    (( (PNDIS_RSC_NBL_INFO)&NET_BUFFER_LIST_INFO((_NBL), TcpRecvSegCoalesceInfo))->Info.DupAckCount)
-
 
 #endif // (NDIS_SUPPORT_NDIS630)
 
@@ -8832,6 +8844,35 @@ typedef struct _NDIS_UDP_SEGMENTATION_OFFLOAD_NET_BUFFER_LIST_INFO
 
 #endif // (NDIS_SUPPORT_NDIS683)
 
+#if (NDIS_SUPPORT_NDIS684)
+
+//
+// This structure is used in the OOB UdpRecvSegCoalesceOffloadInfo.
+//
+typedef struct _NDIS_UDP_RSC_OFFLOAD_NET_BUFFER_LIST_INFO
+{
+    union
+    {
+        struct
+        {
+            USHORT    SegCount;
+            USHORT    SegSize;
+        } Receive;
+
+        PVOID Value;
+    };
+} NDIS_UDP_RSC_OFFLOAD_NET_BUFFER_LIST_INFO, *PNDIS_UDP_RSC_OFFLOAD_NET_BUFFER_LIST_INFO;
+
+#define NET_BUFFER_LIST_UDP_COALESCED_SEG_COUNT(_NBL) \
+    (((PNDIS_UDP_RSC_OFFLOAD_NET_BUFFER_LIST_INFO) \
+        &NET_BUFFER_LIST_INFO((_NBL), UdpRecvSegCoalesceOffloadInfo))->Receive.SegCount)
+
+#define NET_BUFFER_LIST_UDP_COALESCED_SEG_SIZE(_NBL) \
+    (((PNDIS_UDP_RSC_OFFLOAD_NET_BUFFER_LIST_INFO) \
+        &NET_BUFFER_LIST_INFO((_NBL), UdpRecvSegCoalesceOffloadInfo))->Receive.SegSize)
+
+#endif // (NDIS_SUPPORT_NDIS684)
+
 #pragma warning(pop)
 
 
@@ -9175,6 +9216,9 @@ typedef PROTOCOL_CO_AF_REGISTER_NOTIFY PROTCOL_CO_AF_REGISTER_NOTIFY;
 
 #if NDIS_LEGACY_PROTOCOL
 
+#pragma warning(push)
+#pragma warning(disable : 4201) // nonstandard extension used: nameless struct/union
+
 typedef struct _NDIS50_PROTOCOL_CHARACTERISTICS
 {
     union
@@ -9247,6 +9291,8 @@ typedef struct _NDIS50_PROTOCOL_CHARACTERISTICS
     CO_AF_REGISTER_NOTIFY_HANDLER   CoAfRegisterNotifyHandler;
 
 } NDIS50_PROTOCOL_CHARACTERISTICS;
+
+#pragma warning(pop)
 
 #endif // NDIS_LEGACY_PROTOCOL
 
@@ -11064,6 +11110,10 @@ NdisMQueueDpcEx(
 
 #if NDIS_LEGACY_MINIPORT
 #if (((NDIS_MINIPORT_MAJOR_VERSION == 5) &&  (NDIS_MINIPORT_MINOR_VERSION == 1)) || NDIS_WRAPPER)
+
+#pragma warning(push)
+#pragma warning(disable : 4201) // nonstandard extension used: nameless struct/union
+
 typedef struct _NDIS51_MINIPORT_CHARACTERISTICS
 {
     union
@@ -11128,6 +11178,9 @@ typedef struct _NDIS51_MINIPORT_CHARACTERISTICS
     PVOID                           Reserved3;
     PVOID                           Reserved4;
 } NDIS51_MINIPORT_CHARACTERISTICS;
+
+#pragma warning(pop)
+
 #endif // (((NDIS_MINIPORT_MAJOR_VERSION == 5) &&  (NDIS_MINIPORT_MINOR_VERSION == 1)) || NDIS_WRAPPER)
 
 typedef struct _NDIS_MINIPORT_INTERRUPT
@@ -12346,6 +12399,8 @@ NdisMCoIndicateStatusEx(
 
 #endif // NDIS_SUPPORT_NDIS6
 
+#pragma warning(push)
+#pragma warning(disable : 4201) // nonstandard extension used: nameless struct/union
 
 //
 // Do not change the structure below !!!
@@ -12363,6 +12418,8 @@ typedef struct
 
     PVOID                       XXXDB;
 } FILTERDBS, *PFILTERDBS;
+
+#pragma warning(pop)
 
 #if NDIS_LEGACY_MINIPORT
 typedef
@@ -16335,6 +16392,11 @@ NdisFSynchronousOidRequest(
     _In_ NDIS_OID_REQUEST *OidRequest);
 
 #endif // NDIS_SUPPORT_NDIS680
+
+#if NDIS_SUPPORT_NDIS684
+
+
+#endif // NDIS_SUPPORT_NDIS684
 
 #endif // NDIS_SUPPORT_NDIS6
 

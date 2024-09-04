@@ -312,7 +312,7 @@ SdpCreateNodeAlternative();
 _Must_inspect_result_
 PSDP_NODE
 SdpCreateNodeUrl(
-    _In_reads_bytes_(UrlLength) PCHAR url,
+    _In_reads_bytes_(urlLength) PCHAR url,
      ULONG urlLength
     );
 

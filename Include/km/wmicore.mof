@@ -20651,6 +20651,27 @@ class MuiTraceData_String:MuiTraceData
      string  MuiLoadString;
 };
 
+[Dynamic,
+Description("Kernel Hypercalls") : amended,
+EventType(114),
+EventTypeName("KernelHypercall") : amended
+]
+class HV_Hypercall:PerfInfo_V2
+{
+    [WmiDataId(1),
+     Description("Hypercall Callcode") : amended,
+     read]
+     uint32 CallCode;
+    [WmiDataId(2),
+     Description("Is fast") : amended,
+     read]
+     uint8 IsFast;
+    [WmiDataId(3),
+     Description("Is Nested") : amended,
+     read]
+     uint8 IsNested;
+};
+
 //
 // UMS events.
 //

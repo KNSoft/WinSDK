@@ -2892,6 +2892,7 @@ typedef enum D3DDDI_MARKERLOGTYPE
     D3DDDIMLT_NONE,
     D3DDDIMLT_PROFILE,
     D3DDDIMLT_FT_PROFILE,
+    D3DDDIMLT_BATCHED,
 } D3DDDI_MARKERLOGTYPE;
 #endif
 
@@ -3550,6 +3551,14 @@ typedef struct _D3DDDICB_RENDERFLAGS
     };
 } D3DDDICB_RENDERFLAGS;
 
+typedef struct _D3DDDI_BATCHEDMARKERDATA
+{
+    HANDLE      hRTCommandListHandle;
+    UINT        FirstAPISequenceNumberHigh;
+    UINT        CompletedAPISequenceNumberLowSize;
+    CONST UINT* pCompletedAPISequenceNumberLow;
+} D3DDDI_BATCHEDMARKERDATA;
+
 typedef struct _D3DDDICB_RENDER
 {
     UINT                        CommandLength;              // in:  Number of byte to process in the command buffer.
@@ -3581,15 +3590,29 @@ typedef struct _D3DDDICB_RENDER
 #if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM1_3) // MP
     D3DDDI_MARKERLOGTYPE        MarkerLogType;              // in
     UINT                        RenderCBSequence;           // in
-    UINT                        FirstAPISequenceNumberHigh; // in
-    UINT                        CompletedAPISequenceNumberLow0Size; // in
-    UINT                        CompletedAPISequenceNumberLow1Size; // in
-    UINT                        BegunAPISequenceNumberLow0Size; // in
-    UINT                        BegunAPISequenceNumberLow1Size; // in
-    CONST UINT*                 pCompletedAPISequenceNumberLow0; // in
-    CONST UINT*                 pCompletedAPISequenceNumberLow1; // in
-    CONST UINT*                 pBegunAPISequenceNumberLow0; // in
-    CONST UINT*                 pBegunAPISequenceNumberLow1; // in
+    union
+    {
+        struct
+        {
+            UINT                        FirstAPISequenceNumberHigh; // in
+            UINT                        CompletedAPISequenceNumberLow0Size; // in
+            UINT                        CompletedAPISequenceNumberLow1Size; // in
+            UINT                        BegunAPISequenceNumberLow0Size; // in
+            UINT                        BegunAPISequenceNumberLow1Size; // in
+        };
+        UINT                        BatchedMarkerDataCount;
+    };
+    union
+    {
+        struct
+        {
+            CONST UINT*                 pCompletedAPISequenceNumberLow0; // in
+            CONST UINT*                 pCompletedAPISequenceNumberLow1; // in
+            CONST UINT*                 pBegunAPISequenceNumberLow0; // in
+            CONST UINT*                 pBegunAPISequenceNumberLow1; // in
+        };
+        CONST D3DDDI_BATCHEDMARKERDATA* pBatchedMarkerData;
+    };
 #endif
 } D3DDDICB_RENDER;
 
@@ -3985,15 +4008,29 @@ typedef struct _D3DDDICB_SUBMITCOMMAND
     D3DKMT_HANDLE               WrittenPrimaries[D3DDDI_MAX_WRITTEN_PRIMARIES];
     D3DDDI_MARKERLOGTYPE        MarkerLogType;              
     UINT                        RenderCBSequence;           
-    UINT                        FirstAPISequenceNumberHigh; 
-    UINT                        CompletedAPISequenceNumberLow0Size; 
-    UINT                        CompletedAPISequenceNumberLow1Size; 
-    UINT                        BegunAPISequenceNumberLow0Size; 
-    UINT                        BegunAPISequenceNumberLow1Size; 
-    CONST UINT*                 pCompletedAPISequenceNumberLow0;
-    CONST UINT*                 pCompletedAPISequenceNumberLow1;
-    CONST UINT*                 pBegunAPISequenceNumberLow0;
-    CONST UINT*                 pBegunAPISequenceNumberLow1;
+    union
+    {
+        struct
+        {
+            UINT                        FirstAPISequenceNumberHigh; // in
+            UINT                        CompletedAPISequenceNumberLow0Size; // in
+            UINT                        CompletedAPISequenceNumberLow1Size; // in
+            UINT                        BegunAPISequenceNumberLow0Size; // in
+            UINT                        BegunAPISequenceNumberLow1Size; // in
+        };
+        UINT                        BatchedMarkerDataCount;
+    };
+    union
+    {
+        struct
+        {
+            CONST UINT*                 pCompletedAPISequenceNumberLow0; // in
+            CONST UINT*                 pCompletedAPISequenceNumberLow1; // in
+            CONST UINT*                 pBegunAPISequenceNumberLow0; // in
+            CONST UINT*                 pBegunAPISequenceNumberLow1; // in
+        };
+        CONST D3DDDI_BATCHEDMARKERDATA* pBatchedMarkerData;
+    };
     UINT                        Reserved;
     UINT                        NumHistoryBuffers;
     D3DKMT_HANDLE*              HistoryBufferArray;
@@ -4221,16 +4258,43 @@ typedef struct _D3DDDICB_SUBMITHISTORYSEQUENCE
 
     UINT                                    PrecisionBits;
     D3DDDI_MARKERLOGTYPE                    MarkerLogType;
-    UINT                                    RenderCBSequence;
-    UINT                                    FirstAPISequenceNumberHigh;
-    UINT                                    CompletedAPISequenceNumberLow0Size;
-    UINT                                    CompletedAPISequenceNumberLow1Size; 
-    UINT                                    BegunAPISequenceNumberLow0Size; 
-    UINT                                    BegunAPISequenceNumberLow1Size; 
-    CONST UINT*                             pCompletedAPISequenceNumberLow0;
-    CONST UINT*                             pCompletedAPISequenceNumberLow1;
-    CONST UINT*                             pBegunAPISequenceNumberLow0;
-    CONST UINT*                             pBegunAPISequenceNumberLow1;
+    UINT                                    RenderCBSequence;          
+    union
+    {
+        struct
+        {
+            UINT                        FirstAPISequenceNumberHigh; // in
+            UINT                        CompletedAPISequenceNumberLow0Size; // in
+            UINT                        CompletedAPISequenceNumberLow1Size; // in
+            UINT                        BegunAPISequenceNumberLow0Size; // in
+            UINT                        BegunAPISequenceNumberLow1Size; // in
+        };
+        UINT                        BatchedMarkerDataCount;
+    };
+    union
+    {
+        struct
+        {
+            CONST UINT*                 pCompletedAPISequenceNumberLow0; // in
+            CONST UINT*                 pCompletedAPISequenceNumberLow1; // in
+            CONST UINT*                 pBegunAPISequenceNumberLow0; // in
+            CONST UINT*                 pBegunAPISequenceNumberLow1; // in
+        };
+        CONST D3DDDI_BATCHEDMARKERDATA* pBatchedMarkerData;
+    };
+
+#if (D3D_UMD_INTERFACE_VERSION >= D3D_UMD_INTERFACE_VERSION_WDDM2_7_2)
+
+    UINT                                    TimestampArrayStride;                   // Stride in bytes between timestamp values in the timestamp array.
+                                                                                    // Can be set to zero if the timestamp values are consecutive with no padding.
+
+    D3DKMT_HANDLE                           HistorySequenceCompletionSyncObject;    // Optional handle to the monitored sync object to be signaled when
+                                                                                    // history buffer data for this sequence is logged to ETW and no longer in use.
+
+    UINT64                                  HistorySequenceCompletionFenceValue;    // Monitored fence value to be signaled when the history buffer is no longer in use.
+
+#endif // D3D_UMD_INTERFACE_VERSION
+
 } D3DDDICB_SUBMITHISTORYSEQUENCE;
 
 #endif // D3D_UMD_INTERFACE_VERSION
@@ -4613,10 +4677,10 @@ typedef _Check_return_ HRESULT (APIENTRY *PFND3DDDI_LOGSTRINGTABLE)(
 #define D3DDDI_LOGMARKERSTRINGTABLE_PROCNAME "LogMarkerStringTable"
 #endif
 
-#define D3DDDI_VERSION64_MAJOR16_MASK 0xFFFF000000000000ui64
-#define D3DDDI_VERSION64_MINOR16_MASK 0x0000FFFF00000000ui64
-#define D3DDDI_VERSION64_BUILD16_MASK 0x00000000FFFF0000ui64
-#define D3DDDI_VERSION64_REVISION16_MASK 0x000000000000FFFFui64
+#define D3DDDI_VERSION64_MAJOR16_MASK 0xFFFF000000000000ull
+#define D3DDDI_VERSION64_MINOR16_MASK 0x0000FFFF00000000ull
+#define D3DDDI_VERSION64_BUILD16_MASK 0x00000000FFFF0000ull
+#define D3DDDI_VERSION64_REVISION16_MASK 0x000000000000FFFFull
 #define D3DDDI_VERSION64_INTERFACE32_MASK (D3DDDI_VERSION64_MAJOR16_MASK | D3DDDI_VERSION64_MINOR16_MASK)
 #define D3DDDI_VERSION64_VERSION32_MASK (D3DDDI_VERSION64_BUILD16_MASK | D3DDDI_VERSION64_REVISION16_MASK)
 #define D3DDDI_MAJOR16_FROM_VERSION64( v ) ((UINT16)(v >> 48))

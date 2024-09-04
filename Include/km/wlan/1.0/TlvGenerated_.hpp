@@ -946,12 +946,45 @@ typedef struct _WDI_STATION_CAPABILITIES
     BOOLEAN DisconnectedStandbySupported; // If disconnected standby is supported. Yes = 1
     BOOLEAN FTMAsInitiatorSupport; // {0,1} If FTM procedures as Initiator are supported. Yes = 1.
     UINT32 FTMNumberOfSupportedTargets; // Number of target STAs supported per FTM request task.
+    BOOLEAN HostWPA3FIPSModeEnabled; // Host-FIPS mode for WPA3 is enabled or not
 #ifdef __cplusplus
-    _WDI_STATION_CAPABILITIES() : ScanSSIDListSize( 0 ), DesiredBSSIDListSize( 0 ), DesiredSSIDListSize( 0 ), PrivacyExemptionListSize( 0 ), KeyMappingTableSize( 0 ), DefaultKeyTableSize( 0 ), WEPKeyValueMaxLength( 0 ), MaxNumPerSTA( 0 ), SupportedQOSFlags( 0 ), HostFIPSModeImplemented( 0 ), MFPCapable( 0 ), AutoPowerSaveMode( FALSE ), BSSListCachemanagement( FALSE ), ConnectBSSSelectionOverride( FALSE ), uMaxNetworkOffloadListSize( 0 ), HESSIDConnectionSupported( FALSE ), DisconnectedStandbySupported( FALSE ), FTMAsInitiatorSupport( FALSE ), FTMNumberOfSupportedTargets( 0 )
+    _WDI_STATION_CAPABILITIES() : ScanSSIDListSize( 0 ), DesiredBSSIDListSize( 0 ), DesiredSSIDListSize( 0 ), PrivacyExemptionListSize( 0 ), KeyMappingTableSize( 0 ), DefaultKeyTableSize( 0 ), WEPKeyValueMaxLength( 0 ), MaxNumPerSTA( 0 ), SupportedQOSFlags( 0 ), HostFIPSModeImplemented( 0 ), MFPCapable( 0 ), AutoPowerSaveMode( FALSE ), BSSListCachemanagement( FALSE ), ConnectBSSSelectionOverride( FALSE ), uMaxNetworkOffloadListSize( 0 ), HESSIDConnectionSupported( FALSE ), DisconnectedStandbySupported( FALSE ), FTMAsInitiatorSupport( FALSE ), FTMNumberOfSupportedTargets( 0 ), HostWPA3FIPSModeEnabled( FALSE )
     {
     };
 #endif // __cplusplus
 } WDI_STATION_CAPABILITIES, *PWDI_STATION_CAPABILITIES;
+
+
+//
+// Structure definition for Station capabilities
+//
+typedef struct _WDI_STATION_CAPABILITIESV1_1_8
+{
+    UINT32 ScanSSIDListSize; // Scan SSID List size
+    UINT32 DesiredBSSIDListSize; // Desired BSSID List size
+    UINT32 DesiredSSIDListSize; // Desired SSID List size
+    UINT32 PrivacyExemptionListSize; // Privacy Exemption List size
+    UINT32 KeyMappingTableSize; // Key Mapping List size
+    UINT32 DefaultKeyTableSize; // Default Key table size
+    UINT32 WEPKeyValueMaxLength; // WEP Key value Max length
+    UINT32 MaxNumPerSTA; // Max num per STA Default key tables
+    UINT8 SupportedQOSFlags; // Whether or not WMM QOS is supported
+    UINT8 HostFIPSModeImplemented; // Whether or not host FIPS mode is supported
+    UINT8 MFPCapable; // Whether or not MFP is supported
+    BOOLEAN AutoPowerSaveMode; // {0,1} if Auto Power Save is supported. Yes = 1.
+    BOOLEAN BSSListCachemanagement; // {0,1} If the adapter would maintain the Station BSS List cache. Yes = 1
+    BOOLEAN ConnectBSSSelectionOverride; // {0,1} If on a Station connect the adapter may attempt association to a BSSID that is not specified in the Preferred BSSID list. Yes = 1
+    UINT32 uMaxNetworkOffloadListSize; // Support number of Network Offload entries
+    BOOLEAN HESSIDConnectionSupported; // {0,1} If ability to connect to HESSIDs is supported. Yes = 1.
+    BOOLEAN DisconnectedStandbySupported; // If disconnected standby is supported. Yes = 1
+    BOOLEAN FTMAsInitiatorSupport; // {0,1} If FTM procedures as Initiator are supported. Yes = 1.
+    UINT32 FTMNumberOfSupportedTargets; // Number of target STAs supported per FTM request task.
+#ifdef __cplusplus
+    _WDI_STATION_CAPABILITIESV1_1_8() : ScanSSIDListSize( 0 ), DesiredBSSIDListSize( 0 ), DesiredSSIDListSize( 0 ), PrivacyExemptionListSize( 0 ), KeyMappingTableSize( 0 ), DefaultKeyTableSize( 0 ), WEPKeyValueMaxLength( 0 ), MaxNumPerSTA( 0 ), SupportedQOSFlags( 0 ), HostFIPSModeImplemented( 0 ), MFPCapable( 0 ), AutoPowerSaveMode( FALSE ), BSSListCachemanagement( FALSE ), ConnectBSSSelectionOverride( FALSE ), uMaxNetworkOffloadListSize( 0 ), HESSIDConnectionSupported( FALSE ), DisconnectedStandbySupported( FALSE ), FTMAsInitiatorSupport( FALSE ), FTMNumberOfSupportedTargets( 0 )
+    {
+    };
+#endif // __cplusplus
+} WDI_STATION_CAPABILITIESV1_1_8, *PWDI_STATION_CAPABILITIESV1_1_8;
 
 
 //
@@ -1992,6 +2025,8 @@ typedef struct ArrayOfElementsOfWDI_MAC_ADDRESS WDI_ADDRESS_LIST_CONTAINER;
 typedef NDIS_GUID WDI_NDIS_GUID_CONTAINER;
 
 typedef WDI_IHV_TASK_PRIORITY WDI_IHV_TASK_PRIORITY_CONTAINER;
+
+typedef INT32 INT32_CONTAINER;
 
 typedef UINT32 UINT32_CONTAINER;
 
@@ -3161,6 +3196,8 @@ typedef struct ArrayOfElementsOfWDI_ALGO_PAIRS WDI_ALGO_PAIRS_LIST_CONTAINER;
 
 typedef WDI_STATION_CAPABILITIES WDI_STATION_CAPABILITIES_CONTAINER;
 
+typedef WDI_STATION_CAPABILITIESV1_1_8 WDI_STATION_CAPABILITIES_CONTAINERV1_1_8;
+
 typedef WDI_STATION_CAPABILITIESV1_0 WDI_STATION_CAPABILITIES_CONTAINERV1_0;
 
 typedef WDI_AP_CAPABILITIES WDI_AP_CAPABILITIES_CONTAINER;
@@ -3578,8 +3615,9 @@ typedef struct _WDI_CONNECT_PARAMETERS_CONTAINER
         UINT32 ActivePhyTypeList_IsPresent : 1;
         UINT32 DisallowedBSSIDs_IsPresent : 1;
         UINT32 AllowedBSSIDs_IsPresent : 1;
+        UINT32 OWEDHIE_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_CONNECT_PARAMETERS_CONTAINER_Optional() : HESSIDInfo_IsPresent( FALSE ), AssociationRequestVendorIE_IsPresent( FALSE ), ActivePhyTypeList_IsPresent( FALSE ), DisallowedBSSIDs_IsPresent( FALSE ), AllowedBSSIDs_IsPresent( FALSE )
+        _WDI_CONNECT_PARAMETERS_CONTAINER_Optional() : HESSIDInfo_IsPresent( FALSE ), AssociationRequestVendorIE_IsPresent( FALSE ), ActivePhyTypeList_IsPresent( FALSE ), DisallowedBSSIDs_IsPresent( FALSE ), AllowedBSSIDs_IsPresent( FALSE ), OWEDHIE_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -3599,6 +3637,7 @@ typedef struct _WDI_CONNECT_PARAMETERS_CONTAINER
     WDI_PHY_TYPE_LIST_CONTAINER ActivePhyTypeList;
     WDI_ADDRESS_LIST_CONTAINER DisallowedBSSIDs;
     WDI_ADDRESS_LIST_CONTAINER AllowedBSSIDs;
+    WDI_BYTE_BLOB OWEDHIE;
 } WDI_CONNECT_PARAMETERS_CONTAINER, *PWDI_CONNECT_PARAMETERS_CONTAINER;
 #ifdef __cplusplus
 namespace WDI_TLV
@@ -3753,8 +3792,10 @@ typedef struct _WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER
         UINT32 BIPKey_IsPresent : 1;
         UINT32 WEPKey_IsPresent : 1;
         UINT32 IHVKey_IsPresent : 1;
+        UINT32 GCMP_256Key_IsPresent : 1;
+        UINT32 BIP_GMAC_256Key_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER_Optional() : CCMPKey_IsPresent( FALSE ), GCMPKey_IsPresent( FALSE ), TKIPInfo_IsPresent( FALSE ), BIPKey_IsPresent( FALSE ), WEPKey_IsPresent( FALSE ), IHVKey_IsPresent( FALSE )
+        _WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER_Optional() : CCMPKey_IsPresent( FALSE ), GCMPKey_IsPresent( FALSE ), TKIPInfo_IsPresent( FALSE ), BIPKey_IsPresent( FALSE ), WEPKey_IsPresent( FALSE ), IHVKey_IsPresent( FALSE ), GCMP_256Key_IsPresent( FALSE ), BIP_GMAC_256Key_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -3769,6 +3810,8 @@ typedef struct _WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER
     WDI_PRIVATE_BYTE_BLOB BIPKey;
     WDI_PRIVATE_BYTE_BLOB WEPKey;
     WDI_PRIVATE_BYTE_BLOB IHVKey;
+    WDI_PRIVATE_BYTE_BLOB GCMP_256Key;
+    WDI_PRIVATE_BYTE_BLOB BIP_GMAC_256Key;
 #ifdef __cplusplus
     _WDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER() : CipherKeyType( (WDI_CIPHER_KEY_TYPE_CONTAINER)0 ), CipherAlgorithm( (WDI_CIPHER_ALGORITHM_CONTAINER)0 )
     {
@@ -3784,7 +3827,32 @@ namespace WDI_TLV
     }
 }
 #endif // __cplusplus
-typedef WDI_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY_STRUCT WDI_PM_RSN_KEY_INFO_CONTAINER;
+
+//
+// Container for 802.11 Rsn Key information.
+//
+typedef struct _WDI_PM_RSN_KEY_INFO_CONTAINER
+{
+    UINT32_CONTAINER ProtocolOffloadId;
+    UINT64_CONTAINER ReplayCounter;
+    WDI_PRIVATE_BYTE_BLOB KCK_CONTENT;
+    WDI_PRIVATE_BYTE_BLOB KEK_CONTENT;
+#ifdef __cplusplus
+    _WDI_PM_RSN_KEY_INFO_CONTAINER() : ProtocolOffloadId( (UINT32_CONTAINER)0 ), ReplayCounter( (UINT64_CONTAINER)0 )
+    {
+    };
+#endif // __cplusplus
+} WDI_PM_RSN_KEY_INFO_CONTAINER, *PWDI_PM_RSN_KEY_INFO_CONTAINER;
+#ifdef __cplusplus
+namespace WDI_TLV
+{
+    namespace PARSER
+    {
+        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_PM_RSN_KEY_INFO_CONTAINER * pField );
+    }
+}
+#endif // __cplusplus
+typedef WDI_PM_PROTOCOL_OFFLOAD_80211RSN_REKEY_STRUCT WDI_PM_RSN_KEY_INFO_CONTAINERV1_1_8;
 
 struct ArrayOfElementsOfWDI_SET_CONFIGURED_CIPHER_KEY_CONTAINER
 {
@@ -3844,8 +3912,10 @@ typedef struct _WDI_SET_ADD_CIPHER_KEYS_CONTAINER
         UINT32 BIPKey_IsPresent : 1;
         UINT32 WEPKey_IsPresent : 1;
         UINT32 IHVKey_IsPresent : 1;
+        UINT32 GCMP_256Key_IsPresent : 1;
+        UINT32 BIP_GMAC_256Key_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_SET_ADD_CIPHER_KEYS_CONTAINER_Optional() : PeerMacAddress_IsPresent( FALSE ), CipherKeyID_IsPresent( FALSE ), ReceiveSequenceCount_IsPresent( FALSE ), CCMPKey_IsPresent( FALSE ), GCMPKey_IsPresent( FALSE ), TKIPInfo_IsPresent( FALSE ), BIPKey_IsPresent( FALSE ), WEPKey_IsPresent( FALSE ), IHVKey_IsPresent( FALSE )
+        _WDI_SET_ADD_CIPHER_KEYS_CONTAINER_Optional() : PeerMacAddress_IsPresent( FALSE ), CipherKeyID_IsPresent( FALSE ), ReceiveSequenceCount_IsPresent( FALSE ), CCMPKey_IsPresent( FALSE ), GCMPKey_IsPresent( FALSE ), TKIPInfo_IsPresent( FALSE ), BIPKey_IsPresent( FALSE ), WEPKey_IsPresent( FALSE ), IHVKey_IsPresent( FALSE ), GCMP_256Key_IsPresent( FALSE ), BIP_GMAC_256Key_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -3861,6 +3931,8 @@ typedef struct _WDI_SET_ADD_CIPHER_KEYS_CONTAINER
     WDI_PRIVATE_BYTE_BLOB BIPKey;
     WDI_PRIVATE_BYTE_BLOB WEPKey;
     WDI_PRIVATE_BYTE_BLOB IHVKey;
+    WDI_PRIVATE_BYTE_BLOB GCMP_256Key;
+    WDI_PRIVATE_BYTE_BLOB BIP_GMAC_256Key;
 #ifdef __cplusplus
     _WDI_SET_ADD_CIPHER_KEYS_CONTAINER()
     {
@@ -4203,6 +4275,10 @@ namespace WDI_TLV
 #endif // __cplusplus
 typedef WDI_FTM_RESPONSE_STATUS WDI_FTM_RESPONSE_STATUS_CONTAINER;
 
+typedef WDI_FTM_BANDWIDTH WDI_FTM_BANDWIDTH_USED_CONTAINER;
+
+typedef WDI_FTM_PROPAGATION WDI_FTM_PROPAGATION_PROPERTY_CONTAINER;
+
 typedef WDI_LCI_REPORT_STATUS WDI_LCI_REPORT_STATUS_CONTAINER;
 
 
@@ -4216,13 +4292,14 @@ typedef struct _WDI_FTM_RESPONSE_CONTAINER
         UINT32 RetryAfter_IsPresent : 1;
         UINT32 NumberOfMeasurements_IsPresent : 1;
         UINT32 SignalInfo_IsPresent : 1;
+        UINT32 BandwidthUsed_IsPresent : 1;
         UINT32 RTT_IsPresent : 1;
-        UINT32 RTTAccuracy_IsPresent : 1;
         UINT32 RTTVariance_IsPresent : 1;
+        UINT32 PropagationProperty_IsPresent : 1;
         UINT32 LCIStatus_IsPresent : 1;
         UINT32 LCIReport_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_FTM_RESPONSE_CONTAINER_Optional() : RetryAfter_IsPresent( FALSE ), NumberOfMeasurements_IsPresent( FALSE ), SignalInfo_IsPresent( FALSE ), RTT_IsPresent( FALSE ), RTTAccuracy_IsPresent( FALSE ), RTTVariance_IsPresent( FALSE ), LCIStatus_IsPresent( FALSE ), LCIReport_IsPresent( FALSE )
+        _WDI_FTM_RESPONSE_CONTAINER_Optional() : RetryAfter_IsPresent( FALSE ), NumberOfMeasurements_IsPresent( FALSE ), SignalInfo_IsPresent( FALSE ), BandwidthUsed_IsPresent( FALSE ), RTT_IsPresent( FALSE ), RTTVariance_IsPresent( FALSE ), PropagationProperty_IsPresent( FALSE ), LCIStatus_IsPresent( FALSE ), LCIReport_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -4233,13 +4310,14 @@ typedef struct _WDI_FTM_RESPONSE_CONTAINER
     UINT16_CONTAINER RetryAfter;
     UINT16_CONTAINER NumberOfMeasurements;
     WDI_SIGNAL_INFO_CONTAINER SignalInfo;
-    UINT32_CONTAINER RTT;
-    UINT32_CONTAINER RTTAccuracy;
+    WDI_FTM_BANDWIDTH_USED_CONTAINER BandwidthUsed;
+    INT32_CONTAINER RTT;
     UINT64_CONTAINER RTTVariance;
+    WDI_FTM_PROPAGATION_PROPERTY_CONTAINER PropagationProperty;
     WDI_LCI_REPORT_STATUS_CONTAINER LCIStatus;
     WDI_BYTE_BLOB LCIReport;
 #ifdef __cplusplus
-    _WDI_FTM_RESPONSE_CONTAINER() : Status( (WDI_FTM_RESPONSE_STATUS_CONTAINER)0 ), RetryAfter( (UINT16_CONTAINER)0 ), NumberOfMeasurements( (UINT16_CONTAINER)0 ), RTT( (UINT32_CONTAINER)0 ), RTTAccuracy( (UINT32_CONTAINER)0 ), RTTVariance( (UINT64_CONTAINER)0 ), LCIStatus( (WDI_LCI_REPORT_STATUS_CONTAINER)0 )
+    _WDI_FTM_RESPONSE_CONTAINER() : Status( (WDI_FTM_RESPONSE_STATUS_CONTAINER)0 ), RetryAfter( (UINT16_CONTAINER)0 ), NumberOfMeasurements( (UINT16_CONTAINER)0 ), BandwidthUsed( (WDI_FTM_BANDWIDTH_USED_CONTAINER)0 ), RTT( (INT32_CONTAINER)0 ), RTTVariance( (UINT64_CONTAINER)0 ), PropagationProperty( (WDI_FTM_PROPAGATION_PROPERTY_CONTAINER)0 ), LCIStatus( (WDI_LCI_REPORT_STATUS_CONTAINER)0 )
     {
         memset( &BSSID, 0, sizeof( BSSID ) );
     };

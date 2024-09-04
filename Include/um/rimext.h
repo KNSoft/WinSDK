@@ -6,8 +6,6 @@
 *                                                                           *
 ****************************************************************************/
 
-
-
 #pragma once
 #ifndef _RIM_EXT_H_
 #define _RIM_EXT_H_
@@ -282,10 +280,22 @@ typedef struct _RIM_HID_ATTRIBUTES
     DWORD VidPnTargetId;
 } RIM_HID_ATTRIBUTES, *PRIM_HID_ATTRIBUTES;
 
+typedef struct _RIM_POINTER_ATTRIBUTES
+{
+    HANDLE PointerDevice;
+} RIM_POINTER_ATTRIBUTES, *PRIM_POINTER_ATTRIBUTES;
+
+typedef struct _RIM_DEVICE_ATTRIBUTES
+{
+    BOOLEAN IsInjectionDevice;
+} RIM_DEVICE_ATTRIBUTES, *PRIM_DEVICE_ATTRIBUTES;
+
 #define RIM_DEVICE_PROP_KEYBOARD 1
 #define RIM_DEVICE_PROP_MOUSE 2
 #define RIM_DEVICE_PROP_HID 3
 #define RIM_DEVICE_PROP_PNP_INSTANCE_PATH 4
+#define RIM_DEVICE_PROP_POINTER 5
+#define RIM_DEVICE_PROP_DEVICE 6
 
 typedef struct _RIM_PNP_INSTANCE_PATH
 {
@@ -302,6 +312,8 @@ typedef struct RIM_DEVICE_PROPERTIES
         RIM_MOUSE_ATTRIBUTES mouse;
         RIM_HID_ATTRIBUTES hid;
         RIM_PNP_INSTANCE_PATH pnpInstancePath;
+        RIM_POINTER_ATTRIBUTES pointer;
+        RIM_DEVICE_ATTRIBUTES device;
     };
 } RIMDEVICEPROPERTIES, *PRIMDEVICEPROPERTIES;
 
@@ -327,6 +339,7 @@ typedef struct tagPOINTEREVENTINT
     GUID                ProprietaryId;         // A unique id for the external source of the pointer input (e.g. physical pen serial number)
     BOOL                bSkipActivation;       // Determines if we should skip the logic responsible for activating destination window due to
                                                // pointer message (xxxPointerActivateInternal)
+    BOOL                bTouchpadShellGesture; // Determines if this input should be processed as a Touchpad Shell Gesture
 } POINTEREVENTINT, *PPOINTEREVENTINT;
 #endif // _POINTEREVENTINT_DEFINED_
 
@@ -354,6 +367,7 @@ typedef struct tagTELEMETRY_POINTER_FRAME_TIMES {
     UINT64 hostPerformanceFrequency; // (Container scenarios only) Performance frequency of the host. Used to convert
                                      // host timestamps to the container timeline so latencies can be computed in the
                                      // container.
+    UINT64 qpcFrameQueued;           // timestamp when the pointer frame gets queued
 }TELEMETRY_POINTER_FRAME_TIMES, *PTELEMETRY_POINTER_FRAME_TIMES;
 
 #endif
@@ -517,14 +531,6 @@ RIMGetDeviceProperties(
     );
 
 
-WINUSERAPI
-NTSTATUS
-WINAPI
-RIMAreSiblingDevices(
-    _In_ HANDLE hRimDev1,
-    _In_ HANDLE hRimDev2,
-    _Out_ PBOOL pbRet
-    );
 
 
 WINUSERAPI
@@ -544,29 +550,8 @@ RIMOnPnpNotification(
     );
 
 
-WINUSERAPI
-NTSTATUS
-WINAPI
-RIMOnTimerNotification(
-    _In_ HANDLE hRimHandle,
-    _In_ BOOL bAutoRepeatTimer
-    );
 
 
-WINUSERAPI
-NTSTATUS
-WINAPI
-RIMDeviceIoControl(
-    _In_ HANDLE hRimHandle,
-    _In_ HANDLE hRimDev,
-    _In_ DWORD dwIoControlCode,
-    _In_opt_ PVOID lpInBuffer,
-    _In_ DWORD nInBufferSize,
-    _Out_opt_ PVOID lpOutBuffer,
-    _In_ DWORD nOutBufferSize,
-    _Out_ LPDWORD lpBytesReturned,
-    _In_ BOOL bInternal
-    );
 
 
 WINUSERAPI
@@ -577,42 +562,12 @@ RIMUnregisterForInput(
     );
 
 
-WINUSERAPI
-NTSTATUS
-WINAPI
-RIMSetTestModeStatus(
-    _In_ BOOL bTestModeOn
-    );
 
 
-WINUSERAPI
-NTSTATUS
-WINAPI
-RIMGetPhysicalDeviceRect(
-    _In_ HANDLE hRimHandle,
-    _In_ HANDLE hRimDev,
-    _Out_ RECT* pPhysicalDeviceRect
-    );
 
 
-WINUSERAPI
-NTSTATUS
-WINAPI
-RIMGetSourceProcessId(
-    _In_ HANDLE hRimHandle,
-    _In_ HANDLE hRimDev,
-    _Out_ PDWORD pdwProcessId
-    );
 
 
-WINUSERAPI
-NTSTATUS
-WINAPI
-RIMEnableMonitorMappingForDevice(
-    _In_ HANDLE hRimHandle,
-    _In_ HANDLE hRimDev,
-    _Out_opt_ HMONITOR* phMonitor
-    );
 
 
 #endif // _BUILD_RIM_ && *CONVERGED*
@@ -875,6 +830,15 @@ RIMSetExtendedDeviceProperty(
     );
 
 
+WINUSERAPI
+NTSTATUS
+WINAPI
+RIMQueryDevicePath(
+    _In_ PUNICODE_STRING pusDevicePath,
+    _Out_ PHANDLE phRimDev
+    );
+
+
 #ifdef __cplusplus
 }
 #endif
@@ -882,8 +846,8 @@ RIMSetExtendedDeviceProperty(
 #endif // _RIM_EXT_H_
 
 
-#ifndef ext_ms_win_ntuser_rim_l1_1_2_query_routines
-#define ext_ms_win_ntuser_rim_l1_1_2_query_routines
+#ifndef ext_ms_win_ntuser_rim_l1_2_0_query_routines
+#define ext_ms_win_ntuser_rim_l1_2_0_query_routines
 
 
 
@@ -957,12 +921,6 @@ IsRIMGetDevicePropertiesPresent(
 
 BOOLEAN
 __stdcall
-IsRIMAreSiblingDevicesPresent(
-    VOID
-    );
-
-BOOLEAN
-__stdcall
 IsRIMFreeInputBufferPresent(
     VOID
     );
@@ -975,43 +933,7 @@ IsRIMOnPnpNotificationPresent(
 
 BOOLEAN
 __stdcall
-IsRIMOnTimerNotificationPresent(
-    VOID
-    );
-
-BOOLEAN
-__stdcall
-IsRIMDeviceIoControlPresent(
-    VOID
-    );
-
-BOOLEAN
-__stdcall
 IsRIMUnregisterForInputPresent(
-    VOID
-    );
-
-BOOLEAN
-__stdcall
-IsRIMSetTestModeStatusPresent(
-    VOID
-    );
-
-BOOLEAN
-__stdcall
-IsRIMGetPhysicalDeviceRectPresent(
-    VOID
-    );
-
-BOOLEAN
-__stdcall
-IsRIMGetSourceProcessIdPresent(
-    VOID
-    );
-
-BOOLEAN
-__stdcall
-IsRIMEnableMonitorMappingForDevicePresent(
     VOID
     );
 
@@ -1084,6 +1006,12 @@ IsInjectGenericHidInputPresent(
 BOOLEAN
 __stdcall
 IsRIMSetExtendedDevicePropertyPresent(
+    VOID
+    );
+
+BOOLEAN
+__stdcall
+IsRIMQueryDevicePathPresent(
     VOID
     );
 

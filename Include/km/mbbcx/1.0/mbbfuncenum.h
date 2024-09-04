@@ -34,8 +34,10 @@ typedef enum _MBBFUNCENUM {
     MbbRequestGetCorrelationIdTableIndex = 9,
     MbbRequestCompleteTableIndex = 10,
     MbbRequestCompleteWithInformationTableIndex = 11,
-    MbbDeviceSetOptionalParametersTableIndex = 12,
-    MbbFunctionTableNumEntries = 13,
+    MbbDeviceSetWakeCapabilitiesTableIndex = 12,
+    MbbDeviceReportWakeReasonTableIndex = 13,
+    MbbDeviceSetOptionalParametersTableIndex = 14,
+    MbbFunctionTableNumEntries = 15,
 } MBBFUNCENUM;
 
 #endif // _MBBFUNCENUM_H_
