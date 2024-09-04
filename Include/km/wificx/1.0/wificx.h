@@ -138,8 +138,16 @@ typedef struct _WIFI_DEVICE_CAPABILITIES
     BOOLEAN BSSTransitionSupported; // True if the device supports BSS Transition frames
     BOOLEAN SAEAuthenticationSupported; // True if the device supports SAE Authentication Capability
     BOOLEAN MBOSupported; // True if the device supports MBO
-    BOOLEAN BeaconReportsImplemented; // True if the device handles beacon report measurement 
+    BOOLEAN BeaconReportsImplemented; // True if the device handles beacon report measurement
 } WIFI_DEVICE_CAPABILITIES;
+
+#define MAX_SIMULTANEOUS_BAND_CONNECTIONS_ALLOWED 4
+
+typedef struct
+{
+    UINT8 NumStaBands;
+    WDI_BAND_ID BandIDs[MAX_SIMULTANEOUS_BAND_CONNECTIONS_ALLOWED];
+} WIFI_STA_BANDS_COMBINATION;
 
 typedef struct _WIFI_STATION_CAPABILITIES
 {
@@ -169,6 +177,8 @@ typedef struct _WIFI_STATION_CAPABILITIES
     PDOT11_AUTH_CIPHER_PAIR MulticastDataAlgorithmsList;
     ULONG NumSupportedMulticastMgmtAlgorithms;
     PDOT11_AUTH_CIPHER_PAIR MulticastMgmtAlgorithmsList;
+    ULONG NumSecondaryStaBandCombinations;
+    WIFI_STA_BANDS_COMBINATION * SecondaryStaBandsCombinations;
 } WIFI_STATION_CAPABILITIES;
 
 typedef struct _WIFI_WIFIDIRECT_CAPABILITIES
@@ -252,6 +262,7 @@ typedef enum _WIFI_ADAPTER_TYPE
 {
     WIFI_ADAPTER_EXTENSIBLE_STATION = 1,
     WIFI_ADAPTER_WIFI_DIRECT_ROLE,
+    WIFI_ADAPTER_SECONDARY_STATION,
 } WIFI_ADAPTER_TYPE;
 
 FORCEINLINE

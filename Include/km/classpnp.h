@@ -2647,6 +2647,12 @@ typedef struct _PHYSICAL_DEVICE_EXTENSION {
 
 #define DEV_SPLIT_LARGE_WRITE  0x00000080
 
+//
+// Indicates that the device has Bypass IO enabled.
+//
+
+#define DEV_BYPASS_IO          0x00000100
+
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 

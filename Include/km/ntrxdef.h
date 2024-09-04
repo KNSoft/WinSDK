@@ -81,6 +81,7 @@ Author:
 
 #define RxAllocatePool ExAllocatePool
 #define RxAllocatePoolWithTag ExAllocatePoolWithTag
+#define RxAllocatePoolWithTag2 ExAllocatePool2
 #define RxFreePool ExFreePool
 
 

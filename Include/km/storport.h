@@ -694,7 +694,7 @@ typedef struct SRB_ALIGN _SRBEX_DATA_IO_INFO {
 } SRBEX_DATA_IO_INFO, *PSRBEX_DATA_IO_INFO;
 
 // Use in NVMe command requests to provide additional info about the IO.
-#define SRBEX_DATA_NVME_COMMAND_LENGTH ((14 * sizeof(ULONG)) + (3 * sizeof(ULONGLONG)) + (2 * sizeof(USHORT)))
+#define SRBEX_DATA_NVME_COMMAND_LENGTH ((13 * sizeof(ULONG)) + (3 * sizeof(ULONGLONG)) + (2 * sizeof(USHORT)))
 
 typedef enum {
     SRBEX_DATA_NVME_COMMAND_TYPE_NVM     = 0,
@@ -746,6 +746,9 @@ typedef struct SRB_ALIGN _SRBEX_DATA_NVME_COMMAND {
     
     ULONG QID;                  // User choice of Queue ID, if unspecified it should be 0xFFFFFFFF
     ULONG CommandTag;           // Unique identifier for the command
+
+    ULONG CQEntryDW0;           // Completion queue entry DW0.
+
 } SRBEX_DATA_NVME_COMMAND, *PSRBEX_DATA_NVME_COMMAND;
 
 
@@ -8473,6 +8476,7 @@ typedef enum _SCSI_ADAPTER_CONTROL_TYPE {
     ScsiAdapterCryptoOperation,
     ScsiAdapterQueryFruId,
     ScsiAdapterSetEventLogging,
+    ScsiAdapterReportInternalData,
     ScsiAdapterControlMax,
     MakeAdapterControlTypeSizeOfUlong = 0xffffffff
 } SCSI_ADAPTER_CONTROL_TYPE, *PSCSI_ADAPTER_CONTROL_TYPE;
@@ -8660,6 +8664,7 @@ typedef enum _SCSI_UNIT_CONTROL_TYPE {
     ScsiUnitRichDescription,
     ScsiUnitQueryBusType,
     ScsiUnitQueryFruId,
+    ScsiUnitReportInternalData,
     ScsiUnitControlMax,
     MakeUnitControlTypeSizeOfUlong = 0xffffffff
 } SCSI_UNIT_CONTROL_TYPE, *PSCSI_UNIT_CONTROL_TYPE;
@@ -8928,6 +8933,52 @@ typedef struct _STOR_FRU_ID_DESCRIPTION {
     UCHAR FruId[STOR_FRU_ID_MAX_LENGTH + 1];
 
 } STOR_FRU_ID_DESCRIPTION, *PSTOR_FRU_ID_DESCRIPTION;
+
+//
+// Parameter to miniport driver for ScsiUnitReportInternalData and ScsiAdapterReportInternalData.
+// This will only be invoked if the miniport has declared support for
+// Report Internal Data feature (StorportFeatureReportInternalDataUnitControl and
+// StorportFeatureReportInternalDataAdapterControl).
+//
+
+typedef enum _INTERNAL_DATA_SCOPE {
+
+    InternalDataScopeUndefined = 0,
+    InternalDataScopeInMemoryState,
+    InternalDataScopeMax
+
+} INTERNAL_DATA_SCOPE, *PINTERNAL_DATA_SCOPE;
+
+typedef struct _STOR_REPORT_INTERNAL_DATA {
+
+    //
+    // Sizeof(STOR_REPORT_INTERNAL_DATA)
+    //
+    ULONG Version;
+
+    //
+    // Sizeof(STOR_REPORT_INTERNAL_DATA)
+    //
+    ULONG Size;
+
+    //
+    // Address of the associated unit object
+    // if request is sent to the unit
+    //
+    PSTOR_ADDRESS Address;
+
+    //
+    // Scope of the data being requested
+    //
+    INTERNAL_DATA_SCOPE Scope;
+
+    //
+    // Storport context that should be passed
+    // through to StorPortMiniportReportData
+    //
+    PVOID CallbackContext;
+
+} STOR_REPORT_INTERNAL_DATA, *PSTOR_REPORT_INTERNAL_DATA;
 
 //
 // DPC Data Structure
@@ -9726,7 +9777,9 @@ typedef enum _STORPORT_FUNCTION_CODE {
     ExtFunctionCreateSystemThread,
     ExtFunctionSetPriorityThread,
     ExtFunctionSetSystemGroupAffinityThread,
-    ExtFunctionRevertToUserGroupAffinityThread
+    ExtFunctionRevertToUserGroupAffinityThread,
+    ExtFunctionDeviceResetEx,
+    ExtFunctionMiniportReportInternalData
 
 } STORPORT_FUNCTION_CODE, *PSTORPORT_FUNCTION_CODE;
 
@@ -10293,6 +10346,7 @@ typedef struct _HW_INITIALIZATION_DATA {
 #define STOR_FEATURE_DUMP_INFO                              0x00001000  // Indicating that the miniport driver supports the dump info SRBs
 #define STOR_FEATURE_DMA_ALLOCATION_NO_BOUNDARY             0x00002000  // Indicating that the miniport driver supports to allocate DMA to physical memory without boundaries.
 #define STOR_FEATURE_NVME                                   0x00004000  // Indicating that the miniport driver supports NVMe SRBEX and NVMe workflow
+#define STOR_FEATURE_REPORT_INTERNAL_DATA                   0x00008000  // Indicating that the miniport driver supports reporting internal data
 
 
 // Flags for denoting the SRB type(s) supported by miniport
@@ -15424,10 +15478,10 @@ Returns:
     return status;
 }
 
-typedef enum _STOR_DEVICE_RESET_TYPE
-{
+typedef enum _STOR_DEVICE_RESET_TYPE {
     StorFunctionLevelReset,
-    StorPlatformLevelReset
+    StorPlatformLevelReset,
+    StorBusSpecificReset
 } STOR_DEVICE_RESET_TYPE;
 
 ULONG
@@ -15471,6 +15525,58 @@ Returns:
     return status;
 }
 
+ULONG
+FORCEINLINE
+StorPortHardwareResetEx(
+    _In_ PVOID HwDeviceExtension,
+    _In_ STOR_DEVICE_RESET_TYPE ResetType,
+    _In_opt_ ULONGLONG Flags,
+    _In_opt_ PVOID AdditionalParameters
+)
+/*
+Description:
+
+    A miniport can call this function to issue hardware reset.
+
+Parameters:
+
+    HwDeviceExtension - The miniport's device extension.
+
+    ResetType - Type of reset to be issued.
+
+    Flags - Request flags.
+
+    AdditionalParameters - Additional parameters if applicable.
+
+Returns:
+
+    STOR_STATUS_SUCCESS if the ETW event was successfully logged.
+    STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter.
+    STOR_STATUS_UNSUCCESSFUL may also be returned for other, internal reasons.
+
+*/
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+
+    status = StorPortExtendedFunction(ExtFunctionDeviceResetEx,
+                                      HwDeviceExtension,
+                                      ResetType,
+                                      Flags,
+                                      AdditionalParameters);
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(ResetType);
+    UNREFERENCED_PARAMETER(Flags);
+    UNREFERENCED_PARAMETER(AdditionalParameters);
+
+#endif
+
+    return status;
+}
+
 //
 // Storport interface to allow miniports to set the supported features list
 //
@@ -15496,6 +15602,16 @@ typedef enum _STORPORT_FEATURE_TYPE
     // Whether ScsiAdapterSetEventLogging control is supported
     //
     StorportFeatureSetEventLoggingAdapterControl,
+
+    //
+    // Whether ScsiUnitReportInternalData control is supported
+    //
+    StorportFeatureReportInternalDataUnitControl,
+
+    //
+    // Whether ScsiAdapterReportInternalData control is supported
+    //
+    StorportFeatureReportInternalDataAdapterControl,
 
     StorportFeatureMax
 
@@ -16395,6 +16511,101 @@ Returns:
     UNREFERENCED_PARAMETER(HwDeviceExtension);
     UNREFERENCED_PARAMETER(ThreadContext);
     UNREFERENCED_PARAMETER(PreviousAffinity);
+
+#endif
+
+    return status;
+}
+
+//
+// Miniport report internal data related definition.
+//
+
+typedef enum _DATA_TYPE {
+    DataTypeGuid,
+    DataTypeBoolean,
+    DataTypeUnicodeString,
+    DataTypeAnsiString,
+    DataTypeInt8,
+    DataTypeInt16,
+    DataTypeInt32,
+    DataTypeInt64,
+    DataTypeUInt8,
+    DataTypeUInt16,
+    DataTypeUInt32,
+    DataTypeUInt64,
+    DataTypeHex8,
+    DataTypeHex16,
+    DataTypeHex32,
+    DataTypeHex64,
+    DataTypeByteArray
+} DATA_TYPE;
+
+typedef struct _MINIPORT_DATA {
+
+    PSTR Name;
+    DATA_TYPE Type;
+
+    // Only for Byte Array
+    USHORT ArrayLength;
+
+    // Pointer to the data
+    PVOID Data;
+} MINIPORT_DATA, *PMINIPORT_DATA;
+
+ULONG
+FORCEINLINE
+StorPortMiniportReportInternalData(
+    _In_ PVOID HwDeviceExtension,
+    _In_opt_ PSTOR_ADDRESS Address,
+    _In_ PVOID CallbackContext,
+    _In_ ULONG DataCount,
+    _In_reads_(DataCount) PMINIPORT_DATA Data
+    )
+/*
+Description:
+
+    A miniport can call this function to report its internal data in
+    response to ScsiAdapterReportInternalData or ScsiUnitReportInternalData.
+
+Parameters:
+
+    HwDeviceExtension - The miniport's device extension.
+
+    Address - NULL if the device is an adapter, otherwise the address specifies
+              the unit object
+
+    CallbackContext - Context passed to the control by Storport
+
+    DataCount - Count of data objects being reported in the data array
+
+    Data - Array of data objects
+
+Returns:
+
+    STOR_STATUS_SUCCESS if miniport data is successfully reported.
+    STOR_STATUS_INVALID_PARAMETER if there is an invalid parameter.
+    STOR_STATUS_UNSUCCESSFUL may also be returned for other, internal reasons.
+
+*/
+{
+    ULONG status = STOR_STATUS_NOT_IMPLEMENTED;
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_FE)
+
+    status = StorPortExtendedFunction(ExtFunctionMiniportReportInternalData,
+                                      HwDeviceExtension,
+                                      Address,
+                                      CallbackContext,
+                                      DataCount,
+                                      Data);
+#else
+
+    UNREFERENCED_PARAMETER(HwDeviceExtension);
+    UNREFERENCED_PARAMETER(Address);
+    UNREFERENCED_PARAMETER(CallbackContext);
+    UNREFERENCED_PARAMETER(DataCount);
+    UNREFERENCED_PARAMETER(Data);
 
 #endif
 

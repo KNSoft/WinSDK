@@ -115,6 +115,13 @@ extern "C" {
 
 #define FLT_MGR_WIN10_VB (NTDDI_VERSION >= NTDDI_WIN10_VB)
 
+//
+//  This defines items that only exist in Windows Cobalt or later.
+//
+
+#define FLT_MGR_WIN10_CO (NTDDI_VERSION >= NTDDI_WIN10_CO)
+
+
 ///////////////////////////////////////////////////////////////////////////////
 //
 //  Standard includes
@@ -5483,6 +5490,20 @@ FltIsIoRedirectionAllowedForOperation(
 
 #endif // FLT_MGR_WIN7
 
+
+#if FLT_MGR_WIN10_CO
+
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTSTATUS
+FLTAPI
+FltVetoBypassIo (
+    _In_ PFLT_CALLBACK_DATA CallbackData,
+    _In_ PCFLT_RELATED_OBJECTS FltObjects,
+    _In_ NTSTATUS OperationStatus,
+    _In_ PCUNICODE_STRING FailureReason
+    );
+
+#endif
 
 ///////////////////////////////////////////////////////////////////////////////
 //

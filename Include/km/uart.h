@@ -257,12 +257,23 @@ typedef struct _UART_HARDWARE_ACCESS {
 
 // -------------------------------------------------------------------- Externs
 
+//
+// Please keep the visibility of the UART_HARDWARE_DRIVER externs consistent
+// with the UartHardwareDrivers array in hardware.c.
+//
+
+#if defined(_X86_) || defined(_AMD64_)
+
 extern UART_HARDWARE_DRIVER Legacy16550HardwareDriver;
 extern UART_HARDWARE_DRIVER Uart16550HardwareDriver;
 extern UART_HARDWARE_DRIVER SpiMax311HardwareDriver;
+extern UART_HARDWARE_DRIVER UsifHardwareDriver;
+extern UART_HARDWARE_DRIVER MM16550HardwareDriver;
+extern UART_HARDWARE_DRIVER IaLpssHardwareDriver;
 
-#if defined(_ARM_) || defined(_ARM64_)
+#elif defined(_ARM_) || defined(_ARM64_)
 
+extern UART_HARDWARE_DRIVER Uart16550HardwareDriver;
 extern UART_HARDWARE_DRIVER PL011HardwareDriver;
 extern UART_HARDWARE_DRIVER MSM8x60HardwareDriver;
 extern UART_HARDWARE_DRIVER NvidiaHardwareDriver;
@@ -270,27 +281,17 @@ extern UART_HARDWARE_DRIVER OmapHardwareDriver;
 extern UART_HARDWARE_DRIVER Apm88xxxxHardwareDriver;
 extern UART_HARDWARE_DRIVER MSM8974HardwareDriver;
 extern UART_HARDWARE_DRIVER Sam5250HardwareDriver;
-
-#endif
-
-extern UART_HARDWARE_DRIVER UsifHardwareDriver;
-
-#if defined(_ARM_) || defined(_ARM64_)
-
 extern UART_HARDWARE_DRIVER MX6HardwareDriver;
-extern UART_HARDWARE_DRIVER SBSAHardwareDriver;
 extern UART_HARDWARE_DRIVER SBSA32HardwareDriver;
+extern UART_HARDWARE_DRIVER SBSAHardwareDriver;
 extern UART_HARDWARE_DRIVER Bcm2835HardwareDriver;
 extern UART_HARDWARE_DRIVER SDM845HardwareDriver;
+extern UART_HARDWARE_DRIVER MM16550HardwareDriver;
 extern UART_HARDWARE_DRIVER SDM845v2HardwareDriver;
 
-#endif
+#else
 
-extern UART_HARDWARE_DRIVER MM16550HardwareDriver;
-
-#if defined (_X86_) || defined(_AMD64_)
-
-extern UART_HARDWARE_DRIVER IaLpssHardwareDriver;
+#error "Unknown Processor Architecture"
 
 #endif
 

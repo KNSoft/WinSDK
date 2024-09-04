@@ -467,6 +467,13 @@ DEFINE_GUID( GUID_STANDBY_RESERVE_TIME, 0x468FE7E5, 0x1158, 0x46EC, 0x88, 0xbc, 
 DEFINE_GUID(GUID_STANDBY_RESET_PERCENT, 0x49cb11a5, 0x56e2, 0x4afb, 0x9d, 0x38, 0x3d, 0xf4, 0x78, 0x72, 0xe2, 0x1b);
 
 //
+// Defines a guid to control Human Presence Sensor Adaptive Display Timeout.
+//
+// {0A7D6AB6-AC83-4AD1-8282-ECA5B58308F3}
+//
+DEFINE_GUID(GUID_HUPR_ADAPTIVE_DISPLAY_TIMEOUT, 0x0A7D6AB6, 0xAC83, 0x4AD1, 0x82, 0x82, 0xEC, 0xA5, 0xB5, 0x83, 0x08, 0xF3);
+
+//
 // Defines a guid for enabling/disabling standby (S1-S3) states. This does not
 // affect hibernation (S4).
 //
@@ -1327,12 +1334,23 @@ DEFINE_GUID( GUID_PROCESSOR_SHORT_THREAD_SCHEDULING_POLICY,
 0xbae08b81, 0x2d5e, 0x4688, 0xad, 0x6a, 0x13, 0x24, 0x33, 0x56, 0x65, 0x4b);
 
 //
+// Specifies the global threshold that designates which threads have a
+// short versus a long runtime.
+//
+// {D92998C2-6A48-49CA-85D4-8CCEEC294570}
+//
+DEFINE_GUID( GUID_PROCESSOR_SHORT_THREAD_RUNTIME_THRESHOLD,
+0xd92998c2, 0x6a48, 0x49ca, 0x85, 0xd4, 0x8c, 0xce, 0xec, 0x29, 0x45, 0x70);
+
+
+//
 // Specifies active vs passive cooling.  Although not directly related to
 // processor settings, it is the processor that gets throttled if we're doing
 // passive cooling, so it is fairly strongly related.
 // {94D3A615-A899-4AC5-AE2B-E4D8F634367F}
 //
-DEFINE_GUID( GUID_SYSTEM_COOLING_POLICY, 0x94D3A615, 0xA899, 0x4AC5, 0xAE, 0x2B, 0xE4, 0xD8, 0xF6, 0x34, 0x36, 0x7F);
+DEFINE_GUID( GUID_SYSTEM_COOLING_POLICY,
+0x94D3A615, 0xA899, 0x4AC5, 0xAE, 0x2B, 0xE4, 0xD8, 0xF6, 0x34, 0x36, 0x7F);
 
 //
 // Processor responsiveness settings
@@ -1508,6 +1526,21 @@ DEFINE_GUID( GUID_ACDC_POWER_SOURCE, 0x5D3E9A59, 0xE9D5, 0x4B00, 0xA6, 0xBD, 0xF
 //
 
 DEFINE_GUID( GUID_LIDSWITCH_STATE_CHANGE,  0xBA3E0F4D, 0xB817, 0x4094, 0xA2, 0xD1, 0xD5, 0x63, 0x79, 0xE6, 0xA0, 0xF3 );
+
+// Lid state reliability
+// -----------------
+//
+// Specifies the current reliability of lid state.
+//
+// Values:
+//
+// 0 - unreliable
+// 1 - reliable
+//
+// {AE4C4FF1-D361-43F4-80AA-BBB6EB03DE94}
+//
+
+DEFINE_GUID( GUID_LIDSWITCH_STATE_RELIABILITY, 0xAE4C4FF1, 0xD361, 0x43F4, 0x80, 0xAA, 0xBB, 0xB6, 0xEB, 0x03, 0xDE, 0x94);
 
 // Battery status changes
 // ----------------------
@@ -2035,7 +2068,7 @@ typedef struct _POWER_SESSION_TIMEOUTS {
 //
 typedef struct _POWER_SESSION_RIT_STATE {
     BOOLEAN Active;  // TRUE - RIT input received, FALSE - RIT timeout
-    ULONG LastInputTime; // last input time held for this session
+    ULONG64 LastInputTime; // last input time held for this session
 } POWER_SESSION_RIT_STATE, *PPOWER_SESSION_RIT_STATE;
 
 //

@@ -6,8 +6,8 @@
 //       (.x or .y) and use stubwork to regenerate the header
 //
 
-#ifndef _NETADAPTEROFFLOADPREVIEW_2_1_H_
-#define _NETADAPTEROFFLOADPREVIEW_2_1_H_
+#ifndef _NETADAPTERCXPREVIEW_2_2_H_
+#define _NETADAPTERCXPREVIEW_2_2_H_
 
 #ifndef WDF_EXTERN_C
   #ifdef __cplusplus
@@ -26,12 +26,20 @@ WDF_EXTERN_C_START
 
 
 
+#ifdef NETCX_ADAPTER_PREVIEW
+#error NETCX_ADAPTER_PREVIEW previously defined. NETCX_ macro prefix is reserved
+#endif
 
+#define NETCX_ADAPTER_PREVIEW
+#include <netadaptercxtypes.h>
+#include <preview/netfuncenum.h>
+#include <netadaptercx.h>
+#undef NETCX_ADAPTER_PREVIEW
 
 
 
 
 WDF_EXTERN_C_END
 
-#endif // _NETADAPTEROFFLOADPREVIEW_2_1_H_
+#endif // _NETADAPTERCXPREVIEW_2_2_H_
 

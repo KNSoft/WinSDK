@@ -25,6 +25,13 @@ DEFINE_GUID (GUID_DEVINTERFACE_A2DP_SIDEBAND_AUDIO,
     0xf3b1362f, 0xc9f4, 0x4dd1, 0x9d, 0x55, 0xe0, 0x20, 0x38, 0xa1, 0x29, 0xfb);
 
 //
+// GUID_SIDEBANDAUDIO_A2DP_SUPPORT_INTERFACE
+// Published by the audio driver to indicate that it is configured for Bluetooth A2DP sideband streaming.
+// 
+// {2BC51EE4-07AF-49CF-B04B-FB3F1C26AADC}
+DEFINE_GUID(GUID_SIDEBANDAUDIO_A2DP_SUPPORT_INTERFACE, 0x2bc51ee4, 0x7af, 0x49cf, 0xb0, 0x4b, 0xfb, 0x3f, 0x1c, 0x26, 0xaa, 0xdc);
+
+//
 // Microsoft A2DP Audio Sideband Set of Parameters
 // {8FE0297F-3AE6-4384-ACE3-87589E571B9C}
 DEFINE_GUID(SIDEBANDAUDIO_PARAMS_SET_A2DP,

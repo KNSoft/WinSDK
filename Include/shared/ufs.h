@@ -38,7 +38,7 @@ Revision:
 //
 // Query UPIU Descriptor Identification (IDN) Values
 //
-    
+
 #define UFS_DESC_DEVICE_IDN                 0x00
 #define UFS_DESC_CONFIGURATION_IDN          0x01
 #define UFS_DESC_UNIT_IDN                   0x02
@@ -412,7 +412,7 @@ typedef enum {
     UFS_wExceptionEventStatus,              // USHORT
     UFS_dSecondsPassed,                     // ULONG
     UFS_wContextConf,                       // USHORT
-    UFS_Obsolete, 
+    UFS_Obsolete,
     UFS_Reserved_12,                         // Reserved for UME
     UFS_Reserved_13,                         // Reserved for UME
     UFS_bDeviceFFUStatus,

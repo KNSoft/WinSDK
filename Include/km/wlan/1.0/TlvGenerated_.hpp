@@ -6775,6 +6775,20 @@ typedef struct _WDI_INDICATION_DEVICE_SERVICE_EVENT_PARAMETERS
 
 
 //
+// Location Privacy Setting
+//
+typedef struct _WDI_SET_LOCATION_PRIVACY_PARAMETERS
+{
+    UINT8_CONTAINER LocationAllowed;
+#ifdef __cplusplus
+    _WDI_SET_LOCATION_PRIVACY_PARAMETERS() : LocationAllowed( (UINT8_CONTAINER)0 )
+    {
+    };
+#endif // __cplusplus
+} WDI_SET_LOCATION_PRIVACY_PARAMETERS, *PWDI_SET_LOCATION_PRIVACY_PARAMETERS;
+
+
+//
 // this is just a test
 //
 typedef struct _WDI_TASK_TEST_PARAMETERS
@@ -9738,6 +9752,26 @@ extern "C" {
         _Out_ WDI_INDICATION_DEVICE_SERVICE_EVENT_PARAMETERS* pParsedMessage );
     void __stdcall CleanupParsedWdiIndicationDeviceServiceEventFromIhv( _In_ WDI_INDICATION_DEVICE_SERVICE_EVENT_PARAMETERS* pParsedMessage );
 
+    NDIS_STATUS __stdcall GenerateWdiSetLocationPrivacyToIhv(
+        _In_ WDI_SET_LOCATION_PRIVACY_PARAMETERS const * pInput,
+        _In_ ULONG ReservedHeaderLength,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ ULONG* pBufferLength,
+        _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer );
+#ifdef __cplusplus
+    extern "C++" inline NDIS_STATUS __stdcall Generate( _In_ WDI_SET_LOCATION_PRIVACY_PARAMETERS const * pInput, _In_ ULONG ReservedHeaderLength, _In_ PCTLV_CONTEXT Context, _Out_ ULONG* pBufferLength, _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer )
+    {
+        return GenerateWdiSetLocationPrivacyToIhv( pInput, ReservedHeaderLength, Context, pBufferLength, ppBuffer );
+    }
+#endif // __cplusplus
+
+    NDIS_STATUS __stdcall ParseWdiSetLocationPrivacyToIhv(
+        _In_ ULONG BufferLength,
+        _In_reads_bytes_( BufferLength ) UINT8 const * pBuffer,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ WDI_SET_LOCATION_PRIVACY_PARAMETERS* pParsedMessage );
+    void __stdcall CleanupParsedWdiSetLocationPrivacyToIhv( _In_ WDI_SET_LOCATION_PRIVACY_PARAMETERS* pParsedMessage );
+
     NDIS_STATUS __stdcall GenerateWdiTestTask(
         _In_ WDI_TASK_TEST_PARAMETERS const * pInput,
         _In_ ULONG ReservedHeaderLength,
@@ -10046,6 +10080,7 @@ extern "C" {
 #define CleanupParsedWdiIndicationCipherKeyUpdated CleanupParsedWdiIndicationCipherKeyUpdatedFromIhv
 #define ParseWdiIndicationDeviceServiceEvent ParseWdiIndicationDeviceServiceEventFromIhv
 #define CleanupParsedWdiIndicationDeviceServiceEvent CleanupParsedWdiIndicationDeviceServiceEventFromIhv
+#define GenerateWdiSetLocationPrivacy GenerateWdiSetLocationPrivacyToIhv
 #define Parse ParseFromIhv
 #define FreeParsed FreeParsedFromIhv
 
@@ -10263,6 +10298,8 @@ extern "C" {
 #define GenerateWdiDeviceServiceCommand GenerateWdiDeviceServiceCommandFromIhv
 #define GenerateWdiIndicationCipherKeyUpdated GenerateWdiIndicationCipherKeyUpdatedFromIhv
 #define GenerateWdiIndicationDeviceServiceEvent GenerateWdiIndicationDeviceServiceEventFromIhv
+#define ParseWdiSetLocationPrivacy ParseWdiSetLocationPrivacyToIhv
+#define CleanupParsedWdiSetLocationPrivacy CleanupParsedWdiSetLocationPrivacyToIhv
 #define Parse ParseToIhv
 #define FreeParsed FreeParsedToIhv
 

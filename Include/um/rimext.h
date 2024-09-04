@@ -399,6 +399,7 @@ struct RIMCOMPLETEFRAME {
     DWORD           cPointers;      // Count of pointers in this frame
     DWORD           cRawDataBlocks; // Count of raw data blocks associated with this frame
     HANDLE          hRimDev;        // Handle to RimDev
+    PVOID           pRimDevObjInCompleteFramesQueue; // Pointer to RimDevObj, only set when frame is queued
     TELEMETRY_POINTER_FRAME_TIMES frameTimes; // QPCs used by interaction latency telemetry to compute performance metrics
     BOOL            bDevInjection;  // If RimDev is a an injection device
     BOOL            bButtonOnly;    // Used by TouchPad. (fButtonOnly)
@@ -448,6 +449,22 @@ RIMRegisterForInput(
     _In_opt_ RIM_USAGE_AND_PAGE* pRimUsages,
     _In_ HANDLE hPnpNotificationEvent,
     _In_ HANDLE hTimer,
+    _In_ PVOID pContext,
+    _In_opt_ RIMDEVCHANGECALLBACKPROC pfnRimDevChangeCbProc,
+    _Out_ PHANDLE phRimHandle
+    );
+
+WINUSERAPI
+NTSTATUS
+WINAPI
+RIMRegisterForInputEx(
+    _In_ DWORD dwInputType,
+    _In_opt_ PUNICODE_STRING pusDeviceName,
+    _In_opt_ DWORD cRimUsages,
+    _In_opt_ RIM_USAGE_AND_PAGE* pRimUsages,
+    _In_ HANDLE hPnpNotificationEvent,
+    _In_ HANDLE hTimer,
+    _In_ HANDLE hAsyncPnpWorkNotificationSemaphore,
     _In_ PVOID pContext,
     _In_opt_ RIMDEVCHANGECALLBACKPROC pfnRimDevChangeCbProc,
     _Out_ PHANDLE phRimHandle
@@ -552,6 +569,13 @@ WINUSERAPI
 NTSTATUS
 WINAPI
 RIMOnPnpNotification(
+    _In_ HANDLE hRimHandle
+    );
+
+WINUSERAPI
+NTSTATUS
+WINAPI
+RIMOnAsyncPnpWorkNotification(
     _In_ HANDLE hRimHandle
     );
 
@@ -824,8 +848,8 @@ RIMQueryDevicePath(
 
 #endif // _RIM_EXT_H_
 
-#ifndef ext_ms_win_ntuser_rim_l1_2_0_query_routines
-#define ext_ms_win_ntuser_rim_l1_2_0_query_routines
+#ifndef ext_ms_win_ntuser_rim_l1_2_1_query_routines
+#define ext_ms_win_ntuser_rim_l1_2_1_query_routines
 
 //
 //Private Extension API Query Routines
@@ -838,6 +862,12 @@ extern "C" {
 BOOLEAN
 __stdcall
 IsRIMRegisterForInputPresent(
+    VOID
+    );
+
+BOOLEAN
+__stdcall
+IsRIMRegisterForInputExPresent(
     VOID
     );
 
@@ -904,6 +934,12 @@ IsRIMFreeInputBufferPresent(
 BOOLEAN
 __stdcall
 IsRIMOnPnpNotificationPresent(
+    VOID
+    );
+
+BOOLEAN
+__stdcall
+IsRIMOnAsyncPnpWorkNotificationPresent(
     VOID
     );
 

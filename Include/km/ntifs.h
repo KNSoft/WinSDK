@@ -1350,7 +1350,6 @@ typedef enum _TOKEN_INFORMATION_CLASS {
     TokenChildProcessFlags,
     TokenIsLessPrivilegedAppContainer,
     TokenIsSandboxed,
-    TokenOriginatingProcessTrustLevel,
     MaxTokenInfoClass  // MaxTokenInfoClass should always be the last enum
 } TOKEN_INFORMATION_CLASS, *PTOKEN_INFORMATION_CLASS;
 
@@ -4443,12 +4442,6 @@ RtlCaptureStackBackTrace(
 
 #endif
 
-#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES) */
-#pragma endregion
-
-#pragma region Desktop Family or OneCore Family or Games Family
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES)
-
 #if (NTDDI_VERSION > NTDDI_WIN2K)
 
 NTSYSAPI
@@ -4459,6 +4452,12 @@ RtlCaptureContext(
     );
 
 #endif // (NTDDI_VERSION > NTDDI_WIN2K)
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES) */
+#pragma endregion
+
+#pragma region Desktop Family or OneCore Family or Games Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES)
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_VB)
 
@@ -4573,6 +4572,8 @@ RtlCaptureContext2(
 #define FILE_DEVICE_UCMUCSI             0x0000005d
 #define FILE_DEVICE_PRM                 0x0000005e
 #define FILE_DEVICE_EVENT_COLLECTOR     0x0000005f
+#define FILE_DEVICE_USB4                0x00000060
+#define FILE_DEVICE_SOUNDWIRE           0x00000061
 
 //
 // Macro definition for defining IOCTL and FSCTL function control codes.  Note
@@ -4632,6 +4633,7 @@ RtlCaptureContext2(
 #define FILE_READ_ACCESS          ( 0x0001 )    // file & pipe
 #define FILE_WRITE_ACCESS         ( 0x0002 )    // file & pipe
 
+//
 
 #if (NTDDI_VERSION >= NTDDI_WINXP)
 
@@ -4673,6 +4675,8 @@ NtSetInformationThread (
 #endif // SORTPP_PASS
 
 #endif // NTDDI_VERSION >= NTDDI_WINXP
+
+//
 
 
 //
@@ -6169,7 +6173,7 @@ typedef struct _MSV1_0_GETUSERINFO_RESPONSE {
 #define FILE_SUPPORTS_REMOTE_STORAGE        0x00000100  // winnt
 #define FILE_RETURNS_CLEANUP_RESULT_INFO    0x00000200  // winnt
 #define FILE_SUPPORTS_POSIX_UNLINK_RENAME   0x00000400  // winnt
-//  available                               0x00000800  // winnt
+#define FILE_SUPPORTS_BYPASS_IO             0x00000800  // winnt
 //  available                               0x00001000  // winnt
 //  available                               0x00002000  // winnt
 //  available                               0x00004000  // winnt
@@ -7570,8 +7574,7 @@ NtUnlockFile (
 //  If set, this operation will write the data for the given file from the
 //  Windows in-memory cache.  This will NOT commit any associated metadata
 //  changes.  This will NOT send a SYNC to the storage device to flush its
-//  cache.  Not supported on volume handles.  Only supported by the NTFS
-//  filesystem.
+//  cache.  Not supported on volume handles.
 //
 
 #define FLUSH_FLAGS_FILE_DATA_ONLY                      0x00000001
@@ -7580,7 +7583,6 @@ NtUnlockFile (
 //  If set, this operation will commit both the data and metadata changes for
 //  the given file from the Windows in-memory cache.  This will NOT send a SYNC
 //  to the storage device to flush its cache.  Not supported on volume handles.
-//  Only supported by the NTFS filesystem.
 //
 
 #define FLUSH_FLAGS_NO_SYNC                             0x00000002
@@ -7593,8 +7595,7 @@ NtUnlockFile (
 //  If set, this operation will write the data for the given file from the
 //  Windows in-memory cache.  It will also try to skip updating the timestamp
 //  as much as possible.  This will send a SYNC to the storage device to flush its
-//  cache.  Not supported on volume or directory handles.  Only supported by the NTFS
-//  filesystem.
+//  cache.  Not supported on volume or directory handles.
 //
 
 #define FLUSH_FLAGS_FILE_DATA_SYNC_ONLY                 0x00000004
@@ -7905,9 +7906,11 @@ NtFlushBuffersFileEx (
 #define FSCTL_INITIATE_FILE_METADATA_OPTIMIZATION       CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 215, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
 #define FSCTL_QUERY_FILE_METADATA_OPTIMIZATION          CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 216, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
 #endif /* (_WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD) */
+
 #if (_WIN32_WINNT >= _WIN32_WINNT_WINBLUE)
 #define FSCTL_SVHDX_ASYNC_TUNNEL_REQUEST         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 217, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #endif /* (_WIN32_WINNT >= _WIN32_WINNT_WINBLUE) */
+
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN7)
 #define FSCTL_GET_WOF_VERSION                    CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 218, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #endif
@@ -7945,9 +7948,11 @@ NtFlushBuffersFileEx (
 #define FSCTL_GHOST_FILE_EXTENTS                 CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 235, METHOD_BUFFERED, FILE_WRITE_ACCESS) // FSCTL_GHOST_FILE_EXTENTS_INPUT_BUFFER
 #define FSCTL_QUERY_GHOSTED_FILE_EXTENTS         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 236, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #endif
+
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_TH2)
 #define FSCTL_UNMAP_SPACE                        CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 237, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #endif
+
 #if (_WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD)
 #define FSCTL_HCS_SYNC_NO_WRITE_TUNNEL_REQUEST   CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 238, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #endif
@@ -7955,6 +7960,7 @@ NtFlushBuffersFileEx (
 #define FSCTL_START_VIRTUALIZATION_INSTANCE     CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 240, METHOD_BUFFERED, FILE_ANY_ACCESS) // VIRTUALIZATION_INSTANCE_INFO_INPUT, VIRTUALIZATION_INSTANCE_INFO_OUTPUT
 #define FSCTL_GET_FILTER_FILE_IDENTIFIER        CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 241, METHOD_BUFFERED, FILE_ANY_ACCESS) // GET_FILTER_FILE_IDENTIFIER_INPUT, GET_FILTER_FILE_IDENTIFIER_OUTPUT
 #endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS1) */
+
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2)
 #define FSCTL_STREAMS_QUERY_PARAMETERS          CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 241, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_STREAMS_ASSOCIATE_ID              CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 242, METHOD_BUFFERED, FILE_ANY_ACCESS)
@@ -7965,15 +7971,18 @@ NtFlushBuffersFileEx (
 #define FSCTL_QUERY_VOLUME_NUMA_INFO            CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 245, METHOD_BUFFERED, FILE_ANY_ACCESS)
 
 #endif
+
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2)
 
 #define FSCTL_REFS_DEALLOCATE_RANGES            CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 246, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #endif
+
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_TH2)
 #define FSCTL_QUERY_REFS_SMR_VOLUME_INFO         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 247, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_SET_REFS_SMR_VOLUME_GC_PARAMETERS  CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 248, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_SET_REFS_FILE_STRICTLY_SEQUENTIAL  CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 249, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #endif
+
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS3)
 #define FSCTL_DUPLICATE_EXTENTS_TO_FILE_EX      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 250, METHOD_BUFFERED, FILE_WRITE_DATA)
 #define FSCTL_QUERY_BAD_RANGES                  CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 251, METHOD_BUFFERED, FILE_ANY_ACCESS)
@@ -7981,12 +7990,15 @@ NtFlushBuffersFileEx (
 #define FSCTL_DELETE_CORRUPTED_REFS_CONTAINER   CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 253, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define FSCTL_SCRUB_UNDISCOVERABLE_ID           CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 254, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS3) */
+
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS4)
 #define FSCTL_NOTIFY_DATA_CHANGE                CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 255, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS4) */
+
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS1)
 #define FSCTL_START_VIRTUALIZATION_INSTANCE_EX  CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 256, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #endif /* (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS1) */
+
 #if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS4)
 #define FSCTL_ENCRYPTION_KEY_CONTROL            CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 257, METHOD_BUFFERED, FILE_ANY_ACCESS)  // protect/unprotect under DPL
 #define FSCTL_VIRTUAL_STORAGE_SET_BEHAVIOR      CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 258, METHOD_BUFFERED, FILE_ANY_ACCESS)
@@ -8009,8 +8021,12 @@ NtFlushBuffersFileEx (
 #if (NTDDI_VERSION >= NTDDI_WIN10_MN)
 #define FSCTL_SMB_SHARE_FLUSH_AND_PURGE         CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 271, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #endif
+
 #if (NTDDI_VERSION >= NTDDI_WIN10_FE)
 #define FSCTL_REFS_STREAM_SNAPSHOT_MANAGEMENT   CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 272, METHOD_BUFFERED, FILE_ANY_ACCESS)
+#endif
+#if (NTDDI_VERSION >= NTDDI_WIN10_CO)
+#define FSCTL_MANAGE_BYPASS_IO                  CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 274, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #endif
 
 //
@@ -8695,6 +8711,8 @@ typedef struct _MARK_HANDLE_INFO32 {
 
 //
 //  Flags for the additional source information above.
+//  To set any of these values required a volume DASD handle to be specified in
+//  VolumeHandle field.
 //
 //      USN_SOURCE_DATA_MANAGEMENT - Service is not modifying the external view
 //          of any part of the file.  Typical case is HSM moving data to
@@ -8709,7 +8727,8 @@ typedef struct _MARK_HANDLE_INFO32 {
 //          replica set.
 //
 //      USN_SOURCE_CLIENT_REPLICATION_MANAGEMENT - Replication is being performed
-//          on client systems either from the cloud or servers
+//          on client systems either from the cloud or servers.  A volume handle
+//          is not required to set this value
 //
 
 #define USN_SOURCE_DATA_MANAGEMENT                  (0x00000001)
@@ -8724,20 +8743,20 @@ typedef struct _MARK_HANDLE_INFO32 {
 
 
 //
-//  Flags for the HandleInfo field above
+//  Flags for the HandleInfo field above:
 //
-//  Introduced in W2K:
+//  ------ Introduced in W2K:
 //  MARK_HANDLE_PROTECT_CLUSTERS - disallow any defragmenting (FSCTL_MOVE_FILE) until the
 //      the handle is closed
 //
-//  Introduced in Vista:
+//  ------ Introduced in Vista:
 //  MARK_HANDLE_TXF_SYSTEM_LOG - indicates that this stream is being used as the Txf
 //      log for an RM on the volume.  Must be called in the kernel using IRP_MN_KERNEL_CALL.
 //
 //  MARK_HANDLE_NOT_TXF_SYSTEM_LOG - indicates that this component is no longer using this
 //      object as a TxF log file.
 //
-//  Introduced in Win7:
+//  ------ Introduced in Win7:
 //  MARK_HANDLE_REALTIME - only supported by the UDFS file system.  Marks the device
 //      to do realtime streaming of video
 //
@@ -8746,13 +8765,13 @@ typedef struct _MARK_HANDLE_INFO32 {
 //
 //  MARK_HANDLE_CLOUD_SYNC - this flag is deprecated and is no longer used
 //
-//  Introduced in Win8
+//  ------ Introduced in Win8
 //  MARK_HANDLE_READ_COPY - indicates the data must be read from the specified copy
 //      of data.  Only supported for spaces redundent volumes.
 //
 //  MARK_HANDLE_NOT_READ_COPY - indicates the data is no longer to be read from a specific copy.
 //
-//  Introduced in WinBlue (win 8.1)
+//  ------ Introduced in WinBlue (win 8.1)
 //  MARK_HANDLE_FILTER_METADATA - Flag reserved for internal Microsoft use
 //
 //  MARK_HANDLE_RETURN_PURGE_FAILURE - When intermixing memory mapped/cached IO with
@@ -8763,7 +8782,7 @@ typedef struct _MARK_HANDLE_INFO32 {
 //      This flag tells the system to return purge failures for the given handle
 //      so the application can better handle this situation
 //
-//  Introduced in WinThreshold (win10)
+//  ------ Introduced in WinThreshold (win10)
 //  MARK_HANDLE_DISABLE_FILE_METADATA_OPTIMIZATION - This disabled the FRS compaction
 //      feature on the given file.
 //
@@ -8778,8 +8797,14 @@ typedef struct _MARK_HANDLE_INFO32 {
 //      to open the file for write access, the operation is failed with STATUS_ACCESS_DENIED.
 //      If a write is seen the operation is failed with STATUS_MARKED_TO_DISALLOW_WRITES
 //
-//  Introduced in RS4 (win10)
+//  ------ Introduced in RS4 (win10)
 //  MARK_HANDLE_ENABLE_CPU_CACHE - Flag reserved for internal Microsoft use
+//
+//  ------ Introduced in Cobalt (win10)
+//  MARK_HANDLE_SUPPRESS_VOLUME_OPEN_FLUSH - Normally, on the first read/write operation
+//      on a volume handle (DASD open) the file system flushes the volume.  This can
+//      have performance consequences in certain scenarios.  If this flag is set on
+//      a volume handle it will suppress that flush on first IO.
 //
 
 #define MARK_HANDLE_PROTECT_CLUSTERS                    (0x00000001)
@@ -8809,6 +8834,7 @@ typedef struct _MARK_HANDLE_INFO32 {
 
 #define MARK_HANDLE_FILTER_METADATA                     (0x00000200)        // 8.1 and newer
 #define MARK_HANDLE_RETURN_PURGE_FAILURE                (0x00000400)        // 8.1 and newer
+//                                                      (0x00000800)        // defined above: MARK_HANDLE_CLOUD_SYNC
 
 #endif /*NTDDI_VERSION >= NTDDI_WINBLUE */
 
@@ -8819,6 +8845,12 @@ typedef struct _MARK_HANDLE_INFO32 {
 #define MARK_HANDLE_SKIP_COHERENCY_SYNC_DISALLOW_WRITES (0x00004000)
 
 #endif /*NTDDI_VERSION >= NTDDI_WINTHRESHOLD */
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_CO)
+
+#define MARK_HANDLE_SUPPRESS_VOLUME_OPEN_FLUSH          (0x00008000)
+
+#endif /*NTDDI_VERSION >= NTDDI_WIN10_CO */
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS4)
 
@@ -11515,6 +11547,8 @@ typedef enum _CSV_CONTROL_OP {
     CsvControlStartForceDFO                      = 0x15,
     CsvControlStopForceDFO                       = 0x16,
     CsvControlQueryMdsPathNoPause                = 0x17,
+    CsvControlSetVolumeId                        = 0x18,
+    CsvControlQueryVolumeId                      = 0x19,
 } CSV_CONTROL_OP, *PCSV_CONTROL_OP;
 
 typedef struct _CSV_CONTROL_PARAM {
@@ -11687,6 +11721,20 @@ typedef struct _CSV_QUERY_MDS_PATH_V2 {
     ULONG PathLength;
 
 } CSV_QUERY_MDS_PATH_V2, *PCSV_QUERY_MDS_PATH_V2;
+
+//
+// Input for the CsvControlSetVolumeId
+//
+typedef struct _CSV_SET_VOLUME_ID {
+    GUID VolumeId;
+} CSV_SET_VOLUME_ID, *PCSV_SET_VOLUME_ID;
+
+//
+// Output for the CsvControlQueryVolumeId
+//
+typedef struct _CSV_QUERY_VOLUME_ID {
+    GUID VolumeId;
+} CSV_QUERY_VOLUME_ID, *PCSV_QUERY_VOLUME_ID;
 
 
 //
@@ -13613,7 +13661,366 @@ typedef struct _GET_FILTER_FILE_IDENTIFIER_OUTPUT {
 // end_ntosifs
 // begin_ntifs begin_winioctl
 
-// ****************** Insert New FSCTLs Here ********************************
+#if (NTDDI_VERSION >= NTDDI_WIN10_CO)
+
+#pragma warning(push)
+#pragma warning(disable:4201) // nameless struct/unions
+
+//
+//============== FSCTL_MANAGE_BYPASS_IO ================
+//
+//  This FSCTL is used to control BypassIO operations on a given file in the
+//  filter and file system stacks
+//
+
+//
+//  Defines the various operations supported by the BypassIO FSCTL
+//
+
+typedef enum _FS_BPIO_OPERATIONS {
+
+    //
+    //  This request can come from user or kernel mode.  This is a request to enable
+    //  BypassIO for the given file which means a driver may not see all reads/writes
+    //  for that file.
+    //
+    //  On the pre-operation, if a driver can support BypassIO for the given file
+    //  it should forward the request down the stack.
+    //
+    //  On the pre-operation if a driver CAN NOT support BypassIO for the given
+    //  file they should complete the FSCTL with STATUS_SUCCESS and should call
+    //  FltVetoBypassIo to update the FS_BPIO_OUTPUT structure with appropriate
+    //  OpStatus, FailingDriverName and FailureReason reasons.
+    //
+    //  During the post-operation they can see if all drivers below them are
+    //  capable of supporting BypassIO.  If yes, the driver should preserve any
+    //  needed state for the file and continue completion processing. It is the
+    //  filter and file systems responsibility to maintain state to properly
+    //  handle requests that may not be compatible with the BypassIO enabled state.
+    //
+    //  During the post-operation processing if a driver determines they can no
+    //  longer support BypassIO, they can  call FltVetoBypassIo to inform the
+    //  stack below them that BypassIO is now disabled.  They should set appropriate
+    //  OpStatus, FailingDriverName and FailureReason reasons as to why it can not
+    //  be supported.
+    //
+
+    FS_BPIO_OP_ENABLE = 1,
+
+    //
+    //  This request can come from user or kernel mode.  This informs filters and
+    //  file systems that BypassIO is being disabled on this file.  It allows a
+    //  driver to cleanup any associated BypassIO state.
+    //
+    //  If a driver has previously allowed BypassIO to be enabled on this file and
+    //  now needs to turn off BypassIO support for a file (a good example is an encryption
+    //  driver wanting to encrypt this file).  They should send this FSCTL to the top
+    //  of the file system stack using the associated handle.
+    //
+    //  This can be received by a driver that currently does not have BypassIO enabled,
+    //  it should be ignored.  If sent on a file that currently does not have BypassIO
+    //  enabled, it should be ignored.
+    //
+    //  This operation should not be failed.
+    //
+
+    FS_BPIO_OP_DISABLE = 2,
+
+    //
+    //  This request can come from user or kernel mode.  This is an informational
+    //  request to see if BypassIO can be enabled for the given file.  This
+    //  should be processed the same as an ENABLE operation with the appropriate
+    //  fields in the FS_BPIO_OUTPUT structure filled out.  The only difference
+    //  is that the driver does not enter the ENABLE state.
+    //
+
+    FS_BPIO_OP_QUERY = 3,
+
+    //
+    //  This request can come from user or kernel mode.  This is a request to PAUSE
+    //  BypassIO on this volume/storage stack.  All active BypassIO enabled files will
+    //  stop doing storage stack level BypassIO operations.  This can be sent on a
+    //  volume handle or any file handle for the given volume.
+    //
+    //  Bitlocker is an example of a component that would use this when it needs to
+    //  enable encryption on a volume.  It is fine to send this even if BypassIO is
+    //  not currently enabled on any files on the volume
+    //
+    //  This operation will not return until all active BypassIO files have transitioned
+    //  to normal operating mode and all outstanding Bypass IO's have completed.
+    //
+    //  This operation should not be failed.
+    //
+
+    FS_BPIO_OP_VOLUME_STACK_PAUSE = 4,
+
+    //
+    //  This request can come from user or kernel mode.  This should be sent by a driver
+    //  which has previously PAUSED BypassIO on a volume/storage stack and can
+    //  now allow the stack to continue doing BypassIO.
+    //
+    //  Volsnap is an example of a component that would PAUSE BypassIO (via
+    //  FS_BPIO_VOLUME_STACK_PAUSE) when a snapshot is created and would send this when
+    //  the snapshot is deleted.
+    //
+    //  This operation should not be failed.
+    //
+
+    FS_BPIO_OP_VOLUME_STACK_RESUME = 5,
+
+    //
+    //  This request can come from user or kernel mode.  This is a request to PAUSE
+    //  BypassIO on this stream.  All active BypassIO enabled files will stop doing
+    //  BypassIO operations.  It is fine to send this even if BypassIO is
+    //  not currently enabled on any files on the stream
+    //
+    //  This operation will not return until all active BypassIO's on this stream
+    //  have completed and no new BypassIO operations are being generated.
+    //
+    //  This operation should not be failed.
+    //
+
+    FS_BPIO_OP_STREAM_PAUSE = 6,
+
+    //
+    //  This request can come from user or kernel mode.  This should be sent by a
+    //  filter which has previously PAUSED BypassIO on this stream and can now
+    //  allow them to be used again.
+    //
+    //  This operaiton should not be failed by filters.  The file system will
+    //  determine if Bypass can be resumed on the stream by issuing a FS_BPIO_OP_QUERY
+    //  to the top of the filter stack.
+    //
+
+    FS_BPIO_OP_STREAM_RESUME = 7,
+
+    //
+    //  This request can come from user or kernel mode.  This returns information
+    //  about the BypassIO state of the volume.
+    //
+
+    FS_BPIO_OP_GET_INFO = 8,
+
+    //
+    //  All valid operations will be less than this value
+    //
+
+    FS_BPIO_OP_MAX_OPERATION
+
+} FS_BPIO_OPERATIONS;
+
+
+//
+//  Defines the BypassIO INPUT flags
+//
+
+typedef enum _FS_BPIO_INFLAGS {
+
+    FSBPIO_INFL_None = 0,
+
+    //
+    //  Only applies to QUERY operations. When set it will suppress sending the
+    //  BypassIO IOCTL to the storage stack.  It will return results based only
+    //  on the filter stack.  This has no effect on ENABLE operations.
+    //
+
+    FSBPIO_INFL_SKIP_STORAGE_STACK_QUERY = 1,
+
+} FS_BPIO_INFLAGS;
+DEFINE_ENUM_FLAG_OPERATORS( FS_BPIO_INFLAGS )
+
+//
+//  Defines the INPUT structure for FSCTL_MANAGE_BYPASS_IO
+//
+
+typedef struct _FS_BPIO_INPUT {
+
+    //
+    //  The BypassIO operation being requested
+    //
+
+    FS_BPIO_OPERATIONS Operation;
+
+    //
+    //  Input flags for this operation.
+    //
+
+    FS_BPIO_INFLAGS InFlags;
+
+    //
+    //  Reserved fields for future improvements, these fields MUST be set to zero
+    //
+
+    ULONGLONG Reserved1;
+    ULONGLONG Reserved2;
+
+} FS_BPIO_INPUT, *PFS_BPIO_INPUT;
+
+
+//
+//  Defines the BypassIO OUTPUT flags
+//
+
+typedef enum _FS_BPIO_OUTFLAGS {
+
+    FSBPIO_OUTFL_None = 0,
+
+    //
+    //  When set it means BypassIO has been temporarily PAUSED for this volume
+    //
+
+    FSBPIO_OUTFL_VOLUME_STACK_BYPASS_PAUSED =   0x00000001,
+
+    //
+    //  When set it means BypassIO has been temporarily PAUSED for this Stream
+    //
+
+    FSBPIO_OUTFL_STREAM_BYPASS_PAUSED =         0x00000002,
+
+    //
+    //  When set, a minifilter has attached to this volume whose supported
+    //  features state says it does not suport BypassIO.  All BypassIO is
+    //  blocked on this volume.
+    //
+
+    FSBPIO_OUTFL_FILTER_ATTACH_BLOCKED =        0x00000004,
+
+    //
+    //  When set, the storage driver for this volume is BypassIO compatible.
+    //  This flag is only defined for ENABLE/QUERY/GETINFO operations
+    //
+
+    FSBPIO_OUTFL_COMPATIBLE_STORAGE_DRIVER =    0x00000008,
+
+} FS_BPIO_OUTFLAGS;
+DEFINE_ENUM_FLAG_OPERATORS( FS_BPIO_OUTFLAGS )
+
+//
+//  This structure defines operation specific outputs for both the ENABLE
+//  and QUERY operations
+//
+
+typedef struct _FS_BPIO_RESULTS {
+
+    //
+    //  A status code that will be available to users which identifies WHY
+    //  the specified driver can't support BypassIO for this file.  This should
+    //  only be set by the first driver to fail the enable/acquire request.
+    //
+
+    NTSTATUS OpStatus;
+
+    //
+    //  Receives the name of the driver that failed the request.  For diagnostic
+    //  reasons it is required that drivers store their name when failing an
+    //  ENABLE/ASK requests.  The name should match the actual name of the driver
+    //  used by the system with extension.  Ex: "ntfs.sys".
+    //
+    //  FailingDriversNameLen contains the length of the string in CHARACTERS.
+    //  No one should assume the string is NULL terminated.
+    //
+
+    USHORT FailingDriverNameLen;
+    WCHAR FailingDriverName[32];
+
+    //
+    //  Receives a reasonable description of why the driver can not support the
+    //  ENABLE/QUERY request.  This string is used for diagnostic reasons and should
+    //  identify the WHY.
+    //
+    //  This string should be in English and does not need to be localized.
+    //
+    //  FailureReasonLen contains the length of the string in CHARACTERS.
+    //  No one should assume the strings is NULL terminated.
+    //
+
+    USHORT FailureReasonLen;
+    WCHAR FailureReason[128];
+
+} FS_BPIO_RESULTS, *PFS_BPIO_RESULTS;
+
+//
+//  This structure defines operation specific outputs for both the ENABLE
+//  and QUERY operations
+//
+
+typedef struct _FS_BPIO_INFO {
+
+    //
+    //  Count of how many BypassIO enabled files are currently open
+    //
+
+    ULONG ActiveBypassIoCount;
+
+    //
+    //  Returns the name of the storage driver for this volume
+    //
+
+    USHORT StorageDriverNameLen;
+    WCHAR StorageDriverName[32];
+
+} FS_BPIO_INFO, *PFS_BPIO_INFO;
+
+//
+//  Defines the variable sized OUTPUT structure for FSCTL_MANAGE_BYPASS_IO
+//
+
+typedef struct _FS_BPIO_OUTPUT {
+
+    //
+    //  The BypassIO operation being requested.  This should be set to the
+    //  same value passed in the INPUT structure
+    //
+
+    FS_BPIO_OPERATIONS Operation;
+
+    //
+    //  Output flags for this operation.
+    //
+
+    FS_BPIO_OUTFLAGS OutFlags;
+
+    //
+    //  Reserved fields used for future improvements
+    //
+
+    ULONGLONG Reserved1;
+    ULONGLONG Reserved2;
+
+    //
+    //  Operation specific outputs
+    //
+
+    union {
+        FS_BPIO_RESULTS Enable;
+        FS_BPIO_RESULTS Query;
+        FS_BPIO_RESULTS VolumeStackResume;
+        FS_BPIO_RESULTS StreamResume;
+        FS_BPIO_INFO GetInfo;
+    };
+
+} FS_BPIO_OUTPUT, *PFS_BPIO_OUTPUT;
+
+//
+//  Structure size based on operations type
+//
+
+#define FS_BPIO_OUTPUT_ENABLE_SIZE                  (RTL_SIZEOF_THROUGH_FIELD(FS_BPIO_OUTPUT,Enable))
+#define FS_BPIO_OUTPUT_QUERY_SIZE                   (RTL_SIZEOF_THROUGH_FIELD(FS_BPIO_OUTPUT,Query))
+#define FS_BPIO_OUTPUT_DISABLE_SIZE                 ((size_t)FIELD_OFFSET(FS_BPIO_OUTPUT, Enable))
+#define FS_BPIO_OUTPUT_VOLUME_STACK_PAUSE_SIZE      ((size_t)FIELD_OFFSET(FS_BPIO_OUTPUT, Enable))
+#define FS_BPIO_OUTPUT_VOLUME_STACK_RESUME_SIZE     (RTL_SIZEOF_THROUGH_FIELD(FS_BPIO_OUTPUT,VolumeStackResume))
+#define FS_BPIO_OUTPUT_STREAM_PAUSE_SIZE            ((size_t)FIELD_OFFSET(FS_BPIO_OUTPUT, Enable))
+#define FS_BPIO_OUTPUT_STREAM_RESUME_SIZE           (RTL_SIZEOF_THROUGH_FIELD(FS_BPIO_OUTPUT,StreamResume))
+#define FS_BPIO_OUTPUT_GET_INFO_SIZE                (RTL_SIZEOF_THROUGH_FIELD(FS_BPIO_OUTPUT,GetInfo))
+
+#pragma warning(pop)
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_CO)
+
+//
+// ****************** Insert New FSCTLs above Here ****************************
+//
 
 #endif // _FILESYSTEMFSCTL_
 
@@ -14567,9 +14974,23 @@ typedef struct _REPARSE_DATA_BUFFER_EX {
 
 #define SUPPORTED_FS_FEATURES_QUERY_OPEN      0x00000004
 
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN10_CO)
+
+#define SUPPORTED_FS_FEATURES_BYPASS_IO       0x00000008
+
+#define SUPPORTED_FS_FEATURES_VALID_MASK      (SUPPORTED_FS_FEATURES_OFFLOAD_READ |\
+                                               SUPPORTED_FS_FEATURES_OFFLOAD_WRITE |\
+                                               SUPPORTED_FS_FEATURES_QUERY_OPEN |\
+                                               SUPPORTED_FS_FEATURES_BYPASS_IO)
+
+#else /*_WIN32_WINNT >= _WIN32_WINNT_WIN10_CO*/
+
+
 #define SUPPORTED_FS_FEATURES_VALID_MASK      (SUPPORTED_FS_FEATURES_OFFLOAD_READ |\
                                                SUPPORTED_FS_FEATURES_OFFLOAD_WRITE |\
                                                SUPPORTED_FS_FEATURES_QUERY_OPEN)
+
+#endif /*_WIN32_WINNT >= _WIN32_WINNT_WIN10_CO*/
 
 #else  /*_WIN32_WINNT >= _WIN32_WINNT_WIN10_RS2 */
 
@@ -15052,7 +15473,6 @@ typedef struct _SHUFFLE_FILE_DATA {
 } SHUFFLE_FILE_DATA, *PSHUFFLE_FILE_DATA;
 
 #endif // (_WIN32_WINNT >= _WIN32_WINNT_WIN8)
-
 
 
 //
@@ -15771,6 +16191,7 @@ typedef struct _NETWORK_APP_INSTANCE_EA {
 #define LX_FILE_METADATA_MODE_EA_NAME "$LXMOD"
 #define LX_FILE_METADATA_DEVICE_ID_EA_NAME "$LXDEV"
 
+
 #if (NTDDI_VERSION >= NTDDI_WIN10_MN)
 
 //
@@ -16195,6 +16616,7 @@ typedef struct _SECURITY_CLIENT_CONTEXT {
 #endif // _OB_REFERENCE_TAGS_
 
 
+//
 
 //
 // Memory priority definitions.
@@ -16203,6 +16625,7 @@ typedef struct _SECURITY_CLIENT_CONTEXT {
 #define SYSTEM_PAGE_PRIORITY_BITS       3
 #define SYSTEM_PAGE_PRIORITY_LEVELS     (1 << SYSTEM_PAGE_PRIORITY_BITS)
 
+//
 
 //
 // Miscellaneous type definitions
@@ -19017,6 +19440,7 @@ IoSetFsZeroingOffset (
 
 #endif
 
+
 #if (NTDDI_VERSION >= NTDDI_WINBLUE)
 
 NTSTATUS
@@ -19630,6 +20054,7 @@ ObQueryObjectAuditingByHandle(
 #define DEVICE_RESET_RESERVED_0 0x1
 #define DEVICE_RESET_RESERVED_1 0x2
 #define DEVICE_RESET_KEEP_STACK 0x4
+#define DEVICE_RESET_ON_EDPC 0x100000000
 
 _IRQL_requires_max_(PASSIVE_LEVEL)
 _Must_inspect_result_
@@ -19679,7 +20104,7 @@ typedef struct _FSRTL_COMMON_FCB_HEADER {
     CSHORT NodeByteSize;
 
     //
-    //  General flags available to FsRtl.
+    //  General flags available to FsRtl (see FSRTL_FLAG_* below)
     //
 
     UCHAR Flags;
@@ -19693,7 +20118,7 @@ typedef struct _FSRTL_COMMON_FCB_HEADER {
     UCHAR IsFastIoPossible; // really type FAST_IO_POSSIBLE
 
     //
-    //  Second Flags Field
+    //  Second Flags Field (see FSRTL_FLAG2_* below)
     //
 
     UCHAR Flags2;
@@ -19847,7 +20272,7 @@ typedef struct _FSRTL_ADVANCED_FCB_HEADER {
 #if (NTDDI_VERSION >= NTDDI_WIN10_MN)
     //
     //  The following field is valid only if the Version field in the
-    //  FSRTL_COMMON_FCB_HEADER is equal to FSRTL_FCB_HEADER_V3.  This field is
+    //  FSRTL_COMMON_FCB_HEADER is >= to FSRTL_FCB_HEADER_V3.  This field is
     //  present in Windows 10 Manganese and beyond and must be initialized by
     //  calling FsRtlSetupAdvancedHeaderEx2.
     //
@@ -19856,7 +20281,7 @@ typedef struct _FSRTL_ADVANCED_FCB_HEADER {
     //  automatically change from a normal pushlock to a cache-aware pushlock
     //  when the lock is subject to high cache contention due to a large number
     //  of concurrent shared acquirers.
-    //  
+    //
 
     PVOID AePushLock;
 
@@ -19864,7 +20289,7 @@ typedef struct _FSRTL_ADVANCED_FCB_HEADER {
 
     //
     //  The following field is valid only if the Version field in the
-    //  FSRTL_COMMON_FCB_HEADER is equal to FSRTL_FCB_HEADER_V3. This field is
+    //  FSRTL_COMMON_FCB_HEADER is >= to FSRTL_FCB_HEADER_V3. This field is
     //  used in Windows Blue through Windows 10 RS4.
     //
     //  This field is used internally by the FSRTL to assist in context lookup.
@@ -19873,6 +20298,19 @@ typedef struct _FSRTL_ADVANCED_FCB_HEADER {
     PVOID ReservedContext;
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_CO)
+    //
+    //  The following field is valid only if the Version field in the
+    //  FSRTL_COMMON_FCB_HEADER is >= to FSRTL_FCB_HEADER_V4.  This field is
+    //  present in Windows 10 Cobalt and beyond.
+    //
+    //  This tracks how many handles are currently open with BypassIO enabled on
+    //  this stream.
+    //
+
+    ULONG BypassIoOpenCount;
+
+#endif
 
 } FSRTL_ADVANCED_FCB_HEADER;
 typedef FSRTL_ADVANCED_FCB_HEADER *PFSRTL_ADVANCED_FCB_HEADER;
@@ -19885,6 +20323,7 @@ typedef FSRTL_ADVANCED_FCB_HEADER *PFSRTL_ADVANCED_FCB_HEADER;
 #define FSRTL_FCB_HEADER_V1             (0x01)
 #define FSRTL_FCB_HEADER_V2             (0x02)
 #define FSRTL_FCB_HEADER_V3             (0x03)
+#define FSRTL_FCB_HEADER_V4             (0x04)
 
 //
 //  Define FsRtl common header flags
@@ -19965,6 +20404,14 @@ typedef FSRTL_ADVANCED_FCB_HEADER *PFSRTL_ADVANCED_FCB_HEADER;
 //
 
 #define FSRTL_FLAG2_WRITABLE_USER_MAPPED_FILE (0x10)
+
+//
+//  If set it means BypassIO's on this stream has been paused, this means any FileObject
+//  associated with this stream that has BypassIO enabled, will not no longer do
+//  BypassIO.
+//
+
+#define FSRTL_FLAG2_BYPASSIO_STREAM_PAUSED (0x20)
 
 
 // begin_ntosp
@@ -22429,11 +22876,29 @@ typedef struct _FSRTL_PER_FILE_CONTEXT {
 //  FileObject
 //
 
-#define FsRtlSupportsPerFileContexts(_fo)                     \
-    ((FsRtlGetPerStreamContextPointer(_fo) != NULL) &&        \
+#define FsRtlSupportsPerFileContexts(_fo)                                       \
+    ((FsRtlGetPerStreamContextPointer(_fo) != NULL) &&                          \
      (FsRtlGetPerStreamContextPointer(_fo)->Version >= FSRTL_FCB_HEADER_V1) &&  \
      (FsRtlGetPerStreamContextPointer(_fo)->FileContextSupportPointer != NULL))
 
+//
+//  These are BypassIO support routines for the advanced FCB header.
+//  They validate and return:
+//      - a pointer to the OpenCount from the AFCBH
+//      - the current value of the OpenCount from the AFCBH
+//
+
+#define FsRtlGetBypassIoOpenCountPtr(_fo)                                       \
+    (((FsRtlGetPerStreamContextPointer(_fo) != NULL) &&                         \
+      (FsRtlGetPerStreamContextPointer(_fo)->Version >= FSRTL_FCB_HEADER_V4))   \
+            ? &FsRtlGetPerStreamContextPointer(_fo)->BypassIoOpenCount          \
+            : NULL)
+
+#define FsRtlGetBypassIoOpenCount(_fo)                                          \
+    (((FsRtlGetPerStreamContextPointer(_fo) != NULL) &&                         \
+      (FsRtlGetPerStreamContextPointer(_fo)->Version >= FSRTL_FCB_HEADER_V4))   \
+            ? FsRtlGetPerStreamContextPointer(_fo)->BypassIoOpenCount           \
+            : 0)
 
 //
 //  Associate the context at Ptr with the given file.  The Ptr structure
@@ -22532,7 +22997,7 @@ FsRtlRemovePerFileContext (
 //  the AePushLock field of the advanced header.  It is the caller's responsibility
 //  to allocate and initialize the memory for AePushLock by calling FsRtlAllocateAePushLock().
 //  The caller must free the memory for AePushLock by calling FsRtlFreeAePushLock().
-//  
+//
 //
 
 #define FsRtlSetupAdvancedHeaderEx2( _advhdr, _fmutx, _fctxptr, _aepushlock )       \
@@ -22744,7 +23209,7 @@ FsRtlAllocateAePushLock (
 
 //
 // Frees memory allocated with FsRtlAllocateAePushLock().
-// 
+//
 
 _IRQL_requires_max_(APC_LEVEL)
 NTKERNELAPI
@@ -22786,7 +23251,9 @@ FsRtlSetupAdvancedHeader(
     localAdvHdr->Flags |= FSRTL_FLAG_ADVANCED_HEADER;
     localAdvHdr->Flags2 |= FSRTL_FLAG2_SUPPORTS_FILTER_CONTEXTS;
 
-#if (NTDDI_VERSION >= NTDDI_WINBLUE)
+#if (NTDDI_VERSION >= NTDDI_WIN10_CO)
+    localAdvHdr->Version = FSRTL_FCB_HEADER_V4;
+#elif (NTDDI_VERSION >= NTDDI_WINBLUE)
     localAdvHdr->Version = FSRTL_FCB_HEADER_V3;
 #elif (NTDDI_VERSION >= NTDDI_WIN8)
     localAdvHdr->Version = FSRTL_FCB_HEADER_V2;
@@ -22822,17 +23289,15 @@ FsRtlSetupAdvancedHeader(
     localAdvHdr->FileContextSupportPointer = NULL;
 #endif
 
-
 #if (NTDDI_VERSION >= NTDDI_WIN8)
     localAdvHdr->Oplock = NULL;
 #endif
-
 
 #if (NTDDI_VERSION >= NTDDI_WIN10_MN)
     //
     //  ReservedContext is unused as of RS5 and AePushLock takes its place in
     //  Manganese.  It must be initialized by calling FsRtlSetupAdvancedHeaderEx2.
-    //  
+    //
 
     localAdvHdr->AePushLock = NULL;
 
@@ -22841,6 +23306,9 @@ FsRtlSetupAdvancedHeader(
     localAdvHdr->ReservedContext = NULL;
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_CO)
+    localAdvHdr->BypassIoOpenCount = 0;
+#endif
 }
 
 

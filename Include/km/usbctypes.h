@@ -13,6 +13,7 @@ Abstract:
     
     - Universal Serial Bus Type-C Cable and Connector Specification Revision 1.2
     - Universal Serial Bus Power Delivery Specification Revision 2.0
+    - Universal Serial Bus Power Delivery Specification Revision 3.0 (only for PPS PDO/RDO) 
     - USB Type-C Connector System Software Interface [UCSI] Revision 1.0
     - USB Type-C Connector System Software Interface [UCSI] Revision 1.1
 
@@ -100,6 +101,10 @@ typedef enum _USBC_PD_CONN_STATE {
 // Universal Serial Bus Power Delivery Specification Revision 2.0
 // 6.4.2 Request Message
 //
+// Universal Serial Bus Power Delivery Specification Revision 3.0
+// 6.4.2 Request Message
+//   Table 6-22 Programmable Request Data Object
+//
 typedef union _USBC_PD_REQUEST_DATA_OBJECT
 {
     UINT32   U;
@@ -123,12 +128,25 @@ typedef union _USBC_PD_REQUEST_DATA_OBJECT
     struct {
         UINT32 MaximumOperatingPowerIn250mW : 10;
         UINT32 OperatingPowerIn250mW : 10;
-        UINT32 Reserved1 : 6;	// masking  NoUsbSuspend and UsbCommunicationCapable
+        UINT32 Reserved1 : 6;	// masking NoUsbSuspend and UsbCommunicationCapable
         UINT32 CapabilityMismatch : 1;
         UINT32 GiveBackFlag : 1;
         UINT32 ObjectPosition : 3;
         UINT32 Reserved2 : 1;
     } BatteryRdo;
+
+    struct {
+        UINT32 OperatingCurrentIn50mA : 7;
+        UINT32 Reserved1 : 2;
+        UINT32 OutputVoltageIn20mV : 11;
+        UINT32 Reserved2 : 3;
+        UINT32 UnchunkedExtendedMessagesSupported : 1;
+        UINT32 Reserved3 : 2;   // masking NoUsbSuspend and UsbCommunicationCapable
+        UINT32 CapabilityMismatch : 1;
+        UINT32 Reserved4 : 1;
+        UINT32 ObjectPosition : 3;
+        UINT32 Reserved5 : 1;
+    } ProgrammableRdo;
 
 } USBC_PD_REQUEST_DATA_OBJECT, *PUSBC_PD_REQUEST_DATA_OBJECT;
 
@@ -138,6 +156,9 @@ typedef union _USBC_PD_REQUEST_DATA_OBJECT
 // 6.4.1.2.3 Source Fixed Supply Power Data Object
 // 6.4.1.2.4 Variable Supply(non - Battery) Power Data Object
 // 6.4.1.2.5 Battery Supply Power Data Object
+//
+// Universal Serial Bus Power Delivery Specification Revision 3.0
+// 6.4.1.2.5 Programmable Power Supply Augmented Power Data Object
 //
 typedef union _USBC_PD_POWER_DATA_OBJECT
 {
@@ -158,22 +179,34 @@ typedef union _USBC_PD_POWER_DATA_OBJECT
         UINT32 ExternallyPowered : 1;
         UINT32 UsbSuspendSupported : 1;
         UINT32 DualRolePower : 1;
-        UINT32 FixedSupply : 2;
+        UINT32 FixedSupply : 2;                 // USBC_PD_POWER_DATA_OBJECT_TYPE
     } FixedSupplyPdo;
 
     struct {
         UINT32 MaximumAllowablePowerIn250mW : 10;
         UINT32 MinimumVoltageIn50mV : 10;
         UINT32 MaximumVoltageIn50mV : 10;
-        UINT32 Battery : 2;
+        UINT32 Battery : 2;                     // USBC_PD_POWER_DATA_OBJECT_TYPE
     } BatterySupplyPdo;
 
     struct {
         UINT32 MaximumCurrentIn10mA : 10;
         UINT32 MinimumVoltageIn50mV : 10;
         UINT32 MaximumVoltageIn50mV : 10;
-        UINT32 VariableSupportNonBattery : 2;
+        UINT32 VariableSupportNonBattery : 2;   // USBC_PD_POWER_DATA_OBJECT_TYPE
     } VariableSupplyNonBatteryPdo;
+
+    struct {
+        UINT32 MaximumCurrentIn50mA : 7;
+        UINT32 Reserved1 : 1;
+        UINT32 MinimumVoltageIn100mV : 8;
+        UINT32 Reserved2 : 1;
+        UINT32 MaximumVoltageIn100mV : 8;
+        UINT32 Reserved3 : 2;
+        UINT32 PpsPowerLimited : 1;
+        UINT32 AugmentedPowerDataObjectType : 2;// USBC_PD_AUGMENTED_POWER_DATA_OBJECT_TYPE
+        UINT32 AugmentedPowerDataObject : 2;    // USBC_PD_POWER_DATA_OBJECT_TYPE
+    } ProgrammablePowerSupplyApdo;              // for both source and sink
 
     struct {
         UINT32 OperationalCurrentIn10mA : 10;
@@ -184,21 +217,21 @@ typedef union _USBC_PD_POWER_DATA_OBJECT
         UINT32 ExternallyPowered : 1;
         UINT32 HigherCapability : 1;
         UINT32 DualRolePower : 1;
-        UINT32 FixedSupply : 2;
+        UINT32 FixedSupply : 2;                 // USBC_PD_POWER_DATA_OBJECT_TYPE
     } FixedSupplyPdoSink;
 
     struct {
         UINT32 OperationalPowerIn250mW : 10;
         UINT32 MinimumVoltageIn50mV : 10;
         UINT32 MaximumVoltageIn50mV : 10;
-        UINT32 Battery : 2;
+        UINT32 Battery : 2;                     // USBC_PD_POWER_DATA_OBJECT_TYPE
     } BatterySupplyPdoSink;
 
     struct {
         UINT32 OperationalCurrentIn10mA : 10;
         UINT32 MinimumVoltageIn50mV : 10;
         UINT32 MaximumVoltageIn50mV : 10;
-        UINT32 VariableSupportNonBattery : 2;
+        UINT32 VariableSupportNonBattery : 2;   // USBC_PD_POWER_DATA_OBJECT_TYPE
     } VariableSupplyNonBatteryPdoSink;
 
 } USBC_PD_POWER_DATA_OBJECT, *PUSBC_PD_POWER_DATA_OBJECT;
@@ -210,12 +243,22 @@ C_ASSERT(sizeof(USBC_PD_POWER_DATA_OBJECT) == 4);
 // 6.4.1 Capabilities Message
 //   Table 6-4 Power Data Object
 //
+// Universal Serial Bus Power Delivery Specification Revision 3.0
+// 6.4.1.2.5 Programmable Power Supply Augmented Power Data Object
+//   Table 6-13 Programmable Power Supply APDO - Source
+//
 typedef enum _USBC_PD_POWER_DATA_OBJECT_TYPE
 {
     UsbCPdPdoTypeFixedSupply = 0,
     UsbCPdPdoTypeBatterySupply = 1,
-    UsbCPdPdoTypeVariableSupplyNonBattery = 2
+    UsbCPdPdoTypeVariableSupplyNonBattery = 2,
+    UsbCPdPdoTypeAugmentedPowerDataObject = 3
 } USBC_PD_POWER_DATA_OBJECT_TYPE;
+
+typedef enum _USBC_PD_AUGMENTED_POWER_DATA_OBJECT_TYPE
+{
+    UsbCPdApdoTypeProgrammablePowerSupply = 0
+} USBC_PD_AUGMENTED_POWER_DATA_OBJECT_TYPE;
 
 USBC_PD_POWER_DATA_OBJECT_TYPE
 FORCEINLINE

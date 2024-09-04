@@ -1800,7 +1800,7 @@ typedef struct _WDI_ASSOCIATION_RESULT_PARAMETERS
     UINT32 AssociationComebackTime; // Comeback time requested by the peer
     WDI_BAND_ID BandID; // Band ID on which the association is established
     UINT32 IHVAssociationStatus; // IHV defined status code for a failed association
-    BOOLEAN TrafficEncryptedByIHVExtensibilityModule; // Specifies whether traffic encrypted by IHV extensibility module for WifiCx based driver
+    WDI_DISABLE_DATA_PATH_OFFLOADS_SCENARIO DisableDataPathOffloadsScenario; // Specifies scenario for disabling the data path offloads.
 #ifdef __cplusplus
     _WDI_ASSOCIATION_RESULT_PARAMETERS()
     {
@@ -2604,22 +2604,22 @@ namespace WDI_TLV
 //
 // Container for band + channel information
 //
-typedef struct _WDI_BAND_CHANNEL_LIST_CONTAINER
+typedef struct _WDI_SCAN_BAND_CHANNEL_LIST_CONTAINER
 {
     WDI_BAND_ID_CONTAINER BandID;
     WDI_CHANNEL_LIST_CONTAINER ChannelList;
 #ifdef __cplusplus
-    _WDI_BAND_CHANNEL_LIST_CONTAINER() : BandID( (WDI_BAND_ID_CONTAINER)0 )
+    _WDI_SCAN_BAND_CHANNEL_LIST_CONTAINER() : BandID( (WDI_BAND_ID_CONTAINER)0 )
     {
     };
 #endif // __cplusplus
-} WDI_BAND_CHANNEL_LIST_CONTAINER, *PWDI_BAND_CHANNEL_LIST_CONTAINER;
+} WDI_SCAN_BAND_CHANNEL_LIST_CONTAINER, *PWDI_SCAN_BAND_CHANNEL_LIST_CONTAINER;
 #ifdef __cplusplus
 namespace WDI_TLV
 {
     namespace PARSER
     {
-        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_BAND_CHANNEL_LIST_CONTAINER * pField );
+        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_SCAN_BAND_CHANNEL_LIST_CONTAINER * pField );
     }
 }
 #endif // __cplusplus
@@ -2637,6 +2637,39 @@ typedef struct _WDI_AP_BAND_INFORMATION_CONTAINER
     };
 #endif // __cplusplus
 } WDI_AP_BAND_INFORMATION_CONTAINER, *PWDI_AP_BAND_INFORMATION_CONTAINER;
+
+//
+// Container for band + channel information
+//
+typedef struct _WDI_BAND_CHANNEL_LIST_CONTAINER
+{
+    struct _WDI_BAND_CHANNEL_LIST_CONTAINER_Optional
+    {
+        UINT32 ChannelList_IsPresent : 1;
+#ifdef __cplusplus
+        _WDI_BAND_CHANNEL_LIST_CONTAINER_Optional() : ChannelList_IsPresent( FALSE )
+        {
+        };
+#endif // __cplusplus
+    } Optional;
+
+    WDI_BAND_ID_CONTAINER BandID;
+    WDI_CHANNEL_LIST_CONTAINER ChannelList;
+#ifdef __cplusplus
+    _WDI_BAND_CHANNEL_LIST_CONTAINER() : BandID( (WDI_BAND_ID_CONTAINER)0 )
+    {
+    };
+#endif // __cplusplus
+} WDI_BAND_CHANNEL_LIST_CONTAINER, *PWDI_BAND_CHANNEL_LIST_CONTAINER;
+#ifdef __cplusplus
+namespace WDI_TLV
+{
+    namespace PARSER
+    {
+        void MarkArrayOfElementFieldsAsCopied( _Inout_ WDI_BAND_CHANNEL_LIST_CONTAINER * pField );
+    }
+}
+#endif // __cplusplus
 typedef WDI_SIGNAL_INFO WDI_SIGNAL_INFO_CONTAINER;
 
 typedef WDI_BSS_ENTRY_CHANNEL_INFO WDI_CHANNEL_INFO_CONTAINER;
@@ -2745,14 +2778,14 @@ namespace WDI_TLV
 #endif // __cplusplus
 typedef WDI_P2P_LISTEN_DURATION WDI_P2P_LISTEN_DURATION_CONTAINER;
 
-struct ArrayOfElementsOfWDI_BAND_CHANNEL_LIST_CONTAINER
+struct ArrayOfElementsOfWDI_SCAN_BAND_CHANNEL_LIST_CONTAINER
 {
     UINT32 ElementCount;
-    WDI_BAND_CHANNEL_LIST_CONTAINER* pElements;
+    WDI_SCAN_BAND_CHANNEL_LIST_CONTAINER* pElements;
     BOOLEAN MemoryInternallyAllocated;
 };
 #ifdef __cplusplus
-C_ASSERT( sizeof( ArrayOfElements<WDI_BAND_CHANNEL_LIST_CONTAINER> ) == sizeof( struct ArrayOfElementsOfWDI_BAND_CHANNEL_LIST_CONTAINER ) );
+C_ASSERT( sizeof( ArrayOfElements<WDI_SCAN_BAND_CHANNEL_LIST_CONTAINER> ) == sizeof( struct ArrayOfElementsOfWDI_SCAN_BAND_CHANNEL_LIST_CONTAINER ) );
 #endif // __cplusplus
 
 //
@@ -2762,9 +2795,9 @@ typedef struct _WDI_P2P_DISCOVERY_CHANNEL_SETTINGS_CONTAINER
 {
     WDI_P2P_LISTEN_DURATION_CONTAINER ListenDuration;
 #ifdef __cplusplus
-    ArrayOfElements<WDI_BAND_CHANNEL_LIST_CONTAINER> BandChannelList;
+    ArrayOfElements<WDI_SCAN_BAND_CHANNEL_LIST_CONTAINER> BandChannelList;
 #else // __cplusplus
-    struct ArrayOfElementsOfWDI_BAND_CHANNEL_LIST_CONTAINER BandChannelList;
+    struct ArrayOfElementsOfWDI_SCAN_BAND_CHANNEL_LIST_CONTAINER BandChannelList;
 #endif // __cplusplus
 } WDI_P2P_DISCOVERY_CHANNEL_SETTINGS_CONTAINER, *PWDI_P2P_DISCOVERY_CHANNEL_SETTINGS_CONTAINER;
 #ifdef __cplusplus
@@ -3690,8 +3723,9 @@ typedef struct _WDI_CONNECT_PARAMETERS_CONTAINER
         UINT32 DisallowedBSSIDs_IsPresent : 1;
         UINT32 AllowedBSSIDs_IsPresent : 1;
         UINT32 OWEDHIE_IsPresent : 1;
+        UINT32 UnavailableBandList_IsPresent : 1;
 #ifdef __cplusplus
-        _WDI_CONNECT_PARAMETERS_CONTAINER_Optional() : HESSIDInfo_IsPresent( FALSE ), AssociationRequestVendorIE_IsPresent( FALSE ), ActivePhyTypeList_IsPresent( FALSE ), DisallowedBSSIDs_IsPresent( FALSE ), AllowedBSSIDs_IsPresent( FALSE ), OWEDHIE_IsPresent( FALSE )
+        _WDI_CONNECT_PARAMETERS_CONTAINER_Optional() : HESSIDInfo_IsPresent( FALSE ), AssociationRequestVendorIE_IsPresent( FALSE ), ActivePhyTypeList_IsPresent( FALSE ), DisallowedBSSIDs_IsPresent( FALSE ), AllowedBSSIDs_IsPresent( FALSE ), OWEDHIE_IsPresent( FALSE ), UnavailableBandList_IsPresent( FALSE )
         {
         };
 #endif // __cplusplus
@@ -3712,6 +3746,7 @@ typedef struct _WDI_CONNECT_PARAMETERS_CONTAINER
     WDI_ADDRESS_LIST_CONTAINER DisallowedBSSIDs;
     WDI_ADDRESS_LIST_CONTAINER AllowedBSSIDs;
     WDI_BYTE_BLOB OWEDHIE;
+    WDI_BAND_ID_LIST_CONTAINER UnavailableBandList;
 } WDI_CONNECT_PARAMETERS_CONTAINER, *PWDI_CONNECT_PARAMETERS_CONTAINER;
 #ifdef __cplusplus
 namespace WDI_TLV
@@ -4505,9 +4540,9 @@ typedef struct _WDI_SCAN_PARAMETERS
     WDI_SCAN_PARAMETERS_CONTAINER ScanModeParameters;
     WDI_SCAN_DWELL_TIME_CONTAINER DwellTime;
 #ifdef __cplusplus
-    ArrayOfElements<WDI_BAND_CHANNEL_LIST_CONTAINER> BandChannelList;
+    ArrayOfElements<WDI_SCAN_BAND_CHANNEL_LIST_CONTAINER> BandChannelList;
 #else // __cplusplus
-    struct ArrayOfElementsOfWDI_BAND_CHANNEL_LIST_CONTAINER BandChannelList;
+    struct ArrayOfElementsOfWDI_SCAN_BAND_CHANNEL_LIST_CONTAINER BandChannelList;
 #endif // __cplusplus
 #ifdef __cplusplus
     ArrayOfElements<WDI_6_GHZ_BAND_CHANNEL_LIST_CONTAINER> SixGHzBandChannelList;
@@ -5469,7 +5504,18 @@ typedef struct _WDI_INDICATION_ROAMING_NEEDED_PARAMETERS
 //
 typedef struct _WDI_INDICATION_LINK_STATE_CHANGE_PARAMETERS
 {
+    struct _WDI_INDICATION_LINK_STATE_CHANGE_PARAMETERS_Optional
+    {
+        UINT32 APChannel_IsPresent : 1;
+#ifdef __cplusplus
+        _WDI_INDICATION_LINK_STATE_CHANGE_PARAMETERS_Optional() : APChannel_IsPresent( FALSE )
+        {
+        };
+#endif // __cplusplus
+    } Optional;
+
     WDI_LINK_STATE_CHANGE_PARAMETERS_CONTAINER LinkStateChangeParameters;
+    WDI_CHANNEL_INFO_CONTAINER APChannel;
 } WDI_INDICATION_LINK_STATE_CHANGE_PARAMETERS, *PWDI_INDICATION_LINK_STATE_CHANGE_PARAMETERS;
 
 
@@ -6803,6 +6849,58 @@ typedef struct _WDI_INDICATION_DEVICE_SERVICE_EVENT_PARAMETERS
     };
 #endif // __cplusplus
 } WDI_INDICATION_DEVICE_SERVICE_EVENT_PARAMETERS, *PWDI_INDICATION_DEVICE_SERVICE_EVENT_PARAMETERS;
+
+struct ArrayOfElementsOfWDI_BAND_CHANNEL_LIST_CONTAINER
+{
+    UINT32 ElementCount;
+    WDI_BAND_CHANNEL_LIST_CONTAINER* pElements;
+    BOOLEAN MemoryInternallyAllocated;
+};
+#ifdef __cplusplus
+C_ASSERT( sizeof( ArrayOfElements<WDI_BAND_CHANNEL_LIST_CONTAINER> ) == sizeof( struct ArrayOfElementsOfWDI_BAND_CHANNEL_LIST_CONTAINER ) );
+#endif // __cplusplus
+
+//
+// Parameters for Secondary Sta Connectivity state
+//
+typedef struct _WDI_INDICATION_SECONDARY_STA_CONNECTIVITY_PARAMETERS
+{
+    struct _WDI_INDICATION_SECONDARY_STA_CONNECTIVITY_PARAMETERS_Optional
+    {
+        UINT32 AvaiableBandChannelList_IsPresent : 1;
+#ifdef __cplusplus
+        _WDI_INDICATION_SECONDARY_STA_CONNECTIVITY_PARAMETERS_Optional() : AvaiableBandChannelList_IsPresent( FALSE )
+        {
+        };
+#endif // __cplusplus
+    } Optional;
+
+    UINT8_CONTAINER LimitedConnectivity;
+#ifdef __cplusplus
+    ArrayOfElements<WDI_BAND_CHANNEL_LIST_CONTAINER> AvaiableBandChannelList;
+#else // __cplusplus
+    struct ArrayOfElementsOfWDI_BAND_CHANNEL_LIST_CONTAINER AvaiableBandChannelList;
+#endif // __cplusplus
+#ifdef __cplusplus
+    _WDI_INDICATION_SECONDARY_STA_CONNECTIVITY_PARAMETERS() : LimitedConnectivity( (UINT8_CONTAINER)0 )
+    {
+    };
+#endif // __cplusplus
+} WDI_INDICATION_SECONDARY_STA_CONNECTIVITY_PARAMETERS, *PWDI_INDICATION_SECONDARY_STA_CONNECTIVITY_PARAMETERS;
+
+
+//
+// Location Privacy Setting
+//
+typedef struct _WDI_SET_LOCATION_PRIVACY_PARAMETERS
+{
+    UINT8_CONTAINER LocationAllowed;
+#ifdef __cplusplus
+    _WDI_SET_LOCATION_PRIVACY_PARAMETERS() : LocationAllowed( (UINT8_CONTAINER)0 )
+    {
+    };
+#endif // __cplusplus
+} WDI_SET_LOCATION_PRIVACY_PARAMETERS, *PWDI_SET_LOCATION_PRIVACY_PARAMETERS;
 
 
 //
@@ -9769,6 +9867,46 @@ extern "C" {
         _Out_ WDI_INDICATION_DEVICE_SERVICE_EVENT_PARAMETERS* pParsedMessage );
     void __stdcall CleanupParsedWdiIndicationDeviceServiceEventFromIhv( _In_ WDI_INDICATION_DEVICE_SERVICE_EVENT_PARAMETERS* pParsedMessage );
 
+    NDIS_STATUS __stdcall GenerateWdiIndicationSecondaryStaConnectivityFromIhv(
+        _In_ WDI_INDICATION_SECONDARY_STA_CONNECTIVITY_PARAMETERS const * pInput,
+        _In_ ULONG ReservedHeaderLength,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ ULONG* pBufferLength,
+        _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer );
+#ifdef __cplusplus
+    extern "C++" inline NDIS_STATUS __stdcall Generate( _In_ WDI_INDICATION_SECONDARY_STA_CONNECTIVITY_PARAMETERS const * pInput, _In_ ULONG ReservedHeaderLength, _In_ PCTLV_CONTEXT Context, _Out_ ULONG* pBufferLength, _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer )
+    {
+        return GenerateWdiIndicationSecondaryStaConnectivityFromIhv( pInput, ReservedHeaderLength, Context, pBufferLength, ppBuffer );
+    }
+#endif // __cplusplus
+
+    NDIS_STATUS __stdcall ParseWdiIndicationSecondaryStaConnectivityFromIhv(
+        _In_ ULONG BufferLength,
+        _In_reads_bytes_( BufferLength ) UINT8 const * pBuffer,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ WDI_INDICATION_SECONDARY_STA_CONNECTIVITY_PARAMETERS* pParsedMessage );
+    void __stdcall CleanupParsedWdiIndicationSecondaryStaConnectivityFromIhv( _In_ WDI_INDICATION_SECONDARY_STA_CONNECTIVITY_PARAMETERS* pParsedMessage );
+
+    NDIS_STATUS __stdcall GenerateWdiSetLocationPrivacyToIhv(
+        _In_ WDI_SET_LOCATION_PRIVACY_PARAMETERS const * pInput,
+        _In_ ULONG ReservedHeaderLength,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ ULONG* pBufferLength,
+        _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer );
+#ifdef __cplusplus
+    extern "C++" inline NDIS_STATUS __stdcall Generate( _In_ WDI_SET_LOCATION_PRIVACY_PARAMETERS const * pInput, _In_ ULONG ReservedHeaderLength, _In_ PCTLV_CONTEXT Context, _Out_ ULONG* pBufferLength, _Outptr_result_buffer_( *pBufferLength ) UINT8** ppBuffer )
+    {
+        return GenerateWdiSetLocationPrivacyToIhv( pInput, ReservedHeaderLength, Context, pBufferLength, ppBuffer );
+    }
+#endif // __cplusplus
+
+    NDIS_STATUS __stdcall ParseWdiSetLocationPrivacyToIhv(
+        _In_ ULONG BufferLength,
+        _In_reads_bytes_( BufferLength ) UINT8 const * pBuffer,
+        _In_ PCTLV_CONTEXT Context,
+        _Out_ WDI_SET_LOCATION_PRIVACY_PARAMETERS* pParsedMessage );
+    void __stdcall CleanupParsedWdiSetLocationPrivacyToIhv( _In_ WDI_SET_LOCATION_PRIVACY_PARAMETERS* pParsedMessage );
+
     NDIS_STATUS __stdcall GenerateWdiTestTask(
         _In_ WDI_TASK_TEST_PARAMETERS const * pInput,
         _In_ ULONG ReservedHeaderLength,
@@ -10077,6 +10215,9 @@ extern "C" {
 #define CleanupParsedWdiIndicationCipherKeyUpdated CleanupParsedWdiIndicationCipherKeyUpdatedFromIhv
 #define ParseWdiIndicationDeviceServiceEvent ParseWdiIndicationDeviceServiceEventFromIhv
 #define CleanupParsedWdiIndicationDeviceServiceEvent CleanupParsedWdiIndicationDeviceServiceEventFromIhv
+#define ParseWdiIndicationSecondaryStaConnectivity ParseWdiIndicationSecondaryStaConnectivityFromIhv
+#define CleanupParsedWdiIndicationSecondaryStaConnectivity CleanupParsedWdiIndicationSecondaryStaConnectivityFromIhv
+#define GenerateWdiSetLocationPrivacy GenerateWdiSetLocationPrivacyToIhv
 #define Parse ParseFromIhv
 #define FreeParsed FreeParsedFromIhv
 
@@ -10294,6 +10435,9 @@ extern "C" {
 #define GenerateWdiDeviceServiceCommand GenerateWdiDeviceServiceCommandFromIhv
 #define GenerateWdiIndicationCipherKeyUpdated GenerateWdiIndicationCipherKeyUpdatedFromIhv
 #define GenerateWdiIndicationDeviceServiceEvent GenerateWdiIndicationDeviceServiceEventFromIhv
+#define GenerateWdiIndicationSecondaryStaConnectivity GenerateWdiIndicationSecondaryStaConnectivityFromIhv
+#define ParseWdiSetLocationPrivacy ParseWdiSetLocationPrivacyToIhv
+#define CleanupParsedWdiSetLocationPrivacy CleanupParsedWdiSetLocationPrivacyToIhv
 #define Parse ParseToIhv
 #define FreeParsed FreeParsedToIhv
 

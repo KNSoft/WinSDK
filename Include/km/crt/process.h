@@ -138,19 +138,21 @@ _CRTIMP int __cdecl _wsystem(_In_opt_z_ const wchar_t * _Command);
 __declspec(noreturn) void __cdecl __report_securityfailure(unsigned long FailureCode);
 __declspec(noreturn) void __cdecl __report_rangecheckfailure(void);
 #endif
+
 #if !defined(_M_CEE)
 void __cdecl __security_init_cookie(void);
 #if defined(_M_IX86)
 void __fastcall __security_check_cookie(_In_ uintptr_t _StackCookie);
 __declspec(noreturn) void __cdecl __report_gsfailure(void);
-#elif defined(_M_ARM64EC)
-void __cdecl __security_check_cookie_arm64ec(_In_ uintptr_t _StackCookie);
-__declspec(noreturn) void __cdecl __report_gsfailure(uintptr_t _StackCookie);
 #else
 void __cdecl __security_check_cookie(_In_ uintptr_t _StackCookie);
+#if defined(_M_ARM64EC)
+void __cdecl __security_check_cookie_arm64ec(_In_ uintptr_t _StackCookie);
+#endif
 __declspec(noreturn) void __cdecl __report_gsfailure(uintptr_t _StackCookie);
 #endif
-#endif
+#endif // !defined(_M_CEE)
+
 extern uintptr_t __security_cookie;
 
 /* --------- The following functions are OBSOLETE --------- */

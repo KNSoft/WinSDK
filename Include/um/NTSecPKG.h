@@ -627,7 +627,7 @@ typedef LPSECURITY_ATTRIBUTES   SEC_ATTRS;
               ( ((PLUID)L1)->HighPart == ((PLUID)L2)->HighPart ) ) \
 
 #define SecIsZeroLuid( L1 ) \
-            ( ( L1->LowPart | L1->HighPart ) == 0 )
+            ( ( (L1)->LowPart | (L1)->HighPart ) == 0 )
 
 //
 // The following structures are used by the helper functions
@@ -655,6 +655,7 @@ typedef struct _SECPKG_CLIENT_INFO {
     HANDLE                          ClientToken;
 
 } SECPKG_CLIENT_INFO, * PSECPKG_CLIENT_INFO;
+
 
 #define SECPKG_CLIENT_PROCESS_TERMINATED    0x01    // The client process has terminated
 #define SECPKG_CLIENT_THREAD_TERMINATED     0x02    // The client thread has terminated
@@ -810,22 +811,22 @@ typedef LSA_CALLBACK_FUNCTION * PLSA_CALLBACK_FUNCTION;
 
 
 
-#define PRIMARY_CRED_CLEAR_PASSWORD     0x1
-#define PRIMARY_CRED_OWF_PASSWORD       0x2
-#define PRIMARY_CRED_UPDATE             0x4     // this is a change of existing creds
-#define PRIMARY_CRED_CACHED_LOGON       0x8
-#define PRIMARY_CRED_LOGON_NO_TCB       0x10
-#define PRIMARY_CRED_LOGON_LUA          0x20
-#define PRIMARY_CRED_INTERACTIVE_SMARTCARD_LOGON 0x40
-#define PRIMARY_CRED_REFRESH_NEEDED     0x80   // unlock refresh needed
-#define PRIMARY_CRED_INTERNET_USER      0x100  // online identity credential, consumer accounts like MSA
-#define PRIMARY_CRED_AUTH_ID            0x200  // credential is unencrypted SEC_WINNT_AUTH_IDENTITY_EX2
-#define PRIMARY_CRED_DO_NOT_SPLIT       0x400
-#define PRIMARY_CRED_PROTECTED_USER     0x800
-#define PRIMARY_CRED_EX                 0x1000 // SECPKG_PRIMARY_CRED_EX
-#define PRIMARY_CRED_TRANSFER           0x2000 // transfer credential
-#define PRIMARY_CRED_RESTRICTED_TS      0x4000 // restricted TS
-#define PRIMARY_CRED_PACKED_CREDS       0x8000 // PSEC_WINNT_AUTH_PACKED_CREDENTIALS
+#define PRIMARY_CRED_CLEAR_PASSWORD                 0x00000001
+#define PRIMARY_CRED_OWF_PASSWORD                   0x00000002
+#define PRIMARY_CRED_UPDATE                         0x00000004  // this is a change of existing creds
+#define PRIMARY_CRED_CACHED_LOGON                   0x00000008
+#define PRIMARY_CRED_LOGON_NO_TCB                   0x00000010
+#define PRIMARY_CRED_LOGON_LUA                      0x00000020
+#define PRIMARY_CRED_INTERACTIVE_SMARTCARD_LOGON    0x00000040
+#define PRIMARY_CRED_REFRESH_NEEDED                 0x00000080  // unlock refresh needed
+#define PRIMARY_CRED_INTERNET_USER                  0x00000100  // online identity credential, consumer accounts like MSA
+#define PRIMARY_CRED_AUTH_ID                        0x00000200  // credential is unencrypted SEC_WINNT_AUTH_IDENTITY_EX2
+#define PRIMARY_CRED_DO_NOT_SPLIT                   0x00000400
+#define PRIMARY_CRED_PROTECTED_USER                 0x00000800
+#define PRIMARY_CRED_EX                             0x00001000  // SECPKG_PRIMARY_CRED_EX
+#define PRIMARY_CRED_TRANSFER                       0x00002000  // transfer credential
+#define PRIMARY_CRED_RESTRICTED_TS                  0x00004000  // restricted TS
+#define PRIMARY_CRED_PACKED_CREDS                   0x00008000  // PSEC_WINNT_AUTH_PACKED_CREDENTIALS
 #define PRIMARY_CRED_ENTERPRISE_INTERNET_USER       0x00010000  // online identity credential, enterprise accounts like AAD
 #define PRIMARY_CRED_ENCRYPTED_CREDGUARD_PASSWORD   0x00020000  // password is encrypted by CredGuard
 #define PRIMARY_CRED_CACHED_INTERACTIVE_LOGON       0x00040000  // the actual logon type seen by the SSP was CachedInteractive
@@ -838,9 +839,11 @@ typedef LSA_CALLBACK_FUNCTION * PLSA_CALLBACK_FUNCTION;
 #define PRIMARY_CRED_INTERACTIVE_NGC_LOGON          0x00080000
 #define PRIMARY_CRED_INTERACTIVE_FIDO_LOGON         0x00100000
 #define PRIMARY_CRED_ARSO_LOGON                     0x00200000
+#define PRIMARY_CRED_SUPPLEMENTAL                   0x00400000  // The update is only to move supplemental credentials around
+                                                                // all primary credentials fields except the LogonId should be ignored
 
-#define PRIMARY_CRED_LOGON_PACKAGE_SHIFT 24
-#define PRIMARY_CRED_PACKAGE_MASK 0xff000000
+#define PRIMARY_CRED_LOGON_PACKAGE_SHIFT            24
+#define PRIMARY_CRED_PACKAGE_MASK                   0xff000000
 
 //
 // For cached logons, the RPC id of the package doing the logon is identified
@@ -864,6 +867,12 @@ typedef struct _SECPKG_PRIMARY_CRED {
     UNICODE_STRING Spare3;
     UNICODE_STRING Spare4;
 } SECPKG_PRIMARY_CRED, *PSECPKG_PRIMARY_CRED;
+
+//
+// Creating an extension for SECPKG_PRIMARY_CRED->Flags field
+//
+
+#define SECPKG_PRIMARY_CRED_EX_FLAGS_EX_DELEGATION_TOKEN     0x1
 
 //
 // SECPKG_PRIMARY_CRED_EX has the same layout of SECPKG_PRIMARY_CRED for existing fields.
@@ -894,6 +903,7 @@ typedef struct _SECPKG_PRIMARY_CRED_EX {
     ULONG_PTR      PackageId;       // originating package
     LUID           PrevLogonId;     // if not zero, the logon having up-to-date credential
                                     // system wide.
+    ULONG          FlagsEx;         // See SECPKG_PRIMARY_CRED_EX_FLAGS_EX_* for potential values
 } SECPKG_PRIMARY_CRED_EX, *PSECPKG_PRIMARY_CRED_EX;
 
 //
@@ -991,6 +1001,25 @@ typedef struct  _SECPKG_TARGETINFO
     PSID    DomainSid;
     PCWSTR  ComputerName;
 } SECPKG_TARGETINFO, *PSECPKG_TARGETINFO;
+
+// Flag values for SECPKG_NTLM_TARGETINFO.Flags field below.
+#define SECPKG_MSVAV_FLAGS_VALID              0x01
+#define SECPKG_MSVAV_TIMESTAMP_VALID          0x02
+
+typedef struct  _SECPKG_NTLM_TARGETINFO
+{
+    // Flags contains zero or SECPKG_MSVAV_* values from above
+    ULONG    Flags;
+
+    LPWSTR   MsvAvNbComputerName;
+    LPWSTR   MsvAvNbDomainName;
+    LPWSTR   MsvAvDnsComputerName;
+    LPWSTR   MsvAvDnsDomainName;
+    LPWSTR   MsvAvDnsTreeName;
+    ULONG    MsvAvFlags;
+    FILETIME MsvAvTimestamp;
+    LPWSTR   MsvAvTargetName;
+} SECPKG_NTLM_TARGETINFO, *PSECPKG_NTLM_TARGETINFO;
 
 #define SECPKG_ATTR_SASL_CONTEXT    0x00010000
 
@@ -1130,6 +1159,14 @@ typedef NTSTATUS
         PSECPKG_SUPPLEMENTAL_CRED_ARRAY* SupplementalCredentials
         );
 
+// The authentication package should use this to retrieve the SID associated
+// associated with the TSPkg logon session. This is intended to bind the NLA session to the interactive logon session
+typedef NTSTATUS
+(NTAPI LSA_REDIRECTED_LOGON_GET_SID)(
+        HANDLE RedirectedLogonHandle,
+        PSID* Sid
+        );
+
 #ifdef __cplusplus
 } // extern "C"
 #endif
@@ -1139,6 +1176,7 @@ typedef LSA_REDIRECTED_LOGON_CALLBACK *PLSA_REDIRECTED_LOGON_CALLBACK;
 typedef LSA_REDIRECTED_LOGON_GET_LOGON_CREDS *PLSA_REDIRECTED_LOGON_GET_LOGON_CREDS;
 typedef LSA_REDIRECTED_LOGON_GET_SUPP_CREDS *PLSA_REDIRECTED_LOGON_GET_SUPP_CREDS;
 typedef LSA_REDIRECTED_LOGON_CLEANUP_CALLBACK *PLSA_REDIRECTED_LOGON_CLEANUP_CALLBACK;
+typedef LSA_REDIRECTED_LOGON_GET_SID *PLSA_REDIRECTED_LOGON_GET_SID;
 
 #define SECPKG_REDIRECTED_LOGON_GUID_INITIALIZER { 0xc2be5457, 0x82eb, 0x483e, { 0xae, 0x4e, 0x74, 0x68, 0xef, 0x14, 0xd5, 0x9 } }
 typedef struct _SECPKG_REDIRECTED_LOGON_BUFFER {
@@ -1149,6 +1187,7 @@ typedef struct _SECPKG_REDIRECTED_LOGON_BUFFER {
     PLSA_REDIRECTED_LOGON_CLEANUP_CALLBACK CleanupCallback;
     PLSA_REDIRECTED_LOGON_GET_LOGON_CREDS GetLogonCreds;
     PLSA_REDIRECTED_LOGON_GET_SUPP_CREDS GetSupplementalCreds;
+    PLSA_REDIRECTED_LOGON_GET_SID GetRedirectedLogonSid;
 } SECPKG_REDIRECTED_LOGON_BUFFER, *PSECPKG_REDIRECTED_LOGON_BUFFER;
 
 typedef struct _SECPKG_POST_LOGON_USER_INFO
@@ -2183,6 +2222,16 @@ typedef NTSTATUS
     );
 
 typedef NTSTATUS
+(NTAPI SpExtractTargetInfoFn) (
+    _In_opt_ PLSA_CLIENT_REQUEST ClientRequest,
+    _In_reads_bytes_(SubmitBufferLength) PVOID ProtocolSubmitBuffer,
+    _In_opt_ PVOID ClientBufferBase,
+    _In_ ULONG SubmitBufferLength,
+    _Result_nullonfailure_ _Outptr_result_bytebuffer_(*pcbTargetInfo) PVOID* ppvTargetInfo,
+    _Out_ ULONG* pcbTargetInfo
+    );
+
+typedef NTSTATUS
 (NTAPI LSA_AP_POST_LOGON_USER) (
     _In_ PSECPKG_POST_LOGON_USER_INFO PostLogonUserInfo
     );
@@ -2269,6 +2318,8 @@ typedef struct _SECPKG_FUNCTION_TABLE {
     PLSA_AP_LOGON_USER_EX3 LogonUserEx3;                                    // SECPKG_INTERFACE_VERSION_10
     PLSA_AP_PRE_LOGON_USER_SURROGATE PreLogonUserSurrogate;                 // SECPKG_INTERFACE_VERSION_10
     PLSA_AP_POST_LOGON_USER_SURROGATE PostLogonUserSurrogate;               // SECPKG_INTERFACE_VERSION_10
+
+    SpExtractTargetInfoFn* ExtractTargetInfo;                               // SECPKG_INTERFACE_VERSION_11
 } SECPKG_FUNCTION_TABLE, *PSECPKG_FUNCTION_TABLE;
 
 //
@@ -2366,6 +2417,30 @@ typedef NTSTATUS
     _Outptr_result_bytebuffer_(*MarshalledCredSize) PVOID * MarshalledCreds
     );
 
+//
+// AttributeInfo flag
+//
+// The highest order bit of AttributeInfo indicates whether the attribute data is ANSI (0) or UNICODE (1).
+// The remaining bits store an enumeration, indicating which call the attribute came from:
+//    SECPKG_CREDENTIAL_ATTRIBUTE - Attribute from SetCredentialsAttributes
+//
+#define SECPKG_UNICODE_ATTRIBUTE 0x80000000
+#define SECPKG_ANSI_ATTRIBUTE 0
+#define SECPKG_CREDENTIAL_ATTRIBUTE 0
+
+//
+// On success, MarshaledAttributeData contains MarshaledAttributeDataSize bytes of packed data.
+// If no work needs to be done, returns STATUS_NOT_SUPPORTED and leaves MarshaledAttributeData NULL.
+//
+typedef NTSTATUS
+(NTAPI SpMarshalAttributeDataFn)(
+    _In_ DWORD AttributeInfo,
+    _In_ ULONG Attribute,
+    _In_ ULONG AttributeDataSize,
+    _In_reads_bytes_(AttributeDataSize) PBYTE AttributeData,
+    _Out_ PULONG MarshaledAttributeDataSize,
+    _Outptr_result_bytebuffer_(*MarshaledAttributeDataSize) PBYTE * MarshaledAttributeData);
+
 typedef struct _SECPKG_USER_FUNCTION_TABLE {
     SpInstanceInitFn *                      InstanceInit;
     SpInitUserModeContextFn *               InitUserModeContext;
@@ -2381,6 +2456,7 @@ typedef struct _SECPKG_USER_FUNCTION_TABLE {
     SpMarshallSupplementalCredsFn *         MarshallSupplementalCreds;
     SpExportSecurityContextFn *             ExportContext;
     SpImportSecurityContextFn *             ImportContext;
+    SpMarshalAttributeDataFn *              MarshalAttributeData; // SECPKG_INTERFACE_VERSION_2
 } SECPKG_USER_FUNCTION_TABLE, *PSECPKG_USER_FUNCTION_TABLE;
 
 
@@ -2425,9 +2501,11 @@ typedef NTSTATUS
 //      SECPKG_INTERFACE_VERSION_8 indicates all fields through GetRemoteSupplementalCreds are defined (potentially to NULL)
 //      SECPKG_INTERFACE_VERSION_9 indicates all fields through GetTbalSupplementalCreds are defined (potentially to NULL)
 //      SECPKG_INTERFACE_VERSION_10 indicates all fields through PostLogonUserSurrogate are defined (potentially to NULL)
+//      SECPKG_INTERFACE_VERSION_11 indicates all fields through ExtractTargetInfo are defined (potentially to NULL)
 //
 // * Returned from SpUserModeInitializeFn to indicate the version of the auth package.
-//      All packages currently return SECPKG_INTERFACE_VERSION
+//      SECPKG_INTERFACE_VERSION indicates all fields through ImportContext are defined (potentially to NULL)
+//      SECPKG_INTERFACE_VERSION_2 indicates all fields through MarshalAttributeData are defined (potentially to NULL)
 //
 
 #define SECPKG_INTERFACE_VERSION    0x00010000
@@ -2440,6 +2518,7 @@ typedef NTSTATUS
 #define SECPKG_INTERFACE_VERSION_8  0x00800000
 #define SECPKG_INTERFACE_VERSION_9  0x01000000
 #define SECPKG_INTERFACE_VERSION_10 0x02000000
+#define SECPKG_INTERFACE_VERSION_11 0x04000000
 
 typedef enum _KSEC_CONTEXT_TYPE {
     KSecPaged,

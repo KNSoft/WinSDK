@@ -162,6 +162,7 @@ extern "C" {
 #define WDI_SET_SAE_AUTH_PARAMS                                     135
 #define WDI_TASK_REQUEST_FTM                                        136
 #define WDI_INDICATION_REQUEST_FTM_COMPLETE                         137
+#define WDI_SET_LOCATION_PRIVACY                                    138
 
 // Special codes
 /*++
@@ -1285,7 +1286,10 @@ RTL_SIZEOF_THROUGH_FIELD(NDIS_MINIPORT_DRIVER_WDI_CHARACTERISTICS, LeCancelIdleN
 // For 1.1.11 compliant drivers
 #define WDI_VERSION_1_1_11                  ((1 << 16) | (1 << 8) | 0xb)
 
-#define WDI_VERSION_LATEST                  WDI_VERSION_1_1_11
+// For 1.1.12 compliant drivers
+#define WDI_VERSION_1_1_12                  ((1 << 16) | (1 << 8) | 0xc)
+
+#define WDI_VERSION_LATEST                  WDI_VERSION_1_1_12
 
 #ifndef NDIS_EXPORTED_ROUTINE
 #  define NDIS_EXPORTED_ROUTINE

@@ -160,6 +160,10 @@ extern "C" {
 #define WDI_SET_SAE_AUTH_PARAMS                                     135
 #define WDI_TASK_REQUEST_FTM                                        136
 #define WDI_INDICATION_REQUEST_FTM_COMPLETE                         137
+#define WDI_SET_LOCATION_PRIVACY                                    138
+
+// WiFiCx codes
+#define WDI_INDICATION_SECONDARY_STA_CONNECTIVITY                   200
 
 // Special codes
 /*++
@@ -1285,7 +1289,13 @@ RTL_SIZEOF_THROUGH_FIELD(NDIS_MINIPORT_DRIVER_WDI_CHARACTERISTICS, LeCancelIdleN
 // For 2.0.0 compliant drivers
 #define WDI_VERSION_2_0_0                   ((2 << 16) | (0 << 8) | 0x0)
 
-#define WDI_VERSION_LATEST                  WDI_VERSION_2_0_0
+// For 2.0.1 compliant drivers
+#define WDI_VERSION_2_0_1                   ((2 << 16) | (0 << 8) | 0x1)
+
+// For 2.0.2 compliant drivers
+#define WDI_VERSION_2_0_2                   ((2 << 16) | (0 << 8) | 0x2)
+
+#define WDI_VERSION_LATEST                  WDI_VERSION_2_0_2
 
 #ifndef NDIS_EXPORTED_ROUTINE
 #  define NDIS_EXPORTED_ROUTINE
@@ -1669,6 +1679,9 @@ NdisMDeregisterWdiMiniportDriver(
 
 #define NDIS_STATUS_WDI_INDICATION_REQUEST_FTM_COMPLETE \
     WDI_DEFINE_INDICATION(WDI_INDICATION_REQUEST_FTM_COMPLETE)
+
+#define NDIS_STATUS_WDI_INDICATION_SECONDARY_STA_CONNECTIVITY \
+    WDI_DEFINE_INDICATION(WDI_INDICATION_SECONDARY_STA_CONNECTIVITY)
 
 // Special codes
 /*++

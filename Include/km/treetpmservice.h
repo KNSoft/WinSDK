@@ -15,12 +15,20 @@ Abstract:
 #pragma once
 
 //
-// TPM Service
+// TPM Service for a discrete or an fTPM.
 // {36deaa79-c5dd-447c-95e6-b3859589291a}
 //
 
-DEFINE_GUID(GUID_TREE_TPM_SERVICE,
+DEFINE_GUID(GUID_TREE_TPM_SERVICE_FDTPM,
     0x36deaa79, 0xc5dd, 0x447c, 0x95, 0xe6, 0xb3, 0x85, 0x95, 0x89, 0x29, 0x1a);
+
+//
+// TPM Service for an sTPM (SPU-based TPM).
+// {1F75CF6D-F709-4C0C-8BCB-0CDCA1289DDD}
+//
+
+DEFINE_GUID(GUID_TREE_TPM_SERVICE_STPM,
+    0x1F75CF6D, 0xF709, 0x4C0C, 0x8B, 0xCB, 0x0C, 0xDC, 0xA1, 0x28, 0x9D, 0xDD);
 
 //
 // Defines the expected value of the TPM secure service major version.

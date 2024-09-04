@@ -1111,12 +1111,14 @@ __MACHINE(int __cdecl _setjmp(jmp_buf))
 __MACHINEARM_64(int __cdecl _setjmpex(jmp_buf))
 __MACHINEX64(unsigned __int64 _umul128(unsigned __int64 _Multiplier, unsigned __int64 _Multiplicand, unsigned __int64 * _HighProduct))
 
+#if !defined(_M_CEE_PURE)
 #if defined(_M_ARM64EC) && !defined(_DISABLE_SOFTINTRIN_)
 /***
  * softintrin.h includes widemath.h, which uses _rotr64, so
  * softintrin.h must be included after declaration of _rotr64.
  ****/
 #include <softintrin.h>
+#endif
 #endif
 
 #if defined(__cplusplus)

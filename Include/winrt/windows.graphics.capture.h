@@ -92,7 +92,7 @@
 #endif // defined(WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION)
 
 #if !defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
-#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0xc0000
+#define WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION 0xe0000
 #endif // defined(WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION)
 
 #if !defined(WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION)
@@ -690,6 +690,7 @@ namespace ABI {
                 enum GraphicsCaptureAccessKind : int
                 {
                     GraphicsCaptureAccessKind_Borderless = 0,
+                    GraphicsCaptureAccessKind_Programmatic = 1,
                 };
             } /* Capture */
         } /* Graphics */
@@ -1294,8 +1295,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Graphics.Capture.IGraphicsCaptureItemStatics2 interface starting with version 12.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Graphics.Capture.IGraphicsCaptureItemStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Graphics.Capture.IGraphicsCaptureItemStatics2 interface starting with version 12.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Graphics.Capture.IGraphicsCaptureItem ** Default Interface **
@@ -1850,6 +1851,7 @@ typedef enum __x_ABI_CWindows_CGraphics_CCapture_CGraphicsCaptureAccessKind __x_
 enum __x_ABI_CWindows_CGraphics_CCapture_CGraphicsCaptureAccessKind
 {
     GraphicsCaptureAccessKind_Borderless = 0,
+    GraphicsCaptureAccessKind_Programmatic = 1,
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xc0000
 
@@ -2906,8 +2908,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 6.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Graphics.Capture.IGraphicsCaptureItemStatics2 interface starting with version 12.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Graphics.Capture.IGraphicsCaptureItemStatics interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Graphics.Capture.IGraphicsCaptureItemStatics2 interface starting with version 12.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Graphics.Capture.IGraphicsCaptureItem ** Default Interface **

@@ -249,6 +249,7 @@
 
     <message commandId="WDI_INDICATION_LINK_STATE_CHANGE" type="WDI_INDICATION_LINK_STATE_CHANGE_PARAMETERS" description="Parameters for WDI_INDICATION_LINK_STATE_CHANGE." direction="FromIhv">
       <containerRef id="WDI_TLV_LINK_STATE_CHANGE_PARAMETERS" name="LinkStateChangeParameters" type="LinkStateChangeParametersContainer" optional="false" />
+      <containerRef id="WDI_TLV_BSS_ENTRY_CHANNEL_INFO" name="APChannel" type="ChannelInfoContainer" optional="true" versionAdded="WDI_VERSION_2_0_2" />
     </message>
 
     <message commandId="WDI_INDICATION_P2P_ACTION_FRAME_RECEIVED" type="WDI_INDICATION_P2P_ACTION_FRAME_RECEIVED_PARAMETERS" description="Parameters for a P2P action frame received indication." direction="FromIhv">
@@ -605,6 +606,15 @@
       <containerRef id ="WDI_TLV_DEVICE_SERVICE_PARAMS_GUID" name="DeviceServiceGUID" type="GuidContainer" />
       <containerRef id ="WDI_TLV_DEVICE_SERVICE_PARAMS_OPCODE" name="Opcode" type="UINT32Container" />
       <containerRef id ="WDI_TLV_DEVICE_SERVICE_PARAMS_DATA_BLOB" name="Params" type="ByteBlob" multiContainer="true" optional="true" />
+    </message>
+
+    <message commandId="WDI_INDICATION_SECONDARY_STA_CONNECTIVITY" type="WDI_INDICATION_SECONDARY_STA_CONNECTIVITY_PARAMETERS" description="Parameters for Secondary Sta Connectivity state" direction="FromIhv">
+      <containerRef id="WDI_TLV_LIMITED_CONNECTIVITY" name="LimitedConnectivity" type="UINT8Container" />
+      <containerRef id="WDI_TLV_SECONDARY_STA_BAND_CHANNEL" name="AvaiableBandChannelList" type="BandChannelListContainer" multiContainer="true" optional="true" />
+    </message>
+    
+    <message commandId="WDI_SET_LOCATION_PRIVACY" type="WDI_SET_LOCATION_PRIVACY_PARAMETERS" description="Location Privacy Setting" direction="ToIhv" >
+      <containerRef id="WDI_TLV_LOCATION_PRIVACY" name="LocationAllowed" type="UINT8Container" />
     </message>
 
     <message commandId="WDI_TEST_TASK" type="WDI_TASK_TEST_PARAMETERS" description="this is just a test" direction="Both">
@@ -996,7 +1006,7 @@
       <containerRef id="WDI_TLV_CHANNEL_INFO_LIST" name="ChannelList" type="ChannelListContainer" optional="true" />
     </aggregateContainer>
 
-    <aggregateContainer name="ScanBandChannelListContainer" type="WDI_BAND_CHANNEL_LIST_CONTAINER" description="Container for band + channel information">
+    <aggregateContainer name="ScanBandChannelListContainer" type="WDI_SCAN_BAND_CHANNEL_LIST_CONTAINER" description="Container for band + channel information">
       <containerRef id="WDI_TLV_BANDID" name="BandID" type="BandIDContainer" />
       <containerRef id="WDI_TLV_CHANNEL_INFO_LIST" name="ChannelList" type="ChannelListContainer" />
     </aggregateContainer>
@@ -1004,6 +1014,11 @@
     <aggregateContainer name="APBandInformationContainer" type="WDI_AP_BAND_INFORMATION_CONTAINER" description="Container for AP band + channel information">
       <containerRef id="WDI_TLV_BANDID" name="BandID" type="BandIDContainer" />
       <containerRef id="WDI_TLV_OPERATING_IN_PBSS" name="IsPCPinPBSS" type="UINT8Container" />
+    </aggregateContainer>
+
+    <aggregateContainer name="BandChannelListContainer" type="WDI_BAND_CHANNEL_LIST_CONTAINER" description="Container for band + channel information">
+      <containerRef id="WDI_TLV_BANDID" name="BandID" type="BandIDContainer" />
+      <containerRef id="WDI_TLV_CHANNEL_INFO_LIST" name="ChannelList" type="ChannelListContainer" optional="true" />
     </aggregateContainer>
 
     <container name="SignalInfoContainer" type="WDI_SIGNAL_INFO_CONTAINER" description="Container for signal information">
@@ -1639,6 +1654,7 @@
       <containerRef id="WDI_TLV_DISALLOWED_BSSIDS_LIST" name="DisallowedBSSIDs" type="MacAddressListContainer" optional="true" />
       <containerRef id="WDI_TLV_ALLOWED_BSSIDS_LIST" name="AllowedBSSIDs" type="MacAddressListContainer" optional="true" />
       <containerRef id="WDI_TLV_OWE_DH_IE" name="OWEDHIE" type="ByteBlob" optional="true" />
+      <containerRef id="WDI_TLV_UNAVAILABLE_BAND_LIST" name="UnavailableBandList" optional="true" type="BandIDListContainer" versionAdded="WDI_VERSION_2_0_0" />
     </aggregateContainer>
 
     <container name="BSSSelectionParametersContainer" type="WDI_BSS_SELECTION_PARAMETERS_CONTAINER" description="Container for BSS Selection Parameters">
@@ -2777,7 +2793,7 @@
       <uint32 name="AssociationComebackTime" description="Comeback time requested by the peer" />  
       <namedType type="WDI_BAND_ID" name="BandID" description="Band ID on which the association is established"/>
       <uint32 name="IHVAssociationStatus" description="IHV defined status code for a failed association" />
-      <bool name="TrafficEncryptedByIHVExtensibilityModule" description="Specifies whether traffic encrypted by IHV extensibility module for WifiCx based driver"/>
+      <enum name="DisableDataPathOffloadsScenario" type="WDI_DISABLE_DATA_PATH_OFFLOADS_SCENARIO" description="Specifies scenario for disabling the data path offloads."/>
     </propertyGroup>
 
     <propertyGroup name="AssociationResultParametersStructV1_1_10" type="WDI_ASSOCIATION_RESULT_PARAMETERSV1_1_10" description="Structure definition for association results.">

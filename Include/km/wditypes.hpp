@@ -397,6 +397,7 @@
 #define WDI_TLV_6_GHZ_BAND_CHANNEL                              0x16D
 #define WDI_TLV_BAND_CHANNEL_LIST                               0x16E
 #define WDI_TLV_SAE_REJECTED_GROUPS                             0x16F
+#define WDI_TLV_LOCATION_PRIVACY                                0x171
 
 #define WDI_TEST_TASK                                           0xFFE0
 #define WDI_TLV_TEST1                                           0xFFE1
@@ -630,6 +631,7 @@ typedef enum _WDI_ASSOC_STATUS
      * Reserved
      */
     WDI_ASSOC_STATUS_RESERVED_0 = 0x01000000U,
+    WDI_ASSOC_STATUS_RESERVED_1 = 0x01000001U,
 
 } WDI_ASSOC_STATUS;
 

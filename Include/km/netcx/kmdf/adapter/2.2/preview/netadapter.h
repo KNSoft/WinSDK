@@ -6,8 +6,8 @@
 //       (.x or .y) and use stubwork to regenerate the header
 //
 
-#ifndef _NETREQUESTQUEUEPREVIEW_2_1_H_
-#define _NETREQUESTQUEUEPREVIEW_2_1_H_
+#ifndef _NETADAPTERPREVIEW_2_2_H_
+#define _NETADAPTERPREVIEW_2_2_H_
 
 #ifndef WDF_EXTERN_C
   #ifdef __cplusplus
@@ -28,8 +28,7 @@ WDF_EXTERN_C_START
 
 
 
-
 WDF_EXTERN_C_END
 
-#endif // _NETREQUESTQUEUEPREVIEW_2_1_H_
+#endif // _NETADAPTERPREVIEW_2_2_H_
 

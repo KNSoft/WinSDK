@@ -2674,7 +2674,7 @@ typedef struct _WWAN_NR_SERVING_CELLS_INFO
     UINT32 RSRP;
     UINT32 RSRQ;
     UINT32 SINR;
-    UINT32 NTimingAdvanceOffset;
+    UINT64 TimingAdvance;
     // ProviderId data
     BYTE Data[ANYSIZE_ARRAY];
 } WWAN_NR_SERVING_CELLS_INFO, *PWWAN_NR_SERVING_CELLS_INFO;

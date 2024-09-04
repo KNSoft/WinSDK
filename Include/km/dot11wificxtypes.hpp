@@ -397,7 +397,12 @@
 #define WDI_TLV_6_GHZ_BAND_CHANNEL                              0x16D
 #define WDI_TLV_BAND_CHANNEL_LIST                               0x16E
 #define WDI_TLV_SAE_REJECTED_GROUPS                             0x16F
-#define WDI_TLV_SAE_PASSWORD_IDENTIFIER                         0x170
+#define WDI_TLV_LOCATION_PRIVACY                                0x171
+
+// WiFiCx Tlvs
+#define WDI_TLV_UNAVAILABLE_BAND_LIST                           0x200
+#define WDI_TLV_LIMITED_CONNECTIVITY                            0x201
+#define WDI_TLV_SECONDARY_STA_BAND_CHANNEL                      0x202
 
 #define WDI_TEST_TASK                                           0xFFE0
 #define WDI_TLV_TEST1                                           0xFFE1
@@ -631,6 +636,7 @@ typedef enum _WDI_ASSOC_STATUS
      * Reserved
      */
     WDI_ASSOC_STATUS_RESERVED_0 = 0x01000000U,
+    WDI_ASSOC_STATUS_RESERVED_1 = 0x01000001U,
 
 } WDI_ASSOC_STATUS;
 
@@ -1111,3 +1117,11 @@ typedef enum _WDI_SAE_STATUS
     WDI_SAE_STATUS_CLEAN_UP_CONTEXT = 71,
 
 } WDI_SAE_STATUS;
+
+typedef enum _WDI_DISABLE_DATA_PATH_OFFLOADS_SCENARIO
+{
+    WDI_DISABLE_DATA_PATH_OFFLOADS_SCENARIO_NONE, // Default scenario: do not disable data path offloads
+    WDI_DISABLE_DATA_PATH_OFFLOADS_SCENARIO_ENCRYPTION_CONNECTION,
+    WDI_DISABLE_DATA_PATH_OFFLOADS_SCENARIO_HARDWARE_ERROR,
+
+}WDI_DISABLE_DATA_PATH_OFFLOADS_SCENARIO;

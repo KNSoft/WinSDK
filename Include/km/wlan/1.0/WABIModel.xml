@@ -607,6 +607,10 @@
       <containerRef id ="WDI_TLV_DEVICE_SERVICE_PARAMS_DATA_BLOB" name="Params" type="ByteBlob" multiContainer="true" optional="true" />
     </message>
 
+    <message commandId="WDI_SET_LOCATION_PRIVACY" type="WDI_SET_LOCATION_PRIVACY_PARAMETERS" description="Location Privacy Setting" direction="ToIhv" >
+      <containerRef id="WDI_TLV_LOCATION_PRIVACY" name="LocationAllowed" type="UINT8Container" />
+    </message>
+
     <message commandId="WDI_TEST_TASK" type="WDI_TASK_TEST_PARAMETERS" description="this is just a test" direction="Both">
       <!--Same Id, Optional Current, Optional Old, Multi Old, Multi Current" -->
       <containerRef id="WDI_TLV_TEST1" name="Newsocoomomc" type="Test" optional="true" multiContainer="true" versionAdded="WDI_VERSION_LATEST"/>

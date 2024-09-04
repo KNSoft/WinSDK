@@ -115,7 +115,6 @@ typedef enum _BRB_TYPE
     BRB_STORED_LINK_KEY                             = 0x0310,
     BRB_GET_DEVICE_INTERFACE_STRING                 = 0x0320,
 
-
 } BRB_TYPE;
 
 typedef enum _BRB_VERSION
@@ -1350,7 +1349,6 @@ struct _BRB_L2CA_UNREGISTER_SERVER
 };
 
 #if (NTDDI_VERSION >= NTDDI_WIN8)
-
 struct _BRB_L2CA_OPEN_ENHANCED_CHANNEL
 {
     //! Common BRB header.
@@ -1481,8 +1479,8 @@ struct _BRB_L2CA_OPEN_ENHANCED_CHANNEL
     //! Reserved field.
     PVOID Reserved;
 };
-
 #endif // (NTDDI_VERSION >= NTDDI_WIN8)
+
 
 struct _BRB_L2CA_OPEN_CHANNEL
 {

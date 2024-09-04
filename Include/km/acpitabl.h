@@ -203,6 +203,7 @@ GEN_ADDR        x_gp0_blk;
 GEN_ADDR        x_gp1_blk;              // This is the last field if the table Revision is 3 or 4
 GEN_ADDR        sleep_control_reg;
 GEN_ADDR        sleep_status_reg;       // This is the last field if the table Revision is 5
+ULONGLONG       hypervisor_vendor_identity; // This is the last field if the table Revision is 6
 } FADT, *PFADT;
 
 #define FADT_REV_1_SIZE   (FIELD_OFFSET(FADT, flags) + sizeof(ULONG))
@@ -210,6 +211,7 @@ GEN_ADDR        sleep_status_reg;       // This is the last field if the table R
 #define FADT_REV_3_SIZE   (FIELD_OFFSET(FADT, x_gp1_blk) + sizeof(GEN_ADDR))
 #define FADT_REV_4_SIZE   (FIELD_OFFSET(FADT, x_gp1_blk) + sizeof(GEN_ADDR))
 #define FADT_REV_5_SIZE   (FIELD_OFFSET(FADT, sleep_status_reg) + sizeof(GEN_ADDR))
+#define FADT_REV_6_SIZE   (FIELD_OFFSET(FADT, hypervisor_vendor_identity) + sizeof(ULONGLONG))
 
 #define ACPI_IS_VALID_TABLE_ENTRY(Entry, Type, TableEnd) \
     ((((PUCHAR)(Entry)) + RTL_SIZEOF_THROUGH_FIELD(Type, Length) <= (PUCHAR)(TableEnd)) && \
@@ -1214,16 +1216,14 @@ typedef struct _SERIAL_PORT_REDIRECTION_TABLE {
     GEN_ADDR            BaseAddress;            // Base address of the Debug Port register set
                                                 // described using the Generic Register Address
                                                 // Structure.
-                                                // 0   - console redirection disabled.
-                                                // e.g. COM1 (0x3F8) would be 0x1800000003F8
-                                                //      COM2 (Ox2F8) would be 0x1800000002F8
-
+                                                // 0 = console redirection disabled
 
     UCHAR               InterruptType;          // Interrupt type(s) used by the UART.
                                                 // bit 0 = PC-AT-compatible 8259 IRQ interrupt.
-                                                // bit 1 = I/O APIC interrupt (Global System INterrupt)
+                                                // bit 1 = I/O APIC interrupt (Global System Interrupt)
                                                 // bit 2 = I/O SAPIC interrupt (Global System Interrupt) (IRQ)
-                                                // bit 3:7 = reserved (and must be 0)
+                                                // bit 3 = ARMH GIC interrupt (Global System Interrupt)
+                                                // bit 4:7 = reserved (and must be 0)
                                                 // Note: bit == 1 indicates support, bit == 0 indicates no support.
                                                 //
                                                 // Platforms with both a dual 8259 and an I/O APIC or I/O SAPIC
@@ -1231,17 +1231,14 @@ typedef struct _SERIAL_PORT_REDIRECTION_TABLE {
                                                 // system interrupt bit.  E.g. a system that supported 8259 and
                                                 // SAPIC would be 0x5.
 
-    UCHAR               Irq;                    // 0  = none
-                                                // 2  = 2
-                                                // 3  = 3
-                                                // ...
-                                                // 16 = 16
-                                                // 1, 17-255 reserved
+    UCHAR               Irq;                    // 2-7, 9-12, 14-15 = valid IRQs respectively
+                                                // 0-1, 8, 13, 16-255 = reserved
+                                                // Valid only if Bit[0] of the Interrupt Type field is set.
 
     ULONG               GlobalSystemInterruptVector;
                                                 // The I/O APIC or I/O SAPIC Global System Interrupt used
-                                                // by the UART.Valid only if Bit[1] or Bit[2] of the
-                                                // Interrupt Type field is set.
+                                                // by the UART. Not valid if Bit[0] is the only bit set
+                                                // in the Interrupt Type field.
 
     UCHAR               BaudRate;               // Baudrate for BIOS redirection
                                                 // 3 = 9600
@@ -1256,17 +1253,22 @@ typedef struct _SERIAL_PORT_REDIRECTION_TABLE {
     UCHAR               StopBits;               // 1 = 1 stop bit
                                                 // 0, 2-255 = reserved
 
-    UCHAR               FlowControl;            // 0 = Hardware Flow Control
-                                                // 1 - 255 = reserved.
+    UCHAR               FlowControl;            // Bit[0] = DCD required for transmit
+                                                // Bit[1] = RTS/CTS hardware flow control
+                                                // Bit[2] = XON/XOFF software control
+                                                // Bit[3:7] = reserved, must be zero
 
     UCHAR               TerminalType;           // The terminal protocol the BIOS was using for
                                                 // console redirection
                                                 // 0 = VT100
                                                 // 1 = Extended VT100
-                                                // 2-255 = reserved
+                                                // 2 = VT-UTF8
+                                                // 3 = ANSI
+                                                // 4-255 = reserved
 
     UCHAR               Language;               // Language which the BIOS was redirecting
                                                 // 0 = US Western English (standard ASCII)
+                                                // 1-255 = reserved
 
     USHORT              PciDeviceId;            // Designates device ID of a PCI device that
                                                 // contains a UART to be used as a headless
@@ -1453,7 +1455,7 @@ typedef struct _WATCHDOG_TIMER_ACTION_TABLE {
 
     //
     // The PCI segment number.  If this table doesn't describe a PCI device,
-    // then this field must be 0xFFFF.
+    // then this field must be 0xFF.
     //
 
     USHORT PciSegment;
@@ -1480,10 +1482,24 @@ typedef struct _WATCHDOG_TIMER_ACTION_TABLE {
     UCHAR PciFunctionNumber;
 
     //
+    // The maximum number of retries when executing a command with the
+    // WATCHDOG_INSTRUCTION_HARDWARE_READY flag set.
+    //
+
+    UCHAR MaximumRetries;
+
+    //
+    // The retry interval, in ms, when executing a command with the
+    // WATCHDOG_INSTRUCTION_HARDWARE_READY flag set.
+    //
+
+    UCHAR RetryInterval;
+
+    //
     // Reserved, must be zero.
     //
 
-    UCHAR Reserved1[3];
+    UCHAR Reserved1;
 
     //
     // The period of one timer tick in milliseconds.
@@ -1558,6 +1574,7 @@ typedef struct _WATCHDOG_TIMER_ACTION_TABLE {
 #define WATCHDOG_ACTION_SET_SHUTDOWN                        0x13
 #define WATCHDOG_ACTION_QUERY_BOOT_STATUS                   0x20
 #define WATCHDOG_ACTION_SET_BOOT_STATUS                     0x21
+#define WATCHDOG_ACTION_LOG_SEL                             0x22
 
 //
 // Watchdog instruction flags.
@@ -1567,7 +1584,10 @@ typedef struct _WATCHDOG_TIMER_ACTION_TABLE {
 #define WATCHDOG_INSTRUCTION_READ_COUNTDOWN     0x1
 #define WATCHDOG_INSTRUCTION_WRITE_VALUE        0x2
 #define WATCHDOG_INSTRUCTION_WRITE_COUNTDOWN    0x3
+#define WATCHDOG_INSTRUCTION_HARDWARE_READY     0x40
 #define WATCHDOG_INSTRUCTION_PRESERVE_REGISTER  0x80
+#define WATCHDOG_INSTRUCTION_MODIFIER_MASK      (WATCHDOG_INSTRUCTION_HARDWARE_READY | \
+                                                 WATCHDOG_INSTRUCTION_PRESERVE_REGISTER)
 
 //
 // BOOT Table -- based on Simple Boot Flag Specification 1.0
@@ -2105,6 +2125,7 @@ typedef struct _IORT_ROOT_COMPLEX_NODE {
 #define DMAR_ATSR               2
 #define DMAR_RHSA               3
 #define DMAR_ANDD               4
+#define DMAR_SATC               5
 #define DMAR_FLAG_INT_REMAPPING 1
 #define DMAR_FLAG_X2APIC_OPT_OUT 2
 #define DMAR_FLAG_DMA_CTRL_PLATFORM_OPT_IN 4
@@ -2118,6 +2139,7 @@ typedef struct _IORT_ROOT_COMPLEX_NODE {
 #define DEVICE_SCOPE_HPET       4
 #define DEVICE_SCOPE_ACPI       5
 #define DEVICE_SCOPE_MIN_SIZE   8
+#define DEVICE_ATC_REQUIRED     0x1
 
 typedef struct _DEVICESCOPE
 {
@@ -2164,6 +2186,13 @@ typedef struct _RHSA {
     ULONG       ProximityDomain;
 } RHSA, *PRHSA;
 
+typedef struct _SATC {
+    UCHAR       Flags;
+    UCHAR       Reserved;
+    USHORT      SegmentNumber;
+    DEVICESCOPE DeviceScope[ANYSIZE_ARRAY];
+} SATC, *PSATC;
+
 #if _MSC_VER >= 1200
 #pragma warning(push)
 #endif
@@ -2180,6 +2209,7 @@ typedef struct _DMARTABLE
         RMRR Rmrr;
         ATSR Atsr;
         RHSA Rhsa;
+		SATC Satc;
     } DUMMYUNIONNAME;
 } DMARTABLE, *PDMARTABLE;
 
@@ -3155,8 +3185,31 @@ typedef enum _TPM20_START_METHOD {
     Tpm20TableStartMethodTz3     = 5,
     Tpm20TableStartMethodTis13   = 6,
     Tpm20TableStartMethodCR      = 7,
-    Tpm20TableStartMethodCRWithAcpi   = 8
+    Tpm20TableStartMethodCRWithAcpi   = 8,
+    Tpm20TableStartMethodCRTree  = 9,
+    Tpm20TableStartMethodSpb     = 10,
+    Tpm20TableStartMethodCRSmc   = 11,
+    Tpm20TableStartMethodFifoI2C = 12,
+    Tpm20TableStartMethodCRHsp   = 13,
+    Tpm20TableStartMethodCRSpu   = 14,
 } TPM20_START_METHOD, *PTPM20_START_METHOD;
+
+//
+// Microsoft HSP ACPI table.
+//
+
+#define MHSP_TABLE_SIGNATURE 'PSHM'
+
+typedef struct _MHSP_TABLE {
+    DESCRIPTION_HEADER Header;
+
+    UINT32 Instance;
+    UINT64 ControlAreaAddress;
+    UINT32 ControlAreaSize;
+    GEN_ADDR StartAddress;
+    GEN_ADDR ReplyAddress;
+    UINT32 IrqResource;
+} MHSP_TABLE, *PMHSP_TABLE;
 
 //
 // ACPI Physical Location Descriptor, Revision 1

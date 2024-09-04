@@ -1050,7 +1050,7 @@ NTSTATUS
 DuplicateTransportAddress (
     PTRANSPORT_ADDRESS *Copy,
     PTRANSPORT_ADDRESS Original,
-    POOL_TYPE PoolType);
+    POOL_FLAGS PoolFlags);
 
 NTSTATUS
 RxCepInitializeVC (
@@ -1062,7 +1062,7 @@ NTSTATUS
 DuplicateConnectionInformation (
     PRXCE_CONNECTION_INFORMATION *Copy,
     PRXCE_CONNECTION_INFORMATION Original,
-    POOL_TYPE PoolType
+    POOL_FLAGS PoolFlags
     );
 
 NTSTATUS
@@ -1121,7 +1121,7 @@ PVOID
 RxAllocateFcbObject (
     PRDBSS_DEVICE_OBJECT RxDeviceObject,
     NODE_TYPE_CODE NodeType,
-    POOL_TYPE PoolType,
+    POOL_FLAGS PoolFlags,
     ULONG NameSize,
     PVOID AlreadyAllocatedObject
     );

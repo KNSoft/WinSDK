@@ -104,12 +104,12 @@ typedef struct _FILE_GET_QUOTA_INFORMATION *PFILE_GET_QUOTA_INFORMATION;
 
 #if defined(_M_AMD64)
 
+#if !defined(_M_ARM64EC)
+
 ULONG64
 __readgsqword (
     _In_ ULONG Offset
     );
-
-#if !defined(_M_ARM64EC)
 
 #pragma intrinsic(__readgsqword)
 
@@ -517,7 +517,15 @@ typedef struct _KERNEL_CET_CONTEXT {
     ULONG64 Ssp;
     ULONG64 Rip;
     USHORT SegCs;
-    USHORT Fill[3];
+    union {
+        USHORT AllFlags;
+        struct {
+            USHORT UseWrss : 1;
+            USHORT PopShadowStackOne : 1;
+            USHORT Unused : 14;
+        };
+    };
+    USHORT Fill[2];
 } KERNEL_CET_CONTEXT, *PKERNEL_CET_CONTEXT;
 
 #if !defined(__midl) && !defined(MIDL_PASS)
@@ -943,6 +951,8 @@ _InlineInterlockedCompareExchangePointer (
 
 #define InterlockedExchange8 _InterlockedExchange8
 #define InterlockedExchange16 _InterlockedExchange16
+#define InterlockedExchangeNoFence8 InterlockedExchange8
+#define InterlockedExchangeAcquire8 InterlockedExchange8
 
 CHAR
 InterlockedExchange8 (
@@ -965,8 +975,17 @@ InterlockedExchange16 (
 
 #define InterlockedExchangeAdd8 _InterlockedExchangeAdd8
 #define InterlockedAnd8 _InterlockedAnd8
+#define InterlockedAndAcquire8 _InterlockedAnd8
+#define InterlockedAndRelease8 _InterlockedAnd8
+#define InterlockedAndNoFence8 _InterlockedAnd8
 #define InterlockedOr8 _InterlockedOr8
+#define InterlockedOrAcquire8 _InterlockedOr8
+#define InterlockedOrRelease8 _InterlockedOr8
+#define InterlockedOrNoFence8 _InterlockedOr8
 #define InterlockedXor8 _InterlockedXor8
+#define InterlockedXorAcquire8 _InterlockedXor8
+#define InterlockedXorRelease8 _InterlockedXor8
+#define InterlockedXorNoFence8 _InterlockedXor8
 #define InterlockedAnd16 _InterlockedAnd16
 #define InterlockedOr16 _InterlockedOr16
 #define InterlockedXor16 _InterlockedXor16
@@ -1536,15 +1555,21 @@ _interlockedbittestandreset64 (
 #pragma intrinsic(_bittestandcomplement)
 #pragma intrinsic(_bittestandset)
 #pragma intrinsic(_bittestandreset)
+
+#if !defined(ARM64X_INTRINSICS_FUNCTIONS)
 #pragma intrinsic(_interlockedbittestandset)
 #pragma intrinsic(_interlockedbittestandreset)
+#endif
 
 #pragma intrinsic(_bittest64)
 #pragma intrinsic(_bittestandcomplement64)
 #pragma intrinsic(_bittestandset64)
 #pragma intrinsic(_bittestandreset64)
+
+#if !defined(ARM64X_INTRINSICS_FUNCTIONS)
 #pragma intrinsic(_interlockedbittestandset64)
 #pragma intrinsic(_interlockedbittestandreset64)
+#endif
 
 //
 // Define bit scan intrinsics.
@@ -1889,6 +1914,7 @@ InterlockedExchangePointer(
     _In_opt_ PVOID Value
     );
 
+#if !defined(ARM64X_INTRINSICS_FUNCTIONS)
 #pragma intrinsic(_InterlockedIncrement16)
 #pragma intrinsic(_InterlockedDecrement16)
 #pragma intrinsic(_InterlockedCompareExchange16)
@@ -1917,11 +1943,15 @@ InterlockedExchangePointer(
 
 #pragma intrinsic(_InterlockedExchangePointer)
 #pragma intrinsic(_InterlockedCompareExchangePointer)
+#endif
 
+#if !defined(_M_ARM64EC)
 #if (_MSC_VER >= 1600)
 
 #define InterlockedExchange8 _InterlockedExchange8
 #define InterlockedExchange16 _InterlockedExchange16
+#define InterlockedExchangeNoFence8 InterlockedExchange8
+#define InterlockedExchangeAcquire8 InterlockedExchange8
 
 CHAR
 InterlockedExchange8 (
@@ -1935,8 +1965,10 @@ InterlockedExchange16 (
     _In_ SHORT ExChange
     );
 
+#if !defined(ARM64X_INTRINSICS_FUNCTIONS)
 #pragma intrinsic(_InterlockedExchange8)
 #pragma intrinsic(_InterlockedExchange16)
+#endif
 
 #endif /* _MSC_VER >= 1600 */
 
@@ -1944,8 +1976,17 @@ InterlockedExchange16 (
 
 #define InterlockedExchangeAdd8 _InterlockedExchangeAdd8
 #define InterlockedAnd8 _InterlockedAnd8
+#define InterlockedAndAcquire8 _InterlockedAnd8
+#define InterlockedAndRelease8 _InterlockedAnd8
+#define InterlockedAndNoFence8 _InterlockedAnd8
 #define InterlockedOr8 _InterlockedOr8
+#define InterlockedOrAcquire8 _InterlockedOr8
+#define InterlockedOrRelease8 _InterlockedOr8
+#define InterlockedOrNoFence8 _InterlockedOr8
 #define InterlockedXor8 _InterlockedXor8
+#define InterlockedXorAcquire8 _InterlockedXor8
+#define InterlockedXorRelease8 _InterlockedXor8
+#define InterlockedXorNoFence8 _InterlockedXor8
 #define InterlockedAnd16 _InterlockedAnd16
 #define InterlockedOr16 _InterlockedOr16
 #define InterlockedXor16 _InterlockedXor16
@@ -1992,6 +2033,7 @@ InterlockedXor16(
     _In_ SHORT Value
     );
 
+#if !defined(ARM64X_INTRINSICS_FUNCTIONS)
 #pragma intrinsic (_InterlockedExchangeAdd8)
 #pragma intrinsic (_InterlockedAnd8)
 #pragma intrinsic (_InterlockedOr8)
@@ -1999,7 +2041,9 @@ InterlockedXor16(
 #pragma intrinsic (_InterlockedAnd16)
 #pragma intrinsic (_InterlockedOr16)
 #pragma intrinsic (_InterlockedXor16)
+#endif
 
+#endif
 #endif
 
 //
@@ -2015,7 +2059,9 @@ InterlockedXor16(
 
 #else
 
-#define __cpuidex CpuIdEx
+#undef __cpuidex
+#define __cpuidex CPUIDEX64
+#undef __cpuid
 #define __cpuid __CpuId
 
 #endif
@@ -2033,26 +2079,6 @@ __cpuidex (
 
 #else
 
-// TODO-ARM64X: Implement CpuIdEx in a lib
-
-__forceinline
-VOID
-CpuIdEx(
-    int CPUInfo[4],
-    int Function,
-    int Subfunction
-    )
-{
-    (CPUInfo);     // reference to make compiler happy
-    (Function);    // reference to make compiler happy
-    (Subfunction); // reference to make compiler happy
-
-    CPUInfo[0] = 0;
-    CPUInfo[1] = 0;
-    CPUInfo[2] = 0;
-    CPUInfo[4] = 0;
-}
-
 __forceinline
 VOID
 __CpuId (
@@ -2060,7 +2086,7 @@ __CpuId (
     int Function
     )
 {
-    CpuIdEx(CPUInfo, Function, 0);
+    __cpuidex(CPUInfo, Function, 0);
 }
 
 //
@@ -2269,7 +2295,6 @@ _mm_setcsr (
     _In_ unsigned int MxCsr
     );
 
-// TODO-ARM64X: Intrinsics
 #if !defined(_M_ARM64EC)
 
 #pragma intrinsic(_mm_getcsr)
@@ -2439,6 +2464,7 @@ UnsignedMultiplyHigh (
 
 #else
 
+#undef __popcnt64
 #define __popcnt64 PopulationCount64
 
 #endif // !defined(_M_ARM64EC)
@@ -2503,6 +2529,7 @@ ShiftRight128 (
 
 #else
 
+#undef _mul128
 #define _mul128 Multiply128
 
 #endif // !defined(_M_ARM64EC)
@@ -2535,6 +2562,7 @@ UnsignedMultiply128 (
 
 #else
 
+#undef _umul128
 #define _umul128 UnsignedMultiply128
 
 #endif // !defined(_M_ARM64EC)
@@ -2618,6 +2646,8 @@ UnsignedMultiplyExtract128 (
     return extractedProduct;
 }
 
+#if !defined(_M_ARM64EC)
+
 //
 // Define functions to read and write the user TEB and the system PCR/PRCB.
 //
@@ -2666,9 +2696,6 @@ __writegsqword (
     _In_ ULONG64 Data
     );
 
-// TODO-ARM64X: Intrinsics
-#if !defined(_M_ARM64EC)
-
 #pragma intrinsic(__readgsbyte)
 #pragma intrinsic(__readgsword)
 #pragma intrinsic(__readgsdword)
@@ -2677,8 +2704,6 @@ __writegsqword (
 #pragma intrinsic(__writegsword)
 #pragma intrinsic(__writegsdword)
 #pragma intrinsic(__writegsqword)
-
-#endif // !defined(_M_ARM64EC)
 
 #if !defined(_MANAGED)
 
@@ -2738,6 +2763,8 @@ __addgsqword (
 #endif
 
 #endif // !defined(_MANAGED)
+
+#endif // !defined(_M_ARM64EC)
 
 //
 //
@@ -2873,6 +2900,8 @@ YieldProcessor (
 #pragma intrinsic(_bittestandcomplement)
 #pragma intrinsic(_bittestandset)
 #pragma intrinsic(_bittestandreset)
+
+#if !defined(ARM64X_INTRINSICS_FUNCTIONS)
 #pragma intrinsic(_interlockedbittestandset)
 #pragma intrinsic(_interlockedbittestandset_acq)
 #pragma intrinsic(_interlockedbittestandset_rel)
@@ -2881,6 +2910,7 @@ YieldProcessor (
 #pragma intrinsic(_interlockedbittestandreset_acq)
 #pragma intrinsic(_interlockedbittestandreset_rel)
 #pragma intrinsic(_interlockedbittestandreset_nf)
+#endif
 
 //
 // Define bit scan functions
@@ -2914,6 +2944,8 @@ _InlineBitScanReverse64 (
 
 #define BitScanReverse64 _InlineBitScanReverse64
 
+#if !defined(ARM64X_INTRINSICS_FUNCTIONS)
+
 //
 // Interlocked intrinsic functions.
 //
@@ -2921,6 +2953,7 @@ _InlineBitScanReverse64 (
 #pragma intrinsic(_InterlockedAnd8)
 #pragma intrinsic(_InterlockedOr8)
 #pragma intrinsic(_InterlockedXor8)
+#pragma intrinsic(_InterlockedExchange8)
 #pragma intrinsic(_InterlockedExchangeAdd8)
 
 #pragma intrinsic(_InterlockedAnd16)
@@ -2949,10 +2982,12 @@ _InlineBitScanReverse64 (
 
 #pragma intrinsic(_InterlockedExchangePointer)
 #pragma intrinsic(_InterlockedCompareExchangePointer)
+#endif
 
 #define InterlockedAnd8 _InterlockedAnd8
 #define InterlockedOr8 _InterlockedOr8
 #define InterlockedXor8 _InterlockedXor8
+#define InterlockedExchange8 _InterlockedExchange8
 #define InterlockedExchangeAdd8 _InterlockedExchangeAdd8
 
 #define InterlockedAnd16 _InterlockedAnd16
@@ -2987,9 +3022,12 @@ _InlineBitScanReverse64 (
 #define InterlockedExchangePointer _InterlockedExchangePointer
 #define InterlockedCompareExchangePointer _InterlockedCompareExchangePointer
 
+#if !defined(ARM64X_INTRINSICS_FUNCTIONS)
 #pragma intrinsic(_InterlockedExchange16)
+#endif
 #define InterlockedExchange16 _InterlockedExchange16
 
+#if !defined(ARM64X_INTRINSICS_FUNCTIONS)
 #pragma intrinsic(_InterlockedAnd8_acq)
 #pragma intrinsic(_InterlockedAnd8_rel)
 #pragma intrinsic(_InterlockedAnd8_nf)
@@ -2999,6 +3037,8 @@ _InlineBitScanReverse64 (
 #pragma intrinsic(_InterlockedXor8_acq)
 #pragma intrinsic(_InterlockedXor8_rel)
 #pragma intrinsic(_InterlockedXor8_nf)
+#pragma intrinsic(_InterlockedExchange8_acq)
+#pragma intrinsic(_InterlockedExchange8_nf)
 
 #pragma intrinsic(_InterlockedAnd16_acq)
 #pragma intrinsic(_InterlockedAnd16_rel)
@@ -3071,6 +3111,7 @@ _InlineBitScanReverse64 (
 #pragma intrinsic(_InterlockedCompareExchangePointer_acq)
 #pragma intrinsic(_InterlockedCompareExchangePointer_rel)
 #pragma intrinsic(_InterlockedCompareExchangePointer_nf)
+#endif
 
 #define InterlockedAndAcquire8 _InterlockedAnd8_acq
 #define InterlockedAndRelease8 _InterlockedAnd8_rel
@@ -3081,6 +3122,8 @@ _InlineBitScanReverse64 (
 #define InterlockedXorAcquire8 _InterlockedXor8_acq
 #define InterlockedXorRelease8 _InterlockedXor8_rel
 #define InterlockedXorNoFence8 _InterlockedXor8_nf
+#define InterlockedExchangeNoFence8 _InterlockedExchange8_nf
+#define InterlockedExchangeAcquire8 _InterlockedExchange8_acq
 
 #define InterlockedAndAcquire16 _InterlockedAnd16_acq
 #define InterlockedAndRelease16 _InterlockedAnd16_rel
@@ -3542,10 +3585,62 @@ YieldProcessor (
 #define InterlockedBitTestAndResetRelease _interlockedbittestandreset_rel
 #define InterlockedBitTestAndResetNoFence _interlockedbittestandreset_nf
 
+//
+// Temporary workaround for C++ bug: 64-bit bit test intrinsics are
+// not honoring the full 64-bit wide index, so pre-process the index
+// down to a qword base and a bit index 0-63 before calling through 
+// to the true intrinsic.
+//
+#define __ARM64_COMPILER_BITTEST64_WORKAROUND
+
+#if !defined(__ARM64_COMPILER_BITTEST64_WORKAROUND)
 #define BitTest64 _bittest64
 #define BitTestAndComplement64 _bittestandcomplement64
 #define BitTestAndSet64 _bittestandset64
 #define BitTestAndReset64 _bittestandreset64
+#else
+#undef BitTest64
+#undef BitTestAndComplement64
+#undef BitTestAndSet64
+#undef BitTestAndReset64
+FORCEINLINE
+unsigned char
+_BitTest64(__int64 const *Base, __int64 Index)
+{
+    return _bittest64(Base + (Index >> 6), Index & 63);
+}
+
+FORCEINLINE
+unsigned char
+_BitTestAndComplement64(__int64 *Base, __int64 Index)
+{
+    return _bittestandcomplement64(Base + (Index >> 6), Index & 63);
+}
+
+FORCEINLINE
+unsigned char
+_BitTestAndReset64(__int64 *Base, __int64 Index)
+{
+    return _bittestandreset64(Base + (Index >> 6), Index & 63);
+}
+
+FORCEINLINE
+unsigned char
+_BitTestAndSet64(__int64 *Base, __int64 Index)
+{
+    return _bittestandset64(Base + (Index >> 6), Index & 63);
+}
+#define BitTest64 _BitTest64
+#define BitTestAndComplement64 _BitTestAndComplement64
+#define BitTestAndSet64 _BitTestAndSet64
+#define BitTestAndReset64 _BitTestAndReset64
+#endif
+
+//
+// N.B. The above is not needed for the interlocked variants because they
+//      are now generated as calls to glue code which already contain
+//      fixes for this oversight.
+//
 #define InterlockedBitTestAndSet64 _interlockedbittestandset64
 #define InterlockedBitTestAndSet64Acquire _interlockedbittestandset64_acq
 #define InterlockedBitTestAndSet64Release _interlockedbittestandset64_rel
@@ -3559,6 +3654,8 @@ YieldProcessor (
 #pragma intrinsic(_bittestandcomplement)
 #pragma intrinsic(_bittestandset)
 #pragma intrinsic(_bittestandreset)
+
+#if !defined(ARM64X_INTRINSICS_FUNCTIONS)
 #pragma intrinsic(_interlockedbittestandset)
 #pragma intrinsic(_interlockedbittestandset_acq)
 #pragma intrinsic(_interlockedbittestandset_rel)
@@ -3567,12 +3664,16 @@ YieldProcessor (
 #pragma intrinsic(_interlockedbittestandreset_acq)
 #pragma intrinsic(_interlockedbittestandreset_rel)
 #pragma intrinsic(_interlockedbittestandreset_nf)
+#endif
 
+#if !defined(__ARM64_COMPILER_BITTEST64_WORKAROUND)
 #pragma intrinsic(_bittest64)
 #pragma intrinsic(_bittestandcomplement64)
 #pragma intrinsic(_bittestandset64)
 #pragma intrinsic(_bittestandreset64)
+#endif
 
+#if !defined(ARM64X_INTRINSICS_FUNCTIONS)
 #pragma intrinsic(_interlockedbittestandset64)
 #pragma intrinsic(_interlockedbittestandset64_acq)
 #pragma intrinsic(_interlockedbittestandset64_rel)
@@ -3581,6 +3682,7 @@ YieldProcessor (
 #pragma intrinsic(_interlockedbittestandreset64_acq)
 #pragma intrinsic(_interlockedbittestandreset64_rel)
 #pragma intrinsic(_interlockedbittestandreset64_nf)
+#endif
 
 //
 // Define bit scan functions
@@ -3596,6 +3698,7 @@ YieldProcessor (
 #pragma intrinsic(_BitScanForward64)
 #pragma intrinsic(_BitScanReverse64)
 
+#if !defined(ARM64X_INTRINSICS_FUNCTIONS)
 //
 // Interlocked intrinsic functions.
 //
@@ -3632,6 +3735,7 @@ YieldProcessor (
 #pragma intrinsic(_InterlockedCompareExchange128)
 #pragma intrinsic(_InterlockedExchangePointer)
 #pragma intrinsic(_InterlockedCompareExchangePointer)
+#endif
 
 #define InterlockedAnd8 _InterlockedAnd8
 #define InterlockedOr8 _InterlockedOr8
@@ -3670,9 +3774,14 @@ YieldProcessor (
 #define InterlockedExchangePointer _InterlockedExchangePointer
 #define InterlockedCompareExchangePointer _InterlockedCompareExchangePointer
 
+#if !defined(ARM64X_INTRINSICS_FUNCTIONS)
+#pragma intrinsic(_InterlockedExchange8)
 #pragma intrinsic(_InterlockedExchange16)
+#endif
 #define InterlockedExchange16 _InterlockedExchange16
+#define InterlockedExchange8 _InterlockedExchange8
 
+#if !defined(ARM64X_INTRINSICS_FUNCTIONS)
 #pragma intrinsic(_InterlockedAnd8_acq)
 #pragma intrinsic(_InterlockedAnd8_rel)
 #pragma intrinsic(_InterlockedAnd8_nf)
@@ -3682,6 +3791,8 @@ YieldProcessor (
 #pragma intrinsic(_InterlockedXor8_acq)
 #pragma intrinsic(_InterlockedXor8_rel)
 #pragma intrinsic(_InterlockedXor8_nf)
+#pragma intrinsic(_InterlockedExchange8_acq)
+#pragma intrinsic(_InterlockedExchange8_nf)
 
 #pragma intrinsic(_InterlockedAnd16_acq)
 #pragma intrinsic(_InterlockedAnd16_rel)
@@ -3753,6 +3864,7 @@ YieldProcessor (
 #pragma intrinsic(_InterlockedCompareExchangePointer_acq)
 #pragma intrinsic(_InterlockedCompareExchangePointer_rel)
 #pragma intrinsic(_InterlockedCompareExchangePointer_nf)
+#endif
 
 #define InterlockedAndAcquire8 _InterlockedAnd8_acq
 #define InterlockedAndRelease8 _InterlockedAnd8_rel
@@ -3763,6 +3875,8 @@ YieldProcessor (
 #define InterlockedXorAcquire8 _InterlockedXor8_acq
 #define InterlockedXorRelease8 _InterlockedXor8_rel
 #define InterlockedXorNoFence8 _InterlockedXor8_nf
+#define InterlockedExchangeNoFence8 _InterlockedExchange8_nf
+#define InterlockedExchangeAcquire8 _InterlockedExchange8_acq
 
 #define InterlockedAndAcquire16 _InterlockedAnd16_acq
 #define InterlockedAndRelease16 _InterlockedAnd16_rel
@@ -4377,6 +4491,17 @@ ShiftRight128 (
 // Define functions to perform 128-bit multiplies.
 //
 
+// Most ARM64/AArch64 intrinsics available in MSVC are not currently available in other compilers.
+// clang-cl defines _M_ARM64, so we need a better escape hatch to avoid using these intrinsics,
+// as well as allow us to re-enable them in the event clang-cl starts supporting the msvc intrinsics.
+#if !defined(ARM64_MULT_INTRINSICS_SUPPORTED)
+    #if defined(_MSC_VER) && !defined(__clang__)
+    #define ARM64_MULT_INTRINSICS_SUPPORTED 1
+    #else
+    #define ARM64_MULT_INTRINSICS_SUPPORTED 0
+    #endif
+#endif
+
 #if !defined(UnsignedMultiply128)
 
 __forceinline
@@ -4409,7 +4534,7 @@ Return Value:
 
 {
 
-#if defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC)
+#if (defined(_M_ARM64) || defined(_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC)) && ARM64_MULT_INTRINSICS_SUPPORTED
 
     *HighProduct = UnsignedMultiplyHigh(Multiplier, Multiplicand);
     return Multiplier * Multiplicand;
@@ -5206,6 +5331,150 @@ VOID
 WriteULongRaw (
     _Out_ _Interlocked_operand_ ULONG volatile *Destination,
     _In_ ULONG Value
+    )
+
+{
+
+    WriteRaw((PLONG)Destination, (LONG)Value);
+    return;
+}
+
+FORCEINLINE
+INT32
+ReadInt32Acquire (
+    _In_ _Interlocked_operand_ INT32 const volatile *Source
+    )
+
+{
+
+    return (INT32)ReadAcquire((PLONG)Source);
+}
+
+FORCEINLINE
+INT32
+ReadInt32NoFence (
+    _In_ _Interlocked_operand_ INT32 const volatile *Source
+    )
+
+{
+
+    return (INT32)ReadNoFence((PLONG)Source);
+}
+
+FORCEINLINE
+INT32
+ReadInt32Raw (
+    _In_ _Interlocked_operand_ INT32 const volatile *Source
+    )
+
+{
+
+    return (INT32)ReadRaw((PLONG)Source);
+}
+
+CFORCEINLINE
+VOID
+WriteInt32Release (
+    _Out_ _Interlocked_operand_ INT32 volatile *Destination,
+    _In_ INT32 Value
+    )
+
+{
+
+    WriteRelease((PLONG)Destination, (LONG)Value);
+    return;
+}
+
+FORCEINLINE
+VOID
+WriteInt32NoFence (
+    _Out_ _Interlocked_operand_ INT32 volatile *Destination,
+    _In_ INT32 Value
+    )
+
+{
+
+    WriteNoFence((PLONG)Destination, (LONG)Value);
+    return;
+}
+
+FORCEINLINE
+VOID
+WriteInt32Raw (
+    _Out_ _Interlocked_operand_ INT32 volatile *Destination,
+    _In_ INT32 Value
+    )
+
+{
+
+    WriteRaw((PLONG)Destination, (LONG)Value);
+    return;
+}
+
+FORCEINLINE
+UINT32
+ReadUInt32Acquire (
+    _In_ _Interlocked_operand_ UINT32 const volatile *Source
+    )
+
+{
+
+    return (UINT32)ReadAcquire((PLONG)Source);
+}
+
+FORCEINLINE
+UINT32
+ReadUInt32NoFence (
+    _In_ _Interlocked_operand_ UINT32 const volatile *Source
+    )
+
+{
+
+    return (UINT32)ReadNoFence((PLONG)Source);
+}
+
+FORCEINLINE
+UINT32
+ReadUInt32Raw (
+    _In_ _Interlocked_operand_ UINT32 const volatile *Source
+    )
+
+{
+
+    return (UINT32)ReadRaw((PLONG)Source);
+}
+
+CFORCEINLINE
+VOID
+WriteUInt32Release (
+    _Out_ _Interlocked_operand_ UINT32 volatile *Destination,
+    _In_ UINT32 Value
+    )
+
+{
+
+    WriteRelease((PLONG)Destination, (LONG)Value);
+    return;
+}
+
+FORCEINLINE
+VOID
+WriteUInt32NoFence (
+    _Out_ _Interlocked_operand_ UINT32 volatile *Destination,
+    _In_ UINT32 Value
+    )
+
+{
+
+    WriteNoFence((PLONG)Destination, (LONG)Value);
+    return;
+}
+
+FORCEINLINE
+VOID
+WriteUInt32Raw (
+    _Out_ _Interlocked_operand_ UINT32 volatile *Destination,
+    _In_ UINT32 Value
     )
 
 {
@@ -6748,6 +7017,8 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 #define FILE_DEVICE_UCMUCSI             0x0000005d
 #define FILE_DEVICE_PRM                 0x0000005e
 #define FILE_DEVICE_EVENT_COLLECTOR     0x0000005f
+#define FILE_DEVICE_USB4                0x00000060
+#define FILE_DEVICE_SOUNDWIRE           0x00000061
 
 //
 // Macro definition for defining IOCTL and FSCTL function control codes.  Note
@@ -6808,8 +7079,6 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 #define FILE_WRITE_ACCESS         ( 0x0002 )    // file & pipe
 
 
-// begin_access
-
 //
 // Define access rights to files and directories
 //
@@ -6868,8 +7137,7 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
                                    FILE_EXECUTE             |\
                                    SYNCHRONIZE)
 
-// end_access
-
+// end_access end_winnt
 
 //
 // Define share access rights to files and directories
@@ -7067,8 +7335,9 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 #define FILE_SESSION_AWARE                      0x00040000
 #endif /* NTDDI_VERSION >= NTDDI_WIN8 */
 
-
-
+//
+//  CreateOptions flag to pass in call to CreateFile to allow the write through xro.sys
+//
 
 #define FILE_RESERVE_OPFILTER                   0x00100000
 #define FILE_OPEN_REPARSE_POINT                 0x00200000
@@ -7151,7 +7420,6 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 
 #define MAXIMUM_FILENAME_LENGTH         256
 
-
 //
 // Define the various device characteristics flags
 //
@@ -7174,8 +7442,6 @@ typedef struct _SE_ADT_PARAMETER_ARRAY_EX {
 #define FILE_REMOTE_DEVICE_VSMB                     0x00080000
 #define FILE_DEVICE_REQUIRE_SECURITY_CHECK          0x00100000
 
-
-
 //
 // Define the base asynchronous I/O argument types
 //
@@ -7184,10 +7450,52 @@ typedef struct _IO_STATUS_BLOCK {
     union {
         NTSTATUS Status;
         PVOID Pointer;
-    } DUMMYUNIONNAME;
+    };
 
     ULONG_PTR Information;
 } IO_STATUS_BLOCK, *PIO_STATUS_BLOCK;
+
+//
+// Define 64 bit version of IO_STATUS_BLOCK to simplify WOW support when kernel
+// and user mode communicates using shared memory (like IoRing).
+//
+
+#if defined(_WIN64)
+
+typedef IO_STATUS_BLOCK IO_STATUS_BLOCK64;
+
+#define Iosb64ToIosb(_iosb, _iosb64) {  \
+    (_iosb) = (_iosb64);                \
+}
+
+#define IosbToIosb64(_iosb64, _iosb) {  \
+    (_iosb64) = (_iosb);                \
+}
+
+#else
+
+typedef struct _IO_STATUS_BLOCK64 {
+    union {
+        NTSTATUS Status;
+        PVOID64 Pointer;
+    } DUMMYUNIONNAME;
+
+    ULONG64 Information;
+} IO_STATUS_BLOCK64;
+
+#define Iosb64ToIosb(_iosb, _iosb64) {                      \
+    (_iosb).Pointer = Ptr64ToPtr( (_iosb64).Pointer );      \
+    (_iosb).Information = (ULONG_PTR)(_iosb64).Information; \
+}
+
+#define IosbToIosb64(_iosb64, _iosb) {                      \
+    (_iosb64).Pointer = PtrToPtr64( (_iosb).Pointer );      \
+    (_iosb64).Information = (ULONG64)(_iosb).Information;   \
+}
+
+#endif
+
+typedef IO_STATUS_BLOCK64 *PIO_STATUS_BLOCK64;
 
 
 
@@ -7266,6 +7574,7 @@ typedef struct _IO_SESSION_CONNECT_INFO {
     ULONG SessionId;
     BOOLEAN LocalSession;
 } IO_SESSION_CONNECT_INFO, *PIO_SESSION_CONNECT_INFO;
+
 
 
 //
@@ -7620,8 +7929,7 @@ typedef union _FILE_SEGMENT_ELEMENT {
 //  If set, this operation will write the data for the given file from the
 //  Windows in-memory cache.  This will NOT commit any associated metadata
 //  changes.  This will NOT send a SYNC to the storage device to flush its
-//  cache.  Not supported on volume handles.  Only supported by the NTFS
-//  filesystem.
+//  cache.  Not supported on volume handles.
 //
 
 #define FLUSH_FLAGS_FILE_DATA_ONLY                      0x00000001
@@ -7630,7 +7938,6 @@ typedef union _FILE_SEGMENT_ELEMENT {
 //  If set, this operation will commit both the data and metadata changes for
 //  the given file from the Windows in-memory cache.  This will NOT send a SYNC
 //  to the storage device to flush its cache.  Not supported on volume handles.
-//  Only supported by the NTFS filesystem.
 //
 
 #define FLUSH_FLAGS_NO_SYNC                             0x00000002
@@ -7643,14 +7950,12 @@ typedef union _FILE_SEGMENT_ELEMENT {
 //  If set, this operation will write the data for the given file from the
 //  Windows in-memory cache.  It will also try to skip updating the timestamp
 //  as much as possible.  This will send a SYNC to the storage device to flush its
-//  cache.  Not supported on volume or directory handles.  Only supported by the NTFS
-//  filesystem.
+//  cache.  Not supported on volume or directory handles.
 //
 
 #define FLUSH_FLAGS_FILE_DATA_SYNC_ONLY                 0x00000004
 
 #endif  // (NTDDI_VERSION >= NTDDI_WIN10_RS1)
-
 
 
 //
@@ -7710,9 +8015,10 @@ typedef enum _DMA_SPEED {
 }DMA_SPEED, *PDMA_SPEED;
 
 
+
 //
 // Define Interface reference/dereference routines for
-//  Interfaces exported by IRP_MN_QUERY_INTERFACE
+// Interfaces exported by IRP_MN_QUERY_INTERFACE
 //
 
 typedef VOID (*PINTERFACE_REFERENCE)(PVOID Context);
@@ -8347,6 +8653,7 @@ typedef struct _MEMORY_PARTITION_DEDICATED_MEMORY_OPEN_INFORMATION {
 
 } MEMORY_PARTITION_DEDICATED_MEMORY_OPEN_INFORMATION, *PMEMORY_PARTITION_DEDICATED_MEMORY_OPEN_INFORMATION;
 
+#define SEC_HUGE_PAGES              0x00020000  
 #define SEC_64K_PAGES               0x00080000  
 #define SEC_FILE                    0x00800000  
 #define SEC_IMAGE                   0x01000000  
@@ -8360,6 +8667,7 @@ typedef enum MEM_SECTION_EXTENDED_PARAMETER_TYPE {
     MemSectionExtendedParameterInvalidType = 0,
     MemSectionExtendedParameterUserPhysicalFlags,
     MemSectionExtendedParameterNumaNode,
+    MemSectionExtendedParameterSigningLevel,
     MemSectionExtendedParameterMax
 } MEM_SECTION_EXTENDED_PARAMETER_TYPE, *PMEM_SECTION_EXTENDED_PARAMETER_TYPE;
 
@@ -8373,6 +8681,8 @@ typedef enum MEM_SECTION_EXTENDED_PARAMETER_TYPE {
 
 
 #define PROCESS_DUP_HANDLE                 (0x0040)  
+//
+
 #if (NTDDI_VERSION >= NTDDI_VISTA)
 #define PROCESS_ALL_ACCESS        (STANDARD_RIGHTS_REQUIRED | SYNCHRONIZE | \
                                    0xFFFF)
@@ -8381,6 +8691,8 @@ typedef enum MEM_SECTION_EXTENDED_PARAMETER_TYPE {
                                    0xFFF)
 #endif
 
+//
+//
 
 //
 // Thread Specific Access Rights
@@ -8395,6 +8707,7 @@ typedef enum MEM_SECTION_EXTENDED_PARAMETER_TYPE {
 #define THREAD_SET_LIMITED_INFORMATION   (0x0400)  
 #define THREAD_QUERY_LIMITED_INFORMATION (0x0800)  
 #define THREAD_RESUME                    (0x1000)  
+
 #if (NTDDI_VERSION >= NTDDI_VISTA)
 #define THREAD_ALL_ACCESS         (STANDARD_RIGHTS_REQUIRED | SYNCHRONIZE | \
                                    0xFFFF)
@@ -8402,6 +8715,9 @@ typedef enum MEM_SECTION_EXTENDED_PARAMETER_TYPE {
 #define THREAD_ALL_ACCESS         (STANDARD_RIGHTS_REQUIRED | SYNCHRONIZE | \
                                    0x3FF)
 #endif
+
+//
+//
 
 //
 // ClientId
@@ -8413,7 +8729,7 @@ typedef struct _CLIENT_ID {
 } CLIENT_ID;
 typedef CLIENT_ID *PCLIENT_ID;
 
-
+//
 #define NtCurrentProcess() ( (HANDLE)(LONG_PTR) -1 )  
 #define ZwCurrentProcess() NtCurrentProcess()         
 #define NtCurrentThread() ( (HANDLE)(LONG_PTR) -2 )   
@@ -8897,6 +9213,13 @@ DEFINE_GUID( GUID_STANDBY_RESERVE_TIME, 0x468FE7E5, 0x1158, 0x46EC, 0x88, 0xbc, 
 // {49CB11A5-56E2-4AFB-9D38-3DF47872E21B}
 //
 DEFINE_GUID(GUID_STANDBY_RESET_PERCENT, 0x49cb11a5, 0x56e2, 0x4afb, 0x9d, 0x38, 0x3d, 0xf4, 0x78, 0x72, 0xe2, 0x1b);
+
+//
+// Defines a guid to control Human Presence Sensor Adaptive Display Timeout.
+//
+// {0A7D6AB6-AC83-4AD1-8282-ECA5B58308F3}
+//
+DEFINE_GUID(GUID_HUPR_ADAPTIVE_DISPLAY_TIMEOUT, 0x0A7D6AB6, 0xAC83, 0x4AD1, 0x82, 0x82, 0xEC, 0xA5, 0xB5, 0x83, 0x08, 0xF3);
 
 //
 // Defines a guid for enabling/disabling standby (S1-S3) states. This does not
@@ -9759,12 +10082,23 @@ DEFINE_GUID( GUID_PROCESSOR_SHORT_THREAD_SCHEDULING_POLICY,
 0xbae08b81, 0x2d5e, 0x4688, 0xad, 0x6a, 0x13, 0x24, 0x33, 0x56, 0x65, 0x4b);
 
 //
+// Specifies the global threshold that designates which threads have a
+// short versus a long runtime.
+//
+// {D92998C2-6A48-49CA-85D4-8CCEEC294570}
+//
+DEFINE_GUID( GUID_PROCESSOR_SHORT_THREAD_RUNTIME_THRESHOLD,
+0xd92998c2, 0x6a48, 0x49ca, 0x85, 0xd4, 0x8c, 0xce, 0xec, 0x29, 0x45, 0x70);
+
+
+//
 // Specifies active vs passive cooling.  Although not directly related to
 // processor settings, it is the processor that gets throttled if we're doing
 // passive cooling, so it is fairly strongly related.
 // {94D3A615-A899-4AC5-AE2B-E4D8F634367F}
 //
-DEFINE_GUID( GUID_SYSTEM_COOLING_POLICY, 0x94D3A615, 0xA899, 0x4AC5, 0xAE, 0x2B, 0xE4, 0xD8, 0xF6, 0x34, 0x36, 0x7F);
+DEFINE_GUID( GUID_SYSTEM_COOLING_POLICY,
+0x94D3A615, 0xA899, 0x4AC5, 0xAE, 0x2B, 0xE4, 0xD8, 0xF6, 0x34, 0x36, 0x7F);
 
 //
 // Processor responsiveness settings
@@ -9940,6 +10274,21 @@ DEFINE_GUID( GUID_ACDC_POWER_SOURCE, 0x5D3E9A59, 0xE9D5, 0x4B00, 0xA6, 0xBD, 0xF
 //
 
 DEFINE_GUID( GUID_LIDSWITCH_STATE_CHANGE,  0xBA3E0F4D, 0xB817, 0x4094, 0xA2, 0xD1, 0xD5, 0x63, 0x79, 0xE6, 0xA0, 0xF3 );
+
+// Lid state reliability
+// -----------------
+//
+// Specifies the current reliability of lid state.
+//
+// Values:
+//
+// 0 - unreliable
+// 1 - reliable
+//
+// {AE4C4FF1-D361-43F4-80AA-BBB6EB03DE94}
+//
+
+DEFINE_GUID( GUID_LIDSWITCH_STATE_RELIABILITY, 0xAE4C4FF1, 0xD361, 0x43F4, 0x80, 0xAA, 0xBB, 0xB6, 0xEB, 0x03, 0xDE, 0x94);
 
 // Battery status changes
 // ----------------------
@@ -10438,7 +10787,7 @@ typedef struct _POWER_SESSION_TIMEOUTS {
 //
 typedef struct _POWER_SESSION_RIT_STATE {
     BOOLEAN Active;  // TRUE - RIT input received, FALSE - RIT timeout
-    ULONG LastInputTime; // last input time held for this session
+    ULONG64 LastInputTime; // last input time held for this session
 } POWER_SESSION_RIT_STATE, *PPOWER_SESSION_RIT_STATE;
 
 //
@@ -12177,6 +12526,7 @@ RtlAssert(
 #define FAST_FAIL_KERNEL_CET_SHADOW_STACK_ASSIST    67
 #define FAST_FAIL_PATCH_CALLBACK_FAILED             68
 #define FAST_FAIL_NTDLL_PATCH_FAILED                69
+#define FAST_FAIL_INVALID_FLS_DATA                  70
 #define FAST_FAIL_INVALID_FAST_FAIL_CODE            0xFFFFFFFF
 
 #if _MSC_VER >= 1610
@@ -20198,7 +20548,7 @@ extern "C" {
 
 // begin_halextenv
 
-#if defined(_ARM64_)
+#if defined(_ARM64_) || defined(_ARM64EC_)
 
 //
 // I/O space read and write macros.
@@ -21090,6 +21440,7 @@ KfRaiseIrql (
 
 #endif // defined(_ARM64_) && !defined(MIDL_PASS)
 
+//
 
 typedef enum _FIRMWARE_TYPE {
     FirmwareTypeUnknown,
@@ -21098,8 +21449,8 @@ typedef enum _FIRMWARE_TYPE {
     FirmwareTypeMax
 } FIRMWARE_TYPE, *PFIRMWARE_TYPE;
 
-
-// begin_access
+//
+//
 
 //
 // Event Specific Access Rights.
@@ -21109,6 +21460,8 @@ typedef enum _FIRMWARE_TYPE {
 #define EVENT_MODIFY_STATE      0x0002  
 #define EVENT_ALL_ACCESS (STANDARD_RIGHTS_REQUIRED|SYNCHRONIZE|0x3) 
 
+//
+//
 
 //
 // Semaphore Specific Access Rights.
@@ -21119,6 +21472,8 @@ typedef enum _FIRMWARE_TYPE {
 
 #define SEMAPHORE_ALL_ACCESS (STANDARD_RIGHTS_REQUIRED|SYNCHRONIZE|0x3) 
 
+//
+//
 
 typedef enum _LOGICAL_PROCESSOR_RELATIONSHIP {
     RelationProcessorCore,
@@ -21128,6 +21483,7 @@ typedef enum _LOGICAL_PROCESSOR_RELATIONSHIP {
     RelationGroup,
     RelationProcessorDie,
     RelationNumaNodeEx,
+    RelationProcessorModule,
     RelationAll = 0xffff
 } LOGICAL_PROCESSOR_RELATIONSHIP;
 
@@ -21271,13 +21627,15 @@ _Struct_size_bytes_(Size) struct _SYSTEM_CPU_SET_INFORMATION {
 
 typedef struct _SYSTEM_CPU_SET_INFORMATION SYSTEM_CPU_SET_INFORMATION, *PSYSTEM_CPU_SET_INFORMATION;
 
-
-
+//
+//
 
 typedef struct _SYSTEM_POOL_ZEROING_INFORMATION {
     BOOLEAN PoolZeroingSupportPresent;
 } SYSTEM_POOL_ZEROING_INFORMATION, *PSYSTEM_POOL_ZEROING_INFORMATION;
 
+//
+//
 
 //
 // Defined processor features
@@ -21359,6 +21717,7 @@ typedef enum _ALTERNATIVE_ARCHITECTURE_TYPE {
 
 #define PROCESSOR_FEATURE_MAX 64
 
+//
 //
 // Exception flag definitions.
 //
@@ -21540,6 +21899,7 @@ typedef enum _KWAIT_REASON {
     WrAlertByThreadId,
     WrDeferredPreempt,
     WrPhysicalFault,
+    WrIoRing,
     MaximumWaitReason
 } KWAIT_REASON;
 
@@ -26690,6 +27050,18 @@ ExReleasePushLockSharedEx (
 #endif // !EX_LEGACY_PUSH_LOCKS
 #endif // EX_NO_PUSH_LOCKS
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_CO)
+
+_IRQL_requires_max_(PASSIVE_LEVEL)
+NTKERNELAPI
+NTSTATUS
+ExInitializeDeviceAts (
+    _In_ struct _DEVICE_OBJECT *PhysicalDeviceObject,
+    _In_ BOOLEAN SvmOptOut
+    );
+
+#endif
+
 //
 // Define shared spinlock type and function prototypes.
 //
@@ -29263,6 +29635,7 @@ PsRevertToUserMultipleGroupAffinityThread (
 #define IO_TYPE_ERROR_LOG               0x0000000b
 #define IO_TYPE_ERROR_MESSAGE           0x0000000c
 #define IO_TYPE_DEVICE_OBJECT_EXTENSION 0x0000000d
+#define IO_TYPE_IORING                  0x0000000e
 
 
 //
@@ -30164,13 +30537,23 @@ typedef struct _IO_SECURITY_CONTEXT {
 // Define Volume Parameter Block (VPB) flags.
 //
 
-#define VPB_MOUNTED                     0x00000001
-#define VPB_LOCKED                      0x00000002
-#define VPB_PERSISTENT                  0x00000004
-#define VPB_REMOVE_PENDING              0x00000008
-#define VPB_RAW_MOUNT                   0x00000010
-#define VPB_DIRECT_WRITES_ALLOWED       0x00000020
+#define VPB_MOUNTED                         0x0001
+#define VPB_LOCKED                          0x0002
+#define VPB_PERSISTENT                      0x0004
+#define VPB_REMOVE_PENDING                  0x0008
+#define VPB_RAW_MOUNT                       0x0010
+#define VPB_DIRECT_WRITES_ALLOWED           0x0020
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_CO)
+
+//
+//  When set, BypassIO is completly disabled on this volume meaning filter,
+//  volume and storage stack components will see all read/write operations.
+//
+
+#define VPB_FLAGS_BYPASSIO_BLOCKED          0x0040
+
+#endif
 
 //
 // Volume Parameter Block (VPB)
@@ -30182,7 +30565,7 @@ typedef struct _VPB {
     CSHORT Type;
     CSHORT Size;
     USHORT Flags;
-    USHORT VolumeLabelLength; // in bytes
+    USHORT VolumeLabelLength;   // in bytes
     struct _DEVICE_OBJECT *DeviceObject;
     struct _DEVICE_OBJECT *RealDevice;
     ULONG SerialNumber;
@@ -30524,6 +30907,7 @@ typedef struct _IO_COMPLETION_CONTEXT {
 #define FO_RANDOM_ACCESS                0x00100000
 #define FO_FILE_OPEN_CANCELLED          0x00200000
 #define FO_VOLUME_OPEN                  0x00400000
+#define FO_BYPASS_IO_ENABLED            0x00800000  //when set BYPASS IO is enabled on this handle
 #define FO_REMOTE_ORIGIN                0x01000000
 #define FO_DISALLOW_EXCLUSIVE           0x02000000
 #define FO_SKIP_COMPLETION_PORT         FO_DISALLOW_EXCLUSIVE
@@ -30533,10 +30917,15 @@ typedef struct _IO_COMPLETION_CONTEXT {
 #define FO_SECTION_MINSTORE_TREATMENT   0x20000000
 
 
+// begin_ntosifs
+
 //
 // This mask allows us to re-use flags that are not present during a create
 // operation for uses that are only valid for the duration of the create.
 //
+
+// end_ntosifs
+
 #define FO_FLAGS_VALID_ONLY_DURING_CREATE FO_DISALLOW_EXCLUSIVE
 
 
@@ -30575,9 +30964,11 @@ typedef struct _FILE_OBJECT {
 } FILE_OBJECT;
 typedef struct _FILE_OBJECT *PFILE_OBJECT; 
 
+// begin_ntosifs
 //
 // Define I/O Request Packet (IRP) flags
 //
+// end_ntosifs
 
 #define IRP_NOCACHE                     0x00000001
 #define IRP_PAGING_IO                   0x00000002
@@ -30716,7 +31107,18 @@ typedef struct DECLSPEC_ALIGN(MEMORY_ALLOCATION_ALIGNMENT) _IRP {
     // User parameters.
     //
 
-    PIO_STATUS_BLOCK UserIosb;
+    union {
+        PIO_STATUS_BLOCK UserIosb;
+
+        //
+        // Context used when the Irp is managed by IoRing and is used by IoRing.
+        // UserIosb is used to cancel an Irp, so sharing space with UserIosb
+        // let IoRing cancel an Irp based on its context.
+        //
+
+        PVOID IoRingContext;
+    };
+
     PKEVENT UserEvent;
     union {
         struct {
@@ -30724,7 +31126,21 @@ typedef struct DECLSPEC_ALIGN(MEMORY_ALLOCATION_ALIGNMENT) _IRP {
                 PIO_APC_ROUTINE UserApcRoutine;
                 PVOID IssuingProcess;
             };
-            PVOID UserApcContext;
+            union {
+                PVOID UserApcContext;
+
+                //
+                // IoRing object that rolled this Irp, if any.  The completion
+                // is processed through this IoRing object.  UserApcRoutine and
+                // UserApcContext is not supported when issuing IOs through an
+                // IoRing so we union this with UserApcContext.  We did not use
+                // UserApcRoutine because IssuingProcess use the same location
+                // and is used when an Irp is queued to FileObject and when the
+                // Irp is managed by IoRing it is queued to the FileObject.
+                //
+
+                struct _IORING_OBJECT* IoRing;
+            };
         } AsynchronousParameters;
         LARGE_INTEGER AllocationSize;
     } Overlay;
@@ -37115,6 +37531,7 @@ typedef struct _CRASHDUMP_FUNCTIONS_INTERFACE {
 
 #define DEVICE_RESET_INTERFACE_VERSION_1 1
 #define DEVICE_RESET_INTERFACE_VERSION_2 2
+#define DEVICE_RESET_INTERFACE_VERSION_3 3
 #define DEVICE_RESET_INTERFACE_VERSION  1
 
 //
@@ -37206,6 +37623,15 @@ NTSTATUS
     _In_ PVOID ResetParameters
 );
 
+typedef
+NTSTATUS
+(*PGET_DEVICE_RESET_STATUS)(
+    _In_ PVOID InterfaceContext,
+    _Out_ PBOOLEAN IsResetting,
+    _Out_ PDEVICE_BUS_SPECIFIC_RESET_TYPE ResetTypeSelected,
+    _Out_ PULONGLONG Flags
+);
+
 #endif
 
 typedef struct _DEVICE_RESET_INTERFACE_STANDARD {
@@ -37236,6 +37662,12 @@ typedef struct _DEVICE_RESET_INTERFACE_STANDARD {
 
     PDEVICE_QUERY_BUS_SPECIFIC_RESET_HANDLER QueryBusSpecificResetInfo;
     PDEVICE_BUS_SPECIFIC_RESET_HANDLER DeviceBusSpecificReset;
+
+    //
+    // Version 3 Device Reset Interface
+    //
+
+    PGET_DEVICE_RESET_STATUS GetDeviceResetStatus;
 
 #endif
 
@@ -39677,13 +40109,23 @@ Return Value:
 
     STATUS_SUCCESS - On successful creation of a DMA Device.
 
-    STATUS_INVALID_PARAMETER - Provided PDO represents a device that is not
-        behind an IOMMU.
-
     STATUS_INVALID_PARAMETER_2 - Provided inputs do not match system support.
 
     STATUS_INSUFFICIENT_RESOURCES - Not enough memory to allocate an
-        IOMMU_DMA_DEVICE structure.
+        IOMMU_DMA_DEVICE structure or any intermediate structures.
+
+    STATUS_UNSUCCESSFUL - Underlying IOMMU Interface is not correctly
+        implemented for the GetDeviceId function.
+
+    STATUS_NOT_FOUND - Provided PDO represents a device that is not behind an
+        IOMMU.
+
+        N.B. If the device is not found behind an IOMMU then it should already
+             have direct physical memory access and the platform is not DMA
+             Guard compliant
+
+    Hypervisor Errors (Facility Code = 0x35) if the hypervisor fails to
+        register the device to this partition.
 
 --*/
 
@@ -40297,6 +40739,10 @@ typedef struct _PO_FX_DEVICE_V2 {
 //     device completes its D0-IRP before the system will complete the S0-IRP
 //     when resuming from a system state transition.
 //
+// PO_FX_DEVICE_FLAG_ENABLE_FAST_RESUME - When set this enforces that the device
+//     does not wait for the D0-IRP to be completed before the system allows
+//     the S0-IRP to be completed when resuming from a system state transition.
+//
 
 #define PO_FX_DEVICE_FLAG_RESERVED_1                   (0x0000000000000001ull)
 #define PO_FX_DEVICE_FLAG_DFX_DIRECT_CHILDREN_OPTIONAL (0x0000000000000002ull)
@@ -40306,6 +40752,7 @@ typedef struct _PO_FX_DEVICE_V2 {
              PO_FX_DEVICE_FLAG_DFX_POWER_CHILDREN_OPTIONAL)
 
 #define PO_FX_DEVICE_FLAG_DISABLE_FAST_RESUME          (0x0000000000000008ull)
+#define PO_FX_DEVICE_FLAG_ENABLE_FAST_RESUME           (0x0000000000000010ull)
 
 #define PO_FX_DIRECTED_FX_DEFAULT_IDLE_TIMEOUT    (0ul)
 #define PO_FX_DIRECTED_FX_IMMEDIATE_IDLE_TIMEOUT  ((ULONG)-1)
@@ -41301,6 +41748,7 @@ typedef struct _PCI_COMMON_CONFIG {
 // Bit encodings for PCI_COMMON_CONFIG.Status
 //
 
+#define PCI_STATUS_IMMEDIATE_READINESS      0x0001
 #define PCI_STATUS_INTERRUPT_PENDING        0x0008
 #define PCI_STATUS_CAPABILITIES_LIST        0x0010  // (ro)
 #define PCI_STATUS_66MHZ_CAPABLE            0x0020  // (ro)

@@ -146,7 +146,7 @@ _CRT_MANAGED_FP_DEPRECATE _CRTIMP void __cdecl _statusfp2(_Out_opt_ unsigned int
 #define _IC_PROJECTIVE  0x00000000              /*   projective */
 
 /*
- * RISC specific definitions
+ * Denormal control definitions
  */
 
 #define _MCW_DN         0x03000000              /* Denormal Control */

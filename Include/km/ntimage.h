@@ -1928,23 +1928,47 @@ typedef struct _IMAGE_ARM64EC_METADATA {
     ULONG  AuxiliaryIAT;
     ULONG  CodeRangesToEntryPointsCount;
     ULONG  RedirectionMetadataCount;
-    ULONG  RdtscFunctionPointer;
-    ULONG  CpuIDExFunctionPointer;
+    ULONG  GetX64InformationFunctionPointer;
+    ULONG  SetX64InformationFunctionPointer;
     ULONG  ExtraRFETable;
     ULONG  ExtraRFETableSize;
     ULONG  __os_arm64x_dispatch_fptr;
+    ULONG  AuxiliaryIATCopy;
 } IMAGE_ARM64EC_METADATA;
 
-typedef struct _IMAGE_ARM64EC_REDIRECTION_TUPLES {
+typedef struct _IMAGE_ARM64EC_REDIRECTION_ENTRY {
     ULONG Source;
     ULONG Destination;
-} IMAGE_ARM64EC_REDIRECTION_TUPLES;
+} IMAGE_ARM64EC_REDIRECTION_ENTRY;
 
 typedef struct _IMAGE_ARM64EC_CODE_RANGE_ENTRY_POINT {
     ULONG StartRva;
     ULONG EndRva;
     ULONG EntryPoint;
 } IMAGE_ARM64EC_CODE_RANGE_ENTRY_POINT;
+
+#define IMAGE_DYNAMIC_RELOCATION_ARM64X     0x00000006
+
+#define IMAGE_DVRT_ARM64X_FIXUP_TYPE_ZEROFILL   0
+#define IMAGE_DVRT_ARM64X_FIXUP_TYPE_VALUE      1
+#define IMAGE_DVRT_ARM64X_FIXUP_TYPE_DELTA      2
+
+#define IMAGE_DVRT_ARM64X_FIXUP_SIZE_2BYTES     1
+#define IMAGE_DVRT_ARM64X_FIXUP_SIZE_4BYTES     2
+#define IMAGE_DVRT_ARM64X_FIXUP_SIZE_8BYTES     3
+
+typedef struct _IMAGE_DVRT_ARM64X_FIXUP_RECORD {
+    USHORT Offset : 12;
+    USHORT Type   :  2;
+    USHORT Size   :  2;
+} IMAGE_DVRT_ARM64X_FIXUP_RECORD, *PIMAGE_DVRT_ARM64X_FIXUP_RECORD;
+
+typedef struct _IMAGE_DVRT_ARM64X_DELTA_FIXUP_RECORD {
+    USHORT Offset : 12;
+    USHORT Type   :  2;
+    USHORT Sign   :  1;
+    USHORT Scale  :  1;
+} IMAGE_DVRT_ARM64X_DELTA_FIXUP_RECORD, *PIMAGE_DVRT_ARM64X_DELTA_FIXUP_RECORD;
 
 // begin_winnt
 // begin_ntoshvp
